@@ -13,9 +13,11 @@ Wechaty is a Bot Framework for Wechat **Personal** Account which can help you cr
 
 Wechaty is super easy to use, especially when you are using Docker.   
 This repo contains the code about the video tutorial.   
-If you send the bot a 'hello', the bot will reply you 'hello how are you'  
-If you send the bot a 'test', the bot will add you in the room 'test' (You should create a room called test before)
-If you send the bot a 'out', the bot will remove you from the room 'test'
+
+### Functions as follows:
+* If you send the bot a 'hello', the bot will reply you 'hello how are you'  
+* If you send the bot a 'test', the bot will add you in the room 'test' (You should create a room called test before)
+* If you send the bot a 'out', the bot will remove you from the room 'test'
 
 <div align="center">
 <a target="_blank" href="https://blog.wechaty.io/guide/2017/01/01/getting-started-wechaty.html"><img src="https://cloud.githubusercontent.com/assets/1361891/21722581/3ec957d0-d468-11e6-8888-a91c236e0ba2.jpg" border=0 width="60%"></a>
