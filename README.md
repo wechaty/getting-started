@@ -23,7 +23,7 @@ The above 10 minutes video tutorial, which is a good start if you are new to Wec
 Learn more about wechaty: [Wechaty](https://github.com/wechaty/wechaty "Wechaty")
 
 
-## run  
+## Run  
 
 ### docker
 
