@@ -34,7 +34,7 @@ Learn more about wechaty: [Wechaty](https://github.com/wechaty/wechaty "Wechaty"
 
 ```sh
 git clone https://github.com/lijiarui/wechaty-getting-started.git
-npm install
+cd wechaty-getting-started
 docker run -ti --volume="$(pwd)":/bot --rm zixia/wechaty mybot.ts
 ```
 
