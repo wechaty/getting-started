@@ -39,18 +39,18 @@ Wechaty.instance()
 			m.say("hello how are you")
 		}
 
-		if (/room/.test(content)) {
+		if (/test/.test(content)) {
 			let keyroom = await Room.find({ topic: "test" })
 			if (keyroom) {
 				await keyroom.add(contact)
-				await keyroom.say("welcome!", contact)
+				await keyroom.say("welcome to the room!", contact)
 			}
 		}
 
 		if (/out/.test(content)) {
 			let keyroom = await Room.find({ topic: "test" })
 			if (keyroom) {
-				await keyroom.say("Remove from the room", contact)
+				await keyroom.say("has been removed from the room", contact)
 				await keyroom.del(contact)
 			}
 		}
