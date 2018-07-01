@@ -1,59 +1,26 @@
 const { Wechaty, Room } = require('wechaty')
+const qrTerm            = require('qrcode-terminal')
 
-Wechaty.instance()
-	.on('scan', (url, code) => {
-		if (!/201|200/.test(String(code))) {
-			const loginUrl = url.replace(/\/qrcode\//, '/l/')
-			require('qrcode-terminal').generate(loginUrl)
-		}
-		console.log(url)
-	})
+const bot = new Wechaty()
 
-	.on('login', user => {
-		console.log(`${user} login`)
-	})
+bot.on('scan', (qrcode, status) => {
+  qrTerm.generate(qrcode, { small: true })  // show qrcode on console
 
-	.on('friend', async function (contact, request) {
-		if (request) {
-			await request.accept()
-			console.log(`Contact: ${contact.name()} send request ${request.hello}`)
-		}
-	})
+  const qrcodeImageUrl = [
+    'https://api.qrserver.com/v1/create-qr-code/?data=',
+    encodeURIComponent(qrcode),
+    '&size=220x220&margin=20',
+  ].join('')
 
-	.on('message', async function (m) {
-		const contact = m.from()
-		const content = m.content()
-		const room = m.room()
+  console.log(qrcodeImageUrl)
+})
 
-		if (room) {
-			console.log(`Room: ${room.topic()} Contact: ${contact.name()} Content: ${content}`)
-		} else {
-			console.log(`Contact: ${contact.name()} Content: ${content}`)
-		}
+bot.on('login', user => {
+  console.log(`${user} login`)
+})
 
-		if (m.self()) {
-			return
-		}
+bot.on('message', async function (msg) {
+  console.log(msg.toString())
+})
 
-		if (/hello/.test(content)) {
-			m.say("hello how are you")
-		}
-
-		if (/test/.test(content)) {
-			let keyroom = await Room.find({ topic: "test" })
-			if (keyroom) {
-				await keyroom.add(contact)
-				await keyroom.say("welcome to the room!", contact)
-			}
-		}
-
-		if (/out/.test(content)) {
-			let keyroom = await Room.find({ topic: "test" })
-			if (keyroom) {
-				await keyroom.say("has been removed from the room", contact)
-				await keyroom.del(contact)
-			}
-		}
-	})
-
-	.init()
+bot.start()
