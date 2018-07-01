@@ -1,9 +1,10 @@
 {
   "name": "wechaty-getting-started",
   "version": "1.0.0",
-  "description": "Wechaty is super easy to use, especially when you are using Docker.    This repo contains the code about the video tutorial.",
+  "description": "Wechaty is an easy to use Wechat Chat Bot SDK. This repo contains the code about the video tutorial.",
   "main": "index.js",
   "scripts": {
+    "start": "ts-node examples/simplest-bot/bot.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,7 +19,12 @@
   },
   "homepage": "https://github.com/lijiarui/wechaty-getting-started#readme",
   "dependencies": {
-    "qrcode-terminal": "^0.11.0",
-    "wechaty": "^0.13.0"
+    "qrcode-terminal": "^0.12.0",
+    "wechaty": "^0.17.62"
+  },
+  "devDependencies": {
+    "@types/node": "^10.5.1",
+    "ts-node": "^7.0.0",
+    "typescript": "^2.9.2"
   }
 }

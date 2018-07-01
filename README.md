@@ -1,4 +1,4 @@
-## Connecting ChatBots.
+# WECHATY-GETTING-STARTED
 
 Wechaty is a Bot Framework for Wechat **Personal** Accounts which can help you create a bot in 6 lines of javascript by an easy to use API, with cross-platform support including [Linux](https://travis-ci.org/wechaty/wechaty), [Windows](https://ci.appveyor.com/project/wechaty/wechaty), [Darwin(OSX/Mac)](https://travis-ci.org/wechaty/wechaty) and [Docker](https://circleci.com/gh/wechaty/wechaty).
 
@@ -15,9 +15,10 @@ Wechaty is super easy to use, especially when you are using Docker.
 This repo contains the code for the video tutorial.   
 
 ### Functions as follows:
-* If you send 'hello' to the bot, the bot will reply 'hello how are you'  
-* If you send 'test' to the bot, the bot will add you to the room 'test' (You should create a room called test before)
-* If you send 'out' to the bot, the bot will remove you from the room 'test'
+
+1. Show a QR Code for scan
+1. Login with your user information
+1. Log all the messages to console
 
 <div align="center">
 <a target="_blank" href="https://blog.chatie.io/getting-started-wechaty/"><img src="https://cloud.githubusercontent.com/assets/1361891/21722581/3ec957d0-d468-11e6-8888-a91c236e0ba2.jpg" border=0 width="60%"></a>
@@ -27,22 +28,37 @@ Above is a 10 minute video tutorial, which is a good way to start if you are new
 
 Learn more about wechaty: [Wechaty](https://github.com/wechaty/wechaty "Wechaty")
 
+## RUN
 
-## Run  
+You can run Wechaty in two modes:
 
-### docker
+1. NPM Mode
+1. Docker Mode
+
+### 1. NPM
 
 ```sh
 git clone https://github.com/lijiarui/wechaty-getting-started.git
 cd wechaty-getting-started
-docker run -ti --volume="$(pwd)":/bot --rm zixia/wechaty mybot.ts
+
+npm install
+
+# Run Bot in JavaScript
+node examples/simplest-bot/bot.js
+
+# Run Bot in TypeScript
+./node_modules/.bin/ts-node examples/simplest-bot/bot.ts
 ```
 
-### npm
+### 2. Docker
 
 ```sh
 git clone https://github.com/lijiarui/wechaty-getting-started.git
-npm install
-node mybot.js
-```
+cd wechaty-getting-started
 
+# Run Bot in TypeScript
+docker run -ti --volume="$(pwd)":/bot --rm zixia/wechaty examples/simplest-bot/bot.ts
+
+# Run Bot in JavaScript
+docker run -ti --volume="$(pwd)":/bot --rm zixia/wechaty examples/simplest-bot/bot.js
+```
