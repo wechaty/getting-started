@@ -1,17 +1,17 @@
 # WECHATY-GETTING-STARTED
 
-Wechaty is a Bot Framework for Wechat **Personal** Accounts which can help you create a bot in 6 lines of javascript by an easy to use API, with cross-platform support including [Linux](https://travis-ci.org/wechaty/wechaty), [Windows](https://ci.appveyor.com/project/wechaty/wechaty), [Darwin(OSX/Mac)](https://travis-ci.org/wechaty/wechaty) and [Docker](https://circleci.com/gh/wechaty/wechaty).
+Wechaty is a Bot Framework for Wechat **Personal** Accounts which can help you create a bot in 6 lines of javascript by an easy to use API, with cross-platform support including [Linux](https://travis-ci.com/Chatie/wechaty), [Windows](https://ci.appveyor.com/project/chatie/wechaty), [Darwin(OSX/Mac)](https://travis-ci.com/Chatie/wechaty) and [Docker](https://app.shippable.com/github/Chatie/wechaty).
 
 [![Join the chat at https://gitter.im/zixia/wechaty](https://badges.gitter.im/zixia/wechaty.svg)](https://gitter.im/zixia/wechaty?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![node](https://img.shields.io/node/v/wechaty.svg?maxAge=604800)](https://nodejs.org/)
+[![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-blue.svg)](https://www.typescriptlang.org/)
 
 :octocat: <https://github.com/wechaty/wechaty>  
 :beetle: <https://github.com/wechaty/wechaty/issues>  
 :book: <https://github.com/wechaty/wechaty/wiki>  
 :whale: <https://hub.docker.com/r/zixia/wechaty>  
 
-Wechaty is super easy to use, especially when you are using Docker.   
-This repo contains the code for the video tutorial.   
+Wechaty is super easy to use, especially when you are using Docker.
 
 Functions as follows:
 
@@ -28,6 +28,8 @@ Above is a 10 minute video tutorial, which is a good way to start if you are new
 Learn more about wechaty: [Wechaty](https://github.com/chatie/wechaty "Wechaty")
 
 ## RUN
+
+> Latest Update with Wechaty v0.17, Huan, July 2018.
 
 You can run Wechaty in two modes:
 
