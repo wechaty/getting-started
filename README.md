@@ -6,19 +6,6 @@ Wechaty is a Bot Framework for Wechat **Personal** Accounts which can help you c
 [![node](https://img.shields.io/node/v/wechaty.svg?maxAge=604800)](https://nodejs.org/)
 [![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-blue.svg)](https://www.typescriptlang.org/)
 
-:octocat: <https://github.com/wechaty/wechaty>  
-:beetle: <https://github.com/wechaty/wechaty/issues>  
-:book: <https://github.com/wechaty/wechaty/wiki>  
-:whale: <https://hub.docker.com/r/zixia/wechaty>  
-
-<div align="center">
-<a target="_blank" href="https://blog.chatie.io/getting-started-wechaty/"><img src="https://cloud.githubusercontent.com/assets/1361891/21722581/3ec957d0-d468-11e6-8888-a91c236e0ba2.jpg" border=0 width="60%"></a>
-</div>
-
-Above is a 10 minute video tutorial, which is a good way to start if you are new to Wechaty.
-
-Learn more about wechaty: [Wechaty](https://github.com/chatie/wechaty "Wechaty")
-
 ## GETTING STARTED
 
 > Latest Update with Wechaty v0.17, Huan, July 2018.
@@ -42,6 +29,16 @@ npm install
 node examples/simplest-bot/bot.js
 ```
 
+## VIDEO TUTORIAL
+
+<div align="center">
+<a target="_blank" href="https://blog.chatie.io/getting-started-wechaty/"><img src="https://cloud.githubusercontent.com/assets/1361891/21722581/3ec957d0-d468-11e6-8888-a91c236e0ba2.jpg" border=0 width="60%"></a>
+</div>
+
+Above is a 10 minute video tutorial(a little outdated, it's running under v0.14 or older versions of Wechaty), which is a good way to start if you are new to Wechaty.
+
+Learn more about wechaty: [Wechaty](https://github.com/chatie/wechaty "Wechaty")
+
 ## MORE WECHATY EXAMPLES
 
 Go to [Official Wechaty Examples Directory](https://github.com/Chatie/wechaty/tree/master/examples)
@@ -62,7 +59,14 @@ Go to [Official Wechaty Examples Directory](https://github.com/Chatie/wechaty/tr
 | blessed-twins-bot/  | Multi-Instance Twins Bot Powered by Blessed |
 | busy-bot.ts         | Enter Auto Response Mode when you are BUSY |
 
+## LEARN MORE
+
 Learn more about Wechaty from:
 
 1. API Document: <https://github.com/Chatie/wechaty/wiki/API>
 1. Chatie Blog: <https://blog.chatie.io>
+
+:octocat: <https://github.com/wechaty/wechaty>  
+:beetle: <https://github.com/wechaty/wechaty/issues>  
+:book: <https://github.com/wechaty/wechaty/wiki>  
+:whale: <https://hub.docker.com/r/zixia/wechaty>  
