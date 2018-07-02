@@ -1,10 +1,10 @@
 {
   "name": "wechaty-getting-started",
   "version": "1.0.0",
-  "description": "Wechaty is an easy to use Wechat Chat Bot SDK. This repo contains the code about the video tutorial.",
+  "description": "Wechaty is a Wechat Bot SDK for Personal Account in Node.js",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node examples/basic-bot.js",
+    "start": "ts-node examples/starter-bot.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

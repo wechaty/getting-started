@@ -1,14 +1,12 @@
 # WECHATY-GETTING-STARTED
 
-Wechaty is a Bot Framework for Wechat **Personal** Accounts which can help you create a bot in 6 lines of javascript by an easy to use API, with cross-platform support including [Linux](https://travis-ci.com/Chatie/wechaty), [Windows](https://ci.appveyor.com/project/chatie/wechaty), [Darwin(OSX/Mac)](https://travis-ci.com/Chatie/wechaty) and [Docker](https://app.shippable.com/github/Chatie/wechaty).
+[Wechaty](https://github.com/Chatie/wechaty/) is a Wechat Bot SDK for Personal Account that lets you create software to extend the functionality of the Wechat, writen in Node.js with TypeScript, Support all platforms including Linux, OSX, Win32, and Docker.
 
-[![Join the chat at https://gitter.im/zixia/wechaty](https://badges.gitter.im/zixia/wechaty.svg)](https://gitter.im/zixia/wechaty?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![node](https://img.shields.io/node/v/wechaty.svg?maxAge=604800)](https://nodejs.org/)
-[![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-blue.svg)](https://www.typescriptlang.org/)
+As a developer, you can use Wechaty to easily build your bot on top of Wechat Personal Account, effectively manage message sending/receiving, room creating/inviting, contact friendship, and delightful add artificial intellengence between users and your bot.
+
+This repository is(should be) the best start point for Wechaty beginners.
 
 ## GETTING STARTED
-
-> Latest Update with Wechaty v0.17, Huan, July 2018.
 
 ### 1. Clone this Repository
 
@@ -23,13 +21,21 @@ cd wechaty-getting-started
 npm install
 ```
 
-### 3. You are All Set
+### 3. Run the Bot
 
 ```sh
-node examples/simplest-bot/bot.js
+npm start
+
+# Or use node to run bot directly
+
+node examples/starter-bot.js
 ```
 
-## VIDEO TUTORIAL
+You are all set!
+
+## ADVANCED
+
+### 1. Wechaty Tutorial
 
 <div align="center">
 <a target="_blank" href="https://blog.chatie.io/getting-started-wechaty/"><img src="https://cloud.githubusercontent.com/assets/1361891/21722581/3ec957d0-d468-11e6-8888-a91c236e0ba2.jpg" border=0 width="60%"></a>
@@ -37,11 +43,9 @@ node examples/simplest-bot/bot.js
 
 Above is a 10 minute video tutorial(a little outdated, it's running under v0.14 or older versions of Wechaty), which is a good way to start if you are new to Wechaty.
 
-Learn more about wechaty: [Wechaty](https://github.com/chatie/wechaty "Wechaty")
+### 2. More Examples
 
-## MORE WECHATY EXAMPLES
-
-Go to [Official Wechaty Examples Directory](https://github.com/Chatie/wechaty/tree/master/examples)
+You can get all of the following examples at our [Official Wechaty Examples Directory](https://github.com/Chatie/wechaty/tree/master/examples)
 
 | File Name        | Description |
 | ---                 | ---         |
@@ -59,14 +63,20 @@ Go to [Official Wechaty Examples Directory](https://github.com/Chatie/wechaty/tr
 | blessed-twins-bot/  | Multi-Instance Twins Bot Powered by Blessed |
 | busy-bot.ts         | Enter Auto Response Mode when you are BUSY |
 
-## LEARN MORE
+## API REFERENCE
 
-Learn more about Wechaty from:
+1. JS Document: <https://chatie.io/wechaty/>
 
-1. API Document: <https://github.com/Chatie/wechaty/wiki/API>
-1. Chatie Blog: <https://blog.chatie.io>
+## FAQ
 
-:octocat: <https://github.com/wechaty/wechaty>  
-:beetle: <https://github.com/wechaty/wechaty/issues>  
-:book: <https://github.com/wechaty/wechaty/wiki>  
-:whale: <https://hub.docker.com/r/zixia/wechaty>  
+### 1. I can not login with my Wechat account
+
+Wechat account that registered after 2017 will not be able to login via Web API.  Learn more at <https://github.com/Chatie/wechaty/issues/872>
+
+Solution: Wechaty support protocols other than Web API, such as pad. Learn more at <https://github.com/Chatie/wechaty/issues/1296>
+
+### 2. What is a `Puppet` in Wechaty
+
+The term `Puppet` in Wechaty is an Abstract Class for implementing protocol plugins. The plugins are the component that helps Wechaty to control the Wechat(that's the reason we call it puppet).
+
+The plugins are named `XXXPuppet`, like `PuppetPuppeteer` is using the chrome puppeteer to control the WeChat Web API via a chrome browser, `PuppetPadchat` is using the WebSocket protocol to connect with a Protocol Server for controlling the iPad Wechat program.
