@@ -1,9 +1,9 @@
-const qrTerm  = require('qrcode-terminal')
+const qrTerm = require('qrcode-terminal')
 
 const { 
   Wechaty, 
   Room 
-}             = require('wechaty')
+} = require('wechaty')
 
 const bot = new Wechaty()
 
