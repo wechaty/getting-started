@@ -4,7 +4,7 @@
 
 As a developer, you can use Wechaty to easily build your bot on top of Wechat Personal Account, effectively manage message sending/receiving, room creating/inviting, contact friendship, and delightful add artificial intellengence between users and your bot.
 
-This repository is(should be) the best start point for Wechaty beginners.
+This repository should work out-of-the-box, and is the best start point for Wechaty beginners.
 
 ## GETTING STARTED
 
