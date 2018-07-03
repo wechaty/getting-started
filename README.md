@@ -65,7 +65,7 @@ You can get all of the following examples at our [Official Wechaty Examples Dire
 
 ## API REFERENCE
 
-1. JS Document: <https://chatie.io/wechaty/>
+1. JSDoc: <https://chatie.io/wechaty/>
 
 ## FAQ
 
