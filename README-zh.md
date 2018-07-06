@@ -16,9 +16,12 @@ cd wechaty-getting-started
 ```
 
 ### 2. 安装依赖
+> 注意: Wechaty 需要 Node.js 的版本 >= 10, 建议运行 `node -v` 进行确认 
 ```sh
 npm install
 ```
+
+如果安装速度很慢，建议设置npm源，[点击查看如何设置npm源](https://github.com/Chatie/wechaty/wiki/NPM#use-npm-in-china)
 
 ### 3. 运行机器人
 ```sh
@@ -28,6 +31,12 @@ npm start
 
 node examples/starter-bot.js
 ```
+
+运行成功后可以看到如下截图:
+![demo-png](https://lijiarui.github.io/wechaty-getting-started/demo.png)
+
+截图展示二维码，扫码登陆后，这个微信号就会变成机器人，并在命令行显示机器人登陆信息： `Contact<李佳芮>login`       
+之后，你就可以在命令行看到这个微信收到的所有消息了。
 
 ## 注意事项
 从2017年6月下旬开始，使用基于web版微信接入方案存在大概率的被限制登陆的可能性。 主要表现为：无法登陆Web 微信，但不影响手机等其他平台。
