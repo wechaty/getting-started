@@ -1,5 +1,5 @@
 # WECHATY-GETTING-STARTED
-[Chinese Version 中文版本](https://github.com/lijiarui/wechaty-getting-started/blob/master/README-zh.md)
+[![中文版本](https://img.shields.io/badge/-%E4%B8%AD%E6%96%87%E7%89%88-lightgrey.svg)](https://github.com/chatie/wechaty-getting-started/blob/master/README-zh.md)
 
 [Wechaty](https://github.com/Chatie/wechaty/) is a Wechat Bot SDK for Personal Account that lets you create software to extend the functionality of the Wechat, writen in Node.js with TypeScript, Support all platforms including Linux, OSX, Win32, and Docker.
 
