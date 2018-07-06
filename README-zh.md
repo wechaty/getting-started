@@ -1,6 +1,6 @@
 # WECHATY-GETTING-STARTED
 [![Powered by Wechaty](https://img.shields.io/badge/Powered%20By-Wechaty-blue.svg)](https://github.com/chatie/wechaty)
-[![英文版本](https://img.shields.io/badge/-%E8%8B%B1%E6%96%87%E7%89%88-lightgrey.svg)](https://github.com/chatie/wechaty-getting-started/blob/master/README.md)
+[![English Version](https://img.shields.io/badge/-English%20Version-lightgrey.svg)](https://github.com/chatie/wechaty-getting-started/blob/master/README.md)
 
 [Wechaty](https://github.com/Chatie/wechaty/) 是一个开源的的个人号微信机器人接口，是一个使用Typescript 构建的Node.js 应用。支持多种微信接入方案，包括网页，ipad，ios，windows， android 等。同时支持Linux, OSX, Win32 和 Docker 等多个平台。
 
