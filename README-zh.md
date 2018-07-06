@@ -32,7 +32,7 @@ node examples/starter-bot.js
 
 运行成功后可以看到如下截图:
 
-![demo-png](https://lijiarui.github.io/wechaty-getting-started/demo.png)
+![demo-png](https://chatie.io/wechaty-getting-started/demo.png)
 
 截图展示二维码，扫码登陆后，这个微信号就会变成机器人，并在命令行显示机器人登陆信息： `Contact<李佳芮>login`       
 之后，你就可以在命令行看到这个微信收到的所有消息了。
