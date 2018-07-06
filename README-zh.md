@@ -16,7 +16,8 @@ cd wechaty-getting-started
 ```
 
 ### 2. 安装依赖
-> 注意: Wechaty 需要 Node.js 的版本 >= 10, 建议运行 `node -v` 进行确认 
+> 注意: Wechaty 需要 Node.js 的版本 >= 10, 建议运行 `node -v` 进行确认，[点击升级版本](https://www.jianshu.com/p/3d7669d12768)
+
 ```sh
 npm install
 ```
@@ -25,14 +26,11 @@ npm install
 
 ### 3. 运行机器人
 ```sh
-npm start
-
-# Or use node to run bot directly
-
 node examples/starter-bot.js
 ```
 
 运行成功后可以看到如下截图:
+
 ![demo-png](https://lijiarui.github.io/wechaty-getting-started/demo.png)
 
 截图展示二维码，扫码登陆后，这个微信号就会变成机器人，并在命令行显示机器人登陆信息： `Contact<李佳芮>login`       
