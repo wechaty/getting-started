@@ -26,9 +26,13 @@ npm install
 ```sh
 npm start
 
-# Or use node to run bot directly
+# Or use node to run bot directly (puppeteer mode)
 
 node examples/starter-bot.js
+
+# Or start bot with padchat mode for a quick play (recommended)
+
+WECHATY_PUPPET_PADCHAT_TOKEN=botorange_tempory_token WECHATY_PUPPET=padchat node examples/starter-bot.js
 ```
 
 You are all set!
