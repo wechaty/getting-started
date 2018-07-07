@@ -91,4 +91,4 @@ node examples/starter-bot.js
 发送语音消息 - 后续会支持
 朋友圈相关 - 后续会支持
 
-更多详见 [wiki](https://github.com/chatie/wechaty/wiki)
+更多详见 [FAQ-ZH](https://github.com/Chatie/wechaty-getting-started/wiki/FAQ-zh)
