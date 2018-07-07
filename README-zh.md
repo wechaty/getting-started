@@ -4,9 +4,15 @@
 
 [Wechaty](https://github.com/Chatie/wechaty/) 是一个开源的的 **个人号** 微信机器人接口，是一个使用Typescript 构建的Node.js 应用。支持多种微信接入方案，包括网页，ipad，ios，windows， android 等。同时支持Linux, OSX, Win32 和 Docker 等多个平台。
 
-只需要6行代码，你就可以 **通过个人号** 实现 **微信机器人功能**
+只需要6行代码，你就可以 **通过个人号** 搭建一个 **微信机器人功能** ，用来自动管理微信消息。
 
-更多功能，包括消息处理，群管理，好友请求以及加入智能对话功能，可以仔细看[Wechaty](https://github.com/chatie/wechaty)项目。这个项目是 wechaty 初学者的入门教程。
+更多功能包括：
+- 消息处理：关键词回复
+- 群管理：自动入群，拉人，踢人
+- 自动处理好友请求
+- 智能对话：通过简单配置，即可加入智能对话系统，完成指定任务。
+
+详情请看[Wechaty](https://github.com/chatie/wechaty)项目。这个项目是 wechaty 初学者的入门教程。
 
 ## 简单入门
 
