@@ -59,24 +59,18 @@ node examples/starter-bot.js
 请观看这个1分钟的教学视频，帮助你快速了解如何使用wechaty
 
 ### 2. 示例代码
-
-[点击这里查看 Wechaty 官方 示例代码](https://github.com/Chatie/wechaty/tree/master/examples)
+下面的表格解释了examples目录下各个代码的功能
 
 | 文件名称        | 描述 |
 | ---                 | ---         |
-| contact-bot.ts      | 展示微信号下所有联系的人微信ID和昵称。|
-| ding-dong-bot.ts    | 自动回复消息 |
-| friend-bot.ts       | 自动通过好友请求 |
-| media-file-bot.ts   | 将消息中的文件、图片、视频等非文本信息存到本地。 |
-| room-bot.ts         | 微信群管理。 |
-| speech-to-text-bot.ts | 将微信中的语音消息转换成文字消息。 |
+| contact-bot.js      | 展示微信号下所有联系的人微信ID和昵称。|
+| ding-dong-bot.js    | 自动回复消息 |
+| friend-bot.js       | 自动通过好友请求 |
+| media-file-bot.js   | 将消息中的文件、图片、视频等非文本信息存到本地。 |
+| room-bot.js         | 微信群管理。 |
 | tuling123-bot.ts    | 接入tuling123 机器人，可以回答任何消息。 |
-| hot-import-bot      | 热加载代码，无需重启可以运行修改的代码。 |
-| blessed-twins-bot/  | 启动多个wechaty bot 实例 |
-| busy-bot.ts         | 当微信号处于BUSY模式的时候进行自动回复。 |
-| gist-bot/           | 将不同的wechaty 函数拆分到不同的文件中 |
-| hot-reload-bot/     | 热加载代码，无需重启可以运行修改的代码 @deprecated,  详见`hot-import-bot.ts`  |
-| api-ai-bot.ts       | 集成了api.ai 的功能，提取意图和实体。|
+
+[点击这里查看 更多Wechaty 官方 示例代码](https://github.com/Chatie/wechaty/tree/master/examples)
 
 ## 接口文档
 
