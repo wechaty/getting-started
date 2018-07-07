@@ -19,8 +19,10 @@
   },
   "homepage": "https://github.com/lijiarui/wechaty-getting-started#readme",
   "dependencies": {
+    "file-box": "^0.8.22",
     "qrcode-terminal": "^0.12.0",
-    "wechaty": "^0.17.73"
+    "tuling123-client": "0.0.3",
+    "wechaty-puppet-padchat": "^0.4.2"
   },
   "devDependencies": {
     "@types/node": "^10.5.1",
