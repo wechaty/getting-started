@@ -38,7 +38,7 @@ node examples/starter-bot.js
 之后，你就可以在命令行看到这个微信收到的所有消息了。
 
 ## 试一试
-![Wechaty Developers' Home](https://chatie.io/wechaty/images/bot-qr-code.png)
+![Wechaty Developers' Home](https://chatie.io/wechaty-getting-started/bot-qr-code.png)
 
 回复 'wechaty' 加入 Wechaty 开发者群。
 > 群内均为wechaty 的开发者，如果仅是为了测试功能，请测试后自动退群。为了避免广告及不看文档用户，群主及机器人会T人，不喜勿加。群内发言之前请先阅读文档，谢谢！
