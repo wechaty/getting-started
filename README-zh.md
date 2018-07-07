@@ -2,9 +2,9 @@
 [![Powered by Wechaty](https://img.shields.io/badge/Powered%20By-Wechaty-blue.svg)](https://github.com/chatie/wechaty)
 [![English Version](https://img.shields.io/badge/-English%20Version-blue.svg)](README.md)
 
-[Wechaty](https://github.com/Chatie/wechaty/) 是一个开源的的个人号微信机器人接口，是一个使用Typescript 构建的Node.js 应用。支持多种微信接入方案，包括网页，ipad，ios，windows， android 等。同时支持Linux, OSX, Win32 和 Docker 等多个平台。
+[Wechaty](https://github.com/Chatie/wechaty/) 是一个开源的的 **个人号** 微信机器人接口，是一个使用Typescript 构建的Node.js 应用。支持多种微信接入方案，包括网页，ipad，ios，windows， android 等。同时支持Linux, OSX, Win32 和 Docker 等多个平台。
 
-只需要6行代码，你就可以搭建你的个人号微信机器人，用来管理微信消息。
+只需要6行代码，你就可以 **通过个人号** 实现 **微信机器人功能**
 
 更多功能，包括消息处理，群管理，好友请求以及加入智能对话功能，可以仔细看[Wechaty](https://github.com/chatie/wechaty)项目。这个项目是 wechaty 初学者的入门教程。
 
@@ -17,7 +17,7 @@ cd wechaty-getting-started
 ```
 
 ### 2. 安装依赖
-> 注意: Wechaty 需要 Node.js 的版本 >= 10, 建议运行 `node -v` 进行确认
+> 注意: Wechaty 需要 Node.js 的版本 >= 9, 建议运行 `node -v` 进行确认
 
 ```sh
 npm install
@@ -36,6 +36,12 @@ node examples/starter-bot.js
 
 截图展示二维码，扫码登陆后，这个微信号就会变成机器人，并在命令行显示机器人登陆信息： `Contact<李佳芮>login`       
 之后，你就可以在命令行看到这个微信收到的所有消息了。
+
+## 试一试
+![Wechaty Developers' Home](https://chatie.io/wechaty/images/bot-qr-code.png)
+
+回复 'wechaty' 加入 Wechaty 开发者群。
+> 群内均为wechaty 的开发者，如果仅是为了测试功能，请测试后自动退群。为了避免广告及不看文档用户，群主及机器人会T人，不喜勿加。群内发言之前请先阅读文档，谢谢！
 
 ## 注意事项
 从2017年6月下旬开始，使用基于web版微信接入方案存在大概率的被限制登陆的可能性。 主要表现为：无法登陆Web 微信，但不影响手机等其他平台。
