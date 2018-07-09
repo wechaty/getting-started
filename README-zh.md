@@ -85,12 +85,9 @@ Message#Text(Contact<高原> Contact<李佳芮>)<你好>
 
 | 文件名称        | 描述 |
 | ---                 | ---         |
-| contact-bot.js      | 展示微信号下所有联系的人微信ID和昵称。|
-| ding-dong-bot.js    | 自动回复消息 |
-| friend-bot.js       | 自动通过好友请求 |
+| contact-bot.js      | 在终端下输出微信号下所有联系的人微信ID和昵称。|
 | media-file-bot.js   | 将消息中的文件、图片、视频等非文本信息存到本地。 |
-| room-bot.js         | 微信群管理。 |
-| tuling123-bot.ts    | 接入tuling123 机器人，可以回答任何消息。 |
+| tuling123-bot.ts    | 接入[tuling123机器人](http://www.tuling123.com/) |
 
 [点击这里查看 更多Wechaty 官方 示例代码](https://github.com/Chatie/wechaty/tree/master/examples)
 
