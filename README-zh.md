@@ -41,8 +41,17 @@ node examples/starter-bot.js
 
 ![demo-png](https://chatie.io/wechaty-getting-started/demo.png)
 
-截图展示二维码，扫码登陆后，这个微信号就会变成机器人，并在命令行显示机器人登陆信息： `Contact<李佳芮>login`       
-之后，你就可以在命令行看到这个微信收到的所有消息了。
+截图展示二维码，扫码登陆后，这个微信号就会变成机器人。
+> 某些情况下因为字体问题，导致无法扫码，你也可以复制二维码下面的链接到浏览器里面打开，然后扫码
+
+成功登录后，命令行会显示账号的登陆信息，你应该可以在中括号里看到你的微信名字。
+```
+Contact<李佳芮> login
+```
+除此之外，还能看到你的好友给你发送的消息，比如例子中收到了一条文字(`Text`)类型的消息(`Message`)
+```
+Message#Text(Contact<高原> Contact<李佳芮>)<你好>
+```
 
 ## 试一试
 ![Wechaty Developers' Home](https://chatie.io/wechaty-getting-started/bot-qr-code.png)
