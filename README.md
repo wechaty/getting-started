@@ -13,7 +13,7 @@ This repository should work out-of-the-box, and is the best start point for Wech
 
 ### 0. Install Node.js
 
-You can install Node.js in your environment by following the below links.
+You can install Node.js in your environment by following the links below:
 
 * [Windows](https://nodejs.org/en/download/package-manager/#windows)
 * [Linux(Debian/Ubuntu)](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions)
