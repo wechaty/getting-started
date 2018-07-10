@@ -4,8 +4,8 @@
   "description": "Wechaty is a Wechat Bot SDK for Personal Account in Node.js",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node examples/starter-bot.js",
-    "test": "ts-node tests/smoke-testing.ts"
+    "start": "node examples/starter-bot.js",
+    "test": "node tests/smoke-testing.js"
   },
   "repository": {
     "type": "git",
@@ -19,10 +19,8 @@
   },
   "homepage": "https://github.com/lijiarui/wechaty-getting-started#readme",
   "dependencies": {
-    "file-box": "^0.8.22",
     "qrcode-terminal": "^0.12.0",
-    "tuling123-client": "0.0.3",
-    "wechaty-puppet-padchat": "^0.4.2"
+    "wechaty": "^0.17.117"
   },
   "git": {
     "scripts": {
@@ -30,8 +28,5 @@
     }
   },
   "devDependencies": {
-    "@types/node": "^10.5.1",
-    "ts-node": "^7.0.0",
-    "typescript": "^2.9.2"
   }
 }

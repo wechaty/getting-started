@@ -1,6 +1,6 @@
 #!/usr/bin/env ts-node
 
-import { Wechaty }    from 'wechaty'
+const { Wechaty } = require('wechaty')
 
 async function main() {
   const bot = Wechaty.instance()
