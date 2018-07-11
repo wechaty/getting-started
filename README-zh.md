@@ -13,7 +13,7 @@
 - 智能对话：通过简单配置，即可加入智能对话系统，完成指定任务
 - ... 请自行开脑洞
 
-详情请看[Wechaty](https://github.com/chatie/wechaty)项目。这个项目是 wechaty 初学者的入门教程。
+详情请看[Wechaty](https://github.com/chatie/wechaty)项目。这个项目是 wechaty 初学者的入门教程, 进阶请查看[文档](https://qhduan.github.io/wechaty-doc/#/zh/)
 
 ## 简单入门
 
@@ -85,15 +85,15 @@ Message#Text(Contact<高原> Contact<李佳芮>)<你好>
 
 | 文件名称        | 描述 |
 | ---                 | ---         |
-| contact-bot.js      | 在终端下输出微信号下所有联系的人微信ID和昵称。|
+| contact-bot.js      | 展示微信号下所有联系的人微信ID和昵称。|
 | media-file-bot.js   | 将消息中的文件、图片、视频等非文本信息存到本地。 |
-| tuling123-bot.ts    | 接入[tuling123机器人](http://www.tuling123.com/) |
+| tuling123-bot.ts    | 接入tuling123 机器人，可以回答任何消息。 |
 
 [点击这里查看 更多Wechaty 官方 示例代码](https://github.com/Chatie/wechaty/tree/master/examples)
 
-## 接口文档
+## 文档
 
-1. JSDoc: <https://chatie.io/wechaty/>
+<https://qhduan.github.io/wechaty-doc/#/zh/>
 
 ## 常见问题 FAQ
 
