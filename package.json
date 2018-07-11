@@ -27,6 +27,5 @@
       "pre-push": "./scripts/pre-push.sh"
     }
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }

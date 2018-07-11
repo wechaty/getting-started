@@ -3,7 +3,7 @@
 const { Wechaty } = require('wechaty')
 
 async function main() {
-  const bot = Wechaty.instance()
+  const bot = Wechaty.instance({ puppet: 'mock' })
   try {
     const future = new Promise(r => bot.once('scan', r))
     await bot.start()
