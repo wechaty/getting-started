@@ -15,7 +15,7 @@
 
 详情请看[Wechaty](https://github.com/chatie/wechaty)项目。这个项目是 wechaty 初学者的入门教程, 进阶请查看[文档](https://qhduan.github.io/wechaty-doc/#/zh/)
 
-## 简单入门
+## 快速开始
 
 ### 1. 下载代码
 ```sh
