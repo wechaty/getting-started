@@ -21,7 +21,6 @@ function onScan (qrcode, status) {
   const qrcodeImageUrl = [
     'https://api.qrserver.com/v1/create-qr-code/?data=',
     encodeURIComponent(qrcode),
-    '&size=220x220&margin=20',
   ].join('')
 
   console.log(qrcodeImageUrl)
