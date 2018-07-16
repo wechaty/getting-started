@@ -1,9 +1,6 @@
-const qrTerm = require('qrcode-terminal')
-
 const { 
   Wechaty, 
-  Room 
-} = require('wechaty')
+}           = require('wechaty')
 
 const bot = new Wechaty()
 
@@ -13,10 +10,11 @@ bot.on('logout',  onLogout)
 bot.on('message', onMessage)
 
 bot.start()
-.catch(console.error)
+.then(() => console.log('Starter Bot Started.'))
+.catch(e => console.error(e))
 
 function onScan (qrcode, status) {
-  qrTerm.generate(qrcode, { small: true })  // show qrcode on console
+  require('qrcode-terminal').generate(qrcode, { small: true })  // show qrcode on console
 
   const qrcodeImageUrl = [
     'https://api.qrserver.com/v1/create-qr-code/?data=',
@@ -34,7 +32,6 @@ function onLogout(user) {
   console.log(`${user} logout`)
 }
 
-
-async function onMessage (msg) {
+function onMessage (msg) {
   console.log(msg.toString())
 }
