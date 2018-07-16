@@ -1,4 +1,4 @@
-# EXAMPLES
+# WECHATY OFFICIAL EXAMPLES LIST DIRECTORY
 
 | Filename        | Description |
 | ---             | ---         |
