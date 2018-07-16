@@ -48,7 +48,7 @@ async function onMessage(msg) {
   console.log(`RECV: ${msg}`)
 
   if (msg.type() !== Message.Type.Text) {
-    const file = await msg.file()
+    const file = await msg.toFileBox()
     const name = file.name
     console.log('Save file to: ' + name)
     file.toFile(name)
