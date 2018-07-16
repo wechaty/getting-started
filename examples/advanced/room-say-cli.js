@@ -19,7 +19,7 @@
  */
 
 /* tslint:disable:variable-name */
-import { generate } from 'qrcode-terminal'
+const qrTerm = require('qrcode-terminal')
 
 /**
  * Change `import { ... } from '../'`
@@ -30,14 +30,14 @@ const {
   config,
   Wechaty,
   log,
-}             = require('wechaty')
+}             = require('../')
 
 async function main () {
   const bot = Wechaty.instance({ profile: config.default.DEFAULT_PROFILE })
 
   bot
   .on('scan', (qrcode, status) => {
-    generate(qrcode, { small: true })
+    qrTerm.generate(qrcode, { small: true })
     // Generate a QR Code online via
     // http://goqr.me/api/doc/create-qr-code/
     const qrcodeImageUrl = [
@@ -68,17 +68,22 @@ async function main () {
 
   await bot.start()
 
-  const searchTopic = process.argv[1]
+  const searchTopic = process.argv[2]
   if (!searchTopic) {
     throw new Error('no arg 1 defined as search topic!')
   }
 
-  const sayText = process.argv[2]
+  const sayText = process.argv[3]
   if (!sayText) {
     throw new Error('no arg 2 defined as say text!')
   }
 
-  const room = await bot.Room.find(searchTopic)
+  console.log('searching topic: ', searchTopic)
+  
+  const searchRegex = new RegExp(searchTopic)
+  const room = await bot.Room.find({ topic: searchRegex })
+
+  console.log(searchRegex)
 
   if (!room) {
     console.log('not found')
@@ -88,9 +93,11 @@ async function main () {
   console.log(await room.topic(), 'found')
   await room.say(sayText)
 
+  return 0
 }
 
 main()
+.then(process.exit)
 .catch(e => {
   console.error(e)
   process.exit(1)
