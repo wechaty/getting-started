@@ -60,12 +60,11 @@ Above is a 10 minute video tutorial(a little outdated, it's running under v0.14 
 
 ### 2. More Examples
 
-You can get all of the following examples at our [Official Wechaty Examples Directory](https://github.com/Chatie/wechaty/tree/master/examples)
+You can get all of the following examples at our [Official Wechaty Examples Directory](https://github.com/Chatie/wechaty-getting-started/tree/master/examples)
 
 | File Name        | Description |
 | ---                 | ---         |
 | gist-bot/           | Decouple functions to different files |
-| hot-reload-bot/     | Update code without restart program. @deprecated, see `hot-import-bot` instead |
 | api-ai-bot.ts       | Integrate with api.ai for Intents & Entities |
 | contact-bot.ts      | List All Contacts by Wechat ID & Name |
 | ding-dong-bot.ts    | Auto Reply Message |
