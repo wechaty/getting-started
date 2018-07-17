@@ -20,13 +20,12 @@
   "homepage": "https://github.com/lijiarui/wechaty-getting-started#readme",
   "dependencies": {
     "qrcode-terminal": "^0.12.0",
-    "wechaty": "^0.17.117"
+    "wechaty": "^0.18.3"
   },
   "git": {
     "scripts": {
       "pre-push": "./scripts/pre-push.sh"
     }
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }

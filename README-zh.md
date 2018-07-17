@@ -13,9 +13,9 @@
 - 智能对话：通过简单配置，即可加入智能对话系统，完成指定任务
 - ... 请自行开脑洞
 
-详情请看[Wechaty](https://github.com/chatie/wechaty)项目。这个项目是 wechaty 初学者的入门教程。
+详情请看[Wechaty](https://github.com/chatie/wechaty)项目。这个项目是 wechaty 初学者的入门教程, 进阶请查看[文档](https://qhduan.github.io/wechaty-doc/#/zh/)
 
-## 简单入门
+## 快速开始
 
 ### 1. 下载代码
 ```sh
@@ -53,6 +53,20 @@ Contact<李佳芮> login
 Message#Text(Contact<高原> Contact<李佳芮>)<你好>
 ```
 
+### 4. Puppet 介绍
+
+不同的Puppet是代表的我们对微信协议的不同实现方式，所以请选择一种适合您的选择，本项目默认使用web 协议实现，更详细的介绍在[这里](https://github.com/Chatie/wechaty/wiki/Puppet)
+
+如果需要ipad实现方式, 请查看 [puppet-padchat](https://github.com/lijiarui/wechaty-puppet-padchat) 介绍并获取[token](https://github.com/lijiarui/wechaty-puppet-padchat/wiki/Buy-Padchat-Token)
+
+切换Puppet的方法是通过设置环境变量实现的，如果使用ipad 协议，需要设置token， 运行命令如下
+```shell
+# 安装 wechaty-puppet-padchat
+npm install wechaty-puppet-padchat
+# 运行
+WECHATY_PUPPET_PADCHAT_TOKEN=your_padchat_token WECHATY_PUPPET=padchat node examples/ding-dong-bot.js
+```
+
 ## 试一试
 ![Wechaty Developers' Home](https://chatie.io/wechaty-getting-started/bot-qr-code.png)
 
@@ -85,15 +99,15 @@ Message#Text(Contact<高原> Contact<李佳芮>)<你好>
 
 | 文件名称        | 描述 |
 | ---                 | ---         |
-| contact-bot.js      | 在终端下输出微信号下所有联系的人微信ID和昵称。|
+| contact-bot.js      | 展示微信号下所有联系的人微信ID和昵称。|
 | media-file-bot.js   | 将消息中的文件、图片、视频等非文本信息存到本地。 |
-| tuling123-bot.ts    | 接入[tuling123机器人](http://www.tuling123.com/) |
+| tuling123-bot.ts    | 接入tuling123 机器人，可以回答任何消息。 |
 
 [点击这里查看 更多Wechaty 官方 示例代码](https://github.com/Chatie/wechaty/tree/master/examples)
 
-## 接口文档
+## 文档
 
-1. JSDoc: <https://chatie.io/wechaty/>
+<https://qhduan.github.io/wechaty-doc/#/zh/>
 
 ## 常见问题 FAQ
 
