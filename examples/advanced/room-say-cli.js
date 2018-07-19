@@ -21,11 +21,6 @@
 /* tslint:disable:variable-name */
 const qrTerm = require('qrcode-terminal')
 
-/**
- * Change `import { ... } from '../'`
- * to     `import { ... } from 'wechaty'`
- * when you are runing with Docker or NPM instead of Git Source.
- */
 const {
   config,
   Wechaty,

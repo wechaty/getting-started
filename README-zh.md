@@ -24,7 +24,7 @@ cd wechaty-getting-started
 ```
 
 ### 2. 安装依赖
-> 注意: Wechaty 需要 Node.js 的版本 >= 9, 建议运行 `node -v` 进行确认
+> 注意: Wechaty 需要 Node.js 的版本 >= 10, 建议运行 `node -v` 进行确认
 
 ```sh
 npm install

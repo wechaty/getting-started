@@ -45,20 +45,15 @@ const HELPER_CONTACT_NAME = '李卓桓'
  */
 
 /* tslint:disable:variable-name */
-import { generate } from 'qrcode-terminal'
+const qrTerm = require('qrcode-terminal')
 
-/**
- * Change `import { ... } from '../'`
- * to     `import { ... } from 'wechaty'`
- * when you are runing with Docker or NPM instead of Git Source.
- */
-import {
+const {
   config,
   Contact,
   Room,
   Wechaty,
   log,
-}             from 'wechaty'
+}             = require('wechaty')
 
 const welcome = `
 =============== Powered by Wechaty ===============
@@ -90,7 +85,7 @@ const bot = Wechaty.instance({ profile: config.default.DEFAULT_PROFILE })
 
 bot
 .on('scan', (qrcode, status) => {
-  generate(qrcode, { small: true })
+  qrTerm.generate(qrcode, { small: true })
   console.log(`${qrcode}\n[${status}] Scan QR Code in above url to login: `)
 })
 .on('logout'	, user => log.info('Bot', `"${user.name()}" logouted`))
@@ -327,7 +322,7 @@ async function manageDingRoom() {
   }
 }
 
-async function checkRoomJoin(room: Room, inviteeList: Contact[], inviter: Contact) {
+async function checkRoomJoin(room, inviteeList, inviter) {
   log.info('Bot', 'checkRoomJoin("%s", "%s", "%s")',
                   await room.topic(),
                   inviteeList.map(c => c.name()).join(','),
@@ -368,7 +363,7 @@ async function checkRoomJoin(room: Room, inviteeList: Contact[], inviter: Contac
 
 }
 
-async function putInRoom(contact: Contact, room: Room) {
+async function putInRoom(contact, room) {
   log.info('Bot', 'putInRoom("%s", "%s")', contact.name(), await room.topic())
 
   try {
@@ -382,7 +377,7 @@ async function putInRoom(contact: Contact, room: Room) {
   }
 }
 
-async function getOutRoom(contact: Contact, room: Room) {
+async function getOutRoom(contact, room) {
   log.info('Bot', 'getOutRoom("%s", "%s")', contact, room)
 
   try {
@@ -400,7 +395,7 @@ function getHelperContact() {
   return bot.Contact.find({ name: HELPER_CONTACT_NAME })
 }
 
-async function createDingRoom(contact: Contact): Promise<any> {
+async function createDingRoom(contact) {
   log.info('Bot', 'createDingRoom("%s")', contact)
 
   try {

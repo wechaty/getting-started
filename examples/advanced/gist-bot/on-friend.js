@@ -17,21 +17,15 @@
  *
  */
 
-/**
- * Change `import { ... } from '../../'`
- * to     `import { ... } from 'wechaty'`
- * when you are runing with Docker or NPM instead of Git Source.
- */
-import {
+const {
   Friendship,
   Wechaty,
   // Room,
-}                 from 'wechaty'
+}                 = require('wechaty')
 
 export async function onFriendship(
-  this:     Wechaty,
-  request: Friendship,
-): Promise<void> {
+  request,
+) {
   try {
     const contact = request.contact()
 

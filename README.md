@@ -60,22 +60,9 @@ Above is a 10 minute video tutorial(a little outdated, it's running under v0.14 
 
 ### 2. More Examples
 
-You can get all of the following examples at our [Official Wechaty Examples Directory](https://github.com/Chatie/wechaty-getting-started/tree/master/examples)
+> Note: Please make sure you can run `npm start` with this repository first before you go furture with more examples!
 
-| File Name        | Description |
-| ---                 | ---         |
-| gist-bot/           | Decouple functions to different files |
-| api-ai-bot.ts       | Integrate with api.ai for Intents & Entities |
-| contact-bot.ts      | List All Contacts by Wechat ID & Name |
-| ding-dong-bot.ts    | Auto Reply Message |
-| friend-bot.ts       | Auto Accept Friend Request |
-| media-file-bot.ts   | Save Media Attachment in Message to Local File |
-| room-bot.ts         | Manage Chat Room |
-| speech-to-text-bot.ts | Convert Voice Message to Text |
-| tuling123-bot.ts    | Answer Any Question |
-| hot-import-bot      | Use hot-import for updating code without restarting program |
-| blessed-twins-bot/  | Multi-Instance Twins Bot Powered by Blessed |
-| busy-bot.ts         | Enter Auto Response Mode when you are BUSY |
+* [Official Wechaty Examples Directory](https://github.com/Chatie/wechaty-getting-started/tree/master/examples)
 
 ## API REFERENCE
 

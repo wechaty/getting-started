@@ -16,25 +16,16 @@
  *   limitations under the License.
  *
  */
-// import * as fs    from 'fs'
-import path  from 'path'
+const path  = require('path')
 
 /* tslint:disable:variable-name */
-import { generate }     from 'qrcode-terminal'
-// import finis                from 'finis'
-import { FileBox }      from 'file-box'
+const qrTerm      = require('qrcode-terminal')
+const { FileBox } = require('file-box')
 
-/**
- * Change `import { ... } from '../'`
- * to     `import { ... } from 'wechaty'`
- * when you are runing with Docker or NPM instead of Git Source.
- */
-import {
+const {
   Wechaty,
   log,
-  // Contact,
-  // Room,
-}               from 'wechaty'
+}               = require('wechaty')
 
 const BOT_QR_CODE_IMAGE_FILE = path.resolve(
   __dirname,
