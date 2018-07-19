@@ -55,7 +55,7 @@ Message#Text(Contact<高原> Contact<李佳芮>)<你好>
 
 ### 4. Puppet 介绍
 
-不同的Puppet是代表的我们对微信协议的不同实现方式，所以请选择一种适合您的选择，本项目默认使用web 协议实现，更详细的介绍在[这里](https://github.com/Chatie/wechaty/wiki/Puppet)
+不同的Puppet是代表的我们对微信协议的不同实现方式，所以请选择一种适合您的选择，本项目默认使用web 协议实现，更详细的介绍参考[Puppet的wiki](https://github.com/Chatie/wechaty/wiki/Puppet)
 
 如果需要ipad实现方式, 请查看 [puppet-padchat](https://github.com/lijiarui/wechaty-puppet-padchat) 介绍并获取[token](https://github.com/lijiarui/wechaty-puppet-padchat/wiki/Buy-Padchat-Token)
 
