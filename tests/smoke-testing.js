@@ -15,9 +15,9 @@ async function main() {
       await bot.start()
       await future
       await bot.stop()
-      console.log(`Puppet ${bot.puppet} v${bot.puppet.version()} smoking test passed.`)
+      console.log(`Puppet ${bot.puppet} v${bot.puppet.version()} smoke testing passed.`)
     }
-    console.log(`Wechaty v${Wechaty.VERSION} smoking test passed.`)
+    console.log(`Wechaty v${Wechaty.VERSION} smoke testing passed.`)
   } catch (e) {
     console.error(e)
     // Error!
