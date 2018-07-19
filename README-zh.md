@@ -125,3 +125,9 @@ WECHATY_PUPPET_PADCHAT_TOKEN=your_padchat_token WECHATY_PUPPET=padchat node exam
 朋友圈相关 - 后续会支持
 
 更多详见 [FAQ-ZH](https://github.com/Chatie/wechaty-getting-started/wiki/FAQ-ZH)
+
+### 3. Puppet是什么？
+
+Puppet本身是一个连接不同微信插件的抽象类，其下包括各种不同的微信接入方式或者接口使用方法，例如使用网页接口的[PuppetPuppeteer](https://github.com/Chatie/wechaty-puppet-puppeteer) 或者使用iPad接口的[PuppetPadchat](https://github.com/lijiarui/wechaty-puppet-padchat)
+
+更多细节可以查看[Puppet的wiki页面](https://github.com/Chatie/wechaty/wiki/Puppet)
