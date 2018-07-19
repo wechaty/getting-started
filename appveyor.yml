@@ -12,6 +12,8 @@ install:
   # chocolatey install jq - https://chocolatey.org/packages/jq
   - choco install jq
   # install modules
+  # Workaround for https://github.com/appveyor/ci/issues/2420
+  - set "PATH=%PATH%;C:\Program Files\Git\mingw64\libexec\git-core"
   - npm install
 
 # Post-install test scripts.
