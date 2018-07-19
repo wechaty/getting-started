@@ -55,7 +55,7 @@ Message#Text(Contact<高原> Contact<李佳芮>)<你好>
 
 ### 4. Puppet 介绍
 
-不同的Puppet是代表的我们对微信协议的不同实现方式，所以请选择一种适合您的选择，本项目默认使用web 协议实现，更详细的介绍在[这里](https://github.com/Chatie/wechaty/wiki/Puppet)
+不同的Puppet是代表的我们对微信协议的不同实现方式，所以请选择一种适合您的选择，本项目默认使用web 协议实现，更详细的介绍参考[Puppet的wiki](https://github.com/Chatie/wechaty/wiki/Puppet)
 
 如果需要ipad实现方式, 请查看 [puppet-padchat](https://github.com/lijiarui/wechaty-puppet-padchat) 介绍并获取[token](https://github.com/lijiarui/wechaty-puppet-padchat/wiki/Buy-Padchat-Token)
 
@@ -125,9 +125,3 @@ WECHATY_PUPPET_PADCHAT_TOKEN=your_padchat_token WECHATY_PUPPET=padchat node exam
 朋友圈相关 - 后续会支持
 
 更多详见 [FAQ-ZH](https://github.com/Chatie/wechaty-getting-started/wiki/FAQ-ZH)
-
-### 3. Puppet是什么？
-
-Puppet本身是一个连接不同微信插件的抽象类，其下包括各种不同的微信接入方式或者接口使用方法，例如使用网页接口的[PuppetPuppeteer](https://github.com/Chatie/wechaty-puppet-puppeteer) 或者使用iPad接口的[PuppetPadchat](https://github.com/lijiarui/wechaty-puppet-padchat)
-
-更多细节可以查看[Puppet的wiki页面](https://github.com/Chatie/wechaty/wiki/Puppet)
