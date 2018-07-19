@@ -10,29 +10,18 @@ async function main() {
     new Wechaty({ puppet: 'wechat4u' }),
   ]
   try {
-    const futureList = botList.map(
-      bot => new Promise(r => 
-        bot.once('scan', r),
-      ),
-    )
     for (const bot of botList) {
+      const future = new Promise(r => bot.once('scan', r))
       await bot.start()
+      await future
+      await bot.stop()
+      console.log(`Puppet ${bot.puppet} v${bot.puppet.version()} smoking test passed.`)
     }
-    await Promise.all(futureList)
     console.log(`Wechaty v${Wechaty.VERSION} smoking test passed.`)
-    botList.forEach(bot => {
-      console.log(`Wechaty Puppet ${bot.puppet} v${bot.puppet.version()} smoking test passed.`)
-    })
   } catch (e) {
     console.error(e)
     // Error!
     return 1
-  } finally {
-    await Promise.all(
-      botList.map(
-        bot => bot.stop(),
-      ),
-    )
   }
   return 0
 }
