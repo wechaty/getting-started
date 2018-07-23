@@ -64,7 +64,7 @@ Message#Text(Contact<高原> Contact<李佳芮>)<你好>
 # 安装 wechaty-puppet-padchat
 npm install wechaty-puppet-padchat
 # 运行
-WECHATY_PUPPET_PADCHAT_TOKEN=your_padchat_token WECHATY_PUPPET=padchat node examples/ding-dong-bot.js
+WECHATY_PUPPET_PADCHAT_TOKEN=your_padchat_token WECHATY_PUPPET=wechaty-puppet-padchat node examples/ding-dong-bot.js
 ```
 
 ## 试一试
