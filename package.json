@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "description": "Wechaty is a Wechat Bot SDK for Personal Account in Node.js",
   "main": "index.js",
-  "scripts": {
+  "engines": {
+    "node": ">= 10"
+  },
+   "scripts": {
     "postinstall": "check-node-version --node '>= 10'",
     "start": "node examples/starter-bot.js",
     "test": "node tests/smoke-testing.js"

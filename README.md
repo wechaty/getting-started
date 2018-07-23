@@ -13,11 +13,9 @@ This repository should work out-of-the-box, and is the best start point for Wech
 
 ## GETTING STARTED
 
-### 0. Install Node.js
+### 0. Install Node.js (>=10)
 
-**Node.js v10 or above is required.**
-
-If you have not installed Node.js(or version is below v10),You need to install Node.js first by following the links below:
+If you have not installed Node.js(or version is below 10),You need to install the latest version of Node.js first by following the links below:
 
 * [Windows](https://nodejs.org/en/download/package-manager/#windows)
 * [Linux(Debian/Ubuntu)](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions)
