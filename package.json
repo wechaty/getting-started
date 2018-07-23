@@ -7,7 +7,7 @@
     "node": ">= 10"
   },
    "scripts": {
-    "postinstall": "check-node-version --node '>= 10'",
+    "postinstall": "check-node-version --node \">= 10\"",
     "start": "node examples/starter-bot.js",
     "test": "node tests/smoke-testing.js"
   },
