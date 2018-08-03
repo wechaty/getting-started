@@ -11,6 +11,11 @@ As a developer, you can use Wechaty to easily build your bot on top of Wechat Pe
 
 This repository should work out-of-the-box, and is the best start point for Wechaty beginners.
 
+## REQUIREMENTS
+
+1. Node.js v10 or above
+2. Build Tools for your Platform
+
 ## GETTING STARTED
 
 ### 0. Install Node.js
