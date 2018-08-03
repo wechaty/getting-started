@@ -17,14 +17,14 @@
  *   limitations under the License.
  *
  */
-import { generate } from 'qrcode-terminal'
+const qrTerm = require('qrcode-terminal')
 
-import {
+const {
   IoClient,
   Wechaty,
   config,
   log,
-}             from 'wechaty'
+}             = require('wechaty')
 
 console.log(`
 =============== Powered by Wechaty ===============
@@ -42,7 +42,7 @@ Send command to FileHelper to:
 Loading... please wait for QrCode Image Url and then scan to login.
 `)
 
-let bot: Wechaty
+let bot
 
 const token = config.token
 
@@ -66,7 +66,7 @@ if (token) {
 
 bot
 .on('scan', (qrcode, status) => {
-  generate(qrcode, { small: true })
+  qrTerm.generate(qrcode, { small: true })
   console.log(`${status}: ${qrcode} - Scan QR Code of the url to login:`)
 })
 .on('logout'	, user => log.info('Bot', `${user.name()} logouted`))

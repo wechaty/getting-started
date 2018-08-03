@@ -18,20 +18,15 @@
  */
 
 /* tslint:disable:variable-name */
-const QrcodeTerminal = require('qrcode-terminal')
+const qrTerm = require('qrcode-terminal')
 
-/**
- * Change `import { ... } from '../'`
- * to     `import { ... } from 'wechaty'`
- * when you are runing with Docker or NPM instead of Git Source.
- */
-import {
+const {
   config,
   // Contact,
   log,
   Wechaty,
   Friendship,
-}           from 'wechaty'
+}             = require('wechaty')
 
 const welcome = `
 =============== Powered by Wechaty ===============
@@ -65,7 +60,7 @@ bot
 .on('logout'	, user => log.info('Bot', `${user.name()} logouted`))
 .on('error'   , e => log.info('Bot', 'error: %s', e))
 .on('scan', (qrcode, status) => {
-  QrcodeTerminal.generate(qrcode)
+  qrTerm.generate(qrcode)
   console.log(`${qrcode}\n[${status}] Scan QR Code in above url to login: `)
 })
 /**

@@ -16,7 +16,7 @@
  *   limitations under the License.
  *
  */
-const { Wechaty } = require('wechaty') // import Wechaty from 'wechaty'
+const { Wechaty } = require('wechaty')
 
 Wechaty.instance() // Singleton
 .on('scan',     (qrcode, status)  => console.log(`Scan QR Code to login: ${status}\nhttps://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(qrcode)}`))

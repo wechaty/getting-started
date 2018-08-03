@@ -17,23 +17,17 @@
  *
  */
 
-/**
- * Change `import { ... } from '../../'`
- * to     `import { ... } from 'wechaty'`
- * when you are runing with Docker or NPM instead of Git Source.
- */
-import {
+const {
   Contact,
   Room,
   Wechaty,
-}           from 'wechaty'
+}             = require('wechaty')
 
 export async function onRoomJoin(
-  this:         Wechaty,
-  room:         Room,
-  inviteeList:  Contact[],
-  inviter:      Contact,
-): Promise<void> {
+  room,
+  inviteeList,
+  inviter,
+) {
   try {
     const inviteeName = inviteeList.map(c => c.name()).join(', ')
     /********************************************

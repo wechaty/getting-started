@@ -17,20 +17,15 @@
  *
  */
 
-/**
- * Change `import { ... } from '../../'`
- * to     `import { ... } from 'wechaty'`
- * when you are runing with Docker or NPM instead of Git Source.
- */
-import {
+const {
   config,
   Wechaty,
   log,
-}           from 'wechaty'
+}           = require('wechaty')
 
-import { onMessage }      from './on-message'
-import { onFriendship }   from './on-friend'
-import { onRoomJoin }     from './on-room-join'
+const { onMessage }      = require('./on-message')
+const { onFriendship }   = require('./on-friend')
+const { onRoomJoin }     = require('./on-room-join')
 
 const welcome = `
 =============== Powered by Wechaty ===============

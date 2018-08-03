@@ -32,6 +32,6 @@ function onLogout(user) {
   console.log(`${user} logout`)
 }
 
-function onMessage (msg) {
+async function onMessage (msg) {
   console.log(msg.toString())
 }
