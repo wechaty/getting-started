@@ -6,7 +6,7 @@
   "engines": {
     "node": ">= 10"
   },
-   "scripts": {
+  "scripts": {
     "postinstall": "check-node-version --node \">= 10\"",
     "start": "node examples/starter-bot.js",
     "test": "node tests/smoke-testing.js"
