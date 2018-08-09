@@ -4,10 +4,10 @@ const { Wechaty } = require('wechaty')
 
 async function main() {
   const botList = [
-    new Wechaty({ puppet: 'mock' }),
-    new Wechaty({ puppet: 'puppeteer' }),
-    new Wechaty({ puppet: 'padchat', puppetOptions: { token: 'smoke-testing' } }),
-    new Wechaty({ puppet: 'wechat4u' }),
+    new Wechaty({ puppet: 'wechaty-puppet-mock' }),
+    new Wechaty({ puppet: 'wechaty-puppet-puppeteer' }),
+    new Wechaty({ puppet: 'wechaty-puppet-padchat', puppetOptions: { token: 'smoke-testing' } }),
+    new Wechaty({ puppet: 'wechaty-puppet-wechat4u' }),
   ]
   try {
     for (const bot of botList) {
