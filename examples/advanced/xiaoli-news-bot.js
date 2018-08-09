@@ -14,12 +14,11 @@ const {
     config,
 } = require('wechaty')
 const fetch = require('node-fetch')
-const {FileBox} = require('file-box')
 const qrTerm = require('qrcode-terminal')
 
 /**
  *
- * 1. Declare your Bot!
+ * Declare the Bot
  *
  */
 const bot = new Wechaty({
@@ -28,7 +27,7 @@ const bot = new Wechaty({
 
 /**
  *
- * 2. Register event handlers for Bot
+ * Register event handlers for Bot
  *
  */
 bot
@@ -40,7 +39,7 @@ bot
 
 /**
  *
- * 3. Start the bot!
+ * Start the bot!
  *
  */
 bot.start()
@@ -52,13 +51,7 @@ bot.start()
 
 /**
  *
- * 4. You are all set. ;-]
- *
- */
-
-/**
- *
- * 5. Define Event Handler Functions for:
+ * Define Event Handler Functions for:
  *  `scan`, `login`, `logout`, `error`, and `message`
  *
  */
@@ -88,9 +81,13 @@ function onError(e) {
 }
 
 /**
+ * list of the news details
+ * @type {Array}
+ */
+let preNewsList = []
+/**
  *
- * 6. The most important handler is for:
- *    dealing with Messages.
+ * Dealing with Messages
  *
  */
 async function onMessage(msg) {
@@ -103,23 +100,46 @@ async function onMessage(msg) {
 
     let msgText = msg.text()
 
+    // A super naive implementation intent detection for news query
     if (msgText.endsWith("最新消息") && msgText.length > 4) {
         respText = await searchNews(msgText.substring(0, msgText.length-4))
         await msg.say(respText)
     }
 
+    // query for news details
+    if (msgText.startsWith('#')) {
+        newsNum = parseInt((msgText.substring(1)), 10) - 1
+        if (newsNum < preNewsList.length && newsNum >= 0) {
+            await msg.say(preNewsList[newsNum])
+        }
+    }
+
 }
 
+
+/**
+ * parse the returned json for a list of news titles
+ */
 function makeText(json_obj) {
+    preNewsList = []
     let newsList = json_obj.contents
+    if (newsList.length === 0) {
+        return "暂无相关新闻"
+    }
     let newsText = ''
     for (let i = 0; i < newsList.length; i++) {
         newsText += (i+1) + '. ' + newsList[i].title + '\n'
+        preNewsList.push(newsList[i].news_abstract) // Save the news details for later queries
     }
+    newsText += "\n回复\"#+数字\"(例如\"#1\")看详情"
     return newsText
 }
 
 
+/**
+ * query xiaoli's api for news related to the keyword
+ * @param keyword: search keyword
+ */
 async function searchNews(keyword) {
     let resText = null
     try {
