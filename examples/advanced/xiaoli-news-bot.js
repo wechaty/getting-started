@@ -100,7 +100,7 @@ async function onMessage(msg) {
 
     let msgText = msg.text()
 
-    // A super naive implementation intent detection for news query
+    // A super naive implementation of intent detection for news query
     if (msgText.endsWith("最新消息") && msgText.length > 4) {
         respText = await searchNews(msgText.substring(0, msgText.length-4))
         await msg.say(respText)
@@ -155,8 +155,10 @@ async function searchNews(keyword) {
         )
         let resp_json = await resp.json()
         if (resp.ok) {
+            // status code = 200, we got it!
             resText = makeText(resp_json['data'])
         } else {
+            // status code = 4XX, sth wrong with API
             resText = 'API ERROR: ' + resp_json['msg']
         }
     } catch (err) {
