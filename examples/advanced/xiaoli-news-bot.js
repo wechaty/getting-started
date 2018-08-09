@@ -116,6 +116,36 @@ async function onMessage(msg) {
 
 }
 
+/**
+ * query xiaoli's api for news related to the keyword
+ * @param keyword: search keyword
+ */
+async function searchNews(keyword) {
+    let resText = null
+    try {
+        let resp = await fetch(
+            'https://api.xiaoli.ai/v1/api/search/basic',
+            {
+                method: "POST",
+                body: JSON.stringify({
+                    "keywords": [keyword],
+                    "token": "45d898b459b4a739474175657556249a"
+                }), // put keywords and token in the body
+            }
+        )
+        let resp_json = await resp.json()
+        if (resp.ok) {
+            // status code = 200, we got it!
+            resText = makeText(resp_json['data'])
+        } else {
+            // status code = 4XX, sth wrong with API
+            resText = 'API ERROR: ' + resp_json['msg']
+        }
+    } catch (err) {
+        resText = 'NETWORK ERROR: ' + err
+    }
+    return resText
+}
 
 /**
  * parse the returned json for a list of news titles
@@ -133,36 +163,4 @@ function makeText(json_obj) {
     }
     newsText += "\n回复\"#+数字\"(例如\"#1\")看详情"
     return newsText
-}
-
-
-/**
- * query xiaoli's api for news related to the keyword
- * @param keyword: search keyword
- */
-async function searchNews(keyword) {
-    let resText = null
-    try {
-        let resp = await fetch(
-            'https://api.xiaoli.ai/v1/api/search/basic',
-            {
-                method: "POST", // *GET, POST, PUT, DELETE, etc.
-                body: JSON.stringify({
-                    "keywords": [keyword],
-                    "token": "45d898b459b4a739474175657556249a"
-                }), // body data type must match "Content-Type" header
-            }
-        )
-        let resp_json = await resp.json()
-        if (resp.ok) {
-            // status code = 200, we got it!
-            resText = makeText(resp_json['data'])
-        } else {
-            // status code = 4XX, sth wrong with API
-            resText = 'API ERROR: ' + resp_json['msg']
-        }
-    } catch (err) {
-        resText = 'NETWORK ERROR: ' + err
-    }
-    return resText
 }
