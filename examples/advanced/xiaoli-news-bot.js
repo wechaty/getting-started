@@ -87,7 +87,7 @@ function onError(e) {
  * send a daily
  */
 async function sendDaily() {
-    const room = await bot.Room.find({topic: '小桔和小理'})
+    const room = await bot.Room.find({topic: '小桔和小理'}) //get the room by topic
     console.log('Sending daily to room ' + room.id)
     let dailyText = await getDaily()
     room.say(dailyText)
@@ -176,6 +176,7 @@ async function getDaily() {
     let resText = await fetchXiaoliAPI(dailyURL, postBody, okCallback)
     return resText
 }
+
 
 function makeDailyResponseText(json_obj) {
     let secList = json_obj.sections
