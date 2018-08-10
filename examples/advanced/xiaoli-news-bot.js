@@ -141,7 +141,7 @@ async function searchNews(keyword) {
         "token": "45d898b459b4a739474175657556249a"
     }
     let okCallback = makeSearchResponseText
-    let resText = await fetchXiaoliAPI(searchURL, postBody, okCallback);
+    let resText = await fetchXiaoliAPI(searchURL, postBody, okCallback)
     return resText
 }
 
@@ -168,13 +168,12 @@ function makeSearchResponseText(json_obj) {
  */
 async function getDaily() {
     const dailyUuid = 'e02e6f14-3212-4d44-9f3d-1d79538c38f6'
-    let searchURL = 'https://api.xiaoli.ai/v1/api/briefing/' + dailyUuid
+    let dailyURL = 'https://api.xiaoli.ai/v1/api/briefing/' + dailyUuid
     let postBody = {
         "token": "45d898b459b4a739474175657556249a"
     }
     let okCallback = makeDailyResponseText
-    let resText = await fetchXiaoliAPI(searchURL, postBody, okCallback);
-    console.log(resText)
+    let resText = await fetchXiaoliAPI(dailyURL, postBody, okCallback)
     return resText
 }
 
@@ -220,5 +219,5 @@ async function fetchXiaoliAPI(URL, postBody, okCallback) {
     } catch (err) {
         resText = 'NETWORK ERROR: ' + err
     }
-    return resText;
+    return resText
 }
