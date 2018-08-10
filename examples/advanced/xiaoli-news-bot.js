@@ -15,6 +15,7 @@ const {
 } = require('wechaty')
 const fetch = require('node-fetch')
 const qrTerm = require('qrcode-terminal')
+const schedule = require('node-schedule')
 
 /**
  *
@@ -69,8 +70,9 @@ function onScan(qrcode, status) {
     console.log(`[${status}] ${qrcodeImageUrl}\nScan QR Code above to log in: `)
 }
 
-function onLogin(user) {
+async function onLogin(user) {
     console.log(`${user.name()} login`)
+    schedule.scheduleJob('10 29 15 * * 1-5', sendDaily);
 }
 
 function onLogout(user) {
@@ -80,6 +82,17 @@ function onLogout(user) {
 function onError(e) {
     console.error('Bot error:', e)
 }
+
+/**
+ * send a daily
+ */
+async function sendDaily() {
+    const room = await bot.Room.find({topic: '小桔和小理'})
+    console.log('Sending daily to room ' + room.id)
+    let dailyText = await getDaily()
+    room.say(dailyText)
+}
+
 
 /**
  * list of the news details
@@ -154,7 +167,8 @@ function makeSearchResponseText(json_obj) {
  * query xiaoli's api for a daily news brief
  */
 async function getDaily() {
-    let searchURL = 'https://api.xiaoli.ai/v1/api/briefing/e02e6f14-3212-4d44-9f3d-1d79538c38f6'
+    const dailyUuid = 'e02e6f14-3212-4d44-9f3d-1d79538c38f6'
+    let searchURL = 'https://api.xiaoli.ai/v1/api/briefing/' + dailyUuid
     let postBody = {
         "token": "45d898b459b4a739474175657556249a"
     }
