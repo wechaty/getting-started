@@ -121,36 +121,20 @@ async function onMessage(msg) {
  * @param keyword: search keyword
  */
 async function searchNews(keyword) {
-    let resText = null
-    try {
-        let resp = await fetch(
-            'https://api.xiaoli.ai/v1/api/search/basic',
-            {
-                method: "POST",
-                body: JSON.stringify({
-                    "keywords": [keyword],
-                    "token": "45d898b459b4a739474175657556249a"
-                }), // put keywords and token in the body
-            }
-        )
-        let resp_json = await resp.json()
-        if (resp.ok) {
-            // status code = 200, we got it!
-            resText = makeText(resp_json['data'])
-        } else {
-            // status code = 4XX, sth wrong with API
-            resText = 'API ERROR: ' + resp_json['msg']
-        }
-    } catch (err) {
-        resText = 'NETWORK ERROR: ' + err
+    let searchURL = 'https://api.xiaoli.ai/v1/api/search/basic'
+    let postBody = {
+        "keywords": [keyword],
+        "token": "45d898b459b4a739474175657556249a"
     }
+    let okCallback = makeSearchResponseText
+    let resText = await fetchXiaoliAPI(searchURL, postBody, okCallback);
     return resText
 }
 
 /**
  * parse the returned json for a list of news titles
  */
-function makeText(json_obj) {
+function makeSearchResponseText(json_obj) {
     preNewsList = []
     let newsList = json_obj.contents
     if (newsList.length === 0) {
@@ -163,4 +147,34 @@ function makeText(json_obj) {
     }
     newsText += "\n回复\"#+数字\"(例如\"#1\")看详情"
     return newsText
+}
+
+/**
+ * Fetch response from xiaoli API
+ * @param URL
+ * @param postBody
+ * @param okCallback: covert json to msg text when fetch succeeds
+ */
+async function fetchXiaoliAPI(URL, postBody, okCallback) {
+    let resText = null
+    try {
+        let resp = await fetch(
+            URL,
+            {
+                method: "POST",
+                body: JSON.stringify(postBody), // put keywords and token in the body
+            }
+        )
+        let resp_json = await resp.json()
+        if (resp.ok) {
+            // status code = 200, we got it!
+            resText = okCallback(resp_json['data'])
+        } else {
+            // status code = 4XX/5XX, sth wrong with API
+            resText = 'API ERROR: ' + resp_json['msg']
+        }
+    } catch (err) {
+        resText = 'NETWORK ERROR: ' + err
+    }
+    return resText;
 }
