@@ -72,7 +72,7 @@ function onScan(qrcode, status) {
 
 async function onLogin(user) {
     console.log(`${user.name()} login`)
-    schedule.scheduleJob('10 29 15 * * 1-5', sendDaily);
+    schedule.scheduleJob('40 50 16 * * 1-5', sendDaily); //send daily on 16:50:40 every weekday
 }
 
 function onLogout(user) {
