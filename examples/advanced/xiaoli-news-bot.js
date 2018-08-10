@@ -42,6 +42,7 @@ bot
  * Start the bot!
  *
  */
+// getDaily()
 bot.start()
     .catch(async e => {
         console.error('Bot start() fail:', e);
@@ -148,6 +149,35 @@ function makeSearchResponseText(json_obj) {
     newsText += "\n回复\"#+数字\"(例如\"#1\")看详情"
     return newsText
 }
+
+/**
+ * query xiaoli's api for a daily news brief
+ */
+async function getDaily() {
+    let searchURL = 'https://api.xiaoli.ai/v1/api/briefing/e02e6f14-3212-4d44-9f3d-1d79538c38f6'
+    let postBody = {
+        "token": "45d898b459b4a739474175657556249a"
+    }
+    let okCallback = makeDailyResponseText
+    let resText = await fetchXiaoliAPI(searchURL, postBody, okCallback);
+    console.log(resText)
+    return resText
+}
+
+function makeDailyResponseText(json_obj) {
+    let secList = json_obj.sections
+    let newsText = '今日' + json_obj.title + '\n\n'
+    for (let i = 0; i < Math.min(secList.length, 5); i++) {
+        newsText += secList[i].title + '\n'
+        let newsList = secList[i].contents
+        for (let j = 0; j < Math.min(newsList.length, 3); j++) {
+            newsText += (j+1) + '. ' + newsList[j].title + '\n'
+        }
+        newsText += '\n'
+    }
+    return newsText
+}
+
 
 /**
  * Fetch response from xiaoli API
