@@ -75,6 +75,11 @@ Above is a 10 minute video tutorial(a little outdated, it's running under v0.14 
 
 1. JSDoc: <https://chatie.io/wechaty/>
 
+## SEE ALSO
+
+1. Hero Wechaty Getting Started: <https://github.com/Chatie/heroku-wechaty-getting-started>
+1. Docker Wechaty Getting Started: <https://github.com/Chatie/docker-wechaty-getting-started>
+
 ## FAQ
 
 ### 1. I can not login with my Wechat account
