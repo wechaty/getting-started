@@ -1,6 +1,4 @@
-const { 
-  Wechaty, 
-}           = require('wechaty')
+const { Wechaty } = require('wechaty')
 
 const bot = new Wechaty()
 

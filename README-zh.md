@@ -39,7 +39,7 @@ node examples/starter-bot.js
 
 运行成功后可以看到如下截图:
 
-![demo-png](https://chatie.io/wechaty-getting-started/demo.png)
+![demo](https://chatie.io/wechaty-getting-started/demo.gif)
 
 截图展示二维码，扫码登陆后，这个微信号就会变成机器人。
 > 某些情况下因为字体问题，导致无法扫码，你也可以复制二维码下面的链接到浏览器里面打开，然后扫码
