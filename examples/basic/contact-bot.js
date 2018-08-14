@@ -1,10 +1,10 @@
 const qrTerm = require('qrcode-terminal')
 
 const { 
+  Contact,
+  log,
   Wechaty, 
-  Room,
-  Contact 
-} = require('wechaty')
+}           = require('wechaty')
 
 const welcome = `
 =============== Powered by Wechaty ===============
@@ -50,8 +50,8 @@ function onError (e) {
 async function main() {
   const contactList = await bot.Contact.findAll()
 
-  console.log('Bot', '#######################')
-  console.log('Bot', 'Contact number: %d\n', contactList.length)
+  log.info('Bot', '#######################')
+  log.info('Bot', 'Contact number: %d\n', contactList.length)
 
   /**
    * official contacts list
@@ -59,7 +59,7 @@ async function main() {
   for (let i = 0; i < contactList.length; i++) {
     const contact = contactList[i]
     if (contact.type() === Contact.Type.Official) {
-      console.log('Bot', `official ${i}: ${contact}`)
+      log.info('Bot', `official ${i}: ${contact}`)
     }
   }
 
@@ -70,7 +70,7 @@ async function main() {
   for (let i = 0; i < contactList.length; i++) {
     const contact = contactList[i]
     if (contact.type() === Contact.Type.Personal) {
-      console.log('Bot', `personal ${i}: ${contact.name()} : ${contact.id}`)
+      log.info('Bot', `personal ${i}: ${contact.name()} : ${contact.id}`)
     }
   }
 
@@ -85,19 +85,19 @@ async function main() {
     const name = file.name
     await file.toFile(name, true)
 
-    console.log('Bot', 'Contact: "%s" with avatar file: "%s"',
+    log.info('Bot', 'Contact: "%s" with avatar file: "%s"',
                     contact.name(),
                     name,
             )
 
     if (i > MAX) {
-      console.log('Bot', 'Contacts too many, I only show you the first %d ... ', MAX)
+      log.info('Bot', 'Contacts too many, I only show you the first %d ... ', MAX)
       break
     }
   }
 
   const SLEEP = 7
-  console.log('Bot', 'I will re-dump contact weixin id & names after %d second... ', SLEEP)
+  log.info('Bot', 'I will re-dump contact weixin id & names after %d second... ', SLEEP)
   setTimeout(main, SLEEP * 1000)
 
 }
