@@ -16,7 +16,7 @@
     "url": "git+https://github.com/lijiarui/wechaty-getting-started.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Huan LI <zixia@zixia.net>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/lijiarui/wechaty-getting-started/issues"
@@ -25,11 +25,6 @@
   "dependencies": {
     "qrcode-terminal": "^0.12.0",
     "wechaty": "^0.19.137"
-  },
-  "git": {
-    "scripts": {
-      "pre-push": "./scripts/pre-push.sh"
-    }
   },
   "devDependencies": {
     "check-node-version": "^3.2.0"
