@@ -24,7 +24,9 @@
   "homepage": "https://github.com/lijiarui/wechaty-getting-started#readme",
   "dependencies": {
     "qrcode-terminal": "^0.12.0",
-    "wechaty": "^0.18.3"
+    "wechaty": "^0.18.3",
+    "node-fetch": "^2.2.0",
+    "node-schedule": "^1.3.0"
   },
   "git": {
     "scripts": {
