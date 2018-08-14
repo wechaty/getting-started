@@ -7,14 +7,21 @@
  *   This is a simple news wechat bot.
  *   It can tell you the latest news about anything you're interested in.
  *   It can also send you news briefings on a daily basis.
+ *   Read more about this bot in https://blog.chatie.io/wechaty-xiaoli/
  *   The bot is implemented using Wechaty and xiaoli news API - https://xiaoli.ai
  */
 const {
     Wechaty,
     config,
 } = require('wechaty')
-const fetch = require('node-fetch')
 const qrTerm = require('qrcode-terminal')
+
+/**
+ * before importing these packages, add them in the dependency in package.json:
+ * "node-fetch": "^2.2.0"
+ * "node-schedule": "^1.3.0"
+ */
+const fetch = require('node-fetch')
 const schedule = require('node-schedule')
 
 /**
