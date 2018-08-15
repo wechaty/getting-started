@@ -98,7 +98,6 @@ bot
 
         } else {
           logMsg = 'not auto accepted, because verify message is: ' + friendship.hello()
-          await friendship.accept()
         }
         break
 
