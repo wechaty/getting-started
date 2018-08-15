@@ -93,16 +93,12 @@ bot
 
           // if want to send msg , you need to delay sometimes
           await new Promise(r => setTimeout(r, 1000))
-          await friendship.contact().say('hello world')
+          await friendship.contact().say('hello from Wechaty')
           console.log('after accept')
 
         } else {
           logMsg = 'not auto accepted, because verify message is: ' + friendship.hello()
           await friendship.accept()
-
-          // if want to send msg , you need to delay sometimes
-          await new Promise(r => setTimeout(r, 1000))
-          await friendship.contact().say('hello world')
         }
         break
 
