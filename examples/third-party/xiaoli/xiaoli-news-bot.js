@@ -15,12 +15,6 @@ const {
     config,
 } = require('wechaty')
 const qrTerm = require('qrcode-terminal')
-
-/**
- * before importing these packages, add them in the dependency in package.json:
- * "node-fetch": "^2.2.0"
- * "node-schedule": "^1.3.0"
- */
 const fetch = require('node-fetch')
 const schedule = require('node-schedule')
 
