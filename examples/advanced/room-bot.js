@@ -97,7 +97,7 @@ bot
  * do initialization inside this event.
  * (better to set a timeout, for browser need time to download other data)
  */
-.on('login', async function(this, user) {
+.on('login', async function(user) {
   let msg = `${user.name()} logined`
 
   log.info('Bot', msg)
