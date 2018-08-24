@@ -2,23 +2,23 @@ const { createReadStream } = require('fs')
 const { PassThrough } = require('stream')
 const Ffmpeg = require('fluent-ffmpeg')
 const FfmpegPath = require('@ffmpeg-installer/ffmpeg').path
-const { Message } = require('wechaty')
+const { Message, Wechaty } = require('wechaty')
 const AipSpeech = require('baidu-aip-sdk').speech
 const StreamToArray = require('stream-to-array')
-
+const qrcodeTerminal = require('qrcode-terminal')
 
 Ffmpeg.setFfmpegPath(FfmpegPath)
 const baiduSpeechConfig = {
-    app_id: 11698602,
-    api_id: 'iYpEVZmeVGqy8yCS1F5uGrcz',
-    secret_id: 'BfSGCuTXShS0poNs1XkE4898eL10GFRu'
+    app_id: 'APP_ID',
+    api_id: 'API_ID',
+    secret_id: 'SECRET_ID'
 }
 
 if (baiduSpeechConfig.api_id === 'APP_ID') {
     throw TypeError(`you must set your baidu config`)
 }
 
-const speechClient = new AipSpeech(baiduSpeechConfig.app_id, baiduSpeechConfig.api_id, baiduSpeechConfig.secrt_id)
+const speechClient = new AipSpeech(baiduSpeechConfig.app_id, baiduSpeechConfig.api_id, baiduSpeechConfig.secret_id)
 const Bot = Wechaty.instance()
 
 
@@ -27,26 +27,31 @@ Bot
         qrcodeTerminal.generate(qrcode)
         console.log(`${qrcode}\n[${status}] Scan QR Code in above url to login: `)
     })
-    .on('login'	  , user => console.log(`${user} logined`))
+    .on('login', user => console.log(`${user} logined`))
     .on('message', async function(msg) {
-    console.log(`RECV: ${msg}`)
+        try {
+            console.log(`RECV: ${msg}`)
 
-        if (msg.type() !== Message.Type.Audio) {
-            return // skip no-VOICE message
-        }
-
-        const msgFile = await msg.file()
-        const filename = msgFile.name
-        msgFile.toFile(filename)
-
-        const mp3Stream = createReadStream(filename)
-        const text = await speechToText(mp3Stream)
-        console.log('VOICE TO TEXT: ' + text)
-
-        if (msg.self()) {
-            await Bot.say(text)  // send text to 'filehelper'
-        } else {
-            await msg.say(text)     // to original sender
+            if (msg.type() !== Message.Type.Audio) {
+                return // skip no-VOICE message
+            }
+    
+            const msgFile = await msg.toFileBox()
+            const filename = msgFile.name
+            await msgFile.toFile(filename)
+    
+            const mp3Stream = createReadStream(filename)
+            const text = await speechToText(mp3Stream)
+            console.log('VOICE TO TEXT: ' + text)
+    
+            if (msg.self()) {
+                await Bot.say(text)  // send text to 'filehelper'
+            } else {
+                await msg.say(text)     // to original sender
+            }
+    
+        } catch (e) {
+            console.log('Bot error: ', e)
         }
 
     })
