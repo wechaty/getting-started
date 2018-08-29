@@ -76,6 +76,12 @@ async function main () {
   console.log('searching topic: ', searchTopic)
   
   const searchRegex = new RegExp(searchTopic)
+
+  // wait the bot for logging in
+  while (!bot.logonoff()) {
+    await new Promise(r => setTimeout(r, 100))
+  }
+
   const room = await bot.Room.find({ topic: searchRegex })
 
   console.log(searchRegex)
