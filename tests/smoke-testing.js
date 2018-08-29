@@ -6,7 +6,7 @@ async function main() {
   const botList = [
     new Wechaty({ puppet: 'wechaty-puppet-mock' }),
     new Wechaty({ puppet: 'wechaty-puppet-puppeteer' }),
-    new Wechaty({ puppet: 'wechaty-puppet-padchat', puppetOptions: { token: 'smoke-testing' } }),
+    new Wechaty({ puppet: 'wechaty-puppet-padchat' }),
     new Wechaty({ puppet: 'wechaty-puppet-wechat4u' }),
   ]
   try {
