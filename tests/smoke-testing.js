@@ -15,6 +15,7 @@ async function main() {
     botList.push(
       new Wechaty({ puppet: 'wechaty-puppet-padchat' }),
     )
+  }
 
   try {
     for (const bot of botList) {
