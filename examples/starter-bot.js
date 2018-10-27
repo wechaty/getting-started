@@ -1,16 +1,5 @@
 const { Wechaty } = require('wechaty')
 
-const bot = new Wechaty()
-
-bot.on('scan',    onScan)
-bot.on('login',   onLogin)
-bot.on('logout',  onLogout)
-bot.on('message', onMessage)
-
-bot.start()
-.then(() => console.log('Starter Bot Started.'))
-.catch(e => console.error(e))
-
 function onScan (qrcode, status) {
   require('qrcode-terminal').generate(qrcode, { small: true })  // show qrcode on console
 
@@ -33,3 +22,14 @@ function onLogout(user) {
 async function onMessage (msg) {
   console.log(msg.toString())
 }
+
+const bot = new Wechaty()
+
+bot.on('scan',    onScan)
+bot.on('login',   onLogin)
+bot.on('logout',  onLogout)
+bot.on('message', onMessage)
+
+bot.start()
+.then(() => console.log('Starter Bot Started.'))
+.catch(e => console.error(e))
