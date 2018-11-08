@@ -55,9 +55,9 @@ Message#Text(Contact<高原> Contact<李佳芮>)<你好>
 
 ### 4. Puppet 介绍
 
-不同的Puppet是代表的我们对微信协议的不同实现方式，所以请选择一种适合您的选择，本项目默认使用web 协议实现，更详细的介绍参考[Puppet的wiki](https://github.com/Chatie/wechaty/wiki/Puppet)
+不同的Puppet是代表的我们对微信协议的不同实现方式，所以请选择一种适合您的选择，本项目默认使用web 协议实现，更详细的介绍参考[Puppet的详情](https://wechaty.botorange.com/puppet)
 
-如果需要ipad实现方式, 请查看 [puppet-padchat](https://github.com/lijiarui/wechaty-puppet-padchat) 介绍并获取[token](https://github.com/lijiarui/wechaty-puppet-padchat/wiki/Buy-Padchat-Token)
+如果需要ipad实现方式, 请查看 [puppet-padchat](https://github.com/lijiarui/wechaty-puppet-padchat) 介绍并获取[token](https://github.com/lijiarui/wechaty-puppet-padchat/wiki/%E8%B4%AD%E4%B9%B0token)
 
 切换Puppet的方法是通过设置环境变量实现的，如果使用ipad 协议，需要设置token， 运行命令如下
 ```shell
@@ -89,7 +89,7 @@ WECHATY_PUPPET_PADCHAT_TOKEN=your_padchat_token WECHATY_PUPPET=padchat node exam
 ### 1. Wechaty 视频教学课程
 
 <div align="center">
-<a target="_blank" href="https://blog.chatie.io/getting-started-wechaty/"><img src="https://cloud.githubusercontent.com/assets/1361891/21722581/3ec957d0-d468-11e6-8888-a91c236e0ba2.jpg" border=0 width="60%"></a>
+<a target="_blank" href="https://v.qq.com/x/page/k0726ho4rce.html"><img src="https://cloud.githubusercontent.com/assets/1361891/21722581/3ec957d0-d468-11e6-8888-a91c236e0ba2.jpg" border=0 width="60%"></a>
 </div>
 
 请观看这个1分钟的教学视频，帮助你快速了解如何使用wechaty
@@ -124,4 +124,4 @@ WECHATY_PUPPET_PADCHAT_TOKEN=your_padchat_token WECHATY_PUPPET=padchat node exam
 发送语音消息 - 后续会支持
 朋友圈相关 - 后续会支持
 
-更多详见 [FAQ-ZH](https://github.com/Chatie/wechaty-getting-started/wiki/FAQ-ZH)
+更多详见 [FAQ-ZH](https://wechaty.botorange.com/faq)
