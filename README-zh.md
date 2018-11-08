@@ -105,9 +105,9 @@ WECHATY_PUPPET_PADCHAT_TOKEN=your_padchat_token WECHATY_PUPPET=padchat node exam
 
 [点击这里查看 更多Wechaty 官方 示例代码](https://github.com/Chatie/wechaty/tree/master/examples)
 
-## 文档
+## 中文文档
 
-<https://qhduan.github.io/wechaty-doc/#/zh/>
+<http://wechaty.botorange.com>
 
 ## 常见问题 FAQ
 
