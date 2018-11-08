@@ -19,7 +19,7 @@
 
 ### 1. 下载代码
 ```sh
-git clone https://github.com/lijiarui/wechaty-getting-started.git
+git clone https://github.com/chatie/wechaty-getting-started.git
 cd wechaty-getting-started
 ```
 
