@@ -55,11 +55,18 @@ Message#Text(Contact<高原> Contact<李佳芮>)<你好>
 
 ### 4. Web 限制登陆的解决办法：
 
-切换到非WEB 的接入方式，我们现在提供一个ipad 的接入方式，只需要2条命令就可以切换成功：
+从2017年6月下旬开始，使用基于web版微信接入方案存在大概率的被限制登陆的可能性。 主要表现为：无法登陆Web 微信，但不影响手机等其他平台。验证是否被限制登陆： https://wx.qq.com 上扫码查看是否能登陆。
+
+如果还希望接入，推荐你切换到非WEB的接入方式，我们现在提供一个ipad 的接入方式，具体细节请看[puppet-padchat](https://github.com/lijiarui/wechaty-puppet-padchat)。
+
+[点击查看获取token的方法](https://github.com/lijiarui/wechaty-puppet-padchat/wiki/%E8%B4%AD%E4%B9%B0token)
+
+只需要2条命令就可以切换成功：
 
 ```shell
 # 1. 安装 wechaty-puppet-padchat
 npm install wechaty-puppet-padchat
+
 # 2. 通过环境变量设置接入方式并设置token 运行
 WECHATY_PUPPET_PADCHAT_TOKEN=your_padchat_token WECHATY_PUPPET=padchat node examples/ding-dong-bot.js
 ```
@@ -76,17 +83,6 @@ WECHATY_PUPPET_PADCHAT_TOKEN=your_padchat_token WECHATY_PUPPET=padchat node exam
 
 回复 'wechaty' 加入 Wechaty 开发者群。
 > 群内均为wechaty 的开发者，如果仅是为了测试功能，请测试后自动退群。为了避免广告及不看文档用户，群主及机器人会T人，不喜勿加。群内发言之前请先阅读文档，谢谢！
-
-## 注意事项
-从2017年6月下旬开始，使用基于web版微信接入方案存在大概率的被限制登陆的可能性。 主要表现为：无法登陆Web 微信，但不影响手机等其他平台。
-验证是否被限制登陆： https://wx.qq.com 上扫码查看是否能登陆。
-更多内容详见： 
-- [Can not login with error message: 当前登录环境异常。为了你的帐号安全，暂时不能登录web微信。](https://github.com/Chatie/wechaty/issues/603)
-- [[RUMOR] wechat will close webapi for wechat](https://github.com/Chatie/wechaty/issues/990)
-- [New account login issue](https://github.com/Chatie/wechaty/issues/872)
-- [wechaty-puppet-puppeteer](https://github.com/chatie/wechaty-puppet-puppeteer)
-
-**解决方案：我们提供了非web 版本的解决方案，正在进行alpha 测试，[点击申请测试token](https://github.com/Chatie/wechaty/issues/1296)，技术细节及实现请查看[wechaty-puppet-padchat](https://github.com/lijiarui/wechaty-puppet-padchat)**
 
 ## 进阶学习
 
