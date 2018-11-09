@@ -57,11 +57,7 @@ Message#Text(Contact<高原> Contact<李佳芮>)<你好>
 
 从2017年6月下旬开始，使用基于web版微信接入方案存在大概率的被限制登陆的可能性。 主要表现为：无法登陆Web 微信，但不影响手机等其他平台。验证是否被限制登陆： https://wx.qq.com 上扫码查看是否能登陆。
 
-如果还希望接入，推荐你切换到非WEB的接入方式，我们现在提供一个ipad 的接入方式，具体细节请看[puppet-padchat](https://github.com/lijiarui/wechaty-puppet-padchat)。
-
-[点击查看获取token的方法](https://github.com/lijiarui/wechaty-puppet-padchat/wiki/%E8%B4%AD%E4%B9%B0token)
-
-只需要2条命令就可以切换成功：
+如果还希望接入，推荐你切换到非WEB的接入方式，我们现在提供一个ipad 的接入方式，只需要下面2条命令就可以切换成功：
 
 ```shell
 # 1. 安装 wechaty-puppet-padchat
@@ -70,6 +66,10 @@ npm install wechaty-puppet-padchat
 # 2. 通过环境变量设置接入方式并设置token 运行
 WECHATY_PUPPET_PADCHAT_TOKEN=your_padchat_token WECHATY_PUPPET=padchat node examples/ding-dong-bot.js
 ```
+
+**说明**
+1. [点击查看获取token的方法](https://github.com/lijiarui/wechaty-puppet-padchat/wiki/%E8%B4%AD%E4%B9%B0token)
+2. 具体实现请看：具体细节请看[puppet-padchat](https://github.com/lijiarui/wechaty-puppet-padchat)
 
 ### 5. WECHATY_PUPPET 介绍
 
