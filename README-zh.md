@@ -53,19 +53,23 @@ Contact<李佳芮> login
 Message#Text(Contact<高原> Contact<李佳芮>)<你好>
 ```
 
-### 4. Puppet 介绍
+### 4. Web 限制登陆的解决办法：
+
+切换到非WEB 的接入方式，我们现在提供一个ipad 的接入方式，只需要2条命令就可以切换成功：
+
+```shell
+# 1. 安装 wechaty-puppet-padchat
+npm install wechaty-puppet-padchat
+# 2. 通过环境变量设置接入方式并设置token 运行
+WECHATY_PUPPET_PADCHAT_TOKEN=your_padchat_token WECHATY_PUPPET=padchat node examples/ding-dong-bot.js
+```
+
+### 5. WECHATY_PUPPET 介绍
 
 不同的Puppet是代表的我们对微信协议的不同实现方式，所以请选择一种适合您的选择，本项目默认使用web 协议实现，更详细的介绍参考[Puppet的详情](https://wechaty.botorange.com/puppet)
 
-如果需要ipad实现方式, 请查看 [puppet-padchat](https://github.com/lijiarui/wechaty-puppet-padchat) 介绍并获取[token](https://github.com/lijiarui/wechaty-puppet-padchat/wiki/%E8%B4%AD%E4%B9%B0token)
+同时我们提供 ipad实现方式, 请查看 [puppet-padchat](https://github.com/lijiarui/wechaty-puppet-padchat) 介绍并获取[token](https://github.com/lijiarui/wechaty-puppet-padchat/wiki/%E8%B4%AD%E4%B9%B0token)
 
-切换Puppet的方法是通过设置环境变量实现的，如果使用ipad 协议，需要设置token， 运行命令如下
-```shell
-# 安装 wechaty-puppet-padchat
-npm install wechaty-puppet-padchat
-# 运行
-WECHATY_PUPPET_PADCHAT_TOKEN=your_padchat_token WECHATY_PUPPET=padchat node examples/ding-dong-bot.js
-```
 
 ## 试一试
 ![Wechaty Developers' Home](https://chatie.io/wechaty-getting-started/bot-qr-code.png)
