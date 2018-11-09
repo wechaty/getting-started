@@ -71,12 +71,6 @@ WECHATY_PUPPET_PADCHAT_TOKEN=your_padchat_token WECHATY_PUPPET=padchat node exam
 1. [点击查看获取token的方法](https://github.com/lijiarui/wechaty-puppet-padchat/wiki/%E8%B4%AD%E4%B9%B0token)
 2. 具体实现请看：具体细节请看[puppet-padchat](https://github.com/lijiarui/wechaty-puppet-padchat)
 
-### 5. WECHATY_PUPPET 介绍
-
-不同的Puppet是代表的我们对微信协议的不同实现方式，所以请选择一种适合您的选择，本项目默认使用web 协议实现，更详细的介绍参考[Puppet的详情](https://wechaty.botorange.com/puppet)
-
-同时我们提供 ipad实现方式, 请查看 [puppet-padchat](https://github.com/lijiarui/wechaty-puppet-padchat) 介绍并获取[token](https://github.com/lijiarui/wechaty-puppet-padchat/wiki/%E8%B4%AD%E4%B9%B0token)
-
 
 ## 试一试
 ![Wechaty Developers' Home](https://chatie.io/wechaty-getting-started/bot-qr-code.png)
@@ -104,6 +98,12 @@ WECHATY_PUPPET_PADCHAT_TOKEN=your_padchat_token WECHATY_PUPPET=padchat node exam
 | tuling123-bot.ts    | 接入tuling123 机器人，可以回答任何消息。 |
 
 [点击这里查看 更多Wechaty 官方 示例代码](https://github.com/Chatie/wechaty/tree/master/examples)
+
+### 3. 什么是 WECHATY_PUPPET
+
+不同的Puppet是代表的我们对微信协议的不同实现方式，所以请选择一种适合您的选择，本项目默认使用web 协议实现，更详细的介绍参考[Puppet的详情](https://wechaty.botorange.com/puppet)
+
+同时我们提供 ipad实现方式, 请查看 [puppet-padchat](https://github.com/lijiarui/wechaty-puppet-padchat) 介绍并获取[token](https://github.com/lijiarui/wechaty-puppet-padchat/wiki/%E8%B4%AD%E4%B9%B0token)
 
 ## 中文文档
 
