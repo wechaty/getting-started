@@ -107,7 +107,7 @@ WECHATY_PUPPET_PADCHAT_TOKEN=your_padchat_token WECHATY_PUPPET=padchat node exam
 
 ## 中文文档
 
-<http://wechaty.botorange.com>
+<https://botorange.gitbook.io/wechaty/>
 
 ## 常见问题 FAQ
 
