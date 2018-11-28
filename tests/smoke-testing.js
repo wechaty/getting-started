@@ -6,9 +6,17 @@ async function main() {
   const botList = [
     new Wechaty({ puppet: 'wechaty-puppet-mock' }),
     new Wechaty({ puppet: 'wechaty-puppet-puppeteer' }),
-    new Wechaty({ puppet: 'wechaty-puppet-padchat', puppetOptions: { token: 'smoke-testing' } }),
     new Wechaty({ puppet: 'wechaty-puppet-wechat4u' }),
   ]
+
+  if (   !process.env.TRAVIS_PULL_REQUEST
+      && !process.env.APPVEYOR_PULL_REQUEST_NUMBER
+  ) {
+    botList.push(
+      new Wechaty({ puppet: 'wechaty-puppet-padchat' }),
+    )
+  }
+
   try {
     for (const bot of botList) {
       const future = new Promise(r => bot.once('scan', r))

@@ -13,13 +13,13 @@
 - 智能对话：通过简单配置，即可加入智能对话系统，完成指定任务
 - ... 请自行开脑洞
 
-详情请看[Wechaty](https://github.com/chatie/wechaty)项目。这个项目是 wechaty 初学者的入门教程, 进阶请查看[文档](https://qhduan.github.io/wechaty-doc/#/zh/)
+详情请看[Wechaty](https://github.com/chatie/wechaty)项目。这个项目是 wechaty 初学者的入门教程, 进阶请查看[文档](http://wechaty.botorange.com)
 
 ## 快速开始
 
 ### 1. 下载代码
 ```sh
-git clone https://github.com/lijiarui/wechaty-getting-started.git
+git clone https://github.com/chatie/wechaty-getting-started.git
 cd wechaty-getting-started
 ```
 
@@ -53,19 +53,24 @@ Contact<李佳芮> login
 Message#Text(Contact<高原> Contact<李佳芮>)<你好>
 ```
 
-### 4. Puppet 介绍
+### 4. Web 限制登陆的解决办法：
 
-不同的Puppet是代表的我们对微信协议的不同实现方式，所以请选择一种适合您的选择，本项目默认使用web 协议实现，更详细的介绍参考[Puppet的wiki](https://github.com/Chatie/wechaty/wiki/Puppet)
+从2017年6月下旬开始，使用基于web版微信接入方案存在大概率的被限制登陆的可能性。 主要表现为：无法登陆Web 微信，但不影响手机等其他平台。验证是否被限制登陆： https://wx.qq.com 上扫码查看是否能登陆。
 
-如果需要ipad实现方式, 请查看 [puppet-padchat](https://github.com/lijiarui/wechaty-puppet-padchat) 介绍并获取[token](https://github.com/lijiarui/wechaty-puppet-padchat/wiki/Buy-Padchat-Token)
+如果还希望接入，推荐你切换到非WEB的接入方式，我们现在提供一个ipad 的接入方式，只需要下面2条命令就可以切换成功：
 
-切换Puppet的方法是通过设置环境变量实现的，如果使用ipad 协议，需要设置token， 运行命令如下
 ```shell
-# 安装 wechaty-puppet-padchat
+# 1. 安装 wechaty-puppet-padchat
 npm install wechaty-puppet-padchat
-# 运行
+
+# 2. 通过环境变量设置接入方式并设置token 运行
 WECHATY_PUPPET_PADCHAT_TOKEN=your_padchat_token WECHATY_PUPPET=padchat node examples/ding-dong-bot.js
 ```
+
+**说明**
+1. [点击查看获取token的方法](https://github.com/lijiarui/wechaty-puppet-padchat/wiki/%E8%B4%AD%E4%B9%B0token)
+2. 具体实现请看：具体细节请看[puppet-padchat](https://github.com/lijiarui/wechaty-puppet-padchat)
+
 
 ## 试一试
 ![Wechaty Developers' Home](https://chatie.io/wechaty-getting-started/bot-qr-code.png)
@@ -73,23 +78,12 @@ WECHATY_PUPPET_PADCHAT_TOKEN=your_padchat_token WECHATY_PUPPET=padchat node exam
 回复 'wechaty' 加入 Wechaty 开发者群。
 > 群内均为wechaty 的开发者，如果仅是为了测试功能，请测试后自动退群。为了避免广告及不看文档用户，群主及机器人会T人，不喜勿加。群内发言之前请先阅读文档，谢谢！
 
-## 注意事项
-从2017年6月下旬开始，使用基于web版微信接入方案存在大概率的被限制登陆的可能性。 主要表现为：无法登陆Web 微信，但不影响手机等其他平台。
-验证是否被限制登陆： https://wx.qq.com 上扫码查看是否能登陆。
-更多内容详见： 
-- [Can not login with error message: 当前登录环境异常。为了你的帐号安全，暂时不能登录web微信。](https://github.com/Chatie/wechaty/issues/603)
-- [[RUMOR] wechat will close webapi for wechat](https://github.com/Chatie/wechaty/issues/990)
-- [New account login issue](https://github.com/Chatie/wechaty/issues/872)
-- [wechaty-puppet-puppeteer](https://github.com/chatie/wechaty-puppet-puppeteer)
-
-**解决方案：我们提供了非web 版本的解决方案，正在进行alpha 测试，[点击申请测试token](https://github.com/Chatie/wechaty/issues/1296)，技术细节及实现请查看[wechaty-puppet-padchat](https://github.com/lijiarui/wechaty-puppet-padchat)**
-
 ## 进阶学习
 
 ### 1. Wechaty 视频教学课程
 
 <div align="center">
-<a target="_blank" href="https://blog.chatie.io/getting-started-wechaty/"><img src="https://cloud.githubusercontent.com/assets/1361891/21722581/3ec957d0-d468-11e6-8888-a91c236e0ba2.jpg" border=0 width="60%"></a>
+<a target="_blank" href="https://v.qq.com/x/page/k0726ho4rce.html"><img src="https://cloud.githubusercontent.com/assets/1361891/21722581/3ec957d0-d468-11e6-8888-a91c236e0ba2.jpg" border=0 width="60%"></a>
 </div>
 
 请观看这个1分钟的教学视频，帮助你快速了解如何使用wechaty
@@ -105,9 +99,15 @@ WECHATY_PUPPET_PADCHAT_TOKEN=your_padchat_token WECHATY_PUPPET=padchat node exam
 
 [点击这里查看 更多Wechaty 官方 示例代码](https://github.com/Chatie/wechaty/tree/master/examples)
 
-## 文档
+### 3. 什么是 WECHATY_PUPPET
 
-<https://qhduan.github.io/wechaty-doc/#/zh/>
+不同的Puppet是代表的我们对微信协议的不同实现方式，所以请选择一种适合您的选择，本项目默认使用web 协议实现，更详细的介绍参考[Puppet的详情](https://wechaty.botorange.com/puppet)
+
+同时我们提供 ipad实现方式, 请查看 [puppet-padchat](https://github.com/lijiarui/wechaty-puppet-padchat) 介绍并获取[token](https://github.com/lijiarui/wechaty-puppet-padchat/wiki/%E8%B4%AD%E4%B9%B0token)
+
+## 中文文档
+
+<https://docs.chatie.io/wechaty>
 
 ## 常见问题 FAQ
 
@@ -124,4 +124,4 @@ WECHATY_PUPPET_PADCHAT_TOKEN=your_padchat_token WECHATY_PUPPET=padchat node exam
 发送语音消息 - 后续会支持
 朋友圈相关 - 后续会支持
 
-更多详见 [FAQ-ZH](https://github.com/Chatie/wechaty-getting-started/wiki/FAQ-ZH)
+更多详见 [FAQ-ZH](https://wechaty.botorange.com/faq)
