@@ -1,3 +1,10 @@
+/**
+Please install the following dependencies first:
+    "@ffmpeg-installer/ffmpeg": "^1.0.15",
+    "baidu-aip-sdk": "^2.3.3",
+    "fluent-ffmpeg": "^2.1.2",
+    "stream-to-array": "^2.3.0",
+*/
 const { createReadStream } = require('fs')
 const { PassThrough } = require('stream')
 const Ffmpeg = require('fluent-ffmpeg')
