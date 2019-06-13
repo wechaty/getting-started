@@ -5,7 +5,7 @@
 const { Wechaty } = require('wechaty')
 
 function onScan (qrcode, status) {
-  require('qrcode-terminal').generate(qrcode, { small: true })  // show qrcode on console
+  require('qrcode-terminal').generate(qrcode)  // show qrcode on console
 
   const qrcodeImageUrl = [
     'https://api.qrserver.com/v1/create-qr-code/?data=',
