@@ -27,8 +27,8 @@ var nlp = new NLP();
  */
 const bot = new Wechaty({
     //profile: config.default.DEFAULT_PROFILE,
-    //profile: 'limingth',
-    profile: 'maodou',
+    profile: 'liming',
+    //profile: 'maodou',
 })
 
 /**
@@ -90,21 +90,21 @@ function onError(e) {
 /**
  * send a daily
  */
-async function sendDaily(course) {
-    const room = await bot.Room.find({topic: '毛豆网北京团队'}) //get the room by topic
-    console.log('Sending daily to room ' + room.id)
-    let dailyText = '课程<' + course.title +'>已经创建成功'//await getCourses()
-    let url = 'https://kid.maodouketang.com/course/'+course._id
-    room.say(dailyText)
-    room.say(url)
+async function sendReport(course) {
+    const room_topic = '毛豆少儿课堂产品开发组'
+    const room = await bot.Room.find({topic: room_topic}) //get the room by topic
+    if (room)
+        console.log('Sending daily to room ', room.id)
+    else
+        console.log('room_topic ', room_topic, '不存在')
+
+    let news = '课程已经创建成功:' + course.title + '\n'   //await getCourses()
+    let url = '课程链接: https://kid.maodouketang.com/course/' + course._id
+    let report = news + url
+
+    console.log(report)
+    room.say(report)
 }
-
-
-/**
- * list of the news details
- * @type {Array}
- */
-let preNewsList = []
 
 /**
  *
@@ -114,7 +114,7 @@ let preNewsList = []
 async function onMessage(msg) {
     console.log(msg.toString())
     // Skip message from self
-    if (msg.self() || msg.from().name() === '微信团队' || msg.type() !== Message.Type.Text)
+    if (msg.self() || msg.from().name() === '微信团队')
         return
 
 
@@ -128,29 +128,33 @@ async function onMessage(msg) {
     const time = nlp.parse(msgText)
 
     if (time) {
-        await msg.say('你说的时间是'+time.toLocaleString())
-        console.log(msgText, time)
-        const title = msgText
+        //await msg.say('你说的时间是'+time.toLocaleString())
+        console.log(msgText, '==>', time.toLocaleString())
+
+        const title = msgText.substring(0, 16)
         const start_time = time
-        createCourse(title, start_time)
+        console.log('createCourse params:', {title}, {start_time}, {msgText})
+        createCourse(title, start_time, msgText)
     }
 }
 
 /**
  * parse the returned json for a list of news titles
  */
-function createCourseCallback(json_obj) {
-    console.log(json_obj)
+function createCourseCallback(newCourse) {
+    console.log('createCourseCallback(), newCourse:', newCourse)
 
-    sendDaily(json_obj)
+    // send new course info to admin group
+    sendReport(newCourse)
     return
 }
+
 /**
  * query xiaoli's api for news related to the keyword
  * @param keyword: search keyword
  */
-async function createCourse(title, start_time) {
-    let searchURL = 'https://api.maodouketang.com/api/v1/courses'
+async function createCourse(title, start_time, notes) {
+    let path = '/courses'
     let postBody = {
         "title": title,
         "start_time": start_time,
@@ -166,12 +170,13 @@ async function createCourse(title, start_time) {
                 "at": -300,
                 "by": "sms",
             },
-        ]
+        ],
+        "notes": notes
     }
-    let okCallback = createCourseCallback
-    let res = await fetchMaodouAPI(searchURL, postBody, okCallback)
-    console.log('createCourse() res', res)
-    return res
+
+    // call maodou api
+    await fetchMaodouAPI(path, postBody, createCourseCallback)
+    return
 }
 
 
@@ -184,12 +189,12 @@ function getCoursesCallback(json_obj) {
  * query xiaoli's api for a daily news brief
  */
 async function getCourses() {
-    let dailyURL = 'https://api.maodouketang.com/api/v1/courses'
+    let path = '/courses'
     let postBody = {
     }
-    let okCallback = getCoursesCallback
-    let res = await fetchMaodouAPI(dailyURL, postBody, okCallback)
-    console.log('getCourses() res', res)
+
+    // call maodou api
+    fetchMaodouAPI(path, postBody, getCoursesCallback)
     return res
 }
 
@@ -199,12 +204,10 @@ async function getCourses() {
  * @param postBody
  * @param okCallback: covert json to msg text when fetch succeeds
  */
-async function fetchMaodouAPI(URL, postBody, okCallback) {
+async function fetchMaodouAPI(path, postBody, okCallback) {
     let resText = null
-    try {
-        let resp = await fetch(
-            URL,
-            {
+    const url = 'http://localhost:4000/api/v1' + path  //'https://api.maodouketang.com/api/v1' + path,
+    const options = {
                 method: "POST",
                 body: JSON.stringify(postBody), // put keywords and token in the body
                 headers: {
@@ -212,7 +215,10 @@ async function fetchMaodouAPI(URL, postBody, okCallback) {
                   'authorization': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZDAzNTE4ZWI5MDJiMjAwMTE0NmFkMDQiLCJvcGVuSWQiOiJvRHprWTBkN0RxWjA0aUJzMDN6UzM0RjJBOGFrIiwiaWF0IjoxNTYwNDk4NTc0LCJleHAiOjE1NjU2ODI1NzR9.nPCBSX9qElM3bnxEo9cni5x5I5rphIPTue_-V4BHU-c"
                 }
             }
-        )
+    console.log('fetchMaodouAPI: ', url, options)
+
+    try {
+        let resp = await fetch( url, options )
         let resp_json = await resp.json()
         if (resp.ok) {
             // status code = 200, we got it!
