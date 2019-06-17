@@ -153,28 +153,33 @@ async function onMessage(msg) {
                 if (b_result[0]) {
                     const length = b_result[0]["word"].length
                     for (var i = 0; i < length; i++)
-                        console.log(b_result[0]["word"][i], b_result[0]["tag"][i])
+                        console.log('->', i, b_result[0]["word"][i], b_result[0]["tag"][i])
 
                     //console.log('result[0]["word"]', b_result[0]["word"])
                     title = b_result[0]["word"].filter((x,index) =>
+                        b_result[0]["tag"][index] === 'n' ||
+                        b_result[0]["tag"][index] === 'nl' ||
                         b_result[0]["tag"][index] === 'nz' ||
                         b_result[0]["tag"][index] === 'v' ||
                         b_result[0]["tag"][index] === 'vi' ||
-                        b_result[0]["tag"][index] === 'n' ||
                         b_result[0]["tag"][index] === 's')
                         .slice(0, 5)
                         .join('')
 
                     location = b_result[0]["word"].filter((x,index) =>
                         b_result[0]["tag"][index] === 'ns' ||
+                        b_result[0]["tag"][index] === 'nt' ||
                         b_result[0]["tag"][index] === 'n' ||
+                        b_result[0]["tag"][index] === 'm' ||
+                        b_result[0]["tag"][index] === 'q' ||
                         b_result[0]["tag"][index] === 's')
                         .slice(0, 2)
                         .join('')
 
-                    console.log(msgText, '==> Time: ', time.toLocaleString())
-                    console.log(msgText, '==> Title: ', title)
-                    console.log(msgText, '==> Location: ', location)
+                    console.log('消息原文: ', msgText)
+                    console.log('==> Time: ', time.toLocaleString())
+                    console.log('==> Title: ', title)
+                    console.log('==> Location: ', location)
 
                     const start_time = time
                     console.log('createCourse params:', {title}, {start_time}, {location}, {msgText})
