@@ -178,7 +178,7 @@ async function onMessage(msg) {
 
         const start_time = time
         console.log('createCourse params:', {title}, {start_time}, {location}, {msgText})
-        //createCourse(title, start_time, location, msgText)
+        createCourse(title, start_time, location, msgText)
     }
 }
 
