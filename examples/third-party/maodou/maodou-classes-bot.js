@@ -12,6 +12,7 @@
  */
 const {
     Wechaty,
+    Message,
     config,
 } = require('wechaty')
 const qrTerm = require('qrcode-terminal')
@@ -89,11 +90,13 @@ function onError(e) {
 /**
  * send a daily
  */
-async function sendDaily(msgText) {
+async function sendDaily(course) {
     const room = await bot.Room.find({topic: '毛豆网北京团队'}) //get the room by topic
     console.log('Sending daily to room ' + room.id)
-    let dailyText = '课程<' + msgText +'>已经创建成功'//await getCourses()
+    let dailyText = '课程<' + course.title +'>已经创建成功'//await getCourses()
+    let url = 'https://kid.maodouketang.com/course'+course._id
     room.say(dailyText)
+    room.say(url)
 }
 
 
@@ -129,8 +132,8 @@ async function onMessage(msg) {
         console.log(msgText, time)
         const title = msgText
         const start_time = time
-        createCourse(title, start_time)
-        sendDaily(title)
+        const course = createCourse(title, start_time)
+        sendDaily(course)
     }
 }
 
@@ -146,7 +149,7 @@ function createCourseCallback(json_obj) {
  * @param keyword: search keyword
  */
 async function createCourse(title, start_time) {
-    let searchURL = 'https://api.maodouketang/api/v1/courses'
+    let searchURL = 'https://api.maodouketang.com/api/v1/courses'
     let postBody = {
         "title": title,
         "start_time": start_time,
@@ -167,7 +170,7 @@ async function createCourse(title, start_time) {
     let okCallback = createCourseCallback
     let res = await fetchMaodouAPI(searchURL, postBody, okCallback)
     console.log('createCourse() res', res)
-    return resText
+    return res
 }
 
 
@@ -180,7 +183,7 @@ function getCoursesCallback(json_obj) {
  * query xiaoli's api for a daily news brief
  */
 async function getCourses() {
-    let dailyURL = 'https://api.maodouketang/api/v1/courses'
+    let dailyURL = 'https://api.maodouketang.com/api/v1/courses'
     let postBody = {
     }
     let okCallback = getCoursesCallback
