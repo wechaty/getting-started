@@ -111,7 +111,7 @@ async function sendReport(course) {
     let notes = '备注:' + course.notes + '\n'
 
     let url = '\n课程链接: https://kid.maodouketang.com/course/' + course._id + '\n'
-    let report = news + title + time + notes + url
+    let report = news + title + time + location + notes + url
 
     console.log(report)
     room.say(report)
