@@ -173,12 +173,12 @@ async function onMessage(msg) {
                     console.log(msgText, '==> Time: ', time.toLocaleString())
                     console.log(msgText, '==> Title: ', title)
                     console.log(msgText, '==> Location: ', location)
+
+                    const start_time = time
+                    console.log('createCourse params:', {title}, {start_time}, {location}, {msgText})
+                    createCourse(title, start_time, location, msgText)
                 }
             });
-
-        const start_time = time
-        console.log('createCourse params:', {title}, {start_time}, {location}, {msgText})
-        createCourse(title, start_time, location, msgText)
     }
 }
 
