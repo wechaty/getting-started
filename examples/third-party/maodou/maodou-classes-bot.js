@@ -132,8 +132,7 @@ async function onMessage(msg) {
         console.log(msgText, time)
         const title = msgText
         const start_time = time
-        const course = await createCourse(title, start_time)
-        sendDaily(course)
+        createCourse(title, start_time)
     }
 }
 
@@ -142,6 +141,8 @@ async function onMessage(msg) {
  */
 function createCourseCallback(json_obj) {
     console.log(json_obj)
+
+    sendDaily(json_obj)
     return
 }
 /**
