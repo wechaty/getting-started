@@ -110,6 +110,10 @@ let preNewsList = []
  */
 async function onMessage(msg) {
     console.log(msg.toString())
+    // Skip message from self
+    if (msg.self() || msg.from().name() === '微信团队' || msg.type() !== Message.Type.Text)
+        return
+
 
     if (msg.type() !== bot.Message.Type.Text) {
         console.log('Message discarded because it is not a text message')
@@ -118,13 +122,15 @@ async function onMessage(msg) {
 
     let msgText = msg.text()
 
-    const start_time = nlp.parse(msgText)
+    const time = nlp.parse(msgText)
 
     if (time) {
         await msg.say('你说的时间是'+time.toLocaleString())
-        console.log(msgText, start_time)
-        createCourse(msgText, start_time)
-        sendDaily(msgText)
+        console.log(msgText, time)
+        const title = msgText
+        const start_time = time
+        createCourse(title, start_time)
+        sendDaily(title)
     }
 }
 
