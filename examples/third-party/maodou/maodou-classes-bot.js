@@ -150,7 +150,7 @@ async function onMessage(msg) {
                 console.log('result[0]:', b_result[0]);
                 if (b_result[0]) {
                     const length = b_result[0]["word"].length
-                    for (i = 0; i < length; i++)
+                    for (var i = 0; i < length; i++)
                         console.log(b_result[0]["word"][i], b_result[0]["tag"][i])
 
                     //console.log('result[0]["word"]', b_result[0]["word"])
