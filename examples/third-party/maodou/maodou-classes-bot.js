@@ -17,6 +17,8 @@ const {
 const qrTerm = require('qrcode-terminal')
 const fetch = require('node-fetch')
 
+const NLP = require('chi-time-nlp')
+var nlp = new NLP();
 /**
  *
  * Declare the Bot
@@ -24,6 +26,7 @@ const fetch = require('node-fetch')
  */
 const bot = new Wechaty({
     //profile: config.default.DEFAULT_PROFILE,
+    //profile: 'limingth',
     profile: 'maodou',
 })
 
@@ -86,10 +89,10 @@ function onError(e) {
 /**
  * send a daily
  */
-async function sendDaily() {
+async function sendDaily(msgText) {
     const room = await bot.Room.find({topic: '毛豆网北京团队'}) //get the room by topic
     console.log('Sending daily to room ' + room.id)
-    let dailyText = await getDaily()
+    let dailyText = '课程<' + msgText +'>已经创建成功'//await getCourses()
     room.say(dailyText)
 }
 
@@ -99,6 +102,7 @@ async function sendDaily() {
  * @type {Array}
  */
 let preNewsList = []
+
 /**
  *
  * Dealing with Messages
@@ -114,84 +118,70 @@ async function onMessage(msg) {
 
     let msgText = msg.text()
 
-    // A super naive implementation of intent detection for news query
-    if (msgText.endsWith("最新消息") && msgText.length > 4) {
-        respText = await searchNews(msgText.substring(0, msgText.length-4))
-        await msg.say(respText)
-    }
+    const start_time = nlp.parse(msgText)
 
-    // query for news details
-    if (msgText.startsWith('#')) {
-        newsNum = parseInt((msgText.substring(1)), 10) - 1
-        if (newsNum < preNewsList.length && newsNum >= 0) {
-            await msg.say(preNewsList[newsNum])
-        }
+    if (time) {
+        await msg.say('你说的时间是'+time.toLocaleString())
+        console.log(msgText, start_time)
+        createCourse(msgText, start_time)
+        sendDaily(msgText)
     }
-
-}
-
-/**
- * query xiaoli's api for news related to the keyword
- * @param keyword: search keyword
- */
-async function searchNews(keyword) {
-    let searchURL = 'https://api.xiaoli.ai/v1/api/search/basic'
-    let postBody = {
-        "keywords": [keyword],
-        "token": "45d898b459b4a739474175657556249a"
-    }
-    let okCallback = makeSearchResponseText
-    let resText = await fetchXiaoliAPI(searchURL, postBody, okCallback)
-    return resText
 }
 
 /**
  * parse the returned json for a list of news titles
  */
-function makeSearchResponseText(json_obj) {
-    preNewsList = []
-    let newsList = json_obj.contents
-    if (newsList.length === 0) {
-        return "暂无相关新闻"
+function createCourseCallback(json_obj) {
+    console.log(json_obj)
+    return
+}
+/**
+ * query xiaoli's api for news related to the keyword
+ * @param keyword: search keyword
+ */
+async function createCourse(title, start_time) {
+    let searchURL = 'https://api.maodouketang/api/v1/courses'
+    let postBody = {
+        "title": title,
+        "start_time": start_time,
+        "location": "beijing",
+        "duration": 1800,
+        "count": 1,
+        "freq": "NONE",
+        "alerts": [
+            {
+                "at": -1800, // 提前多少秒进行提醒，参考日历从 0, 5, 15, 30,
+                "by": "call", // 通过何种方式进行提醒？["wxmsg", "sms", "call", "email"]，可以选多种方式
+            }, {
+                "at": -300,
+                "by": "sms",
+            },
+        ]
     }
-    let newsText = ''
-    for (let i = 0; i < newsList.length; i++) {
-        newsText += (i+1) + '. ' + newsList[i].title + '\n'
-        preNewsList.push(newsList[i].news_abstract) // Save the news details for later queries
-    }
-    newsText += "\n回复\"#+数字\"(例如\"#1\")看详情"
-    return newsText
+    let okCallback = createCourseCallback
+    let res = await fetchMaodouAPI(searchURL, postBody, okCallback)
+    console.log('createCourse() res', res)
+    return resText
+}
+
+
+function getCoursesCallback(json_obj) {
+    console.log(json_obj)
+    return
 }
 
 /**
  * query xiaoli's api for a daily news brief
  */
-async function getDaily() {
-    const dailyUuid = 'e02e6f14-3212-4d44-9f3d-1d79538c38f6'
-    let dailyURL = 'https://api.xiaoli.ai/v1/api/briefing/' + dailyUuid
+async function getCourses() {
+    let dailyURL = 'https://api.maodouketang/api/v1/courses'
     let postBody = {
-        "token": "45d898b459b4a739474175657556249a"
     }
-    let okCallback = makeDailyResponseText
-    let resText = await fetchXiaoliAPI(dailyURL, postBody, okCallback)
-    return resText
+    let okCallback = getCoursesCallback
+    let res = await fetchMaodouAPI(dailyURL, postBody, okCallback)
+    console.log('getCourses() res', res)
+    return res
 }
-
-
-function makeDailyResponseText(json_obj) {
-    let secList = json_obj.sections
-    let newsText = '今日' + json_obj.title + '\n\n'
-    for (let i = 0; i < Math.min(secList.length, 5); i++) {
-        newsText += secList[i].title + '\n'
-        let newsList = secList[i].contents
-        for (let j = 0; j < Math.min(newsList.length, 3); j++) {
-            newsText += (j+1) + '. ' + newsList[j].title + '\n'
-        }
-        newsText += '\n'
-    }
-    return newsText
-}
-
 
 /**
  * Fetch response from xiaoli API
@@ -199,7 +189,7 @@ function makeDailyResponseText(json_obj) {
  * @param postBody
  * @param okCallback: covert json to msg text when fetch succeeds
  */
-async function fetchXiaoliAPI(URL, postBody, okCallback) {
+async function fetchMaodouAPI(URL, postBody, okCallback) {
     let resText = null
     try {
         let resp = await fetch(
@@ -207,6 +197,10 @@ async function fetchXiaoliAPI(URL, postBody, okCallback) {
             {
                 method: "POST",
                 body: JSON.stringify(postBody), // put keywords and token in the body
+                headers: {
+                  'Content-Type': 'application/json',
+                  'authorization': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZDAzNTE4ZWI5MDJiMjAwMTE0NmFkMDQiLCJvcGVuSWQiOiJvRHprWTBkN0RxWjA0aUJzMDN6UzM0RjJBOGFrIiwiaWF0IjoxNTYwNDk4NTc0LCJleHAiOjE1NjU2ODI1NzR9.nPCBSX9qElM3bnxEo9cni5x5I5rphIPTue_-V4BHU-c"
+                }
             }
         )
         let resp_json = await resp.json()
