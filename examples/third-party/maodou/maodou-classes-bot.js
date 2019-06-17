@@ -104,8 +104,10 @@ async function sendReport(course) {
         console.log('room_topic ', room_topic, '不存在')
 
     let news = '[课程创建成功通知] \n'
-    let title = '标题:' + course.title + '\n'
+
+    let title = '\n标题:' + course.title + '\n'
     let time = '时间:' + new Date(course.start_time).toLocaleString() + '\n'
+    let time = '地点:' + course.location + '\n'
     let notes = '备注:' + course.notes + '\n'
 
     let url = '\n课程链接: https://kid.maodouketang.com/course/' + course._id + '\n'
