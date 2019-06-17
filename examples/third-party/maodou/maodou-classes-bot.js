@@ -98,9 +98,13 @@ async function sendReport(course) {
     else
         console.log('room_topic ', room_topic, '不存在')
 
-    let news = '课程已经创建成功:' + course.title + '\n'   //await getCourses()
-    let url = '课程链接: https://kid.maodouketang.com/course/' + course._id
-    let report = news + url
+    let news = '[课程创建成功通知] \n'
+    let title = '标题:' + course.title + '\n'
+    let time = '时间:' + new Date(course.start_time).toLocaleString() + '\n'
+    let notes = '备注:' + course.notes + '\n'
+
+    let url = '\n课程链接: https://kid.maodouketang.com/course/' + course._id + '\n'
+    let report = news + title + time + notes + url
 
     console.log(report)
     room.say(report)
@@ -145,7 +149,9 @@ function createCourseCallback(newCourse) {
     console.log('createCourseCallback(), newCourse:', newCourse)
 
     // send new course info to admin group
-    sendReport(newCourse)
+    if (newCourse)
+        sendReport(newCourse)
+
     return
 }
 
@@ -206,7 +212,8 @@ async function getCourses() {
  */
 async function fetchMaodouAPI(path, postBody, okCallback) {
     let resText = null
-    const url = 'http://localhost:4000/api/v1' + path  //'https://api.maodouketang.com/api/v1' + path,
+    //const url = 'http://localhost:4000/api/v1' + path
+    const url = 'https://api.maodouketang.com/api/v1' + path
     const options = {
                 method: "POST",
                 body: JSON.stringify(postBody), // put keywords and token in the body
