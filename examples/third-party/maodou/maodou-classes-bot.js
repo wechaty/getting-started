@@ -20,6 +20,10 @@ const fetch = require('node-fetch')
 
 const NLP = require('chi-time-nlp')
 var nlp = new NLP();
+
+var bosonnlp = require('bosonnlp');
+var b_nlp = new bosonnlp.BosonNLP('6wXvIkZk.35344.lbaaVKiTzyh6');
+
 /**
  *
  * Declare the Bot
@@ -63,7 +67,8 @@ bot.start()
  *
  */
 function onScan(qrcode, status) {
-    qrTerm.generate(qrcode, {small: true})
+    //qrTerm.generate(qrcode, {small: true})
+    qrTerm.generate(qrcode)
 
     // Generate a QR Code online via
     // http://goqr.me/api/doc/create-qr-code/
@@ -131,14 +136,49 @@ async function onMessage(msg) {
 
     const time = nlp.parse(msgText)
 
-    if (time) {
-        //await msg.say('你说的时间是'+time.toLocaleString())
-        console.log(msgText, '==>', time.toLocaleString())
+    console.log({time})
 
-        const title = msgText.substring(0, 16)
+    if (time) {
+        var title = msgText.substring(0, 16)
+        var location = 'beijing'
+
+        b_nlp.ner(msgText, function (result) {
+                console.log('result:', result);
+
+                var b_result = JSON.parse(result)
+
+                console.log('result[0]:', b_result[0]);
+                if (b_result[0]) {
+                    const length = b_result[0]["word"].length
+                    for (i = 0; i < length; i++)
+                        console.log(b_result[0]["word"][i], b_result[0]["tag"][i])
+
+                    //console.log('result[0]["word"]', b_result[0]["word"])
+                    title = b_result[0]["word"].filter((x,index) =>
+                        b_result[0]["tag"][index] === 'nz' ||
+                        b_result[0]["tag"][index] === 'v' ||
+                        b_result[0]["tag"][index] === 'vi' ||
+                        b_result[0]["tag"][index] === 'n' ||
+                        b_result[0]["tag"][index] === 's')
+                        .slice(0, 5)
+                        .join('')
+
+                    location = b_result[0]["word"].filter((x,index) =>
+                        b_result[0]["tag"][index] === 'ns' ||
+                        b_result[0]["tag"][index] === 'n' ||
+                        b_result[0]["tag"][index] === 's')
+                        .slice(0, 2)
+                        .join('')
+
+                    console.log(msgText, '==> Time: ', time.toLocaleString())
+                    console.log(msgText, '==> Title: ', title)
+                    console.log(msgText, '==> Location: ', location)
+                }
+            });
+
         const start_time = time
-        console.log('createCourse params:', {title}, {start_time}, {msgText})
-        createCourse(title, start_time, msgText)
+        console.log('createCourse params:', {title}, {start_time}, {location}, {msgText})
+        //createCourse(title, start_time, location, msgText)
     }
 }
 
@@ -159,12 +199,12 @@ function createCourseCallback(newCourse) {
  * query xiaoli's api for news related to the keyword
  * @param keyword: search keyword
  */
-async function createCourse(title, start_time, notes) {
+async function createCourse(title, start_time, location, notes) {
     let path = '/courses'
     let postBody = {
         "title": title,
         "start_time": start_time,
-        "location": "beijing",
+        "location": location,
         "duration": 1800,
         "count": 1,
         "freq": "NONE",
