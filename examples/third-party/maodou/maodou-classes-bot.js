@@ -94,7 +94,7 @@ async function sendDaily(course) {
     const room = await bot.Room.find({topic: '毛豆网北京团队'}) //get the room by topic
     console.log('Sending daily to room ' + room.id)
     let dailyText = '课程<' + course.title +'>已经创建成功'//await getCourses()
-    let url = 'https://kid.maodouketang.com/course'+course._id
+    let url = 'https://kid.maodouketang.com/course/'+course._id
     room.say(dailyText)
     room.say(url)
 }
@@ -132,7 +132,7 @@ async function onMessage(msg) {
         console.log(msgText, time)
         const title = msgText
         const start_time = time
-        const course = createCourse(title, start_time)
+        const course = await createCourse(title, start_time)
         sendDaily(course)
     }
 }
