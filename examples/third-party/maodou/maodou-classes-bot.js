@@ -136,6 +136,9 @@ async function onMessage(msg) {
 
     let msgText = msg.text()
 
+    // get rid of html tags like <img class="qqemoji qqemoji0"> in case someone use emoji input
+    msgText = msgText.replace(/<[^>]*>?/gm, '');
+
     const time = nlp.parse(msgText)
 
     console.log({time})
@@ -218,18 +221,17 @@ async function onMessage(msg) {
 
                     // [2, 9, "location"]
                     var location_array = b_result[0].entity.filter(item => item.indexOf("location")>=0)
-
+                    location = ""
                     if (location_array.length > 0) {
-                        var l = ""
                         for (var i = 0; i < location_array.length; i++) {
                             const from = location_array[i][0]
                             const to = location_array[i][1]
                             //console.log(from, to)
 
-                            l += b_result[0]["word"].slice(from, to).join('')
+                            const l = b_result[0]["word"].slice(from, to).join('')
                             console.log(l)
+                            location += l
                         }
-                        location = l
                     }
 
                     console.log('消息原文: ', msgText)
