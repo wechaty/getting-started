@@ -178,6 +178,60 @@ async function onMessage(msg) {
                         .slice(0, 5)
                         .join('')
 
+// Message#Text[🗣Contact<毛豆课堂小助手>] 上午9点清华东门集合，在科技大厦一楼会议室吃早饭
+// { time: '2019-07-19 09:00:00' }
+// result: [{"word": ["上午", "9点", "清华", "东门", "集合", "，", "在", "科技", "大厦", "一", "楼", "会议室", "吃", "早饭"], "tag": ["t", "t", "nt", "s", "v", "wd", "p", "n", "n", "m", "n", "n", "v", "n"], "entity": [[0, 2, "time"], [2, 4, "location"], [7, 9, "location"]]}]
+// result[0]: { word:
+//    [ '上午',
+//      '9点',
+//      '清华',
+//      '东门',
+//      '集合',
+//      '，',
+//      '在',
+//      '科技',
+//      '大厦',
+//      '一',
+//      '楼',
+//      '会议室',
+//      '吃',
+//      '早饭' ],
+//   tag:
+//    [ 't', 't', 'nt', 's', 'v', 'wd', 'p', 'n', 'n', 'm', 'n', 'n', 'v', 'n' ],
+//   entity:
+//    [ [ 0, 2, 'time' ], [ 2, 4, 'location' ], [ 7, 9, 'location' ] ] }
+// -> 0 上午 t
+// -> 1 9点 t
+// -> 2 清华 nt
+// -> 3 东门 s
+// -> 4 集合 v
+// -> 5 ， wd
+// -> 6 在 p
+// -> 7 科技 n
+// -> 8 大厦 n
+// -> 9 一 m
+// -> 10 楼 n
+// -> 11 会议室 n
+// -> 12 吃 v
+// -> 13 早饭 n
+// 消息原文:  上午9点清华东门集合，在科技大厦一楼会议室吃早饭
+
+                    // [2, 9, "location"]
+                    var location_array = b_result[0].entity.filter(item => item.indexOf("location")>=0)
+
+                    if (location_array.length > 0) {
+                        var l = ""
+                        for (var i = 0; i < location_array.length; i++) {
+                            const from = location_array[i][0]
+                            const to = location_array[i][1]
+                            //console.log(from, to)
+
+                            l += b_result[0]["word"].slice(from, to).join('')
+                            console.log(l)
+                        }
+                        location = l
+                    }
+
                     console.log('消息原文: ', msgText)
                     console.log('==> Time: ', time.toLocaleString())
                     console.log('==> Title: ', title)
