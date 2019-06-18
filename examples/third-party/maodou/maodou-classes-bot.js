@@ -163,17 +163,19 @@ async function onMessage(msg) {
                         b_result[0]["tag"][index] === 'v' ||
                         b_result[0]["tag"][index] === 'vi' ||
                         b_result[0]["tag"][index] === 's')
-                        .slice(0, 5)
+                        .slice(0, 3)
                         .join('')
 
                     location = b_result[0]["word"].filter((x,index) =>
                         b_result[0]["tag"][index] === 'ns' ||
                         b_result[0]["tag"][index] === 'nt' ||
+                        b_result[0]["tag"][index] === 'nz' ||
+                        b_result[0]["tag"][index] === 'an' ||
                         b_result[0]["tag"][index] === 'n' ||
                         b_result[0]["tag"][index] === 'm' ||
                         b_result[0]["tag"][index] === 'q' ||
                         b_result[0]["tag"][index] === 's')
-                        .slice(0, 2)
+                        .slice(0, 5)
                         .join('')
 
                     console.log('消息原文: ', msgText)
