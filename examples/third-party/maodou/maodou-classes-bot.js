@@ -24,6 +24,45 @@ var nlp = new NLP();
 var bosonnlp = require('bosonnlp');
 var b_nlp = new bosonnlp.BosonNLP('6wXvIkZk.35344.lbaaVKiTzyh6');
 
+var Recognizers = require('@microsoft/recognizers-text-suite');
+const defaultCulture = Recognizers.Culture.Chinese;
+
+function getTimeInResult(result) {
+    console.log('getTimeInResult()', result)
+    var start_time
+
+    if (result.typeName === 'datetimeV2.datetime') {
+        start_time = new Date(result.resolution.values[0].value)
+    }
+
+    if (result.typeName === 'datetimeV2.time') {
+        const timeStr = result.resolution.values[0].value
+        const dateStr = new Date().toDateString()
+
+        console.log(dateStr, timeStr)
+        start_time = new Date(dateStr + ' ' + timeStr)
+    }
+
+    if (result.typeName === 'datetimeV2.timerange') {
+        const timeStr = result.resolution.values[0].start
+        const dateStr = new Date().toDateString()
+
+        console.log(dateStr, timeStr)
+        start_time = new Date(dateStr + ' ' + timeStr)
+    }
+
+    if (result.typeName === 'datetimeV2.datetimerange') {
+        start_time = new Date(result.resolution.values[0].start)
+    }
+
+    console.log({start_time})
+    return start_time
+}
+
+function parseAll(input, culture) {
+    return Recognizers.recognizeDateTime(input, culture)
+}
+
 // const puppet = 'wechaty-puppet-padchat'
 
 // const puppetOptions = {
@@ -114,7 +153,7 @@ async function sendReport(course) {
     else
         console.log('room_topic ', room_topic, '不存在')
 
-    let news = '[课程创建成功通知] \n'
+    let news = '[课程创建成功通知]\n'
 
     let title = '\n标题:' + course.title + '\n'
     let time = '时间:' + new Date(course.start_time).toLocaleString() + '\n'
@@ -122,7 +161,7 @@ async function sendReport(course) {
     let notes = '备注:' + course.notes + '\n'
 
     let url = '\n课程链接: https://kid.maodouketang.com/course/' + course._id + '\n'
-    let report = news + title + time + location + notes + url
+    let report = news + title + time + location + notes + url + '\nMS nlp-powered'
 
     console.log(report)
     room.say(report)
@@ -150,7 +189,30 @@ async function onMessage(msg) {
     // get rid of html tags like <img class="qqemoji qqemoji0"> in case someone use emoji input
     msgText = msgText.replace(/<[^>]*>?/gm, '');
 
-    const time = nlp.parse(msgText)
+//    const time = nlp.parse(msgText)
+
+    var results = parseAll(msgText, defaultCulture);
+    var time
+    if (results.length > 0) {
+        console.log('we only take datetimeV type', results)
+        results.forEach(function (result) {
+            console.log(JSON.stringify(result, null, "\t"));
+        });
+
+        // we only pick up those item which has datetime or time
+        results = results.filter(r => r.typeName === 'datetimeV2.datetime' || r.typeName === 'datetimeV2.time' || r.typeName === 'datetimeV2.timerange' || r.typeName === 'datetimeV2.datetimerange')
+        console.log('results after filter', results)
+
+        if (results.length > 0) {
+            var start_time = getTimeInResult(results[0])
+            console.log('start_time 0: ', start_time.toLocaleString())
+
+            // start_time = getTimeInResult(results[1])
+            // console.log('start_time 1: ', start_time.toLocaleString())
+
+            time = start_time
+        }
+    }
 
     console.log({time})
 

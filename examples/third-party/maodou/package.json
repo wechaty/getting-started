@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/Chatie/wechaty-getting-started#readme",
   "dependencies": {
+    "@microsoft/recognizers-text-suite": "^1.1.4",
     "bosonnlp": "^0.1.0",
     "chi-time-nlp": "^1.0.4",
     "node-fetch": "^2.6.0",
