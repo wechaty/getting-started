@@ -6,11 +6,12 @@ import {
   Wechaty,
   Contact,
   Message,
-}           from 'wechaty'
+  ScanStatus,
+}               from 'wechaty'
 
 import { generate } from 'qrcode-terminal'
 
-function onScan (qrcode: string, status: number) {
+function onScan (qrcode: string, status: ScanStatus) {
   generate(qrcode)  // show qrcode on console
 
   const qrcodeImageUrl = [
@@ -18,7 +19,7 @@ function onScan (qrcode: string, status: number) {
     encodeURIComponent(qrcode),
   ].join('')
 
-  console.log(status, qrcodeImageUrl)
+  console.log(`${ScanStatus[status]}(${status})`, qrcodeImageUrl)
 }
 
 function onLogin (user: Contact) {
@@ -33,7 +34,7 @@ async function onMessage (msg: Message) {
   console.log(msg.toString())
 }
 
-const bot = new Wechaty()
+const bot = new Wechaty({ name: 'wechaty' })
 
 bot.on('scan',    onScan)
 bot.on('login',   onLogin)

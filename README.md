@@ -57,7 +57,15 @@ You are all set!
 
 ## ADVANCED
 
-### 1. Wechaty Tutorial
+### 1. TypeScript
+
+```sh
+npm run start:ts
+```
+
+This will run `examples/starter-bot.ts` instead of `examples/starter-bot.js` for you.
+
+### 2. Wechaty Tutorial
 
 <div align="center">
 <a target="_blank" href="https://blog.chatie.io/getting-started-wechaty/"><img src="https://cloud.githubusercontent.com/assets/1361891/21722581/3ec957d0-d468-11e6-8888-a91c236e0ba2.jpg" border=0 width="60%"></a>
@@ -65,7 +73,7 @@ You are all set!
 
 Above is a 10 minute video tutorial(a little outdated, it's running under v0.14 or older versions of Wechaty), which is a good way to start if you are new to Wechaty.
 
-### 2. More Examples
+### 3. More Examples
 
 > Note: Please make sure you can run `npm start` with this repository first before you go furture with more examples!
 

@@ -4,7 +4,7 @@
  */
 const { Wechaty } = require('wechaty')
 
-function onScan (qrcode, status) {
+function onScan (qrcode) {
   require('qrcode-terminal').generate(qrcode)  // show qrcode on console
 
   const qrcodeImageUrl = [
@@ -12,7 +12,7 @@ function onScan (qrcode, status) {
     encodeURIComponent(qrcode),
   ].join('')
 
-  console.log(status, qrcodeImageUrl)
+  console.log(qrcodeImageUrl)
 }
 
 function onLogin (user) {
@@ -27,7 +27,7 @@ async function onMessage (msg) {
   console.log(msg.toString())
 }
 
-const bot = new Wechaty()
+const bot = new Wechaty({ name: 'wechaty' })
 
 bot.on('scan',    onScan)
 bot.on('login',   onLogin)
