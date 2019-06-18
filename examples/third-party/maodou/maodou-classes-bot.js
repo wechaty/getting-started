@@ -24,16 +24,27 @@ var nlp = new NLP();
 var bosonnlp = require('bosonnlp');
 var b_nlp = new bosonnlp.BosonNLP('6wXvIkZk.35344.lbaaVKiTzyh6');
 
-/**
- *
+// const puppet = 'wechaty-puppet-padchat'
+
+// const puppetOptions = {
+//   token: WECHATY_PUPPET_PADCHAT_TOKEN,
+// }
+
+/*
  * Declare the Bot
  *
  */
+
 const bot = new Wechaty({
     //profile: config.default.DEFAULT_PROFILE,
     profile: 'liming',
     //profile: 'maodou',
 })
+
+// const bot = new Wechaty({
+//   puppet,
+//   puppetOptions,
+// })
 
 /**
  *
@@ -275,16 +286,21 @@ async function createCourse(title, start_time, location, notes) {
         "title": title,
         "start_time": start_time,
         "location": location,
-        "duration": 1800,
+        "duration": 3600,
         "count": 1,
         "freq": "NONE",
         "alerts": [
+            // {
+            //   at: -3600, //单位s
+            //   by: 'sms',
+            // },
             {
-                "at": -1800, // 提前多少秒进行提醒，参考日历从 0, 5, 15, 30,
-                "by": "call", // 通过何种方式进行提醒？["wxmsg", "sms", "call", "email"]，可以选多种方式
-            }, {
-                "at": -300,
-                "by": "sms",
+              at: -1800,
+              by: 'wxmsg',
+            },
+            {
+              at: -900,
+              by: 'call',
             },
         ],
         "notes": notes
