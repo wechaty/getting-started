@@ -221,8 +221,11 @@ async function onMessage(msg) {
 
                     // [2, 9, "location"]
                     var location_array = b_result[0].entity.filter(item => item.indexOf("location")>=0)
-                    location = ""
+
                     if (location_array.length > 0) {
+                        // clear the old location value
+                        location = ""
+
                         for (var i = 0; i < location_array.length; i++) {
                             const from = location_array[i][0]
                             const to = location_array[i][1]
@@ -230,6 +233,8 @@ async function onMessage(msg) {
 
                             const l = b_result[0]["word"].slice(from, to).join('')
                             console.log(l)
+
+                            // make the new location value
                             location += l
                         }
                     }
