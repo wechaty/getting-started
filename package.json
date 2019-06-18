@@ -7,7 +7,7 @@
     "node": ">= 10"
   },
   "scripts": {
-    "lint": "",
+    "lint": "eslint 'examples/*.{js,ts}'",
     "postinstall": "check-node-version --node \">= 10\"",
     "start": "node examples/starter-bot.js",
     "start:ts": "ts-node examples/starter-bot.ts",
@@ -29,6 +29,7 @@
     "wechaty": "^0.27.26"
   },
   "devDependencies": {
+    "@chatie/eslint-config": "^0.6.17",
     "@chatie/git-scripts": "^0.2.5",
     "@chatie/tsconfig": "^0.6.1",
     "check-node-version": "^3.2.0"

@@ -12,19 +12,19 @@ function onScan (qrcode) {
     encodeURIComponent(qrcode),
   ].join('')
 
-  console.log(qrcodeImageUrl)
+  console.info(qrcodeImageUrl)
 }
 
 function onLogin (user) {
-  console.log(`${user} login`)
+  console.info(`${user} login`)
 }
 
-function onLogout(user) {
-  console.log(`${user} logout`)
+function onLogout (user) {
+  console.info(`${user} logout`)
 }
 
 async function onMessage (msg) {
-  console.log(msg.toString())
+  console.info(msg.toString())
 }
 
 const bot = new Wechaty({ name: 'wechaty' })
@@ -35,5 +35,5 @@ bot.on('logout',  onLogout)
 bot.on('message', onMessage)
 
 bot.start()
-.then(() => console.log('Starter Bot Started.'))
-.catch(e => console.error(e))
+  .then(() => console.info('Starter Bot Started.'))
+  .catch(e => console.error(e))
