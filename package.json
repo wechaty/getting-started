@@ -11,7 +11,8 @@
     "postinstall": "check-node-version --node \">= 10\"",
     "start": "node examples/starter-bot.js",
     "start:ts": "ts-node examples/starter-bot.ts",
-    "test": "node tests/smoke-testing.js"
+    "test": "npm run lint && npm run test:smoke",
+    "test:smoke": "node tests/smoke-testing.js"
   },
   "repository": {
     "type": "git",
