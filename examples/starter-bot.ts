@@ -2,10 +2,16 @@
  * Wechaty - WeChat Bot SDK for Personal Account, Powered by TypeScript, Docker, and 💖
  *  - https://github.com/chatie/wechaty
  */
-const { Wechaty } = require('wechaty')
+import { 
+  Wechaty,
+  Contact,
+  Message,
+}           from 'wechaty'
 
-function onScan (qrcode, status) {
-  require('qrcode-terminal').generate(qrcode)  // show qrcode on console
+import { generate } from 'qrcode-terminal'
+
+function onScan (qrcode: string, status: number) {
+  generate(qrcode)  // show qrcode on console
 
   const qrcodeImageUrl = [
     'https://api.qrserver.com/v1/create-qr-code/?data=',
@@ -15,15 +21,15 @@ function onScan (qrcode, status) {
   console.log(status, qrcodeImageUrl)
 }
 
-function onLogin (user) {
+function onLogin (user: Contact) {
   console.log(`${user} login`)
 }
 
-function onLogout(user) {
+function onLogout(user: Contact) {
   console.log(`${user} logout`)
 }
 
-async function onMessage (msg) {
+async function onMessage (msg: Message) {
   console.log(msg.toString())
 }
 
