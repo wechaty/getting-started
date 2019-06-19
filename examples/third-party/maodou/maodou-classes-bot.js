@@ -465,7 +465,7 @@ async function fetchMaodouAPI(path, postBody, okCallback) {
                 body: JSON.stringify(postBody), // put keywords and token in the body
                 headers: {
                   'Content-Type': 'application/json',
-                  'authorization': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZDAzNTE4ZWI5MDJiMjAwMTE0NmFkMDQiLCJvcGVuSWQiOiJvRHprWTBkN0RxWjA0aUJzMDN6UzM0RjJBOGFrIiwiaWF0IjoxNTYwNDk4NTc0LCJleHAiOjE1NjU2ODI1NzR9.nPCBSX9qElM3bnxEo9cni5x5I5rphIPTue_-V4BHU-c"
+                  'authorization': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZDA5ZjcxYTQyOTg4YjAwMTI2ZmYxYmMiLCJvcGVuSWQiOiJvRHprWTBUTjlfTmNLdXZCYVo1SzhzeE1NZHNzIiwiaWF0IjoxNTYwOTM0MTcwLCJleHAiOjE1NjYxMTgxNzB9.-NtfK62Y1S_EHAkA2Y0j5BW4qtb7IdH2mpq85NUqPuA"
                 }
             }
     console.log('fetchMaodouAPI: ', url, options)
