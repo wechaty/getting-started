@@ -233,7 +233,7 @@ async function sendReport(course) {
 async function onMessage(msg) {
     console.log(msg.toString())
     // Skip message from self
-    if (msg.self() || msg.from().name() === '微信团队')
+    if (msg.self() || msg.from().name() === '微信团队' || msg.from().name() === '毛豆课堂小助手' )
         return
 
 
