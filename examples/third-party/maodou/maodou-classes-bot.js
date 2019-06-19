@@ -27,36 +27,88 @@ var b_nlp = new bosonnlp.BosonNLP('6wXvIkZk.35344.lbaaVKiTzyh6');
 var Recognizers = require('@microsoft/recognizers-text-suite');
 const defaultCulture = Recognizers.Culture.Chinese;
 
-function getTimeInResult(result) {
-    console.log('getTimeInResult()', result)
+function getTimeInResults(results) {
+    console.log('getTimeInResult()', results)
     var start_time
+    var result
+    var date
+    var time
 
-    if (result.typeName === 'datetimeV2.datetime') {
+    // if results have date and time, just return value
+    result = results.find(x => x.typeName === 'datetimeV2.datetime')
+    if (result) {
         start_time = new Date(result.resolution.values[0].value)
+        return start_time
     }
 
-    if (result.typeName === 'datetimeV2.time') {
-        const timeStr = result.resolution.values[0].value
-        const dateStr = new Date().toDateString()
+    // first deal with time
+    time = results.find(x => x.typeName === 'datetimeV2.time')
+    var timeStr
+    if (time) {
+        timeStr = time.resolution.values[0].value
+        if (time.resolution.values[1])  // we prefer the later time for kid's class
+            timeStr = time.resolution.values[1].value
+    } else {
+        time = results.find(x => x.typeName === 'datetimeV2.timerange')
+        if (time) {
+            timeStr = time.resolution.values[0].start
+        } else {
+            // do nothing with timeStr
+        }
+    }
+    console.log({timeStr})
 
-        console.log(dateStr, timeStr)
-        start_time = new Date(dateStr + ' ' + timeStr)
+    if (!timeStr) {
+        // if results have date and time range, we return start
+        result = results.find(x => x.typeName === 'datetimeV2.datetimerange')
+        if (result) {
+            start_time = new Date(result.resolution.values[0].start)
+            return start_time
+        } else
+            return // undefined
     }
 
-    if (result.typeName === 'datetimeV2.timerange') {
-        const timeStr = result.resolution.values[0].start
-        const dateStr = new Date().toDateString()
-
-        console.log(dateStr, timeStr)
-        start_time = new Date(dateStr + ' ' + timeStr)
+    // then deal with date
+    date = results.find(x => x.typeName === 'datetimeV2.date')
+    var dateStr
+    if (date) {
+        dateStr = date.resolution.values[0].value
+    } else {
+        date = results.find(x => x.typeName === 'datetimeV2.daterange')
+        if (date) {
+            dateStr = date.resolution.values[0].start
+        } else {
+            dateStr = new Date().toDateString()
+        }
     }
+    console.log({dateStr})
 
-    if (result.typeName === 'datetimeV2.datetimerange') {
-        start_time = new Date(result.resolution.values[0].start)
-    }
-
-    console.log({start_time})
+    start_time = new Date(dateStr + ' ' + timeStr)
     return start_time
+
+    // if (result.typeName === 'datetimeV2.datetime') {
+    //     start_time = new Date(result.resolution.values[0].value)
+    // }
+
+    // if (result.typeName === 'datetimeV2.time') {
+    //     const timeStr = result.resolution.values[0].value
+    //     const dateStr = new Date().toDateString()
+
+    //     console.log(dateStr, timeStr)
+    //     start_time = new Date(dateStr + ' ' + timeStr)
+    // }
+
+    // if (result.typeName === 'datetimeV2.timerange') {
+    //     const timeStr = result.resolution.values[0].start
+    //     const dateStr = new Date().toDateString()
+
+    //     console.log(dateStr, timeStr)
+    //     start_time = new Date(dateStr + ' ' + timeStr)
+    // }
+
+    // if (result.typeName === 'datetimeV2.datetimerange') {
+    //     start_time = new Date(result.resolution.values[0].start)
+    // }
 }
 
 function parseAll(input, culture) {
@@ -200,12 +252,12 @@ async function onMessage(msg) {
         });
 
         // we only pick up those item which has datetime or time
-        results = results.filter(r => r.typeName === 'datetimeV2.datetime' || r.typeName === 'datetimeV2.time' || r.typeName === 'datetimeV2.timerange' || r.typeName === 'datetimeV2.datetimerange')
-        console.log('results after filter', results)
+        //results = results.filter(r => r.typeName === 'datetimeV2.date' || r.typeName === 'datetimeV2.datetime' || r.typeName === 'datetimeV2.time' || r.typeName === 'datetimeV2.timerange' || r.typeName === 'datetimeV2.datetimerange')
+        console.log('results without filter', results)
 
         if (results.length > 0) {
-            var start_time = getTimeInResult(results[0])
-            console.log('start_time 0: ', start_time.toLocaleString())
+            var start_time = getTimeInResults(results)
+            console.log('start_time: ', start_time && start_time.toLocaleString())
 
             // start_time = getTimeInResult(results[1])
             // console.log('start_time 1: ', start_time.toLocaleString())
