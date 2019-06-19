@@ -3,10 +3,10 @@
  *  - https://github.com/chatie/wechaty
  */
 import {
-  Wechaty,
   Contact,
   Message,
   ScanStatus,
+  Wechaty,
 }               from 'wechaty'
 
 import { generate } from 'qrcode-terminal'
