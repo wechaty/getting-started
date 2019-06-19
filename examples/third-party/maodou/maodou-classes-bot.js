@@ -73,6 +73,8 @@ function getTimeInResults(results) {
     var dateStr
     if (date) {
         dateStr = date.resolution.values[0].value
+        if(date.resolution.values[1])
+            dateStr = date.resolution.values[1].value
     } else {
         date = results.find(x => x.typeName === 'datetimeV2.daterange')
         if (date) {
