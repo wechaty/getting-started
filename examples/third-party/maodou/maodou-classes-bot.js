@@ -37,7 +37,11 @@ function getTimeInResults(results) {
     // if results have date and time, just return value
     result = results.find(x => x.typeName === 'datetimeV2.datetime')
     if (result) {
-        start_time = new Date(result.resolution.values[0].value)
+        if (result.resolution.values[1])
+            start_time = new Date(result.resolution.values[1].value)
+        else
+            start_time = new Date(result.resolution.values[0].value)
+
         return start_time
     }
 
@@ -56,6 +60,7 @@ function getTimeInResults(results) {
             // do nothing with timeStr
         }
     }
+    console("-------1timeStr-----------")
     console.log({timeStr})
 
     if (!timeStr) {
@@ -73,8 +78,6 @@ function getTimeInResults(results) {
     var dateStr
     if (date) {
         dateStr = date.resolution.values[0].value
-        if(date.resolution.values[1])
-            dateStr = date.resolution.values[1].value
     } else {
         date = results.find(x => x.typeName === 'datetimeV2.daterange')
         if (date) {
@@ -83,6 +86,7 @@ function getTimeInResults(results) {
             dateStr = new Date().toDateString()
         }
     }
+    console("-------2dateStr-----------")
     console.log({dateStr})
 
     start_time = new Date(dateStr + ' ' + timeStr)
