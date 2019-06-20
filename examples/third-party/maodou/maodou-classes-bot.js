@@ -189,7 +189,7 @@ async function sendReportToRoom(course, room_topic) {
     let title = '\n标题: ' + course.title + '\n'
     let time = '时间: ' + new Date(course.start_time).toLocaleString() + '\n'
     let location = '地点: ' + course.location + '\n'
-    let notes = '备注: ' + course.notes + '\n'
+    let notes = '备注: toLocaleString' + course.notes + '\n'
 
     let url = '\n课程链接: https://kid.maodouketang.com/course/' + course._id + '\n'
     let report = news + title + time + location + notes + url + '\n- microsoft nlp powered'
@@ -404,7 +404,7 @@ async function getMaodouCourses() {
 }
 
 /**
- * Fetch response from xiaoli API
+ * Fetch response from Maodou API
  * @param URL
  * @param postBody
  * @param fetchCallback: covert json to msg text when fetch succeeds
