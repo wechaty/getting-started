@@ -89,30 +89,6 @@ function getTimeInResults(results) {
 
     start_time = new Date(dateStr + ' ' + timeStr)
     return start_time
-
-    // if (result.typeName === 'datetimeV2.datetime') {
-    //     start_time = new Date(result.resolution.values[0].value)
-    // }
-
-    // if (result.typeName === 'datetimeV2.time') {
-    //     const timeStr = result.resolution.values[0].value
-    //     const dateStr = new Date().toDateString()
-
-    //     console.log(dateStr, timeStr)
-    //     start_time = new Date(dateStr + ' ' + timeStr)
-    // }
-
-    // if (result.typeName === 'datetimeV2.timerange') {
-    //     const timeStr = result.resolution.values[0].start
-    //     const dateStr = new Date().toDateString()
-
-    //     console.log(dateStr, timeStr)
-    //     start_time = new Date(dateStr + ' ' + timeStr)
-    // }
-
-    // if (result.typeName === 'datetimeV2.datetimerange') {
-    //     start_time = new Date(result.resolution.values[0].start)
-    // }
 }
 
 function parseAll(input, culture) {
@@ -201,11 +177,10 @@ function onError(e) {
 /**
  * send a daily
  */
-async function sendReport(course) {
-    const room_topic = '毛豆少儿课堂产品开发组'
+async function sendReportToRoom(course, room_topic) {
     const room = await bot.Room.find({topic: room_topic}) //get the room by topic
     if (room)
-        console.log('Sending daily to room ', room.id)
+        console.log('Sending daily to room ', room_topic, 'id:', room.id)
     else
         console.log('room_topic ', room_topic, '不存在')
 
@@ -217,45 +192,14 @@ async function sendReport(course) {
     let notes = '备注:' + course.notes + '\n'
 
     let url = '\n课程链接: https://kid.maodouketang.com/course/' + course._id + '\n'
-    let report = news + title + time + location + notes + url + '\nMS nlp-powered'
+    let report = news + title + time + location + notes + url + '\n- microsoft nlp powered'
 
     console.log(report)
     room.say(report)
 }
 
-/**
- *
- * Dealing with Messages
- *
- */
-async function onMessage(msg) {
-    console.log(msg.toString())
-    // Skip message from self
-    if (msg.self() || msg.from().name() === '微信团队' || msg.from().name() === '毛豆课堂小助手' )
-        return
-
-
-    if (msg.type() !== bot.Message.Type.Text) {
-        console.log('Message discarded because it is not a text message')
-        return
-    }
-
-    let msgText = msg.text()
-
-    // get rid of html tags like <img class="qqemoji qqemoji0"> in case someone use emoji input
-    msgText = msgText.replace(/<[^>]*>?/gm, '')
-
-    console.log("----------get rid of emoji--------")
-    console.log(msgText)
-
-    msgText = msgText.replace(/(^\s*)/g, '')
-
-    console.log("----------get rid of left whitespace--------")
-    console.log(msgText)
-
-
-//    const time = nlp.parse(msgText)
-
+function createCourse(msgText, createCallback) {
+//    const time = nlp.parse(msgText)   // no longer to using ChiTimeNlp
     var results = parseAll(msgText, defaultCulture);
     var time
     if (results.length > 0) {
@@ -274,7 +218,6 @@ async function onMessage(msg) {
 
             // start_time = getTimeInResult(results[1])
             // console.log('start_time 1: ', start_time.toLocaleString())
-
             time = start_time
         }
     }
@@ -319,44 +262,6 @@ async function onMessage(msg) {
                         .slice(0, 5)
                         .join('')
 
-// Message#Text[🗣Contact<毛豆课堂小助手>] 上午9点清华东门集合，在科技大厦一楼会议室吃早饭
-// { time: '2019-07-19 09:00:00' }
-// result: [{"word": ["上午", "9点", "清华", "东门", "集合", "，", "在", "科技", "大厦", "一", "楼", "会议室", "吃", "早饭"], "tag": ["t", "t", "nt", "s", "v", "wd", "p", "n", "n", "m", "n", "n", "v", "n"], "entity": [[0, 2, "time"], [2, 4, "location"], [7, 9, "location"]]}]
-// result[0]: { word:
-//    [ '上午',
-//      '9点',
-//      '清华',
-//      '东门',
-//      '集合',
-//      '，',
-//      '在',
-//      '科技',
-//      '大厦',
-//      '一',
-//      '楼',
-//      '会议室',
-//      '吃',
-//      '早饭' ],
-//   tag:
-//    [ 't', 't', 'nt', 's', 'v', 'wd', 'p', 'n', 'n', 'm', 'n', 'n', 'v', 'n' ],
-//   entity:
-//    [ [ 0, 2, 'time' ], [ 2, 4, 'location' ], [ 7, 9, 'location' ] ] }
-// -> 0 上午 t
-// -> 1 9点 t
-// -> 2 清华 nt
-// -> 3 东门 s
-// -> 4 集合 v
-// -> 5 ， wd
-// -> 6 在 p
-// -> 7 科技 n
-// -> 8 大厦 n
-// -> 9 一 m
-// -> 10 楼 n
-// -> 11 会议室 n
-// -> 12 吃 v
-// -> 13 早饭 n
-// 消息原文:  上午9点清华东门集合，在科技大厦一楼会议室吃早饭
-
                     // [2, 9, "location"]
                     var location_array = b_result[0].entity.filter(item => item.indexOf("location")>=0)
 
@@ -384,30 +289,71 @@ async function onMessage(msg) {
 
                     const start_time = time
                     console.log('createCourse params:', {title}, {start_time}, {location}, {msgText})
-                    createCourse(title, start_time, location, msgText)
+                    createMaodouCourse(title, start_time, location, msgText, createCallback)
                 }
             });
     }
 }
-
 /**
- * parse the returned json for a list of news titles
+ *
+ * Dealing with Messages
+ *
  */
-function createCourseCallback(newCourse) {
-    console.log('createCourseCallback(), newCourse:', newCourse)
+async function onMessage(msg) {
+    const room = msg.room()
+    const from = msg.from()
 
-    // send new course info to admin group
-    if (newCourse)
-        sendReport(newCourse)
+    if (!from) {
+        return
+    }
+    //console.log('room', room)
 
-    return
+    console.log((room ? '[' + await room.topic() + ']' : '')
+              + '<' + from.name() + '>'
+              + ':' + msg,
+    )
+
+    // Skip message from self
+    if (msg.self() || from.name() === '微信团队' || from.name() === '毛豆课堂小助手' ) {
+        console.log('Message discarded because it is from self or 毛豆课堂小助手')
+        return
+    }
+
+    if (msg.type() !== bot.Message.Type.Text) {
+        console.log('Message discarded because it is not a text message')
+        return
+    }
+
+    let msgText = msg.text()
+    console.log({msgText})
+
+    // get rid of html tags like <img class="qqemoji qqemoji0"> in case someone use emoji input
+    msgText = msgText.replace(/<[^>]*>?/gm, '')
+
+    console.log("----------get rid of emoji--------")
+    console.log(msgText)
+
+    msgText = msgText.replace(/(^\s*)/g, '')
+
+    console.log("----------get rid of left whitespace--------")
+    console.log(msgText)
+
+    const room_topic = await room.topic()
+    // create course using msgText, and send report to wechat admin group
+    createCourse(msgText, function(newCourse) {
+        if (room_topic === '毛豆少儿课堂产品开发组')
+            sendReportToRoom(newCourse, '毛豆少儿课堂产品开发组')
+
+        if (room_topic === 'Wechaty LiLiLi')
+            sendReportToRoom(newCourse, 'Wechaty LiLiLi')
+    })
 }
 
 /**
  * query xiaoli's api for news related to the keyword
  * @param keyword: search keyword
  */
-async function createCourse(title, start_time, location, notes) {
+async function createMaodouCourse(title, start_time, location, notes, createMaodouCourseCallback) {
     let path = '/courses'
     let postBody = {
         "title": title,
@@ -434,12 +380,12 @@ async function createCourse(title, start_time, location, notes) {
     }
 
     // call maodou api
-    await fetchMaodouAPI(path, postBody, createCourseCallback)
+    await fetchMaodouAPI(path, postBody, createMaodouCourseCallback)
     return
 }
 
 
-function getCoursesCallback(json_obj) {
+function getMaodouCoursesCallback(json_obj) {
     console.log(json_obj)
     return
 }
@@ -447,13 +393,13 @@ function getCoursesCallback(json_obj) {
 /**
  * query xiaoli's api for a daily news brief
  */
-async function getCourses() {
+async function getMaodouCourses() {
     let path = '/courses'
     let postBody = {
     }
 
     // call maodou api
-    fetchMaodouAPI(path, postBody, getCoursesCallback)
+    fetchMaodouAPI(path, postBody, getMaodouCoursesCallback)
     return res
 }
 
@@ -461,9 +407,9 @@ async function getCourses() {
  * Fetch response from xiaoli API
  * @param URL
  * @param postBody
- * @param okCallback: covert json to msg text when fetch succeeds
+ * @param fetchCallback: covert json to msg text when fetch succeeds
  */
-async function fetchMaodouAPI(path, postBody, okCallback) {
+async function fetchMaodouAPI(path, postBody, fetchCallback) {
     let resText = null
     //const url = 'http://localhost:4000/api/v1' + path
     const url = 'https://api.maodouketang.com/api/v1' + path
@@ -482,7 +428,7 @@ async function fetchMaodouAPI(path, postBody, okCallback) {
         let resp_json = await resp.json()
         if (resp.ok) {
             // status code = 200, we got it!
-            resText = okCallback(resp_json['data'])
+            resText = fetchCallback(resp_json['data'])
         } else {
             // status code = 4XX/5XX, sth wrong with API
             resText = 'API ERROR: ' + resp_json['msg']
