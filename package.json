@@ -23,8 +23,13 @@
   },
   "homepage": "https://github.com/Chatie/wechaty-getting-started#readme",
   "dependencies": {
+    "@microsoft/recognizers-text-suite": "^1.1.4",
+    "bosonnlp": "^0.1.0",
+    "chi-time-nlp": "^1.0.4",
     "qrcode-terminal": "^0.12.0",
-    "wechaty": "^0.27.23"
+    "wechaty": "^0.27.23",
+    "wechaty-puppet": "^0.14.1",
+    "wechaty-puppet-puppeteer": "^0.16.1"
   },
   "devDependencies": {
     "check-node-version": "^3.2.0"
