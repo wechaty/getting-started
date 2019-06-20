@@ -60,7 +60,6 @@ function getTimeInResults(results) {
             // do nothing with timeStr
         }
     }
-    console("-------1timeStr-----------")
     console.log({timeStr})
 
     if (!timeStr) {
@@ -86,7 +85,6 @@ function getTimeInResults(results) {
             dateStr = new Date().toDateString()
         }
     }
-    console("-------2dateStr-----------")
     console.log({dateStr})
 
     start_time = new Date(dateStr + ' ' + timeStr)
@@ -245,7 +243,16 @@ async function onMessage(msg) {
     let msgText = msg.text()
 
     // get rid of html tags like <img class="qqemoji qqemoji0"> in case someone use emoji input
-    msgText = msgText.replace(/<[^>]*>?/gm, '');
+    msgText = msgText.replace(/<[^>]*>?/gm, '')
+
+    console.log("----------get rid of emoji--------")
+    console.log(msgText)
+
+    msgText = msgText.replace(/(^\s*)/g, '')
+
+    console.log("----------get rid of left whitespace--------")
+    console.log(msgText)
+
 
 //    const time = nlp.parse(msgText)
 

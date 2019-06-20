@@ -28,6 +28,7 @@
     "node-fetch": "^2.6.0",
     "qrcode-terminal": "^0.12.0",
     "wechaty": "^0.26.1",
+    "wechaty-puppet": "^0.14.1",
     "wechaty-puppet-puppeteer": "^0.16.1"
   },
   "devDependencies": {
