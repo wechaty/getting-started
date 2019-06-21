@@ -18,7 +18,7 @@ const qrTerm = require('qrcode-terminal')
 // import Debug from 'debug'
 // const debug = Debug('maodou:api/utils/agenda.js')
 const debug = require("debug")("maodou-classes-bot.js");
-const createCourse = require('./maodouketang-api.js')
+const createCourse = require('./maodou-course-api.js')
 /*
  * Declare the Bot
  *
@@ -92,7 +92,7 @@ function makeReport(course) {
     let title = '\n标题: ' + course.title + '\n'
     let time = '时间: ' + new Date(course.start_time).toLocaleString() + '\n'
     let location = '地点: ' + course.location + '\n'
-    let notes = '\n消息原文: ' + course.notes + '\n'
+    let notes = '\n消息原文: \n' + course.notes + '\n'
 
     let url = '\n课程链接: https://kid.maodouketang.com/course/' + course._id + '\n'
     let report = news + title + time + location + notes + url + '\n- microsoft nlp powered'
@@ -133,13 +133,13 @@ async function onMessage(msg) {
     )
 
     if (msg.type() !== bot.Message.Type.Text) {
-        console.log('Message discarded because it is not a text message')
+        console.log('[Bot] ==> Message discarded because it is not a text message')
         return
     }
 
     // Skip message from self
     if (msg.self() || from.name() === '微信团队' || from.name() === '毛豆课堂小助手' ) {
-        console.log('Message discarded because it is from self or 毛豆课堂小助手')
+        console.log('[Bot] ==> Message discarded because it is from self or 毛豆课堂小助手')
         return
     }
 
@@ -154,7 +154,7 @@ async function onMessage(msg) {
         debug("[newCourse]", newCourse)
         // get report from newCourse
         report = makeReport(newCourse)
-        console.log("[newCourse report]", report)
+        console.log("[New course report]", report)
 
         // only these 2 admin groups will receive report
         if (room_topic === '毛豆少儿课堂产品开发组' || room_topic === 'Wechaty LiLiLi')
