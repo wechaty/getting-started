@@ -7,6 +7,7 @@ import {
   Message,
   ScanStatus,
   Wechaty,
+  log,
 }               from 'wechaty'
 
 import { generate } from 'qrcode-terminal'
@@ -19,19 +20,19 @@ function onScan (qrcode: string, status: ScanStatus) {
     encodeURIComponent(qrcode),
   ].join('')
 
-  console.info(`${ScanStatus[status]}(${status})`, qrcodeImageUrl)
+  log.info('StarterBot', '%s(%s) %s', ScanStatus[status], status, qrcodeImageUrl)
 }
 
 function onLogin (user: Contact) {
-  console.info(`${user} login`)
+  log.info('StarterBot', '%s login', user)
 }
 
 function onLogout (user: Contact) {
-  console.info(`${user} logout`)
+  log.info('StarterBot', '%s logout', user)
 }
 
 async function onMessage (msg: Message) {
-  console.info(msg.toString())
+  log.info('StarterBot', msg.toString())
 }
 
 const bot = new Wechaty({ name: 'wechaty' })
@@ -42,5 +43,5 @@ bot.on('logout',  onLogout)
 bot.on('message', onMessage)
 
 bot.start()
-  .then(() => console.info('Starter Bot Started.'))
-  .catch(e => console.error(e))
+  .then(() => log.info('StarterBot', 'Starter Bot Started.'))
+  .catch(e => log.error('StarterBot', e))
