@@ -153,7 +153,7 @@ async function onMessage(msg) {
     createCourse(msgText, function(newCourse) {
         debug("[newCourse]", newCourse)
         // get report from newCourse
-        report = makeReport(newCourse)
+        var report = makeReport(newCourse)
         console.log("[New course report]", report)
 
         // only these 2 admin groups will receive report
