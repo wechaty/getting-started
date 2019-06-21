@@ -8,6 +8,7 @@ This is a third-party bot built using wechaty and [maodouketang courses API](htt
 * To run a bot of yourself, you need
   -  ```git clone``` this repo and ```cd wechaty-getting-started/examples/third-party/maodou```
   - Within this directory, type ```npm install``` and ```npm start``` and you are good to go!
+  - ```npm run dev``` if you want to see all debug logs and debug your own code
 
 To get your own authorization in fetchMaodouAPI, you need to follow these 3 steps:
 1. Search a mini-program in wechat -> discover named "毛豆课堂", click it and login with your phone number.
