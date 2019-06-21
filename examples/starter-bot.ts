@@ -3,10 +3,10 @@
  *  - https://github.com/chatie/wechaty
  */
 import {
-  Wechaty,
   Contact,
   Message,
   ScanStatus,
+  Wechaty,
   log,
 }               from 'wechaty'
 
