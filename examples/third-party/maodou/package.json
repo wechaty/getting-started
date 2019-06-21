@@ -8,7 +8,8 @@
   },
   "scripts": {
     "postinstall": "check-node-version --node \">= 10\"",
-    "start": "node maodou-classes-bot.js"
+    "start": "node maodou-classes-bot.js",
+    "dev": "DEBUG=maodou* node maodou-classes-bot.js"
   },
   "repository": {
     "type": "git",
