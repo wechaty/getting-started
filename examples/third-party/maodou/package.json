@@ -1,0 +1,38 @@
+{
+  "name": "maodou-classes-bot",
+  "version": "0.1.0",
+  "description": "maodou-classes-bot is a class reminder bot based on wechaty",
+  "main": "index.js",
+  "engines": {
+    "node": ">= 10"
+  },
+  "scripts": {
+    "postinstall": "check-node-version --node \">= 10\"",
+    "start": "node maodou-classes-bot.js",
+    "dev": "DEBUG=maodou* node maodou-classes-bot.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maodouio/wechaty-getting-started.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maodouio/wechaty-getting-started/issues"
+  },
+  "homepage": "https://github.com/maodouio/wechaty-getting-started#readme",
+  "dependencies": {
+    "@microsoft/recognizers-text-suite": "^1.1.4",
+    "bosonnlp": "^0.1.0",
+    "chi-time-nlp": "^1.0.4",
+    "node-fetch": "^2.6.0",
+    "qrcode-terminal": "^0.12.0",
+    "wechaty": "^0.26.1",
+    "wechaty-puppet": "^0.14.1",
+    "wechaty-puppet-puppeteer": "^0.16.1"
+  },
+  "devDependencies": {
+    "check-node-version": "^3.2.0"
+  }
+}
