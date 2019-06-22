@@ -2,10 +2,10 @@
 
 ![Node.js v10](https://img.shields.io/badge/node-%3E%3D10-green.svg)
 [![Powered by Wechaty](https://img.shields.io/badge/Powered%20By-Wechaty-blue.svg)](https://github.com/chatie/wechaty)
-[![Build Status](https://travis-ci.com/Chatie/wechaty-getting-started.svg?branch=master)](https://travis-ci.com/Chatie/wechaty-getting-started)
-[![Windows Build Status](https://img.shields.io/appveyor/ci/chatie/wechaty-getting-started/master.svg?label=Windows)](https://ci.appveyor.com/project/chatie/wechaty-getting-started)
-[![中文版本](https://img.shields.io/badge/%20-%E4%B8%AD%E6%96%87%E7%89%88-lightgrey.svg)](https://github.com/chatie/wechaty-getting-started/blob/master/README-zh.md)
-[![Greenkeeper badge](https://badges.greenkeeper.io/Chatie/wechaty-getting-started.svg)](https://greenkeeper.io/)
+[![Build Status](https://travis-ci.com/wechaty/wechaty-getting-started.svg?branch=master)](https://travis-ci.com/wechaty/wechaty-getting-started)
+[![Windows Build Status](https://img.shields.io/appveyor/ci/Chatie/wechaty-getting-started/master.svg?label=Windows)](https://ci.appveyor.com/project/Chatie/wechaty-getting-started)
+[![中文版本](https://img.shields.io/badge/%20-%E4%B8%AD%E6%96%87%E7%89%88-lightgrey.svg)](https://github.com/wechaty/wechaty-getting-started/blob/master/README-zh.md)
+[![Greenkeeper badge](https://badges.greenkeeper.io/wechaty/wechaty-getting-started.svg)](https://greenkeeper.io/)
 
 [Wechaty](https://github.com/Chatie/wechaty/) is a Wechat Bot SDK for Personal Account that lets you create software to extend the functionality of the Wechat, writen in Node.js with TypeScript, Support all platforms including Linux, OSX, Win32, and Docker.
 
@@ -77,7 +77,7 @@ Above is a 10 minute video tutorial(a little outdated, it's running under v0.14 
 
 > Note: Please make sure you can run `npm start` with this repository first before you go furture with more examples!
 
-* [Official Wechaty Examples Directory](https://github.com/Chatie/wechaty-getting-started/tree/master/examples)
+* [Official Wechaty Examples Directory](https://github.com/wechaty/wechaty-getting-started/tree/master/examples)
 
 ## API REFERENCE
 
