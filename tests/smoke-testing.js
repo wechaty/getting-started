@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 const { Wechaty } = require('wechaty')
+const isPr = require('is-pr')
 
 async function main () {
   const botList = [
@@ -9,16 +10,14 @@ async function main () {
     new Wechaty({ puppet: 'wechaty-puppet-wechat4u' }),
   ]
 
-  if (!process.env.TRAVIS_PULL_REQUEST
-      && !process.env.APPVEYOR_PULL_REQUEST_NUMBER
-  ) {
-    console.info('This CI test is a direct push to master branch.')
+  if (isPr) {
+    console.info('This CI test was activitated from Pull Request.')
+  } else {
+    console.info('This CI test was activitated from Master Branch.')
     botList.push(
       new Wechaty({ puppet: 'wechaty-puppet-padchat' }),
       new Wechaty({ puppet: 'wechaty-puppet-padpro' }),
     )
-  } else {
-    console.info('This CI test was activitated from a Pull Request.')
   }
 
   try {
