@@ -1,6 +1,6 @@
 {
   "name": "wechaty-getting-started",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "description": "Wechaty is a Wechat Bot SDK for Personal Account in Node.js",
   "main": "index.js",
   "engines": {
