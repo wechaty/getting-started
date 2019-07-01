@@ -14,6 +14,7 @@ async function main() {
   ) {
     botList.push(
       new Wechaty({ puppet: 'wechaty-puppet-padchat' }),
+      new Wechaty({ puppet: 'wechaty-puppet-padpro' }),
     )
   }
 
