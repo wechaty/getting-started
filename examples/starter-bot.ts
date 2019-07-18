@@ -20,7 +20,7 @@ function onScan (qrcode: string, status: ScanStatus) {
     encodeURIComponent(qrcode),
   ].join('')
 
-  log.info('StarterBot', '%s(%s) %s', ScanStatus[status], status, qrcodeImageUrl)
+  log.info('StarterBot', '%s(%s) - %s', ScanStatus[status], status, qrcodeImageUrl)
 }
 
 function onLogin (user: Contact) {

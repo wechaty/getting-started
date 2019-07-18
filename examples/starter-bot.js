@@ -4,10 +4,11 @@
  */
 const {
   Wechaty,
+  ScanStatus,
   log,
-} = require('wechaty')
+}               = require('wechaty')
 
-function onScan (qrcode) {
+function onScan (qrcode, status) {
   require('qrcode-terminal').generate(qrcode)  // show qrcode on console
 
   const qrcodeImageUrl = [
@@ -15,7 +16,8 @@ function onScan (qrcode) {
     encodeURIComponent(qrcode),
   ].join('')
 
-  log.info('StarterBot', qrcodeImageUrl)
+  log.info('StarterBot', '%s(%s) - %s', ScanStatus[status], status, qrcodeImageUrl)
+
 }
 
 function onLogin (user) {
