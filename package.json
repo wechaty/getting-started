@@ -9,8 +9,8 @@
   "scripts": {
     "lint": "eslint 'examples/*.{js,ts}'",
     "postinstall": "check-node-version --node \">= 10\"",
-    "start": "node examples/starter-bot.js",
-    "start:ts": "ts-node examples/starter-bot.ts",
+    "start": "cross-env WECHATY_LOG=verbose node examples/starter-bot.js",
+    "start:ts": "cross-env WECHATY_LOG=verbose ts-node examples/starter-bot.ts",
     "test": "npm run lint && npm run test:smoke",
     "test:smoke": "node tests/smoke-testing.js"
   },
@@ -34,6 +34,7 @@
     "@chatie/git-scripts": "^0.2.5",
     "@chatie/tsconfig": "^0.6.1",
     "check-node-version": "^3.2.0",
+    "cross-env": "^5.2.0",
     "is-pr": "^1.1.0"
   },
   "git": {

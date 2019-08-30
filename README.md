@@ -47,9 +47,13 @@ npm install
 
 ```sh
 npm start
+```
 
-# Or use node to run bot directly
+Or use node to run bot directly
 
+```shell
+# Linux: export WECHATY_LOG=verbose
+# Win32: set WECHATY_LOG=verbose
 node examples/starter-bot.js
 ```
 
