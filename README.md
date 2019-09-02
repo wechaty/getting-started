@@ -4,7 +4,6 @@
 [![Powered by Wechaty](https://img.shields.io/badge/Powered%20By-Wechaty-blue.svg)](https://github.com/chatie/wechaty)
 [![Build Status](https://travis-ci.com/wechaty/wechaty-getting-started.svg?branch=master)](https://travis-ci.com/wechaty/wechaty-getting-started)
 [![Windows Build Status](https://img.shields.io/appveyor/ci/Chatie/wechaty-getting-started/master.svg?label=Windows)](https://ci.appveyor.com/project/Chatie/wechaty-getting-started)
-[![中文版本](https://img.shields.io/badge/%20-%E4%B8%AD%E6%96%87%E7%89%88-lightgrey.svg)](https://github.com/wechaty/wechaty-getting-started/blob/master/README-zh.md)
 [![Greenkeeper badge](https://badges.greenkeeper.io/wechaty/wechaty-getting-started.svg)](https://greenkeeper.io/)
 
 [Wechaty](https://github.com/Chatie/wechaty/) is a Wechat Bot SDK for Personal Account that lets you create software to extend the functionality of the Wechat, writen in Node.js with TypeScript, Support all platforms including Linux, OSX, Win32, and Docker.
