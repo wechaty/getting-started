@@ -34,27 +34,27 @@ const welcome = `
 Please wait... I'm trying to login in...
 
 `
-console.log(welcome)
+console.info(welcome)
 
 const bot = Wechaty.instance({ profile: config.default.DEFAULT_PROFILE })
 
 bot
-.on('scan', (qrcode, status) => {
-  require('qrcode-terminal').generate(qrcode)
-  console.log(`${qrcode}\n[${status}] Scan QR Code in above url to login: `)
-})
+  .on('scan', (qrcode, status) => {
+    require('qrcode-terminal').generate(qrcode)
+    console.info(`${qrcode}\n[${status}] Scan QR Code in above url to login: `)
+  })
 
-.on('login'	  , async function (this, user) {
-  log.info('Bot', `${user.name()} logined`)
-  await this.say(`wechaty logined`)
-})
+  .on('login', async function (user) {
+    log.info('Bot', `${user.name()} logined`)
+    await this.say(`wechaty logined`)
+  })
 
-.on('logout'	, user => log.info('Bot', `${user.name()} logouted`))
-.on('error'   , error => log.info('Bot', 'error: %s', error))
+  .on('logout',     user => log.info('Bot', `${user.name()} logouted`))
+  .on('error',      error => log.info('Bot', 'error: %s', error))
 
-.on('message',    onMessage)
-.on('friendship', onFriendship)
-.on('room-join',  onRoomJoin)
+  .on('message',    onMessage)
+  .on('friendship', onFriendship)
+  .on('room-join',  onRoomJoin)
 
-.start()
-.catch(e => console.error(e))
+  .start()
+  .catch(e => console.error(e))

@@ -23,14 +23,14 @@ const {
   // Room,
 }                 = require('wechaty')
 
-export async function onFriendship(
+async function onFriendship (
   request,
 ) {
   try {
     const contact = request.contact()
 
     if (request.type() === Friendship.Type.Confirm) {
-      console.log('New friend ' + contact.name() + ' relationship confirmed!')
+      console.info('New friend ' + contact.name() + ' relationship confirmed!')
       return
     }
 
@@ -66,7 +66,12 @@ export async function onFriendship(
      *
      */
     /*******************************************/
- } catch (e) {
-    console.log(e)
+  } catch (e) {
+    console.info(e)
   }
+}
+
+module.exports = {
+  default: onFriendship,
+  onFriendship,
 }

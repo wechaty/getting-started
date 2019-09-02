@@ -22,19 +22,19 @@ const {
   Wechaty,
 }             = require('wechaty')
 
-export async function onMessage(message) {
+async function onMessage(message) {
   try {
     const room      = message.room()
     const sender    = message.from()
     const content   = message.text()
 
-    console.log((room ? '[' + await room.topic() + ']' : '')
+    console.info((room ? '[' + await room.topic() + ']' : '')
                 + '<' + (sender && sender.name()) + '>'
                 + ':' + message,
     )
 
     if (message.self() || room) {
-      console.log('message is sent from myself, or inside a room.')
+      console.info('message is sent from myself, or inside a room.')
       return
     }
 
@@ -74,4 +74,9 @@ export async function onMessage(message) {
   } catch (e) {
     console.error(e)
   }
+}
+
+module.exports = {
+  default: onMessage,
+  onMessage,
 }

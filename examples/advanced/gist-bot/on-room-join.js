@@ -23,7 +23,7 @@ const {
   Wechaty,
 }             = require('wechaty')
 
-export async function onRoomJoin(
+async function onRoomJoin (
   room,
   inviteeList,
   inviter,
@@ -40,7 +40,7 @@ export async function onRoomJoin(
       await this.say('Room ' + await room.topic()
                       + ' got new memeber ' + inviteeName
                       + ' invited by ' + inviter.name(),
-                    )
+      )
       return
     }
 
@@ -66,9 +66,12 @@ export async function onRoomJoin(
     /*********************************************/
 
   } catch (e) {
-    console.log(e)
+    console.info(e)
   }
 
-  return
+}
 
+module.exports = {
+  default: onRoomJoin,
+  onRoomJoin,
 }
