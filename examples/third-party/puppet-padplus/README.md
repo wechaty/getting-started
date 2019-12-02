@@ -1,4 +1,4 @@
-## Simple example for `wechaty-puppet-macpro`
+## Simple example for `wechaty-puppet-padplus`
 
 #### Steps to run
 

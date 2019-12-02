@@ -1,3 +1,8 @@
+/* eslint-disable @typescript-eslint/no-floating-promises */
+/* eslint-disable no-console */
+/*
+  Deprecated, please use padplus instead.
+*/
 const { Wechaty } = require('wechaty')
 const { PuppetPadpro } = require('wechaty-puppet-padpro')
 
@@ -14,14 +19,14 @@ const bot = new Wechaty({
 
 // 运行 wechaty
 bot
-.on('scan', (qrcode, status) => {
-  console.log(`Scan QR Code to login: ${status}
-  https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(qrcode)}`)
-})
-.on('login', user => {
-  console.log(`User ${user} login.`)
-})
-.on('message', message => {
-  console.log(`Message: ${message}`)
-})
-.start()
+  .on('scan', (qrcode, status) => {
+    console.log(`Scan QR Code to login: ${status}
+    https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(qrcode)}`)
+  })
+  .on('login', user => {
+    console.log(`User ${user} login.`)
+  })
+  .on('message', message => {
+    console.log(`Message: ${message}`)
+  })
+  .start()
