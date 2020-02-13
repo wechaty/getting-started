@@ -15,8 +15,7 @@ async function main () {
   } else {
     console.info('This CI test was activitated from Master Branch.')
     botList.push(
-      new Wechaty({ puppet: 'wechaty-puppet-padchat' }),
-      new Wechaty({ puppet: 'wechaty-puppet-padpro' }),
+      new Wechaty({ puppet: 'wechaty-puppet-padplus' }),
     )
   }
 
