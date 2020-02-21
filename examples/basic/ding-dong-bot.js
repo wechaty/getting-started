@@ -31,6 +31,7 @@ const qrTerm = require('qrcode-terminal')
  */
 const bot = new Wechaty({
   profile : config.default.DEFAULT_PROFILE,
+  name    : 'myWechatyBot',
 })
 
 /**
