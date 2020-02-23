@@ -8,11 +8,11 @@
   },
   "scripts": {
     "lint": "eslint 'examples/*.{js,ts}'",
-    "postinstall": "check-node-version --node \">= 10\"",
     "start": "cross-env WECHATY_LOG=verbose node examples/starter-bot.js",
     "start:ts": "cross-env WECHATY_LOG=verbose ts-node examples/starter-bot.ts",
-    "test": "npm run lint && npm run test:smoke",
-    "test:smoke": "node tests/smoke-testing.js"
+    "test": "npm run lint && npm run test:version && npm run test:smoke",
+    "test:smoke": "node tests/smoke-testing.js",
+    "test:version": "check-node-version --node \">= 10\""
   },
   "repository": {
     "type": "git",
