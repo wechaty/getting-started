@@ -30,11 +30,11 @@
     "wechaty": "^0.30.23"
   },
   "devDependencies": {
-    "@chatie/eslint-config": "^0.6.17",
+    "@chatie/eslint-config": "^0.8.1",
     "@chatie/git-scripts": "^0.2.5",
-    "@chatie/tsconfig": "^0.6.1",
-    "check-node-version": "^3.2.0",
-    "cross-env": "^5.2.0",
+    "@chatie/tsconfig": "^0.8.0",
+    "check-node-version": "^4.0.2",
+    "cross-env": "^7.0.0",
     "is-pr": "^1.1.0"
   },
   "git": {
