@@ -9,15 +9,19 @@ const {
 }               = require('wechaty')
 
 function onScan (qrcode, status) {
-  require('qrcode-terminal').generate(qrcode)  // show qrcode on console
+  if (status === ScanStatus.Waiting || status === ScanStatus.Timeout) {
+    require('qrcode-terminal').generate(qrcode)  // show qrcode on console
 
-  const qrcodeImageUrl = [
-    'https://api.qrserver.com/v1/create-qr-code/?data=',
-    encodeURIComponent(qrcode),
-  ].join('')
+    const qrcodeImageUrl = [
+      'https://api.qrserver.com/v1/create-qr-code/?data=',
+      encodeURIComponent(qrcode),
+    ].join('')
 
-  log.info('StarterBot', '%s(%s) - %s', ScanStatus[status], status, qrcodeImageUrl)
+    log.info('StarterBot', 'onScan: %s(%s) - %s', ScanStatus[status], status, qrcodeImageUrl)
 
+  } else {
+    log.info('StarterBot', 'onScan: %s(%s)', ScanStatus[status], status)
+  }
 }
 
 function onLogin (user) {

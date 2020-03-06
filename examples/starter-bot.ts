@@ -13,7 +13,7 @@ import {
 import { generate } from 'qrcode-terminal'
 
 function onScan (qrcode: string, status: ScanStatus) {
-  if (status === ScanStatus.Waiting) {
+  if (status === ScanStatus.Waiting || status === ScanStatus.Timeout) {
     generate(qrcode)  // show qrcode on console
 
     const qrcodeImageUrl = [
