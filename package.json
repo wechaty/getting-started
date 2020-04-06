@@ -1,6 +1,6 @@
 {
   "name": "wechaty-getting-started",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Wechaty is a Wechat Bot SDK for Personal Account in Node.js",
   "main": "examples/ding-dong-bot.js",
   "engines": {
