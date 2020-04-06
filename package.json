@@ -8,8 +8,9 @@
   },
   "scripts": {
     "lint": "eslint 'examples/*.{js,ts}'",
-    "start": "cross-env WECHATY_LOG=verbose node examples/ding-dong-bot.js",
-    "start:ts": "cross-env WECHATY_LOG=verbose ts-node examples/ding-dong-bot.ts",
+    "start": "cross-env WECHATY_LOG=verbose nodemon examples/ding-dong-bot.ts",
+    "start:js": "cross-env WECHATY_LOG=verbose node examples/ding-dong-bot.js",
+    "start:ts": "cross-env WECHATY_LOG=verbose node -r ts-node/register examples/ding-dong-bot.ts",
     "test": "npm run lint && npm run test:version && npm run test:smoke",
     "test:smoke": "node tests/smoke-testing.js",
     "test:version": "check-node-version --node \">= 10\""
@@ -37,7 +38,8 @@
     "connect": "^3.7.0",
     "cross-env": "^7.0.0",
     "is-pr": "^1.1.0",
-    "marked": "^0.8.2"
+    "marked": "^0.8.2",
+    "nodemon": "^2.0.2"
   },
   "git": {
     "scripts": {
