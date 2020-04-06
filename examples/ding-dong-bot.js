@@ -8,6 +8,11 @@ const {
   log,
 }               = require('wechaty')
 
+/**
+ * You can ignore the next line becasue it is using for CodeSandbox
+ */
+require('./.util/helper')
+
 function onScan (qrcode, status) {
   if (status === ScanStatus.Waiting || status === ScanStatus.Timeout) {
     require('qrcode-terminal').generate(qrcode)  // show qrcode on console
@@ -36,7 +41,23 @@ async function onMessage (msg) {
   log.info('StarterBot', msg.toString())
 }
 
-const bot = new Wechaty({ name: 'wechaty' })
+const bot = new Wechaty({
+  name: 'ding-dong-bot',
+  /**
+   * Specify a puppet for a specific protocol (Web/Pad/Mac/Windows, etc).
+   *
+   * You can use the following providers:
+   *  - wechaty-puppet-hostie
+   *  - wechaty-puppet-puppeteer
+   *  - wechaty-puppet-padplus
+   *  - wechaty-puppet-macpro
+   *  - etc.
+   *
+   * Learn more about Wechaty Puppet Providers at:
+   *  https://github.com/wechaty/wechaty-puppet/wiki/Directory
+   */
+  puppet: 'wechaty-puppet-wechat4u',
+})
 
 bot.on('scan',    onScan)
 bot.on('login',   onLogin)

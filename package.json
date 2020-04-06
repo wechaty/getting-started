@@ -27,15 +27,17 @@
   "homepage": "https://github.com/Chatie/wechaty-getting-started#readme",
   "dependencies": {
     "qrcode-terminal": "^0.12.0",
-    "wechaty": "^0.30.23"
+    "wechaty": "^0.37.11"
   },
   "devDependencies": {
     "@chatie/eslint-config": "^0.8.1",
     "@chatie/git-scripts": "^0.2.5",
     "@chatie/tsconfig": "^0.8.0",
     "check-node-version": "^4.0.2",
+    "connect": "^3.7.0",
     "cross-env": "^7.0.0",
-    "is-pr": "^1.1.0"
+    "is-pr": "^1.1.0",
+    "serve-static": "^1.14.1"
   },
   "git": {
     "scripts": {
