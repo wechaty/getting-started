@@ -19,7 +19,7 @@ require('./.util/helper')
 
 function onScan (qrcode: string, status: ScanStatus) {
   if (status === ScanStatus.Waiting || status === ScanStatus.Timeout) {
-    generate(qrcode)  // show qrcode on console
+    generate(qrcode, { small: true })  // show qrcode on console
 
     const qrcodeImageUrl = [
       'https://api.qrserver.com/v1/create-qr-code/?data=',
