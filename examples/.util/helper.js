@@ -1,4 +1,4 @@
-const isCodeSandbox = () => Object.keys(process.env).includes('KUBERNETES')
+const isCodeSandbox = () => Object.keys(process.env).filter(k => /KUBERNETES/i.test(k)).length > 0
 
 if (isCodeSandbox()) {
   /**
