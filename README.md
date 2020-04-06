@@ -9,7 +9,7 @@
 
 As a developer, you can use Wechaty to easily build your bot on top of Wechat Personal Account, effectively manage message sending/receiving, room creating/inviting, contact friendship, and delightful add artificial intellengence between users and your bot.
 
-[![Edit wechaty-getting-started](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/wechaty/wechaty-getting-started/tree/master/?autoresize=1&fontsize=14&hidenavigation=1&module=%2Fexamples%2Fstarter-bot.ts&theme=dark)
+[![Edit wechaty-getting-started](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/wechaty/wechaty-getting-started/tree/master/?autoresize=1&fontsize=14&hidenavigation=1&module=%2Fexamples%2Fding-dong-bot.ts&theme=dark)
 
 > Click the `[Edit in CodeSandbox]` button above for getting started in your browser right now!
 
@@ -56,7 +56,7 @@ Or use node to run bot directly
 ```shell
 # Linux: export WECHATY_LOG=verbose
 # Win32: set WECHATY_LOG=verbose
-node examples/starter-bot.js
+node examples/ding-dong-bot.js
 ```
 
 You are all set!
@@ -69,7 +69,7 @@ You are all set!
 npm run start:ts
 ```
 
-This will run `examples/starter-bot.ts` instead of `examples/starter-bot.js` for you.
+This will run `examples/ding-dong-bot.ts` instead of `examples/ding-dong-bot.js` for you.
 
 ### 2. Wechaty Tutorial
 

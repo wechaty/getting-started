@@ -8,8 +8,8 @@
   },
   "scripts": {
     "lint": "eslint 'examples/*.{js,ts}'",
-    "start": "cross-env WECHATY_LOG=verbose node examples/starter-bot.js",
-    "start:ts": "cross-env WECHATY_LOG=verbose ts-node examples/starter-bot.ts",
+    "start": "cross-env WECHATY_LOG=verbose node examples/ding-dong-bot.js",
+    "start:ts": "cross-env WECHATY_LOG=verbose ts-node examples/ding-dong-bot.ts",
     "test": "npm run lint && npm run test:version && npm run test:smoke",
     "test:smoke": "node tests/smoke-testing.js",
     "test:version": "check-node-version --node \">= 10\""
@@ -27,7 +27,7 @@
   "homepage": "https://github.com/Chatie/wechaty-getting-started#readme",
   "dependencies": {
     "qrcode-terminal": "^0.12.0",
-    "wechaty": "^0.37.12"
+    "wechaty": "^0.37.13"
   },
   "devDependencies": {
     "@chatie/eslint-config": "^0.8.1",
@@ -37,7 +37,7 @@
     "connect": "^3.7.0",
     "cross-env": "^7.0.0",
     "is-pr": "^1.1.0",
-    "serve-static": "^1.14.1"
+    "marked": "^0.8.2"
   },
   "git": {
     "scripts": {

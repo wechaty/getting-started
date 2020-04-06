@@ -5,19 +5,20 @@ if (isCodeSandbox()) {
    * A quick webserver
    */
   const path = require('path')
+  const fs   = require('fs')
 
-  const connect     = require('connect')
-  const serveStatic = require('serve-static')
+  const connect = require('connect')
+  const marked   = require('marked')
 
-  const webRoot = path.join(
+  const readme = path.join(
     __dirname,
     '..',
     '..',
+    'README.md',
   )
 
-  console.log(webRoot)
   connect()
-    .use(serveStatic(webRoot, { 'index': ['README.md'] }))
+    .use((_, res) => res.end(marked(fs.readFileSync(readme).toString())))
     .listen(8080, function() {
       console.info('Web Server running on 8080...')
     })
