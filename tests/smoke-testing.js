@@ -6,7 +6,7 @@ const isPr = require('is-pr')
 async function main () {
   const botList = [
     new Wechaty({ puppet: 'wechaty-puppet-mock' }),
-    new Wechaty({ puppet: 'wechaty-puppet-puppeteer' }),
+    // new Wechaty({ puppet: 'wechaty-puppet-puppeteer' }),
     new Wechaty({ puppet: 'wechaty-puppet-wechat4u' }),
   ]
 
