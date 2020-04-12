@@ -1,6 +1,6 @@
 {
   "name": "wechaty-getting-started",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "Wechaty is a Wechat Bot SDK for Personal Account in Node.js",
   "main": "examples/ding-dong-bot.js",
   "engines": {
@@ -28,18 +28,18 @@
   "homepage": "https://github.com/Chatie/wechaty-getting-started#readme",
   "dependencies": {
     "qrcode-terminal": "^0.12.0",
-    "wechaty": "^0.37.13"
+    "wechaty": "^0.38.4"
   },
   "devDependencies": {
     "@chatie/eslint-config": "^0.8.1",
-    "@chatie/git-scripts": "^0.2.5",
+    "@chatie/git-scripts": "^0.6.1",
     "@chatie/tsconfig": "^0.8.0",
-    "check-node-version": "^4.0.2",
+    "check-node-version": "^4.0.3",
     "connect": "^3.7.0",
-    "cross-env": "^7.0.0",
+    "cross-env": "^7.0.2",
     "is-pr": "^1.1.0",
     "marked": "^0.8.2",
-    "nodemon": "^2.0.2"
+    "nodemon": "^2.0.3"
   },
   "git": {
     "scripts": {
