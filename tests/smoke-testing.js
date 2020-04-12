@@ -14,9 +14,10 @@ async function main () {
     console.info('This CI test was activitated from Pull Request.')
   } else {
     console.info('This CI test was activitated from Master Branch.')
-    botList.push(
-      new Wechaty({ puppet: 'wechaty-puppet-padplus' }),
-    )
+    // Skip padplus because it only support node v10 now.
+    // botList.push(
+    //   new Wechaty({ puppet: 'wechaty-puppet-padplus' }),
+    // )
   }
 
   try {
