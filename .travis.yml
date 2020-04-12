@@ -15,7 +15,7 @@ cache:
     - node_modules
 
 script:
-  - env
+  - #env
   - node --version
   - npm --version
   - npm ls grpc wechaty wechaty-puppet wechaty-puppet-mock wechaty-puppet-puppeteer wechaty-puppet-wechat4u wechaty-puppet-padplus || true
