@@ -56,7 +56,8 @@ const bot = new Wechaty({
    * Learn more about Wechaty Puppet Providers at:
    *  https://github.com/wechaty/wechaty-puppet/wiki/Directory
    */
-  puppet: 'wechaty-puppet-wechat4u',
+  // puppet: 'wechaty-puppet-wechat4u',
+  // Set as above, or set using environment variable WECHATY_PUPPET
 })
 
 bot.on('scan',    onScan)
