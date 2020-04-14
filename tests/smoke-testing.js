@@ -14,12 +14,16 @@ async function main () {
     console.info('This CI test was activitated from Pull Request.')
   } else {
     console.info('This CI test was activitated from Master Branch.')
-    // Skip padplus because it only support node v10 now.
-    // botList.push(
-    //   new Wechaty({ puppet: 'wechaty-puppet-padplus' }),
-    // )
+    if (process.env['TRAVIS_OS_NAME'] != '' ) // Do not skip puppeteer if under TRAVIS
+     botList.push(
+       new Wechaty({ puppet: 'wechaty-puppet-puppeteer' }),
+     )
+    if (process.env['TRAVIS_NODE_VERSION'] === '10' ) // Do not skip padplus if under node v10
+     botList.push(
+       new Wechaty({ puppet: 'wechaty-puppet-padplus' }),
+     )
   }
-
+  
   try {
     for (const bot of botList) {
       const future = new Promise(resolve => bot.once('scan', resolve))
