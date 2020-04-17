@@ -24,7 +24,7 @@
   "dependencies": {
     "qrcode-terminal": "^0.12.0",
     "wechaty": "^0.38.4",
-    "wechaty-puppet-macpro": "^0.3.10"
+    "wechaty-puppet-macpro": "^0.7.0"
   },
   "devDependencies": {
     "check-node-version": "^3.2.0"
