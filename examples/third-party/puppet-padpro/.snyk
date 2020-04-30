@@ -1,0 +1,12 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.14.1
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  SNYK-JS-LODASH-567746:
+    - wechaty-puppet-padpro > request-promise > request-promise-core > lodash:
+        patched: '2020-04-30T23:08:07.416Z'
+    - wechaty-puppet-padpro > socks5-client > ip-address > lodash:
+        patched: '2020-04-30T23:08:07.416Z'
+    - wechaty-puppet-padpro > socks5-http-client > socks5-client > ip-address > lodash:
+        patched: '2020-04-30T23:08:07.416Z'
