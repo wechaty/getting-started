@@ -44,7 +44,7 @@ async function onMessage (msg: Message) {
   log.info('StarterBot', msg.toString())
 
   if (msg.text() === 'ding') {
-    msg.say('dong')
+    await msg.say('dong')
   }
 }
 
