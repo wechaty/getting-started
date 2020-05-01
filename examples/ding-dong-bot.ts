@@ -42,6 +42,10 @@ function onLogout (user: Contact) {
 
 async function onMessage (msg: Message) {
   log.info('StarterBot', msg.toString())
+
+  if (msg.text() === 'ding') {
+    await msg.say('dong')
+  }
 }
 
 const bot = new Wechaty({
@@ -59,7 +63,7 @@ const bot = new Wechaty({
    * Learn more about Wechaty Puppet Providers at:
    *  https://github.com/wechaty/wechaty-puppet/wiki/Directory
    */
-  puppet: 'wechaty-puppet-wechat4u',
+  puppet: 'wechaty-puppet-puppeteer',
 })
 
 bot.on('scan',    onScan)
