@@ -42,6 +42,10 @@ function onLogout (user: Contact) {
 
 async function onMessage (msg: Message) {
   log.info('StarterBot', msg.toString())
+
+  if (msg.text() === 'ding') {
+    msg.say('dong')
+  }
 }
 
 const bot = new Wechaty({
