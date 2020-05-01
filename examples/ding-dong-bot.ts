@@ -59,7 +59,7 @@ const bot = new Wechaty({
    * Learn more about Wechaty Puppet Providers at:
    *  https://github.com/wechaty/wechaty-puppet/wiki/Directory
    */
-  puppet: 'wechaty-puppet-wechat4u',
+  puppet: 'wechaty-puppet-puppeteer',
 })
 
 bot.on('scan',    onScan)
