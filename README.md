@@ -119,10 +119,10 @@ The plugins are named `PuppetXXX`, like [PuppetPuppeteer](https://github.com/Cha
 
 ## Wechaty Getting Started in Multiple Languages
 
-- [TypeScript Wechaty Getting Started](https://github.com/wechaty-getting-started)
-- [Python Wechaty Getting Started](https://github.com/python-wechaty-getting-started)
-- [Java Wechaty Getting Started](https://github.com/java-wechaty-getting-started)
-- [Go Wechaty Getting Started](https://github.com/go-wechaty-getting-started)
+- [TypeScript Wechaty Getting Started](https://github.com/wechaty/wechaty-getting-started)
+- [Python Wechaty Getting Started](https://github.com/wechaty/python-wechaty-getting-started)
+- [Java Wechaty Getting Started](https://github.com/wechaty/java-wechaty-getting-started)
+- [Go Wechaty Getting Started](https://github.com/wechaty/go-wechaty-getting-started)
 
 ## Copyright & License
 
