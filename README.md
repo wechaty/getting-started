@@ -116,3 +116,16 @@ Solution: Wechaty support protocols other than Web API, such as pad. Learn more 
 The term [Puppet](https://github.com/Chatie/wechaty/wiki/Puppet) in Wechaty is an Abstract Class for implementing protocol plugins. The plugins are the component that helps Wechaty to control the Wechat(that's the reason we call it puppet).
 
 The plugins are named `PuppetXXX`, like [PuppetPuppeteer](https://github.com/Chatie/wechaty-puppet-puppeteer) is using the [google puppeteer](https://github.com/GoogleChrome/puppeteer) to control the [WeChat Web API](https://wx.qq.com) via a chrome browser, [PuppetPadchat](https://github.com/lijiarui/wechaty-puppet-padchat) is using the WebSocket protocol to connect with a Protocol Server for controlling the iPad Wechat program. More detail you could go [Puppet in wiki](https://github.com/Chatie/wechaty/wiki/Puppet).
+
+## Wechaty Getting Started in Multiple Languages
+
+- [TypeScript Wechaty Getting Started](https://github.com/wechaty-getting-started)
+- [Python Wechaty Getting Started](https://github.com/python-wechaty-getting-started)
+- [Java Wechaty Getting Started](https://github.com/java-wechaty-getting-started)
+- [Go Wechaty Getting Started](https://github.com/go-wechaty-getting-started)
+
+## Copyright & License
+
+- Code & Docs © 2020-now Wechaty <https://github.com/wechaty>
+- Code released under the Apache-2.0 License
+- Docs released under Creative Commons
