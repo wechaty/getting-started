@@ -1,3 +1,5 @@
+image: zixia/wechaty
+
 tasks:
   - init: npm install
     command: npm start
