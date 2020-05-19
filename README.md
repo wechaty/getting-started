@@ -13,6 +13,8 @@ As a developer, you can use Wechaty to easily build your bot on top of Wechat Pe
 
 > Click the `[Edit in CodeSandbox]` button above for getting started in your browser right now!
 
+[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/wechaty/wechaty-getting-started) 
+
 This repository should work out-of-the-box, and is the best start point for Wechaty beginners.
 
 ## REQUIREMENTS
