@@ -126,8 +126,12 @@ The plugins are named `PuppetXXX`, like [PuppetPuppeteer](https://github.com/Cha
 - [Java Wechaty Getting Started](https://github.com/wechaty/java-wechaty-getting-started)
 - [Go Wechaty Getting Started](https://github.com/wechaty/go-wechaty-getting-started)
 
+## Maintainers
+
+[@wechaty/contributors](https://github.com/orgs/wechaty/teams/contributors/members)
+
 ## Copyright & License
 
-- Code & Docs © 2020-now Wechaty <https://github.com/wechaty>
+- Code & Docs © 2018 Wechaty (https://github.com/wechaty)
 - Code released under the Apache-2.0 License
 - Docs released under Creative Commons
