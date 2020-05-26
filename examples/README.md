@@ -52,3 +52,11 @@ Wechaty Integrated with Other Modules/Services (demos under the `professional/` 
 | tuling123-bot.ts    | Connect to [tuling123](http://www.tuling123.com/) chatbot | 接入[tuling123机器人](http://www.tuling123.com/) |
 | telegram-roger-bot.js | single bot that runs under/for both Telegram and WeChaty  |  |
 | blessed-twins-bot/ | Wechaty multi-instance support (v0.16+) demo |  |
+
+## Multi-lang Wechaty Examples Directories
+
+1. Python: <https://github.com/wechaty/python-wechaty-getting-started/examples/>
+1. Java: <https://github.com/wechaty/java-wechaty-getting-started/examples/>
+1. Go: <https://github.com/wechaty/go-wechaty-getting-started/examples/>
+
+I hope you will enjoy them, cheers!
