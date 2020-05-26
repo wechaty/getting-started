@@ -9,10 +9,6 @@
 
 As a developer, you can use Wechaty to easily build your bot on top of Wechat Personal Account, effectively manage message sending/receiving, room creating/inviting, contact friendship, and delightful add artificial intellengence between users and your bot.
 
-[![Edit wechaty-getting-started](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/wechaty/wechaty-getting-started/tree/master/?autoresize=1&fontsize=14&hidenavigation=1&module=%2Fexamples%2Fding-dong-bot.ts&theme=dark)
-
-> Click the `[Edit in CodeSandbox]` button above for getting started in your browser right now!
-
 [![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/wechaty/wechaty-getting-started) 
 
 This repository should work out-of-the-box, and is the best start point for Wechaty beginners.
