@@ -117,10 +117,18 @@ The plugins are named `PuppetXXX`, like [PuppetPuppeteer](https://github.com/Cha
 
 ## Wechaty Getting Started in Multiple Languages
 
+[![Powered by Wechaty](https://img.shields.io/badge/Powered%20By-Wechaty-brightgreen.svg)](https://github.com/Wechaty/wechaty)
+[![Wechaty in Python](https://img.shields.io/badge/Wechaty-Python-blue)](https://github.com/wechaty/python-wechaty)
+[![Wechaty in Go](https://img.shields.io/badge/Wechaty-Go-7de)](https://github.com/wechaty/go-wechaty)
+[![Wechaty in Java](https://img.shields.io/badge/Wechaty-Java-blue)](https://github.com/wechaty/java-wechaty)
+[![Wechaty in Scala](https://img.shields.io/badge/Wechaty-Scala-890)](https://github.com/wechaty/scala-wechaty)
+
+
 - [TypeScript Wechaty Getting Started](https://github.com/wechaty/wechaty-getting-started)
 - [Python Wechaty Getting Started](https://github.com/wechaty/python-wechaty-getting-started)
-- [Java Wechaty Getting Started](https://github.com/wechaty/java-wechaty-getting-started)
 - [Go Wechaty Getting Started](https://github.com/wechaty/go-wechaty-getting-started)
+- [Java Wechaty Getting Started](https://github.com/wechaty/java-wechaty-getting-started)
+- [Scala Wechaty Getting Started](https://github.com/wechaty/scala-wechaty-getting-started)
 
 ## Maintainers
 
