@@ -85,7 +85,7 @@ Above is a 10 minute video tutorial(a little outdated, it's running under v0.14 
 
 ## API REFERENCE
 
-1. JSDoc: <https://chatie.io/wechaty/>
+1. GitBook: <https://wechaty.js.org/api>
 
 ## SEE ALSO
 
