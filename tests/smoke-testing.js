@@ -3,9 +3,25 @@
 const { Wechaty } = require('wechaty')
 const isPr = require('is-pr')
 
+const {
+  PuppetMock,
+  Mocker,
+  SimpleEnvironment,
+}                       = require('wechaty-puppet-mock')
+
 async function main () {
+  // Timeout after 2 minutes
+  const timer = setTimeout(() => {
+    console.error('Smoke testing timeout after 2 minutes.')
+    process.exit(1)
+  }, 120 * 1000)
+
+  const mocker = new Mocker()
+  mocker.use(SimpleEnvironment())
+  const puppetMock = new PuppetMock({ mocker })
+
   const botList = [
-    new Wechaty({ puppet: 'wechaty-puppet-mock' }),
+    new Wechaty({ puppet: puppetMock }),
     new Wechaty({ puppet: 'wechaty-puppet-padplus' }),
     new Wechaty({ puppet: 'wechaty-puppet-puppeteer' }),
     new Wechaty({ puppet: 'wechaty-puppet-wechat4u' }),
@@ -25,6 +41,7 @@ async function main () {
     console.info(`Puppet ${bot.puppet} v${bot.puppet.version()} smoke testing passed.`)
   }
 
+  clearTimeout(timer)
   console.info(`Wechaty v${Wechaty.VERSION} smoke testing passed.`)
   return 0
 }
