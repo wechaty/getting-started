@@ -1,6 +1,6 @@
 {
   "name": "wechaty-getting-started",
-  "version": "0.4.13",
+  "version": "0.4.14",
   "description": "Wechaty is a Conversational AI RPA SDK for Chatbot",
   "main": "examples/ding-dong-bot.js",
   "engines": {
