@@ -23,7 +23,16 @@ async function main () {
   const botList = [
     new Wechaty({ puppet: puppetMock }),
     new Wechaty({ puppet: 'wechaty-puppet-padplus' }),
-    new Wechaty({ puppet: 'wechaty-puppet-puppeteer' }),
+    new Wechaty({
+      puppet: 'wechaty-puppet-puppeteer',
+      puppetOptions: {
+        launchOptions: {
+          ignoreDefaultArgs: [
+            '--disable-extensions',
+          ],
+        },
+      },
+    }),
     new Wechaty({ puppet: 'wechaty-puppet-wechat4u' }),
   ]
 
