@@ -1,6 +1,5 @@
 # Wechaty Getting Started [![Powered by Wechaty](https://img.shields.io/badge/Powered%20By-Wechaty-brightgreen.svg)](https://github.com/chatie/wechaty)
 
-
 [![Node.js CI](https://github.com/wechaty/wechaty-getting-started/workflows/Node.js%20CI/badge.svg)](https://github.com/wechaty/wechaty-getting-started/actions?query=workflow%3A%22Node.js+CI%22)
 ![Node.js v10](https://img.shields.io/badge/node-%3E%3D10-green.svg)
 [![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-blue.svg)](https://www.typescriptlang.org/)
@@ -85,7 +84,7 @@ Above is a 10 minute video tutorial(a little outdated, it's running under v0.14 
 
 ## API REFERENCE
 
-1. JSDoc: <https://chatie.io/wechaty/>
+1. GitBook: <https://wechaty.js.org/api>
 
 ## SEE ALSO
 

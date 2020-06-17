@@ -1,19 +1,19 @@
 {
   "name": "wechaty-getting-started",
-  "version": "0.2.18",
-  "description": "Wechaty is a Wechat Bot SDK for Personal Account in Node.js",
+  "version": "0.4.15",
+  "description": "Wechaty is a Conversational AI RPA SDK for Chatbot",
   "main": "examples/ding-dong-bot.js",
   "engines": {
-    "node": ">= 10"
+    "node": ">= 12"
   },
   "scripts": {
-    "lint": "eslint 'examples/*.{js,ts}'",
+    "lint": "eslint \"examples/*.{js,ts}\"",
     "start": "cross-env WECHATY_LOG=verbose nodemon -w examples/ examples/ding-dong-bot.ts",
     "start:js": "cross-env WECHATY_LOG=verbose node examples/ding-dong-bot.js",
     "start:ts": "cross-env WECHATY_LOG=verbose node -r ts-node/register examples/ding-dong-bot.ts",
     "test": "npm run lint && npm run test:version && npm run test:smoke",
     "test:smoke": "node tests/smoke-testing.js",
-    "test:version": "check-node-version --node \">= 10\""
+    "test:version": "check-node-version --node \">= 12\""
   },
   "repository": {
     "type": "git",
@@ -21,7 +21,7 @@
   },
   "keywords": [],
   "author": "Huan LI <zixia@zixia.net>",
-  "license": "ISC",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/Chatie/wechaty-getting-started/issues"
   },
@@ -29,18 +29,22 @@
   "dependencies": {
     "qrcode-terminal": "^0.12.0",
     "wechaty": "^0.41.8",
-    "wechaty-plugin-contrib": "^0.6.15"
+    "wechaty-plugin-contrib": "^0.10.6"
   },
   "devDependencies": {
     "@chatie/eslint-config": "^0.8.1",
     "@chatie/git-scripts": "^0.6.1",
-    "@chatie/tsconfig": "^0.8.0",
+    "@chatie/tsconfig": "^0.10.1",
     "check-node-version": "^4.0.3",
     "connect": "^3.7.0",
     "cross-env": "^7.0.2",
     "is-pr": "^1.1.0",
     "marked": "^1.1.0",
-    "nodemon": "^2.0.3"
+    "nodemon": "^2.0.3",
+    "wechaty-puppet-mock": "^0.22.31",
+    "wechaty-puppet-padplus": "^0.6.3",
+    "wechaty-puppet-puppeteer": "^0.18.6",
+    "wechaty-puppet-wechat4u": "^0.16.3"
   },
   "git": {
     "scripts": {

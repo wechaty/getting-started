@@ -14,7 +14,7 @@ jobs:
     strategy:
       matrix:
         os: [macos-latest, windows-latest, ubuntu-latest]
-        node-version: [10.x, 11.x, 12.x, 13.x]
+        node-version: [12, 14]
     runs-on: ${{ matrix.os }}
 
     steps:
@@ -27,3 +27,4 @@ jobs:
     - run: npm test
       env:
         CI: true
+        WECHATY_PUPPET_PADPLUS_TOKEN: ${{ secrets.WECHATY_PUPPET_PADPLUS_TOKEN }}
