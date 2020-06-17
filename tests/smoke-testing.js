@@ -6,38 +6,26 @@ const isPr = require('is-pr')
 async function main () {
   const botList = [
     new Wechaty({ puppet: 'wechaty-puppet-mock' }),
-    // new Wechaty({ puppet: 'wechaty-puppet-puppeteer' }),
+    new Wechaty({ puppet: 'wechaty-puppet-padplus' }),
+    new Wechaty({ puppet: 'wechaty-puppet-puppeteer' }),
     new Wechaty({ puppet: 'wechaty-puppet-wechat4u' }),
   ]
 
   if (isPr) {
-    console.info('This CI test was activitated from Pull Request.')
+    console.info('This CI test was activated from Pull Request.')
   } else {
-    console.info('This CI test was activitated from Master Branch.')
-    if (process.env['TRAVIS_OS_NAME'] != '' ) // Do not skip puppeteer if under TRAVIS
-     botList.push(
-       new Wechaty({ puppet: 'wechaty-puppet-puppeteer' }),
-     )
-    if (process.env['TRAVIS_NODE_VERSION'] === '10' ) // Do not skip padplus if under node v10
-     botList.push(
-       new Wechaty({ puppet: 'wechaty-puppet-padplus' }),
-     )
+    console.info('This CI test was activated from Master Branch.')
   }
-  
-  try {
-    for (const bot of botList) {
-      const future = new Promise(resolve => bot.once('scan', resolve))
-      await bot.start()
-      await future
-      await bot.stop()
-      console.info(`Puppet ${bot.puppet} v${bot.puppet.version()} smoke testing passed.`)
-    }
-    console.info(`Wechaty v${Wechaty.VERSION} smoke testing passed.`)
-  } catch (e) {
-    console.error(e)
-    // Error!
-    return 1
+
+  for (const bot of botList) {
+    const future = new Promise(resolve => bot.once('scan', resolve))
+    await bot.start()
+    await future
+    await bot.stop()
+    console.info(`Puppet ${bot.puppet} v${bot.puppet.version()} smoke testing passed.`)
   }
+
+  console.info(`Wechaty v${Wechaty.VERSION} smoke testing passed.`)
   return 0
 }
 
