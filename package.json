@@ -1,13 +1,13 @@
 {
   "name": "wechaty-getting-started",
   "version": "0.2.18",
-  "description": "Wechaty is a Wechat Bot SDK for Personal Account in Node.js",
+  "description": "Wechaty is a Conversational AI RPA SDK for Chatbot",
   "main": "examples/ding-dong-bot.js",
   "engines": {
-    "node": ">= 10"
+    "node": ">= 12"
   },
   "scripts": {
-    "lint": "eslint 'examples/*.{js,ts}'",
+    "lint": "eslint \"examples/*.{js,ts}\"",
     "start": "cross-env WECHATY_LOG=verbose nodemon -w examples/ examples/ding-dong-bot.ts",
     "start:js": "cross-env WECHATY_LOG=verbose node examples/ding-dong-bot.js",
     "start:ts": "cross-env WECHATY_LOG=verbose node -r ts-node/register examples/ding-dong-bot.ts",
@@ -40,7 +40,8 @@
     "cross-env": "^7.0.2",
     "is-pr": "^1.1.0",
     "marked": "^1.1.0",
-    "nodemon": "^2.0.3"
+    "nodemon": "^2.0.3",
+    "wechaty-puppet-mock": "^0.22.31"
   },
   "git": {
     "scripts": {
