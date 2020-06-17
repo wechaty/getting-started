@@ -27,3 +27,4 @@ jobs:
     - run: npm test
       env:
         CI: true
+        WECHATY_PUPPET_PADPLUS_TOKEN: ${{ secrets.WECHATY_PUPPET_PADPLUS_TOKEN }}
