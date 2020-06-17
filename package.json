@@ -21,7 +21,7 @@
   },
   "keywords": [],
   "author": "Huan LI <zixia@zixia.net>",
-  "license": "ISC",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/Chatie/wechaty-getting-started/issues"
   },
