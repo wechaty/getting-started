@@ -27,7 +27,7 @@ async function main () {
       puppet: 'wechaty-puppet-puppeteer',
       puppetOptions: {
         launchOptions: {
-          ignoreDefaultArgs: true,
+          ignoreDefaultArgs: ['--disable-extensions'],
         },
       },
     }),
