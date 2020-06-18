@@ -4,11 +4,11 @@
 ![Node.js v10](https://img.shields.io/badge/node-%3E%3D10-green.svg)
 [![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-blue.svg)](https://www.typescriptlang.org/)
 
-[Wechaty](https://github.com/Chatie/wechaty/) is a Wechat Bot SDK for Personal Account that lets you create software to extend the functionality of the Wechat, writen in Node.js with TypeScript, Support all platforms including Linux, OSX, Win32, and Docker.
+[Wechaty](https://github.com/Chatie/wechaty/) is a Conversational AI RPA SDK for Chatbot that lets you create software to extend the functionality of the WeChat, written in Node.js with TypeScript, Support all platforms including Linux, OSX, Win32, and Docker.
 
-As a developer, you can use Wechaty to easily build your bot on top of Wechat Personal Account, effectively manage message sending/receiving, room creating/inviting, contact friendship, and delightful add artificial intellengence between users and your bot.
+As a developer, you can use Wechaty to easily build your bot on top of WeChat Personal Account, effectively manage message sending/receiving, room creating/inviting, contact friendship, and delightful add artificial intelligence between users and your bot.
 
-[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/wechaty/wechaty-getting-started) 
+[![GitPod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/wechaty/wechaty-getting-started)
 
 This repository should work out-of-the-box, and is the best start point for Wechaty beginners.
 
@@ -23,16 +23,16 @@ This repository should work out-of-the-box, and is the best start point for Wech
 
 If you have not installed Node.js(or version is below 10),You need to install the latest version of Node.js first by following the links below:
 
-* [Windows](https://nodejs.org/en/download/package-manager/#windows)
-* [Linux(Debian/Ubuntu)](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions)
-* [macOS](https://nodejs.org/en/download/package-manager/#macos)
+- [Windows](https://nodejs.org/en/download/package-manager/#windows)
+- [Linux(Debian/Ubuntu)](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions)
+- [macOS](https://nodejs.org/en/download/package-manager/#macos)
 
 > Instal Node.js for other platforms can be found at <https://nodejs.org/en/download/package-manager/>
 
 ### 1. Clone this Repository
 
 ```sh
-git clone https://github.com/lijiarui/wechaty-getting-started.git
+git clone https://github.com/wechaty/wechaty-getting-started.git
 cd wechaty-getting-started
 ```
 
@@ -80,7 +80,7 @@ Above is a 10 minute video tutorial(a little outdated, it's running under v0.14 
 
 > Note: Please make sure you can run `npm start` with this repository first before you go furture with more examples!
 
-* [Official Wechaty Examples Directory](https://github.com/wechaty/wechaty-getting-started/tree/master/examples)
+- [Official Wechaty Examples Directory](https://github.com/wechaty/wechaty-getting-started/tree/master/examples)
 
 ## API REFERENCE
 
@@ -104,7 +104,7 @@ Above is a 10 minute video tutorial(a little outdated, it's running under v0.14 
 
 ### 1. I can not login with my Wechat account
 
-Wechat account that registered after 2017 will not be able to login via Web API.  Learn more at <https://github.com/Chatie/wechaty/issues/872>
+WeChat account that registered after 2017 will not be able to login via Web API.  Learn more at <https://github.com/Chatie/wechaty/issues/872>
 
 Solution: Wechaty support protocols other than Web API, such as pad. Learn more at <https://github.com/Chatie/wechaty/issues/1296>
 
@@ -122,12 +122,22 @@ The plugins are named `PuppetXXX`, like [PuppetPuppeteer](https://github.com/Cha
 [![Wechaty in Java](https://img.shields.io/badge/Wechaty-Java-blue)](https://github.com/wechaty/java-wechaty)
 [![Wechaty in Scala](https://img.shields.io/badge/Wechaty-Scala-890)](https://github.com/wechaty/scala-wechaty)
 
-
 - [TypeScript Wechaty Getting Started](https://github.com/wechaty/wechaty-getting-started)
 - [Python Wechaty Getting Started](https://github.com/wechaty/python-wechaty-getting-started)
 - [Go Wechaty Getting Started](https://github.com/wechaty/go-wechaty-getting-started)
 - [Java Wechaty Getting Started](https://github.com/wechaty/java-wechaty-getting-started)
 - [Scala Wechaty Getting Started](https://github.com/wechaty/scala-wechaty-getting-started)
+
+## Contributors
+
+[![contributor](https://sourcerer.io/fame/huan/wechaty/wechaty-getting-started/images/0)](https://sourcerer.io/fame/huan/wechaty/wechaty-getting-started/links/0)
+[![contributor](https://sourcerer.io/fame/huan/wechaty/wechaty-getting-started/images/1)](https://sourcerer.io/fame/huan/wechaty/wechaty-getting-started/links/1)
+[![contributor](https://sourcerer.io/fame/huan/wechaty/wechaty-getting-started/images/2)](https://sourcerer.io/fame/huan/wechaty/wechaty-getting-started/links/2)
+[![contributor](https://sourcerer.io/fame/huan/wechaty/wechaty-getting-started/images/3)](https://sourcerer.io/fame/huan/wechaty/wechaty-getting-started/links/3)
+[![contributor](https://sourcerer.io/fame/huan/wechaty/wechaty-getting-started/images/4)](https://sourcerer.io/fame/huan/wechaty/wechaty-getting-started/links/4)
+[![contributor](https://sourcerer.io/fame/huan/wechaty/wechaty-getting-started/images/5)](https://sourcerer.io/fame/huan/wechaty/wechaty-getting-started/links/5)
+[![contributor](https://sourcerer.io/fame/huan/wechaty/wechaty-getting-started/images/6)](https://sourcerer.io/fame/huan/wechaty/wechaty-getting-started/links/6)
+[![contributor](https://sourcerer.io/fame/huan/wechaty/wechaty-getting-started/images/7)](https://sourcerer.io/fame/huan/wechaty/wechaty-getting-started/links/7)
 
 ## Maintainers
 
@@ -135,6 +145,6 @@ The plugins are named `PuppetXXX`, like [PuppetPuppeteer](https://github.com/Cha
 
 ## Copyright & License
 
-- Code & Docs © 2018 Wechaty Contributors (https://github.com/wechaty)
+- Code & Docs © 2018 Wechaty Contributors (<https://github.com/wechaty>)
 - Code released under the Apache-2.0 License
 - Docs released under Creative Commons
