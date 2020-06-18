@@ -51,7 +51,7 @@ async function onMessage (msg: Message) {
 const bot = new Wechaty({
   name: 'ding-dong-bot',
   /**
-   * Specify a puppet for a specific protocol (Web/Pad/Mac/Windows, etc).
+   * Specify a `puppet` for a specific protocol (Web/Pad/Mac/Windows, etc).
    *
    * You can use the following providers:
    *  - wechaty-puppet-hostie
@@ -63,7 +63,9 @@ const bot = new Wechaty({
    * Learn more about Wechaty Puppet Providers at:
    *  https://github.com/wechaty/wechaty-puppet/wiki/Directory
    */
-  puppet: 'wechaty-puppet-puppeteer',
+  
+  // puppet: 'wechaty-puppet-puppeteer',
+  
 })
 
 bot.on('scan',    onScan)
