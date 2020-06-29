@@ -67,7 +67,7 @@ function onScan(qrcode, status) {
     // Generate a QR Code online via
     // http://goqr.me/api/doc/create-qr-code/
     const qrcodeImageUrl = [
-        'https://api.qrserver.com/v1/create-qr-code/?data=',
+        'https://wechaty.github.io/qrcode/',
         encodeURIComponent(qrcode),
     ].join('')
 

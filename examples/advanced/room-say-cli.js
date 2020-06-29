@@ -36,7 +36,7 @@ async function main () {
     // Generate a QR Code online via
     // http://goqr.me/api/doc/create-qr-code/
     const qrcodeImageUrl = [
-      'https://api.qrserver.com/v1/create-qr-code/?data=',
+      'https://wechaty.github.io/qrcode/',
       encodeURIComponent(qrcode),
     ].join('')
     console.log(`[${status}] ${qrcodeImageUrl}\nScan QR Code above to log in: `)
@@ -74,7 +74,7 @@ async function main () {
   }
 
   console.log('searching topic: ', searchTopic)
-  
+
   const searchRegex = new RegExp(searchTopic)
 
   // wait the bot for logging in

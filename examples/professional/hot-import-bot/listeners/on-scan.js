@@ -20,7 +20,7 @@ async function onScan (qrcode, status) {
   require('qrcode-terminal').generate(qrcode, {small: true})
 
   const qrcodeImageUrl = [
-    'https://api.qrserver.com/v1/create-qr-code/?data=',
+    'https://wechaty.github.io/qrcode/',
     encodeURIComponent(qrcode),
   ].join('')
 

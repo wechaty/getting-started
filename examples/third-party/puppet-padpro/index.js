@@ -16,7 +16,7 @@ const bot = new Wechaty({
 bot
 .on('scan', (qrcode, status) => {
   console.log(`Scan QR Code to login: ${status}
-  https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(qrcode)}`)
+  https://wechaty.github.io/qrcode/${encodeURIComponent(qrcode)}`)
 })
 .on('login', user => {
   console.log(`User ${user} login.`)
