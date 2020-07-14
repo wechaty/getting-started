@@ -29,7 +29,7 @@
   "dependencies": {
     "qrcode-terminal": "^0.12.0",
     "wechaty": "^0.43.2",
-    "wechaty-plugin-contrib": "^0.10.6"
+    "wechaty-plugin-contrib": "^0.14.2"
   },
   "devDependencies": {
     "@chatie/eslint-config": "^0.8.1",
