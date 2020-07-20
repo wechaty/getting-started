@@ -32,7 +32,7 @@
     "wechaty-plugin-contrib": "^0.14.2"
   },
   "devDependencies": {
-    "@chatie/eslint-config": "^0.8.1",
+    "@chatie/eslint-config": "^0.12.1",
     "@chatie/git-scripts": "^0.6.1",
     "@chatie/tsconfig": "^0.10.1",
     "check-node-version": "^4.0.3",
