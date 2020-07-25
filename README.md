@@ -121,12 +121,16 @@ The plugins are named `PuppetXXX`, like [PuppetPuppeteer](https://github.com/Cha
 [![Wechaty in Go](https://img.shields.io/badge/Wechaty-Go-7de)](https://github.com/wechaty/go-wechaty)
 [![Wechaty in Java](https://img.shields.io/badge/Wechaty-Java-blue)](https://github.com/wechaty/java-wechaty)
 [![Wechaty in Scala](https://img.shields.io/badge/Wechaty-Scala-890)](https://github.com/wechaty/scala-wechaty)
+[![Wechaty in PHP](https://img.shields.io/badge/Wechaty-PHP-890)](https://github.com/wechaty/php-wechaty)
+[![Wechaty in .NET(C#)](https://img.shields.io/badge/Wechaty-dotNET-890)](https://github.com/wechaty/dotnet-wechaty)
 
 - [TypeScript Wechaty Getting Started](https://github.com/wechaty/wechaty-getting-started)
 - [Python Wechaty Getting Started](https://github.com/wechaty/python-wechaty-getting-started)
 - [Go Wechaty Getting Started](https://github.com/wechaty/go-wechaty-getting-started)
 - [Java Wechaty Getting Started](https://github.com/wechaty/java-wechaty-getting-started)
 - [Scala Wechaty Getting Started](https://github.com/wechaty/scala-wechaty-getting-started)
+- [PHP Wechaty Getting Started](https://github.com/wechaty/php-wechaty-getting-started)
+- [.NET(C#) Wechaty Getting Started](https://github.com/wechaty/dotnet-wechaty-getting-started)
 
 ## Contributors
 
