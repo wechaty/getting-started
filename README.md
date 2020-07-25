@@ -121,7 +121,7 @@ The plugins are named `PuppetXXX`, like [PuppetPuppeteer](https://github.com/Cha
 [![Wechaty in Go](https://img.shields.io/badge/Wechaty-Go-7de)](https://github.com/wechaty/go-wechaty)
 [![Wechaty in Java](https://img.shields.io/badge/Wechaty-Java-f80)](https://github.com/wechaty/java-wechaty)
 [![Wechaty in Scala](https://img.shields.io/badge/Wechaty-Scala-890)](https://github.com/wechaty/scala-wechaty)
-[![Wechaty in PHP](https://img.shields.io/badge/Wechaty-PHP-07c)](https://github.com/wechaty/php-wechaty)
+[![Wechaty in PHP](https://img.shields.io/badge/Wechaty-PHP-99c)](https://github.com/wechaty/php-wechaty)
 [![Wechaty in .NET(C#)](https://img.shields.io/badge/Wechaty-dotNET-629)](https://github.com/wechaty/dotnet-wechaty)
 
 - [TypeScript Wechaty Getting Started](https://github.com/wechaty/wechaty-getting-started)
