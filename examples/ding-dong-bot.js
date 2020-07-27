@@ -50,7 +50,6 @@ const bot = new Wechaty({
    *  - wechaty-puppet-hostie
    *  - wechaty-puppet-puppeteer
    *  - wechaty-puppet-padplus
-   *  - wechaty-puppet-macpro
    *  - etc.
    *
    * Learn more about Wechaty Puppet Providers at:

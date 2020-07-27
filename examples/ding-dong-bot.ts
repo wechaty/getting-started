@@ -55,14 +55,13 @@ const bot = new Wechaty({
    *  - wechaty-puppet-hostie
    *  - wechaty-puppet-puppeteer
    *  - wechaty-puppet-padplus
-   *  - wechaty-puppet-macpro
    *  - etc.
    *
    * Learn more about Wechaty Puppet Providers at:
    *  https://github.com/wechaty/wechaty-puppet/wiki/Directory
    */
 
-  // puppet: 'wechaty-puppet-puppeteer',
+  // puppet: 'wechaty-puppet-hostie',
 
 })
 
