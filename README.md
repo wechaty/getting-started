@@ -124,17 +124,21 @@ Above is a 10 minute video tutorial(a little outdated, it's running under v0.14 
 
 ## SEE ALSO
 
-### 1. Docker Wechaty Getting Started
+### 1 Docker Wechaty Getting Started
 
 [![Docker](https://avatars0.githubusercontent.com/u/5429470?s=200)](https://github.com/Chatie/docker-wechaty-getting-started)
 
 <https://github.com/Chatie/docker-wechaty-getting-started>
 
-### 2. Heroku Wechaty Getting Started
+### 2 Heroku Wechaty Getting Started
 
 [![Heroku](https://avatars3.githubusercontent.com/u/23211?s=200)](https://github.com/Chatie/heroku-wechaty-getting-started)
 
 <https://github.com/Chatie/heroku-wechaty-getting-started>
+
+### 3 Wechaty Home
+
+<https://wechaty.github.io>
 
 ## FAQ
 
