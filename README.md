@@ -1,7 +1,7 @@
 # Wechaty Getting Started [![Powered by Wechaty](https://img.shields.io/badge/Powered%20By-Wechaty-brightgreen.svg)](https://github.com/chatie/wechaty)
 
 [![Node.js CI](https://github.com/wechaty/wechaty-getting-started/workflows/Node.js%20CI/badge.svg)](https://github.com/wechaty/wechaty-getting-started/actions?query=workflow%3A%22Node.js+CI%22)
-![Node.js v10](https://img.shields.io/badge/node-%3E%3D10-green.svg)
+![Node.js v12](https://img.shields.io/badge/node-%3E%3D12-green.svg)
 [![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-blue.svg)](https://www.typescriptlang.org/)
 
 [Wechaty](https://github.com/Chatie/wechaty/) is a Conversational AI RPA SDK for Chatbot that lets you create software to extend the functionality of the WeChat, written in Node.js with TypeScript, Support all platforms including Linux, OSX, Win32, and Docker.
@@ -21,11 +21,11 @@ This repository should work out-of-the-box, and is the best start point for Wech
 ## Requirements
 
 1. Node.js v12+
-1. Build Tools for your Platform
+1. Build Tools for your platform
 
 ## Getting Started
 
-### 1 Install Node.js (>=10)
+### 1 Install Node.js (>=12)
 
 If you have not installed Node.js(or version is below 10),You need to install the latest version of Node.js first by following the links below:
 
@@ -59,7 +59,7 @@ Or use node to run bot directly
 ```shell
 # Linux: export WECHATY_LOG=verbose
 # Win32: set WECHATY_LOG=verbose
-node examples/ding-dong-bot.js
+npx ts-node examples/ding-dong-bot.ts
 ```
 
 You are all set!
