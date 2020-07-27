@@ -12,10 +12,8 @@ import {
 
 import { generate } from 'qrcode-terminal'
 
-/**
- * You can ignore the next line becasue it is using for CodeSandbox
- */
-require('./.util/helper')
+// You can safely ignore the next line because it is using for CodeSandbox
+require('./.code-sandbox.js')
 
 function onScan (qrcode: string, status: ScanStatus) {
   if (status === ScanStatus.Waiting || status === ScanStatus.Timeout) {

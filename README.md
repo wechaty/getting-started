@@ -12,14 +12,20 @@ As a developer, you can use Wechaty to easily build your bot on top of WeChat Pe
 
 This repository should work out-of-the-box, and is the best start point for Wechaty beginners.
 
-## REQUIREMENTS
+## Features
 
-1. Node.js v10 or above
-2. Build Tools for your Platform
+1. Works out-of-the-box under Linux/Mac/Windows.
+1. Supports all puppets like Web, Pad, Windows, and Mac.
+1. Reply a `dong` message when it received a `ding`.
 
-## GETTING STARTED
+## Requirements
 
-### 0. Install Node.js (>=10)
+1. Node.js v12+
+1. Build Tools for your Platform
+
+## Getting Started
+
+### 1 Install Node.js (>=10)
 
 If you have not installed Node.js(or version is below 10),You need to install the latest version of Node.js first by following the links below:
 
@@ -29,20 +35,20 @@ If you have not installed Node.js(or version is below 10),You need to install th
 
 > Instal Node.js for other platforms can be found at <https://nodejs.org/en/download/package-manager/>
 
-### 1. Clone this Repository
+### 2 Clone this Repository
 
 ```sh
 git clone https://github.com/wechaty/wechaty-getting-started.git
 cd wechaty-getting-started
 ```
 
-### 2. Install Dependencies
+### 3 Install Dependencies
 
 ```sh
 npm install
 ```
 
-### 3. Run the Bot
+### 4 Run the Bot
 
 ```sh
 npm start
@@ -58,17 +64,47 @@ node examples/ding-dong-bot.js
 
 You are all set!
 
-## ADVANCED
+## Working with Different Puppets
 
-### 1. TypeScript
+By default, the Wechaty will use the Web protocol (`wechaty-puppet-puppeteer`) for logging in bot.
+
+If you want to use other protocols instead of the Web protocol, then you need to specified a puppet service provider other than the `wechaty-puppet-puppeteer`.
+
+Thanks for the great contributions from our great community, there are many puppet service providers can be used by Wechaty, which helps us to use protocols like Web, Pad, Mac, and Windows.
+
+In order to specify a puppet service provider, you can set the environment `WECHATY_PUPPET` to the specific NPM module name.
+
+### Wechaty Puppet Service Providers
+
+| Protocol | NPM |
+| :--- | :--- |
+| Web | `wechaty-puppet-puppeteer` |
+| Hostie | `wechaty-puppet-hostie` |
+| Pad | `wechaty-puppet-padplus` |
+
+For example, if you want to use the `Hostie` puppet, you should set `WECHATY_PUPPET=wechaty-puppet-hostie` before you run `npm start`.
+
+> You also need a TOKEN for the `wechaty-puppet-hostie`, and set it to the `WECHATY_PUPPET_HOSTIE_TOKEN` environment variable.
+
+### Linux
 
 ```sh
-npm run start:ts
+export WECHATY_PUPPET=wechaty-puppet-hostie
+export WECHATY_PUPPET_HOSTIE_TOKEN='your_token_here'
+npm start
 ```
 
-This will run `examples/ding-dong-bot.ts` instead of `examples/ding-dong-bot.js` for you.
+### Windows
 
-### 2. Wechaty Tutorial
+```sh
+set WECHATY_PUPPET=wechaty-puppet-hostie
+set WECHATY_PUPPET_HOSTIE_TOKEN='your_token_here'
+npm start
+```
+
+## Advanced
+
+### 1 Wechaty Tutorial
 
 <div align="center">
 <a target="_blank" href="https://blog.chatie.io/getting-started-wechaty/"><img src="https://cloud.githubusercontent.com/assets/1361891/21722581/3ec957d0-d468-11e6-8888-a91c236e0ba2.jpg" border=0 width="60%"></a>
@@ -76,7 +112,7 @@ This will run `examples/ding-dong-bot.ts` instead of `examples/ding-dong-bot.js`
 
 Above is a 10 minute video tutorial(a little outdated, it's running under v0.14 or older versions of Wechaty), which is a good way to start if you are new to Wechaty.
 
-### 3. More Examples
+### 2 More Examples
 
 > Note: Please make sure you can run `npm start` with this repository first before you go furture with more examples!
 
@@ -116,13 +152,12 @@ The plugins are named `PuppetXXX`, like [PuppetPuppeteer](https://github.com/Cha
 
 ## Wechaty Getting Started in Multiple Languages
 
-[![Powered by Wechaty](https://img.shields.io/badge/Powered%20By-Wechaty-brightgreen.svg)](https://github.com/Wechaty/wechaty)
 [![Wechaty in Python](https://img.shields.io/badge/Wechaty-Python-blue)](https://github.com/wechaty/python-wechaty)
 [![Wechaty in Go](https://img.shields.io/badge/Wechaty-Go-7de)](https://github.com/wechaty/go-wechaty)
 [![Wechaty in Java](https://img.shields.io/badge/Wechaty-Java-f80)](https://github.com/wechaty/java-wechaty)
 [![Wechaty in Scala](https://img.shields.io/badge/Wechaty-Scala-890)](https://github.com/wechaty/scala-wechaty)
 [![Wechaty in PHP](https://img.shields.io/badge/Wechaty-PHP-99c)](https://github.com/wechaty/php-wechaty)
-[![Wechaty in .NET(C#)](https://img.shields.io/badge/Wechaty-dotNET-629)](https://github.com/wechaty/dotnet-wechaty)
+[![Wechaty in .NET(C#)](https://img.shields.io/badge/Wechaty-.NET-629)](https://github.com/wechaty/dotnet-wechaty)
 
 - [TypeScript Wechaty Getting Started](https://github.com/wechaty/wechaty-getting-started)
 - [Python Wechaty Getting Started](https://github.com/wechaty/python-wechaty-getting-started)
