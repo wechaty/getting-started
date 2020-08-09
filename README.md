@@ -4,9 +4,9 @@
 ![Node.js v12](https://img.shields.io/badge/node-%3E%3D12-green.svg)
 [![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-blue.svg)](https://www.typescriptlang.org/)
 
-[Wechaty](https://github.com/Chatie/wechaty/) is a Conversational AI RPA SDK for Chatbot that lets you create software to extend the functionality of the WeChat, written in Node.js with TypeScript, Support all platforms including Linux, OSX, Win32, and Docker.
+[Wechaty](https://github.com/wechaty/wechaty/) is a Conversational SDK for Chatbot Makers. It's well designed with a very easy to use API, supports all platforms including Linux, OSX, Win32, and Docker.
 
-As a developer, you can use Wechaty to easily build your bot on top of WeChat Personal Account, effectively manage message sending/receiving, room creating/inviting, contact friendship, and delightful add artificial intelligence between users and your bot.
+As a developer, you can use Wechaty to easily build your bot, effectively manage message sending/receiving, room creating/inviting, contact friendship, and delightful add artificial intelligence between users and your bot.
 
 [![GitPod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/wechaty/wechaty-getting-started)
 
