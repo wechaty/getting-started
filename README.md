@@ -188,6 +188,6 @@ The plugins are named `PuppetXXX`, like [PuppetPuppeteer](https://github.com/Cha
 
 ## Copyright & License
 
-- Code & Docs © 2018 Wechaty Contributors (<https://github.com/wechaty>)
+- Code & Docs © 2018-now Huan and Wechaty Community Contributors (<https://github.com/wechaty>)
 - Code released under the Apache-2.0 License
 - Docs released under Creative Commons
