@@ -1,4 +1,4 @@
-image: zixia/wechaty
+image: wechaty/wechaty
 
 tasks:
   - init: npm install

@@ -6,7 +6,7 @@
     "node": ">= 12"
   },
   "scripts": {
-    "start": "WECHATY_LOG=verbose nodemon -w . ding-dong-bot.ts"
+    "start": "WECHATY_LOG=verbose nodemon -w ding-dong-bot.ts ding-dong-bot.ts"
   },
   "repository": {
     "type": "git",
@@ -21,7 +21,7 @@
   "homepage": "https://github.com/wechaty/wechaty-getting-started#readme",
   "dependencies": {
     "qrcode-terminal": "^0.12.0",
-    "wechaty": "^0.46.2",
+    "wechaty": "^0.46.2"
   },
   "devDependencies": {
     "@chatie/tsconfig": "^0.10.1",
