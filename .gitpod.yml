@@ -1,4 +1,5 @@
-image: wechaty/wechaty
+image:
+  file: .gitpod.dockerfile
 
 # List the ports you want to expose and what to do when they are served. See https://www.gitpod.io/docs/config-ports/
 ports:
@@ -8,12 +9,8 @@ ports:
 # List the start up tasks. You can start them in parallel in multiple terminals. See https://www.gitpod.io/docs/config-start-tasks/
 tasks:
   - name: Ding Dong BOT
-    before: |
-      wget https://github.com/yudai/gotty/releases/download/v2.0.0-alpha.3/gotty_2.0.0-alpha.3_linux_amd64.tar.gz
-      tar zxvf ./gotty*.tar.gz
-      rm -f gotty*.tar.gz
-    init: npm install
-    command: ./gotty npm start
+    init: cd examples/third-parties/gitpod && npm install
+    command: cd examples/third-parties/gitpod && gotty npm start
 
 github:
   prebuilds:

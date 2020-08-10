@@ -71,6 +71,10 @@
     "typescript",
   ],
   "cSpell.words": [
-    "KUBERNETES"
+    "KUBERNETES",
+    "gitpod",
+    "gotty",
+    "prebuild",
+    "prebuilds"
   ],
 }
