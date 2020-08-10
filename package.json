@@ -1,7 +1,7 @@
 {
   "name": "wechaty-getting-started",
   "version": "0.4.30",
-  "description": "Wechaty is a Conversational AI RPA SDK for Chatbot Hackers",
+  "description": "Wechaty is a Conversational SDK for Chatbot Makers",
   "main": "examples/ding-dong-bot.js",
   "engines": {
     "node": ">= 12"
@@ -17,15 +17,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Chatie/wechaty-getting-started.git"
+    "url": "git+https://github.com/wechaty/wechaty-getting-started.git"
   },
   "keywords": [],
   "author": "Huan LI <zixia@zixia.net>",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/Chatie/wechaty-getting-started/issues"
+    "url": "https://github.com/wechaty/wechaty-getting-started/issues"
   },
-  "homepage": "https://github.com/Chatie/wechaty-getting-started#readme",
+  "homepage": "https://github.com/wechaty/wechaty-getting-started#readme",
   "dependencies": {
     "qrcode-terminal": "^0.12.0",
     "wechaty": "^0.46.2",
