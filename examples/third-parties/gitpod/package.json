@@ -3,7 +3,7 @@
   "version": "0.4.30",
   "description": "Wechaty is a Conversational SDK for Chatbot Makers",
   "engines": {
-    "node": ">= 12"
+    "node": ">= 10"
   },
   "scripts": {
     "start": "WECHATY_LOG=verbose nodemon -w ding-dong-bot.ts ding-dong-bot.ts"
@@ -20,12 +20,12 @@
   },
   "homepage": "https://github.com/wechaty/wechaty-getting-started#readme",
   "dependencies": {
+    "cross-env": "^7.0.2",
     "qrcode-terminal": "^0.12.0",
     "wechaty": "^0.46.2"
   },
   "devDependencies": {
     "@chatie/tsconfig": "^0.10.1",
-    "cross-env": "^7.0.2",
     "nodemon": "^2.0.3",
     "wechaty-puppet-mock": "^0.22.31",
     "wechaty-puppet-wechat4u": "^0.16.3"
