@@ -23,11 +23,10 @@
     "@chatie/tsconfig": "^0.10.1",
     "cross-env": "^7.0.2",
     "qrcode-terminal": "^0.12.0",
-    "nodemon": "^2.0.3",
-    "wechaty-puppet-mock": "^0.22.31",
-    "wechaty-puppet-wechat4u": "^0.16.3",
-    "wechaty": "^0.46.2"
+    "nodemon": "^2.0.4",
+    "wechaty-puppet-mock": "^0.22.41",
+    "wechaty-puppet-wechat4u": "^0.17.4",
+    "wechaty": "^0.46.4"
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }
