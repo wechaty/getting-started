@@ -6,7 +6,7 @@
     "node": ">= 10"
   },
   "scripts": {
-    "start": "bash -x install-gotty.sh && WECHATY_LOG=verbose ./gotty --ws-origin '.*' nodemon -w ding-dong-bot.ts ding-dong-bot.ts"
+    "start": "bash -x install-gotty.sh && WECHATY_LOG=verbose ./gotty --ws-origin '.*' npx nodemon -w ding-dong-bot.ts ding-dong-bot.ts"
   },
   "repository": {
     "type": "git",
