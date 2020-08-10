@@ -59,6 +59,7 @@ const bot = new Wechaty({
    */
 
   // puppet: 'wechaty-puppet-hostie',
+  puppet: 'wechaty-puppet-wechat4u',
 
 })
 
