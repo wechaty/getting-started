@@ -6,7 +6,7 @@
     "node": ">= 10"
   },
   "scripts": {
-    "start": "bash -x install-gotty.sh && WECHATY_LOG=verbose ./gotty --ws-origin '.*' npx nodemon -w ding-dong-bot.ts --exec 'npx ts-node ding-dong-bot.ts'"
+    "start": "bash -x install-gotty.sh && WECHATY_LOG=verbose ./gotty --ws-origin '.*' npx nodemon -w ding-dong-bot.ts ding-dong-bot.ts"
   },
   "repository": {
     "type": "git",
@@ -22,11 +22,11 @@
   "dependencies": {
     "@chatie/tsconfig": "^0.10.1",
     "cross-env": "^7.0.2",
-    "qrcode-terminal": "^0.12.0",
     "nodemon": "^2.0.4",
+    "qrcode-terminal": "^0.12.0",
+    "wechaty": "^0.46.4",
     "wechaty-puppet-mock": "^0.22.41",
-    "wechaty-puppet-wechat4u": "^0.17.4",
-    "wechaty": "^0.46.4"
+    "wechaty-puppet-wechat4u": "^0.17.4"
   },
   "devDependencies": {}
 }
