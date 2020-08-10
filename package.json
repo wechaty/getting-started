@@ -4,7 +4,7 @@
   "description": "Wechaty is a Conversational SDK for Chatbot Makers",
   "main": "examples/ding-dong-bot.js",
   "engines": {
-    "node": ">= 12"
+    "node": ">= 10"
   },
   "scripts": {
     "lint": "eslint \"examples/*.ts\"",
