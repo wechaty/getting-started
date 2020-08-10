@@ -6,8 +6,7 @@
     "node": ">= 10"
   },
   "scripts": {
-    "postinstall": "bash -x ./post-install.sh",
-    "start": "WECHATY_LOG=verbose ./gotty nodemon -w ding-dong-bot.ts ding-dong-bot.ts"
+    "start": "./install-gotty.sh; WECHATY_LOG=verbose ./gotty nodemon -w ding-dong-bot.ts ding-dong-bot.ts"
   },
   "repository": {
     "type": "git",
