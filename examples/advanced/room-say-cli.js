@@ -36,7 +36,7 @@ async function main () {
     // Generate a QR Code online via
     // http://goqr.me/api/doc/create-qr-code/
     const qrcodeImageUrl = [
-      'https://wechaty.github.io/qrcode/',
+      'https://wechaty.js.org.qrcode/',
       encodeURIComponent(qrcode),
     ].join('')
     console.log(`[${status}] ${qrcodeImageUrl}\nScan QR Code above to log in: `)

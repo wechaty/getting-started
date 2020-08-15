@@ -20,7 +20,7 @@ function onScan (qrcode: string, status: ScanStatus) {
     generate(qrcode, { small: true })  // show qrcode on console
 
     const qrcodeImageUrl = [
-      'https://wechaty.github.io/qrcode/',
+      'https://wechaty.js.org.qrcode/',
       encodeURIComponent(qrcode),
     ].join('')
 
