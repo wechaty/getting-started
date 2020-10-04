@@ -11,7 +11,7 @@ const {
 /**
  * You can ignore the next line becasue it is using for CodeSandbox
  */
-require('./.util/helper')
+require('./.code-sandbox.js')
 
 function onScan (qrcode, status) {
   if (status === ScanStatus.Waiting || status === ScanStatus.Timeout) {
