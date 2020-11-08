@@ -41,7 +41,7 @@
     "is-pr": "^1.1.0",
     "marked": "^1.1.0",
     "nodemon": "^2.0.3",
-    "wechaty-puppet-mock": "^0.22.31",
+    "wechaty-puppet-mock": "^0.28.1",
     "wechaty-puppet-padplus": "^0.7.21",
     "wechaty-puppet-puppeteer": "^0.23.1",
     "wechaty-puppet-wechat4u": "^0.16.3"
