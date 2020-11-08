@@ -12,7 +12,7 @@
     "start:js": "cross-env WECHATY_LOG=verbose node examples/ding-dong-bot.js",
     "start:ts": "cross-env WECHATY_LOG=verbose node -r ts-node/register examples/ding-dong-bot.ts",
     "test": "npm run lint && npm run test:version && npm run test:smoke",
-    "test:smoke": "node tests/smoke-testing.js",
+    "test:smoke": "ts-node tests/smoke-testing.ts",
     "test:version": "check-node-version --node \">= 12\""
   },
   "repository": {

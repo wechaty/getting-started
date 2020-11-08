@@ -1,13 +1,12 @@
-#!/usr/bin/env node
+#!/usr/bin/env node -r ts-node/register
 
-const { Wechaty } = require('wechaty')
+import { Wechaty } from 'wechaty'
 const isPr = require('is-pr')
 
-const {
+import {
   PuppetMock,
-  Mocker,
-  SimpleEnvironment,
-}                       = require('wechaty-puppet-mock')
+  mock,
+}                       from 'wechaty-puppet-mock'
 
 async function main () {
   // Timeout after 2 minutes
@@ -16,8 +15,8 @@ async function main () {
     process.exit(1)
   }, 120 * 1000)
 
-  const mocker = new Mocker()
-  mocker.use(SimpleEnvironment())
+  const mocker = new mock.Mocker()
+  mocker.use(mock.SimpleEnvironment())
   const puppetMock = new PuppetMock({ mocker })
 
   const botList = [
