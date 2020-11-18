@@ -22,6 +22,8 @@ This repository should work out-of-the-box, and is the best start point for Wech
 
 1. Node.js v12+
 1. Build Tools for your platform
+1. Wechaty TOKEN(if you want to use protocols other than Web)
+    - Apply from our [Wechaty Puppet Service Providers](https://github.com/wechaty/puppet-service-providers)
 
 ## Getting Started
 

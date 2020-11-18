@@ -12,7 +12,9 @@ import {
 
 import { generate } from 'qrcode-terminal'
 
-// You can safely ignore the next line because it is using for CodeSandbox
+require('dotenv').config()
+
+// You can safely ignore / comment out the next two lines because it is using for CodeSandbox
 require('./.code-sandbox.js')
 
 function onScan (qrcode: string, status: ScanStatus) {
@@ -49,20 +51,24 @@ async function onMessage (msg: Message) {
 const bot = new Wechaty({
   name: 'ding-dong-bot',
   /**
-   * Specify a `puppet` for a specific protocol (Web/Pad/Mac/Windows, etc).
+   * To use different puppets(which are control different underlying protocols, like Web/Pad/Mac/Windows, etc)
+   * with Wechaty, you have two ways:
+   *  1. Specify a `puppet` option when instantiating Wechaty. (like `{ puppet: 'wechaty-puppet-hostie' }`)
+   *  1. Set the `WECHATY_PUPPET` environment variable to the puppet NPM module name. (like `wechaty-puppet-hostie`)
    *
    * You can use the following providers:
    *  - wechaty-puppet-hostie
    *  - wechaty-puppet-puppeteer
-   *  - wechaty-puppet-padplus
    *  - etc.
    *
    * Learn more about Wechaty Puppet Providers at:
+   *  https://github.com/wechaty/puppet-service-providers
+   *
+   * Learn more about Wechaty Puppet at:
    *  https://github.com/wechaty/wechaty-puppet/wiki/Directory
    */
 
   // puppet: 'wechaty-puppet-hostie',
-
 })
 
 bot.on('scan',    onScan)

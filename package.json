@@ -28,8 +28,9 @@
   "homepage": "https://github.com/wechaty/wechaty-getting-started#readme",
   "dependencies": {
     "cross-env": "^7.0.2",
+    "dotnet": "^1.1.4",
     "qrcode-terminal": "^0.12.0",
-    "wechaty": "^0.50.4",
+    "wechaty": "^0.50.7",
     "wechaty-plugin-contrib": "^0.14.2"
   },
   "devDependencies": {
