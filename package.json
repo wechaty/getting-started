@@ -27,22 +27,23 @@
   },
   "homepage": "https://github.com/wechaty/wechaty-getting-started#readme",
   "dependencies": {
-    "cross-env": "^7.0.2",
-    "dotnet": "^1.1.4",
+    "cross-env": "^7.0.3",
+    "dotenv": "^8.2.0",
     "qrcode-terminal": "^0.12.0",
-    "wechaty": "^0.50.7",
-    "wechaty-plugin-contrib": "^0.14.2"
+    "wechaty": "^0.51.8",
+    "wechaty-plugin-contrib": "^0.14.15"
   },
   "devDependencies": {
     "@chatie/eslint-config": "^0.12.1",
-    "@chatie/git-scripts": "^0.6.1",
+    "@chatie/git-scripts": "^0.6.2",
     "@chatie/tsconfig": "^0.10.1",
     "check-node-version": "^4.0.3",
     "connect": "^3.7.0",
     "is-pr": "^1.1.0",
-    "marked": "^1.1.0",
-    "nodemon": "^2.0.3",
-    "wechaty-puppet-mock": "^0.28.1",
+    "marked": "^1.2.5",
+    "nodemon": "^2.0.6",
+    "wechaty-puppet-mock": "^0.28.2",
+    "wechaty-puppet-padlocal": "^0.2.3",
     "wechaty-puppet-padplus": "^0.7.21",
     "wechaty-puppet-puppeteer": "^0.23.1",
     "wechaty-puppet-wechat4u": "^0.16.3"
