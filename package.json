@@ -1,10 +1,10 @@
 {
   "name": "wechaty-getting-started",
   "version": "0.4.65",
-  "description": "Wechaty is a Conversational SDK for Chatbot Makers",
+  "description": "Wechaty conversational SDK getting start template & examples",
   "main": "examples/ding-dong-bot.js",
   "engines": {
-    "node": ">= 10"
+    "node": ">= 12"
   },
   "scripts": {
     "lint": "eslint \"examples/*.ts\"",
@@ -27,7 +27,6 @@
   },
   "homepage": "https://github.com/wechaty/wechaty-getting-started#readme",
   "dependencies": {
-    "cross-env": "^7.0.3",
     "dotenv": "^8.2.0",
     "qrcode-terminal": "^0.12.0",
     "wechaty": "^0.51.8",
@@ -39,6 +38,7 @@
     "@chatie/tsconfig": "^0.10.1",
     "check-node-version": "^4.0.3",
     "connect": "^3.7.0",
+    "cross-env": "^7.0.3",
     "is-pr": "^1.1.0",
     "marked": "^1.2.5",
     "nodemon": "^2.0.6",

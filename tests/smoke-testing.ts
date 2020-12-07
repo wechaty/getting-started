@@ -8,6 +8,30 @@ import {
   mock,
 }                       from 'wechaty-puppet-mock'
 
+function getBotList () {
+  const mocker = new mock.Mocker()
+  mocker.use(mock.SimpleEnvironment())
+  const puppetMock = new PuppetMock({ mocker })
+
+  const optionsPuppeteer = {
+    puppet: 'wechaty-puppet-puppeteer' as const,
+    puppetOptions: {
+      launchOptions: {
+        ignoreDefaultArgs: ['--disable-extensions'],
+      },
+    },
+  }
+
+  const botList = [
+    new Wechaty({ puppet: puppetMock }),
+    new Wechaty({ puppet: 'wechaty-puppet-hostie' }),
+    new Wechaty(optionsPuppeteer),
+    new Wechaty({ puppet: 'wechaty-puppet-wechat4u' }),
+  ]
+
+  return botList
+}
+
 async function main () {
   // Timeout after 2 minutes
   const timer = setTimeout(() => {
@@ -15,31 +39,13 @@ async function main () {
     process.exit(1)
   }, 120 * 1000)
 
-  const mocker = new mock.Mocker()
-  mocker.use(mock.SimpleEnvironment())
-  const puppetMock = new PuppetMock({ mocker })
-
-  const botList = [
-    new Wechaty({ puppet: puppetMock }),
-    new Wechaty({ puppet: 'wechaty-puppet-padplus' }),
-    new Wechaty({
-      puppet: 'wechaty-puppet-puppeteer',
-      puppetOptions: {
-        launchOptions: {
-          ignoreDefaultArgs: ['--disable-extensions'],
-        },
-      },
-    }),
-    new Wechaty({ puppet: 'wechaty-puppet-wechat4u' }),
-  ]
-
   if (isPr) {
     console.info('This CI test was activated from Pull Request.')
   } else {
     console.info('This CI test was activated from Master Branch.')
   }
 
-  for (const bot of botList) {
+  for (const bot of getBotList()) {
     const future = new Promise(resolve => bot.once('scan', resolve))
     await bot.start()
     await future
