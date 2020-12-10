@@ -28,4 +28,4 @@ jobs:
     - run: npm test
       env:
         CI: true
-        WECHATY_PUPPET_HOSTIE_TOKEN:
+        WECHATY_PUPPET_HOSTIE_TOKEN: ${{ secrets.WECHATY_PUPPET_HOSTIE_TOKEN }}
