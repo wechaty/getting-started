@@ -1,10 +1,10 @@
 {
   "name": "wechaty-getting-started",
-  "version": "0.4.61",
-  "description": "Wechaty is a Conversational SDK for Chatbot Makers",
+  "version": "0.4.68",
+  "description": "Wechaty conversational SDK getting start template & examples",
   "main": "examples/ding-dong-bot.js",
   "engines": {
-    "node": ">= 10"
+    "node": ">= 12"
   },
   "scripts": {
     "lint": "eslint \"examples/*.ts\"",
@@ -27,24 +27,25 @@
   },
   "homepage": "https://github.com/wechaty/wechaty-getting-started#readme",
   "dependencies": {
-    "cross-env": "^7.0.2",
+    "dotenv": "^8.2.0",
     "qrcode-terminal": "^0.12.0",
-    "wechaty": "^0.48.5",
-    "wechaty-plugin-contrib": "^0.14.2"
+    "wechaty": "^0.51.8",
+    "wechaty-plugin-contrib": "^0.14.15"
   },
   "devDependencies": {
     "@chatie/eslint-config": "^0.12.1",
-    "@chatie/git-scripts": "^0.6.1",
+    "@chatie/git-scripts": "^0.6.2",
     "@chatie/tsconfig": "^0.10.1",
     "check-node-version": "^4.0.3",
     "connect": "^3.7.0",
+    "cross-env": "^7.0.3",
     "is-pr": "^1.1.0",
-    "marked": "^1.1.0",
-    "nodemon": "^2.0.3",
-    "wechaty-puppet-mock": "^0.28.1",
-    "wechaty-puppet-padplus": "^0.7.21",
-    "wechaty-puppet-puppeteer": "^0.23.1",
-    "wechaty-puppet-wechat4u": "^0.16.3"
+    "marked": "^1.2.5",
+    "nodemon": "^2.0.6",
+    "wechaty-puppet-mock": "^0.28.2",
+    "wechaty-puppet-padlocal": "^0.2.3",
+    "wechaty-puppet-puppeteer": "^0.23.3",
+    "wechaty-puppet-wechat4u": "^0.17.5"
   },
   "git": {
     "scripts": {

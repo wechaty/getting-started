@@ -1,0 +1,21 @@
+{
+  "name": "tensorflow-js-fingerpose",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@chatie/tsconfig": "^0.10.1",
+    "@tensorflow-models/handpose": "0.0.6",
+    "@tensorflow/tfjs-node": "^2.7.0",
+    "canvas": "^2.6.1",
+    "file-box": "^0.16.2",
+    "fingerpose": "0.0.2",
+    "wechaty": "^0.50.7"
+  }
+}

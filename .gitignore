@@ -75,3 +75,4 @@ examples/.pki
 .config/
 log
 /*.jpg
+.env
