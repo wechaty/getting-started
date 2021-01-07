@@ -29,7 +29,7 @@
   "dependencies": {
     "dotenv": "^8.2.0",
     "qrcode-terminal": "^0.12.0",
-    "wechaty": "^0.51.8",
+    "wechaty": "^0.53.3",
     "wechaty-plugin-contrib": "^0.14.15"
   },
   "devDependencies": {
