@@ -81,26 +81,26 @@ In order to specify a puppet service provider, you can set the environment `WECH
 | Protocol | NPM |
 | :--- | :--- |
 | Web | `wechaty-puppet-puppeteer` |
-| Hostie | `wechaty-puppet-hostie` |
+| Service | `wechaty-puppet-service` |
 | Pad | `wechaty-puppet-padplus` |
 
-For example, if you want to use the `Hostie` puppet, you should set `WECHATY_PUPPET=wechaty-puppet-hostie` before you run `npm start`.
+For example, if you want to use the `Service` puppet, you should set `WECHATY_PUPPET=wechaty-puppet-service` before you run `npm start`.
 
-> You also need a TOKEN for the `wechaty-puppet-hostie`, and set it to the `WECHATY_PUPPET_HOSTIE_TOKEN` environment variable.
+> You also need a TOKEN for the `wechaty-puppet-service`, and set it to the `WECHATY_PUPPET_SERVICE_TOKEN` environment variable.
 
 ### Linux
 
 ```sh
-export WECHATY_PUPPET=wechaty-puppet-hostie
-export WECHATY_PUPPET_HOSTIE_TOKEN='your_token_here'
+export WECHATY_PUPPET=wechaty-puppet-service
+export WECHATY_PUPPET_SERVICE_TOKEN='your_token_here'
 npm start
 ```
 
 ### Windows
 
 ```sh
-set WECHATY_PUPPET=wechaty-puppet-hostie
-set WECHATY_PUPPET_HOSTIE_TOKEN='your_token_here'
+set WECHATY_PUPPET=wechaty-puppet-service
+set WECHATY_PUPPET_SERVICE_TOKEN='your_token_here'
 npm start
 ```
 

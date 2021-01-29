@@ -24,7 +24,7 @@ function getBotList () {
 
   const botList = [
     new Wechaty({ puppet: puppetMock }),
-    new Wechaty({ puppet: 'wechaty-puppet-hostie' }),
+    new Wechaty({ puppet: 'wechaty-puppet-service' }),
     new Wechaty(optionsPuppeteer),
     new Wechaty({ puppet: 'wechaty-puppet-wechat4u' }),
   ]

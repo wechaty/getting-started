@@ -53,11 +53,11 @@ const bot = new Wechaty({
   /**
    * To use different puppets(which are control different underlying protocols, like Web/Pad/Mac/Windows, etc)
    * with Wechaty, you have two ways:
-   *  1. Specify a `puppet` option when instantiating Wechaty. (like `{ puppet: 'wechaty-puppet-hostie' }`)
-   *  1. Set the `WECHATY_PUPPET` environment variable to the puppet NPM module name. (like `wechaty-puppet-hostie`)
+   *  1. Specify a `puppet` option when instantiating Wechaty. (like `{ puppet: 'wechaty-puppet-service' }`)
+   *  1. Set the `WECHATY_PUPPET` environment variable to the puppet NPM module name. (like `wechaty-puppet-service`)
    *
    * You can use the following providers:
-   *  - wechaty-puppet-hostie
+   *  - wechaty-puppet-service
    *  - wechaty-puppet-puppeteer
    *  - etc.
    *
@@ -68,7 +68,7 @@ const bot = new Wechaty({
    *  https://github.com/wechaty/wechaty-puppet/wiki/Directory
    */
 
-  // puppet: 'wechaty-puppet-hostie',
+  // puppet: 'wechaty-puppet-service',
 })
 
 bot.on('scan',    onScan)

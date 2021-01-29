@@ -49,7 +49,7 @@ const bot = new Wechaty({
    * Specify a `puppet` for a specific protocol (Web/Pad/Mac/Windows, etc).
    *
    * You can use the following providers:
-   *  - wechaty-puppet-hostie
+   *  - wechaty-puppet-service
    *  - wechaty-puppet-puppeteer
    *  - wechaty-puppet-padplus
    *  - etc.
@@ -58,7 +58,7 @@ const bot = new Wechaty({
    *  https://github.com/wechaty/wechaty-puppet/wiki/Directory
    */
 
-  // puppet: 'wechaty-puppet-hostie',
+  // puppet: 'wechaty-puppet-service',
   puppet: 'wechaty-puppet-wechat4u',
 
 })

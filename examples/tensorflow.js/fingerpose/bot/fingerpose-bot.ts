@@ -1,10 +1,10 @@
 import { Wechaty } from 'wechaty'
 
 const bot = new Wechaty({
-  puppet: 'wechaty-puppet-hostie',
+  puppet: 'wechaty-puppet-service',
   puppetOptions: {
     token: 'puppet_hostie_gdg_zhengzhou',
-  }
+  },
 })
 
 bot.on('scan', qrcode => {

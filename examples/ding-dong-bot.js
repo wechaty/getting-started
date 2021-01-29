@@ -51,7 +51,7 @@ const bot = new Wechaty({
    * Specify a puppet for a specific protocol (Web/Pad/Mac/Windows, etc).
    *
    * You can use the following providers:
-   *  - wechaty-puppet-hostie
+   *  - wechaty-puppet-service
    *  - wechaty-puppet-puppeteer
    *  - etc.
    *
