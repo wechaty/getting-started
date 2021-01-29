@@ -43,7 +43,6 @@
     "marked": "^1.2.5",
     "nodemon": "^2.0.6",
     "wechaty-puppet-mock": "^0.28.2",
-    "wechaty-puppet-padlocal": "^0.2.3",
     "wechaty-puppet-puppeteer": "^0.23.3",
     "wechaty-puppet-wechat4u": "^0.17.5"
   },
