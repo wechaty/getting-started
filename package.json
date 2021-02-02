@@ -33,15 +33,15 @@
     "wechaty-plugin-contrib": "^0.14.15"
   },
   "devDependencies": {
-    "@chatie/eslint-config": "^0.12.1",
+    "@chatie/eslint-config": "^0.12.2",
     "@chatie/git-scripts": "^0.6.2",
-    "@chatie/tsconfig": "^0.10.1",
+    "@chatie/tsconfig": "^0.14.1",
     "check-node-version": "^4.0.3",
     "connect": "^3.7.0",
     "cross-env": "^7.0.3",
     "is-pr": "^1.1.0",
-    "marked": "^1.2.5",
-    "nodemon": "^2.0.6",
+    "marked": "^1.2.8",
+    "nodemon": "^2.0.7",
     "wechaty-puppet-mock": "^0.28.2",
     "wechaty-puppet-wechat4u": "^0.17.5"
   },
