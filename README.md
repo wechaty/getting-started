@@ -4,7 +4,7 @@
 ![Node.js v12](https://img.shields.io/badge/node-%3E%3D12-green.svg)
 [![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-blue.svg)](https://www.typescriptlang.org/)
 
-[Wechaty](https://github.com/wechaty/wechaty/) is a RPA SDK for Chatbot Makers. It's well designed with a very easy to use API, supports all OSs including Linux, OSX, Win32, Docker, and all IMs including WeChat, WeCom, Whatsapp, Lark, Gitter, etc.
+[Wechaty](https://github.com/wechaty/wechaty/) is a RPA SDK for Chatbot Makers. It's well designed with an easy to use API, supports all OSs including Linux, OSX, Win32, Docker, and lots of IMs including WeChat, WeCom, Whatsapp, Lark, Gitter, etc.
 
 As a developer, you can use Wechaty to easily build your bot, effectively manage message sending/receiving, room creating/inviting, contact friendship, and delightful add artificial intelligence between users and your bot.
 
@@ -82,9 +82,11 @@ In order to specify a puppet service provider, you can set the environment `WECH
 | :--- | :--- |
 | Web | `wechaty-puppet-puppeteer` |
 | Service | `wechaty-puppet-service` |
-| Pad | `wechaty-puppet-padlocal` |
+| PadLocal | `wechaty-puppet-padlocal` |
 
-For example, if you want to use the `Service` puppet, you should set `WECHATY_PUPPET=wechaty-puppet-service` before you run `npm start`.
+> Visit our website for learning more about [Wechaty Puppet Service Providers](https://wechaty.js.org/docs/puppet-services/)
+
+For example, if you want to use the `service` puppet, you should set `WECHATY_PUPPET=wechaty-puppet-service` before you run `npm start`.
 
 > You also need a TOKEN for the `wechaty-puppet-service`, and set it to the `WECHATY_PUPPET_SERVICE_TOKEN` environment variable.
 
@@ -155,6 +157,8 @@ Solution: Wechaty support protocols other than Web API, such as pad. Learn more 
 The term [Puppet](https://github.com/Chatie/wechaty/wiki/Puppet) in Wechaty is an Abstract Class for implementing protocol plugins. The plugins are the component that helps Wechaty to control the Wechat(that's the reason we call it puppet).
 
 The plugins are named `PuppetXXX`, like [PuppetPuppeteer](https://github.com/Chatie/wechaty-puppet-puppeteer) is using the [google puppeteer](https://github.com/GoogleChrome/puppeteer) to control the [WeChat Web API](https://wx.qq.com) via a chrome browser, [PuppetPadchat](https://github.com/lijiarui/wechaty-puppet-padchat) is using the WebSocket protocol to connect with a Protocol Server for controlling the iPad Wechat program. More detail you could go [Puppet in wiki](https://github.com/Chatie/wechaty/wiki/Puppet).
+
+Learn more about Wechaty Puppet from our documentation at [Wechaty Puppet](https://wechaty.js.org/docs/specifications/puppet)
 
 ## Wechaty Getting Started in Multiple Languages
 
