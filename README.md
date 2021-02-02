@@ -4,7 +4,7 @@
 ![Node.js v12](https://img.shields.io/badge/node-%3E%3D12-green.svg)
 [![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-blue.svg)](https://www.typescriptlang.org/)
 
-[Wechaty](https://github.com/wechaty/wechaty/) is a Conversational SDK for Chatbot Makers. It's well designed with a very easy to use API, supports all platforms including Linux, OSX, Win32, and Docker.
+[Wechaty](https://github.com/wechaty/wechaty/) is a RPA SDK for Chatbot Makers. It's well designed with a very easy to use API, supports all OSs including Linux, OSX, Win32, Docker, and all IMs including WeChat, WeCom, Whatsapp, Lark, Gitter, etc.
 
 As a developer, you can use Wechaty to easily build your bot, effectively manage message sending/receiving, room creating/inviting, contact friendship, and delightful add artificial intelligence between users and your bot.
 
@@ -22,8 +22,8 @@ This repository should work out-of-the-box, and is the best start point for Wech
 
 1. Node.js v12+
 1. Build Tools for your platform
-1. Wechaty TOKEN(if you want to use protocols other than Web)
-    - Apply from our [Wechaty Puppet Service Providers](https://github.com/wechaty/puppet-service-providers)
+1. Wechaty Puppet Service TOKEN (if you want to use RPA protocols other than Web)
+    - Apply from our [Wechaty Puppet Service Providers](https://wechaty.js.org/docs/puppet-services/)
 
 ## Getting Started
 
@@ -82,7 +82,7 @@ In order to specify a puppet service provider, you can set the environment `WECH
 | :--- | :--- |
 | Web | `wechaty-puppet-puppeteer` |
 | Service | `wechaty-puppet-service` |
-| Pad | `wechaty-puppet-padplus` |
+| Pad | `wechaty-puppet-padlocal` |
 
 For example, if you want to use the `Service` puppet, you should set `WECHATY_PUPPET=wechaty-puppet-service` before you run `npm start`.
 
