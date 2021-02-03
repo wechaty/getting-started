@@ -48,21 +48,18 @@ async function onMessage (msg) {
 const bot = new Wechaty({
   name: 'ding-dong-bot',
   /**
-   * Specify a puppet for a specific protocol (Web/Pad/Mac/Windows, etc).
+   * How to set Wechaty Puppet Provider:
+   *
+   *  1. Specify a `puppet` option when instantiating Wechaty. (like `{ puppet: 'wechaty-puppet-padlocal' }`, see below)
+   *  1. Set the `WECHATY_PUPPET` environment variable to the puppet NPM module name. (like `wechaty-puppet-padlocal`)
    *
    * You can use the following providers:
-   *  - wechaty-puppet-service
-   *  - wechaty-puppet-puppeteer
-   *  - etc.
-   *
-   * Learn more about Wechaty Puppet Providers at:
-   *  https://github.com/wechaty/puppet-service-providers
-   *
-   * Learn more about Wechaty Puppet at:
-   *  https://github.com/wechaty/wechaty-puppet/wiki/Directory
+   *  - wechaty-puppet-puppeteer (no token required)
+   *  - wechaty-puppet-padlocal (token required)
+   *  - wechaty-puppet-service (token required, see: <https://wechaty.js.org/docs/puppet-services>)
+   *  - etc. see: <https://github.com/wechaty/wechaty-puppet/wiki/Directory>
    */
-  // puppet: 'wechaty-puppet-wechat4u',
-  // Set as above, or set using environment variable WECHATY_PUPPET
+  // puppet: 'wechaty-puppet-puppeteer',
 })
 
 bot.on('scan',    onScan)

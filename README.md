@@ -68,13 +68,11 @@ You are all set!
 
 ## Working with Different Puppets
 
-By default, the Wechaty will use the Web protocol (`wechaty-puppet-puppeteer`) for logging in bot.
+By default, the Wechaty will use the [Puppet Service](https://wechaty.js.org/docs/puppet-services/) for logging in your bot. You can use other [Puppet Provider](https://github.com/wechaty/wechaty-puppet/wiki/Directory) like Web protocol (`wechaty-puppet-puppeteer`) for logging in bot.
 
-If you want to use other protocols instead of the Web protocol, then you need to specified a puppet service provider other than the `wechaty-puppet-puppeteer`.
+If you want to use a Wechaty Puppet Provider for different protocols, then you need to specified a puppet service provider name (the same as its NPM name) by setting the `WECHATY_PUPPET` environment variable.
 
 Thanks for the great contributions from our great community, there are many puppet service providers can be used by Wechaty, which helps us to use protocols like Web, Pad, Mac, and Windows.
-
-In order to specify a puppet service provider, you can set the environment `WECHATY_PUPPET` to the specific NPM module name.
 
 ### Wechaty Puppet Service Providers
 
@@ -86,9 +84,9 @@ In order to specify a puppet service provider, you can set the environment `WECH
 
 > Visit our website for learning more about [Wechaty Puppet Service Providers](https://wechaty.js.org/docs/puppet-services/)
 
-For example, if you want to use the `service` puppet, you should set `WECHATY_PUPPET=wechaty-puppet-service` before you run `npm start`.
+For example, if you want to use the `padlocal` puppet, you should set `WECHATY_PUPPET=wechaty-puppet-padlocal` before you run `npm start`.
 
-> You also need a TOKEN for the `wechaty-puppet-service`, and set it to the `WECHATY_PUPPET_SERVICE_TOKEN` environment variable.
+> You also need a TOKEN for the `wechaty-puppet-padlocal`, and set it to the `WECHATY_PUPPET_PADLOCAL_TOKEN` environment variable.
 
 ### Linux
 

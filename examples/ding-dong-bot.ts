@@ -51,24 +51,18 @@ async function onMessage (msg: Message) {
 const bot = new Wechaty({
   name: 'ding-dong-bot',
   /**
-   * To use different puppets(which are control different underlying protocols, like Web/Pad/Mac/Windows, etc)
-   * with Wechaty, you have two ways:
-   *  1. Specify a `puppet` option when instantiating Wechaty. (like `{ puppet: 'wechaty-puppet-service' }`)
-   *  1. Set the `WECHATY_PUPPET` environment variable to the puppet NPM module name. (like `wechaty-puppet-service`)
+   * How to set Wechaty Puppet Provider:
+   *
+   *  1. Specify a `puppet` option when instantiating Wechaty. (like `{ puppet: 'wechaty-puppet-padlocal' }`, see below)
+   *  1. Set the `WECHATY_PUPPET` environment variable to the puppet NPM module name. (like `wechaty-puppet-padlocal`)
    *
    * You can use the following providers:
-   *  - wechaty-puppet-service
-   *  - wechaty-puppet-puppeteer
-   *  - etc.
-   *
-   * Learn more about Wechaty Puppet Providers at:
-   *  https://github.com/wechaty/puppet-service-providers
-   *
-   * Learn more about Wechaty Puppet at:
-   *  https://github.com/wechaty/wechaty-puppet/wiki/Directory
+   *  - wechaty-puppet-puppeteer (no token required)
+   *  - wechaty-puppet-padlocal (token required)
+   *  - wechaty-puppet-service (token required, see: <https://wechaty.js.org/docs/puppet-services>)
+   *  - etc. see: <https://github.com/wechaty/wechaty-puppet/wiki/Directory>
    */
-
-  // puppet: 'wechaty-puppet-service',
+  // puppet: 'wechaty-puppet-puppeteer',
 })
 
 bot.on('scan',    onScan)
