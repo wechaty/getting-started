@@ -22,13 +22,18 @@ The button will send you to this link: <https://gitpod.io/#https://github.com/we
 
 [Here](https://stackoverflow.com/a/63595356/1123955) has a Stackoverflow answer from Gitpod co-founder Moriz Eysholdt.
 
-## Wechaty Getting Started
+## What is Wechaty
 
 [Wechaty](https://github.com/wechaty/wechaty/) is a Conversational RPA SDK for Chatbot Makers. It's well designed with an easy to use API, supports all OSs including Linux, OSX, Win32, Docker, and lots of IMs including WeChat, WeCom, Whatsapp, Lark, Gitter, etc.
 
+## What is Wechaty Getting Started
+
+[Wechaty Getting Started](https://github.com/wechaty/wechaty-getting-started) is a repository that work out-of-the-box, which is the best start point for Wechaty beginners.
+
 As a developer, you can use Wechaty to easily build your bot, effectively manage message sending/receiving, room creating/inviting, contact friendship, and delightful add artificial intelligence between users and your bot.
 
-This repository should work out-of-the-box, and is the best start point for Wechaty beginners.
+- GitHub: <https://github.com/wechaty/wechaty-getting-started>
+- `ding-dong-bot.ts`: <https://github.com/wechaty/wechaty-getting-started/blob/master/examples/ding-dong-bot.ts>
 
 ## Maintainers
 
