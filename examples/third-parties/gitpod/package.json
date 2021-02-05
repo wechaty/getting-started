@@ -6,8 +6,7 @@
     "node": ">= 10"
   },
   "scripts": {
-    "gotty": "gotty --ws-origin '.*' npm start",
-    "start": "WECHATY_LOG=${WECHATY_LOG:=verbose} nodemon -w ding-dong-bot.ts ding-dong-bot.ts"
+    "start": "WECHATY_LOG=${WECHATY_LOG:=verbose} ts-node ding-dong-bot.ts"
   },
   "repository": {
     "type": "git",
