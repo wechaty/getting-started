@@ -1,4 +1,4 @@
-# 👇 **Click me** 👇 **Click me**
+# 👇 **Click me**
 
 [![GitPod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/wechaty/wechaty-getting-started)
 
@@ -10,7 +10,7 @@ The button will send you to this link: <https://gitpod.io/#https://github.com/we
 
 [![GitPod Wechaty Getting Started](images/gitpod-wechaty.webp)](https://gitpod.io/#https://github.com/wechaty/wechaty-getting-started)
 
-> Gitpod ❤️ Wechaty
+> Wechaty ❤️ Gitpod
 
 ## What is Gitpod
 
