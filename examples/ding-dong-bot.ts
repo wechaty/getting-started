@@ -8,7 +8,7 @@ import {
   ScanStatus,
   Wechaty,
   log,
-}               from 'wechaty'
+}                  from 'wechaty'
 
 import { generate } from 'qrcode-terminal'
 
@@ -62,7 +62,9 @@ const bot = new Wechaty({
    *  - wechaty-puppet-service (token required, see: <https://wechaty.js.org/docs/puppet-services>)
    *  - etc. see: <https://github.com/wechaty/wechaty-puppet/wiki/Directory>
    */
-  // puppet: 'wechaty-puppet-puppeteer',
+  puppet: process.env.WECHATY_PUPPET
+    ? process.env.WECHATY_PUPPET as any
+    : 'wechaty-puppet-wechat4u',
 })
 
 bot.on('scan',    onScan)
