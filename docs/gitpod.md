@@ -24,8 +24,7 @@ The button will send you to this link: <https://gitpod.io/#https://github.com/we
 
 ## Wechaty Getting Started
 
-[Wechaty](https://github.com/wechaty/wechaty/) is a RPA SDK for Chatbot Makers. It's well designed with an easy to use API, supports all OSs including Linux, OSX, Win32, Docker, and lots of IMs including WeChat, WeCom, Whatsapp, L
-ark, Gitter, etc.
+[Wechaty](https://github.com/wechaty/wechaty/) is a Conversational RPA SDK for Chatbot Makers. It's well designed with an easy to use API, supports all OSs including Linux, OSX, Win32, Docker, and lots of IMs including WeChat, WeCom, Whatsapp, Lark, Gitter, etc.
 
 As a developer, you can use Wechaty to easily build your bot, effectively manage message sending/receiving, room creating/inviting, contact friendship, and delightful add artificial intelligence between users and your bot.
 
