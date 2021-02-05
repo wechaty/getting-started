@@ -10,7 +10,11 @@ ports:
 tasks:
   - name: Wechaty ding-dong BOT
     init: echo 'npm install'
-    command: echo 'npm install && npm start'
+    command: npm install && npm start
+  - openMode: split-right
+    command: echo SplitTerminal
+  - openIn: left
+    command: echo LeftPanelTerminal
 
 github:
   prebuilds:
