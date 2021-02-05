@@ -9,12 +9,10 @@ ports:
 # List the start up tasks. You can start them in parallel in multiple terminals. See https://www.gitpod.io/docs/config-start-tasks/
 tasks:
   - name: Wechaty ding-dong BOT
+    openIn: main
+    openMode: split-right
     init: echo 'npm install'
     command: npm install && npm start
-  - openMode: split-right
-    command: echo SplitTerminal
-  - openIn: left
-    command: echo LeftPanelTerminal
 
 github:
   prebuilds:
