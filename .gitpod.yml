@@ -9,8 +9,8 @@ ports:
 # List the start up tasks. You can start them in parallel in multiple terminals. See https://www.gitpod.io/docs/config-start-tasks/
 tasks:
   - name: Ding Dong BOT
-    init: cd examples/third-parties/gitpod && npm install
-    command: cd examples/third-parties/gitpod && npm run gotty
+    init: echo 'npm install'
+    command: echo 'npm start'
 
 github:
   prebuilds:
