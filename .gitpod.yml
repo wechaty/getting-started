@@ -1,5 +1,5 @@
 image:
-  file: .gitpod.Dockerfile
+  file: .gitpod.dockerfile
 
 # List the ports you want to expose and what to do when they are served. See https://www.gitpod.io/docs/config-ports/
 ports:
