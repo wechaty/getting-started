@@ -9,7 +9,7 @@ ports:
 # List the start up tasks. You can start them in parallel in multiple terminals. See https://www.gitpod.io/docs/config-start-tasks/
 tasks:
   - name: Wechaty ding-dong BOT
-    init: echo npm install
+    init: npm install
     #
     # Huan(202001):
     #   Gitpod will not be able to start in browser
