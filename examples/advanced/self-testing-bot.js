@@ -27,10 +27,8 @@ const {
   log,
 }               = require('wechaty')
 
-const BOT_QR_CODE_IMAGE_FILE = path.resolve(
-  __dirname,
-  '../docs/images/bot-qr-code.png',
-)
+const BOT_QR_CODE_IMAGE_FILE_BOX = FileBox
+  .fromUrl('https://wechaty.js.org/img/friday-qrcode.svg')
 
 const bot = Wechaty.instance()
 
@@ -198,14 +196,13 @@ bot
       /**
        * 2. reply qrcode image
        */
-      const fileBox = FileBox.fromFile(BOT_QR_CODE_IMAGE_FILE)
       // const fileBox = FileBox.packStream(
       //   fs.createReadStream(BOT_QR_CODE_IMAGE_FILE),
       //   BOT_QR_CODE_IMAGE_FILE,
       // )
 
-      log.info('Bot', 'REPLY: %s', fileBox)
-      await msg.say(fileBox)
+      log.info('Bot', 'REPLY: %s', BOT_QR_CODE_IMAGE_FILE_BOX)
+      await msg.say(BOT_QR_CODE_IMAGE_FILE_BOX)
 
       /**
        * 3. reply 'scan now!'

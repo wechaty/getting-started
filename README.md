@@ -8,9 +8,15 @@
 
 As a developer, you can use Wechaty to easily build your bot, effectively manage message sending/receiving, room creating/inviting, contact friendship, and delightful add artificial intelligence between users and your bot.
 
-[![GitPod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](examples/third-parties/gitpod)
-
 This repository should work out-of-the-box, and is the best start point for Wechaty beginners.
+
+## TL;DR
+
+[![GitPod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/wechaty/wechaty-getting-started)
+
+Use Gitpod to run our Wechaty Getting Started ding-dong BOT instantly right inside your browser!
+
+Learn more about [Gitpod ❤️ Wechaty](docs/gitpod)
 
 ## Features
 

@@ -8,6 +8,10 @@ Click the above `[Gitpod | Ready-to-Code]` button to launch Gitpod with Wechaty 
 
 The button will send you to this link: <https://gitpod.io/#https://github.com/wechaty/wechaty-getting-started>
 
+## Screenshot
+
+[![GitPod Wechaty Getting Started](images/gitpod-wechaty.webp)](https://gitpod.io/#https://github.com/wechaty/wechaty-getting-started)
+
 ## What is Gitpod
 
 > Gitpod is an online IDE which can be launched from any GitHub page. Simply prefix any GitHub-URL with “https://gitpod.io#” or use our browser extension that adds a button to GitHub pages.
@@ -17,10 +21,6 @@ The button will send you to this link: <https://gitpod.io/#https://github.com/we
 > &mdash; [Gitpod — Online IDE For GitHub](https://medium.com/gitpod/gitpod-gitpod-online-ide-for-github-6296b907a886)
 
 [Here](https://stackoverflow.com/a/63595356/1123955) has a Stackoverflow answer from Gitpod co-founder Moriz Eysholdt.
-
-## Screenshot
-
-[![GitPod Wechaty Getting Started](gitpod-wechaty.webp)](https://gitpod.io/#https://github.com/wechaty/wechaty-getting-started)
 
 ## Wechaty Getting Started
 
