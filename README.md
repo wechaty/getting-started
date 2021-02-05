@@ -16,7 +16,7 @@ This repository should work out-of-the-box, and is the best start point for Wech
 
 Use Gitpod to run our Wechaty Getting Started ding-dong BOT instantly right inside your browser!
 
-Learn more about [Gitpod ❤️ Wechaty](docs/gitpod)
+Learn more about [Gitpod ❤️ Wechaty](docs/gitpod.md)
 
 ## Features
 

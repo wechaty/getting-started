@@ -1,10 +1,8 @@
-# Gitpod ❤️ Wechaty
+# 👇 **Click me** 👇 **Click me**
 
 [![GitPod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/wechaty/wechaty-getting-started)
 
-## ☝️ **Click me** ☝️ **Click me**
-
-Click the above `[Gitpod | Ready-to-Code]` button to launch Gitpod with Wechaty Getting Started ding-dong BOT.
+Click the ☝️ above `[Gitpod | Ready-to-Code]` button to launch Gitpod with Wechaty Getting Started ding-dong BOT instantly right inside your favorite browser.
 
 The button will send you to this link: <https://gitpod.io/#https://github.com/wechaty/wechaty-getting-started>
 
@@ -12,9 +10,11 @@ The button will send you to this link: <https://gitpod.io/#https://github.com/we
 
 [![GitPod Wechaty Getting Started](images/gitpod-wechaty.webp)](https://gitpod.io/#https://github.com/wechaty/wechaty-getting-started)
 
+> Gitpod ❤️ Wechaty
+
 ## What is Gitpod
 
-> Gitpod is an online IDE which can be launched from any GitHub page. Simply prefix any GitHub-URL with “https://gitpod.io#” or use our browser extension that adds a button to GitHub pages.
+> Gitpod is an online IDE which can be launched from any GitHub page. Simply prefix any GitHub-URL with “<https://gitpod.io#>” or use our browser extension that adds a button to GitHub pages.
 >
 > Within seconds, Gitpod provides you with a fully working development environment, including a VS Code-powered IDE and a cloud-based Linux container configured specifically for the project at hand.
 >
