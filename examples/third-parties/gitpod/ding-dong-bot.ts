@@ -59,8 +59,9 @@ const bot = new Wechaty({
    */
 
   // puppet: 'wechaty-puppet-service',
-  puppet: 'wechaty-puppet-wechat4u',
-
+  puppet: process.env.WECHATY_PUPPET
+    ? process.env.WECHATY_PUPPET as any
+    : 'wechaty-puppet-wechat4u',
 })
 
 bot.on('scan',    onScan)

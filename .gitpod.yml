@@ -10,7 +10,7 @@ ports:
 tasks:
   - name: Ding Dong BOT
     init: cd examples/third-parties/gitpod && npm install
-    command: cd examples/third-parties/gitpod && gotty npm start
+    command: cd examples/third-parties/gitpod && npm run gotty
 
 github:
   prebuilds:
