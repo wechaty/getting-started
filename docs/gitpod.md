@@ -2,9 +2,14 @@
 
 [![GitPod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/wechaty/wechaty-getting-started)
 
-Click the ☝️ above `[Gitpod | Ready-to-Code]` button to launch Gitpod with Wechaty Getting Started ding-dong BOT instantly right inside your favorite browser.
+Click the ☝️ above `[Gitpod | Ready-to-Code]` button to launch Gitpod with Wechaty Getting Started ding-dong BOT instantly inside your favorite browser.
 
 The button will take you to this link: <https://gitpod.io/#https://github.com/wechaty/wechaty-getting-started>
+
+GitHub links:
+
+- Repo: <https://github.com/wechaty/wechaty-getting-started/blob/master/docs/gitpod.md>
+- Pages <https://wechaty.github.io/wechaty-getting-started/docs/gitpod>
 
 ## Screenshot
 
