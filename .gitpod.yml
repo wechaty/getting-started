@@ -13,6 +13,9 @@ tasks:
   - name: Wechaty ding-dong BOT
     openIn: main
     openMode: split-right
+    #
+    # Huan(202002): `npm install` will fail the gitpod loading in browser
+    #
     init: echo 'npm install'
     command: npm install && npm start
 
