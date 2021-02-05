@@ -4,7 +4,7 @@
 
 Click the ☝️ above `[Gitpod | Ready-to-Code]` button to launch Gitpod with Wechaty Getting Started ding-dong BOT instantly right inside your favorite browser.
 
-The button will send you to this link: <https://gitpod.io/#https://github.com/wechaty/wechaty-getting-started>
+The button will take you to this link: <https://gitpod.io/#https://github.com/wechaty/wechaty-getting-started>
 
 ## Screenshot
 
