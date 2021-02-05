@@ -16,7 +16,8 @@ tasks:
     #
     # Huan(202002): `npm install` will fail the gitpod loading in browser
     #
-    init: echo 'npm install'
+    #
+    init: npm install
     command: npm install && npm start
 
 github:
