@@ -27,7 +27,6 @@ Learn more about [Gitpod ❤️ Wechaty](docs/gitpod.md)
 ## Requirements
 
 1. [Node.js](https://nodejs.dev/) v12+
-1. Build Tools for your platform
 1. [Wechaty Puppet Service TOKEN](https://wechaty.js.org/docs/puppet-services/) (if you want to use RPA protocols other than Web)
 
 ## Getting Started
