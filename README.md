@@ -14,7 +14,7 @@ This repository should work out-of-the-box, and is the best start point for Wech
 
 [![GitPod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/wechaty/wechaty-getting-started)
 
-Use Gitpod to run our [Wechaty Getting Started ding-dong BOT](examples/ding-dong-bot.ts) instantly right inside your browser!
+Use Gitpod to run our [Wechaty Getting Started ding-dong BOT](examples/ding-dong-bot.ts) instantly inside your browser!
 
 Learn more about [Gitpod ❤️ Wechaty](docs/gitpod.md)
 
@@ -55,6 +55,20 @@ cd wechaty-getting-started
 npm install
 ```
 
+#### Troubleshooting
+
+1. You might want to use taobao registry mirror for NPM:
+
+    ```sh
+    npm --registry=https://registry.npm.taobao.org install
+    ```
+
+1. You mignt need [windows-build-tool](https://www.npmjs.com/package/windows-build-tool) if you are using windows:
+
+    ```sh
+    npm install windows-build-tool
+    ```
+
 ### 4 Run the Bot
 
 ```sh
@@ -73,39 +87,42 @@ You are all set!
 
 ## Working with Different Puppets
 
-By default, the Wechaty will use the [Puppet Service](https://wechaty.js.org/docs/puppet-services/) for logging in your bot. You can use other [Puppet Provider](https://github.com/wechaty/wechaty-puppet/wiki/Directory) like Web protocol (`wechaty-puppet-puppeteer`) for logging in bot.
+In our getting started example, the ding-dong BOT is using [wechaty-puppet-wechat4u](https://github.com/wechaty/wechaty-puppet-wechat4u) when `WECHATY_PUPPET` is not set, which is just for newcomer's convenience.
+
+By default, the Wechaty will use the [Puppet Service](https://wechaty.js.org/docs/puppet-services/) for logging in your bot. You can use other [Puppet Provider](https://github.com/wechaty/wechaty-puppet/wiki/Directory) like Whatsapp Web protocol([wechaty-puppet-whatsapp](https://github.com/wechaty/wechaty-puppet-whatsapp)).
 
 If you want to use a Wechaty Puppet Provider for different protocols, then you need to specified a puppet service provider name (the same as its NPM name) by setting the `WECHATY_PUPPET` environment variable.
 
-Thanks for the great contributions from our great community, there are many puppet service providers can be used by Wechaty, which helps us to use protocols like Web, Pad, Mac, and Windows.
+Thanks for the great contributions from our great community, there are many Wechaty Puppets can be used by Wechaty, which helps us to use protocols like Web, Pad, Mac, and Windows.
 
-### Wechaty Puppet Service Providers
+### Wechaty Puppets
 
 | Protocol | NPM |
 | :--- | :--- |
-| Web | `wechaty-puppet-puppeteer` |
-| Service | `wechaty-puppet-service` |
-| PadLocal | `wechaty-puppet-padlocal` |
+| Puppet Service | `wechaty-puppet-service` |
+| Whatsapp Web | `wechaty-puppet-whatsapp` |
+| WeChat Web | `wechaty-puppet-puppeteer` |
+| WeChat Pad | `wechaty-puppet-padlocal` |
 
 > Visit our website for learning more about [Wechaty Puppet Service Providers](https://wechaty.js.org/docs/puppet-services/)
 
 For example, if you want to use the `padlocal` puppet, you should set `WECHATY_PUPPET=wechaty-puppet-padlocal` before you run `npm start`.
 
-> You also need a TOKEN for the `wechaty-puppet-padlocal`, and set it to the `WECHATY_PUPPET_PADLOCAL_TOKEN` environment variable.
+> You also need a TOKEN for the `wechaty-puppet-padlocal`, and set it to the `WECHATY_PUPPET_PADLOCAL_TOKEN` environment variable. Apply the PadLocal TOKEN from [here](https://wechaty.js.org/docs/puppet-services/padlocal/)
 
-### Linux
+### Linux / macOS
 
 ```sh
-export WECHATY_PUPPET=wechaty-puppet-service
-export WECHATY_PUPPET_SERVICE_TOKEN='your_token_here'
+export WECHATY_PUPPET=wechaty-puppet-padlocal
+export WECHATY_PUPPET_PADLOCAL_TOKEN='puppet_padlocal_your-token-here'
 npm start
 ```
 
 ### Windows
 
 ```sh
-set WECHATY_PUPPET=wechaty-puppet-service
-set WECHATY_PUPPET_SERVICE_TOKEN='your_token_here'
+set WECHATY_PUPPET=wechaty-puppet-padlocal
+set WECHATY_PUPPET_PADLOCAL_TOKEN='puppet_padlocal_your-token-here'
 npm start
 ```
 
@@ -162,12 +179,6 @@ The term [Puppet](https://github.com/Chatie/wechaty/wiki/Puppet) in Wechaty is a
 The plugins are named `PuppetXXX`, like [PuppetPuppeteer](https://github.com/Chatie/wechaty-puppet-puppeteer) is using the [google puppeteer](https://github.com/GoogleChrome/puppeteer) to control the [WeChat Web API](https://wx.qq.com) via a chrome browser, [PuppetPadchat](https://github.com/lijiarui/wechaty-puppet-padchat) is using the WebSocket protocol to connect with a Protocol Server for controlling the iPad Wechat program. More detail you could go [Puppet in wiki](https://github.com/Chatie/wechaty/wiki/Puppet).
 
 Learn more about Wechaty Puppet from our documentation at [Wechaty Puppet](https://wechaty.js.org/docs/specifications/puppet)
-
-### 3. How to install build tools for my platform
-
-1. Linux: gcc
-1. macOS: xcode
-1. Windows: "npm install [windows-build-tool](https://www.npmjs.com/package/windows-build-tool)"
 
 ## Wechaty Getting Started in Multiple Languages
 
