@@ -14,7 +14,7 @@ This repository should work out-of-the-box, and is the best start point for Wech
 
 [![GitPod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/wechaty/wechaty-getting-started)
 
-Use Gitpod to run our Wechaty Getting Started ding-dong BOT instantly right inside your browser!
+Use Gitpod to run our [Wechaty Getting Started ding-dong BOT](examples/ding-dong-bot.ts) instantly right inside your browser!
 
 Learn more about [Gitpod ❤️ Wechaty](docs/gitpod.md)
 
@@ -26,10 +26,9 @@ Learn more about [Gitpod ❤️ Wechaty](docs/gitpod.md)
 
 ## Requirements
 
-1. Node.js v12+
+1. [Node.js](https://nodejs.dev/) v12+
 1. Build Tools for your platform
-1. Wechaty Puppet Service TOKEN (if you want to use RPA protocols other than Web)
-    - Apply from our [Wechaty Puppet Service Providers](https://wechaty.js.org/docs/puppet-services/)
+1. [Wechaty Puppet Service TOKEN](https://wechaty.js.org/docs/puppet-services/) (if you want to use RPA protocols other than Web)
 
 ## Getting Started
 
@@ -163,6 +162,12 @@ The term [Puppet](https://github.com/Chatie/wechaty/wiki/Puppet) in Wechaty is a
 The plugins are named `PuppetXXX`, like [PuppetPuppeteer](https://github.com/Chatie/wechaty-puppet-puppeteer) is using the [google puppeteer](https://github.com/GoogleChrome/puppeteer) to control the [WeChat Web API](https://wx.qq.com) via a chrome browser, [PuppetPadchat](https://github.com/lijiarui/wechaty-puppet-padchat) is using the WebSocket protocol to connect with a Protocol Server for controlling the iPad Wechat program. More detail you could go [Puppet in wiki](https://github.com/Chatie/wechaty/wiki/Puppet).
 
 Learn more about Wechaty Puppet from our documentation at [Wechaty Puppet](https://wechaty.js.org/docs/specifications/puppet)
+
+### 3. How to install build tools for my platform
+
+1. Linux: gcc
+1. macOS: xcode
+1. Windows: "npm install [windows-build-tool](https://www.npmjs.com/package/windows-build-tool)"
 
 ## Wechaty Getting Started in Multiple Languages
 
