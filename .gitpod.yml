@@ -20,7 +20,7 @@ tasks:
     init: |
       echo '`npm install` will fail the gitpod loading in browser'
       echo 'See: https://github.com/wechaty/wechaty-getting-started/issues/160'
-    command: npm install && npm start
+    command: npm install && WECHATY_PUPPET=wechaty-puppet-puppeteer npm start
 
 github:
   prebuilds:
