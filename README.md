@@ -10,6 +10,8 @@ As a developer, you can use Wechaty to easily build your bot, effectively manage
 
 This repository should work out-of-the-box, and is the best start point for Wechaty beginners.
 
+If you have any questions, please join our Gitter at <https://gitter.im/wechaty/wechaty>
+
 ## TL;DR
 
 [![GitPod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/wechaty/wechaty-getting-started)
