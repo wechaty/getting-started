@@ -8,11 +8,6 @@ const {
   log,
 }               = require('wechaty')
 
-/**
- * You can ignore the next line becasue it is using for CodeSandbox
- */
-require('./.code-sandbox.js')
-
 function onScan (qrcode, status) {
   if (status === ScanStatus.Waiting || status === ScanStatus.Timeout) {
     require('qrcode-terminal').generate(qrcode, { small: true })  // show qrcode on console

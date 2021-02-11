@@ -14,9 +14,6 @@ import { generate } from 'qrcode-terminal'
 
 require('dotenv').config()
 
-// You can safely ignore / comment out the next two lines because it is using for CodeSandbox
-require('./.code-sandbox.js')
-
 function onScan (qrcode: string, status: ScanStatus) {
   if (status === ScanStatus.Waiting || status === ScanStatus.Timeout) {
     generate(qrcode, { small: true })  // show qrcode on console
