@@ -202,7 +202,7 @@ Learn more about Wechaty Puppet from our documentation at [Wechaty Puppet](https
 
 ### master
 
-### v0.6 (Feb 11, 2020)
+### v0.6 (Feb 11, 2021)
 
 [![GitPod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/wechaty/wechaty-getting-started)
 
