@@ -72,16 +72,26 @@ npm install
 
 ### 4 Run the Bot
 
-```sh
-npm start
-```
+You can use `export` to set environment variables in Linux, and use `set` in Windows.
 
-Or use node to run bot directly
+#### Linux
 
 ```shell
-# Linux: export WECHATY_LOG=verbose
-# Win32: set WECHATY_LOG=verbose
-npx ts-node examples/ding-dong-bot.ts
+export WECHATY_LOG=verbose
+export WECHATY_PUPPET=wechaty-puppet-puppeteer
+npm start
+# the above is equals to the below command:
+# npx ts-node examples/ding-dong-bot.ts
+```
+
+#### Windows
+
+```shell
+set WECHATY_LOG=verbose
+set WECHATY_PUPPET=wechaty-puppet-puppeteer
+npm start
+# the above is equals to the below command:
+# npx ts-node examples/ding-dong-bot.ts
 ```
 
 You are all set!
