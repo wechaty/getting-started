@@ -198,6 +198,20 @@ Learn more about Wechaty Puppet from our documentation at [Wechaty Puppet](https
 - [PHP Wechaty Getting Started](https://github.com/wechaty/php-wechaty-getting-started)
 - [.NET(C#) Wechaty Getting Started](https://github.com/wechaty/dotnet-wechaty-getting-started)
 
+## History
+
+### master
+
+### v0.6 (Feb 11, 2020)
+
+[![GitPod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/wechaty/wechaty-getting-started)
+
+Using Gitpod for easy getting started!
+
+### v0.0.1 (Jan 12, 2017)
+
+Init version
+
 ## Contributors
 
 [![contributor](https://sourcerer.io/fame/huan/wechaty/wechaty-getting-started/images/0)](https://sourcerer.io/fame/huan/wechaty/wechaty-getting-started/links/0)
@@ -215,6 +229,6 @@ Learn more about Wechaty Puppet from our documentation at [Wechaty Puppet](https
 
 ## Copyright & License
 
-- Code & Docs © 2018-now Huan and Wechaty Community Contributors (<https://github.com/wechaty>)
+- Code & Docs © 2018-now Huan and [Wechaty Contributors](https://wechaty.js.org/contributors/)
 - Code released under the Apache-2.0 License
 - Docs released under Creative Commons
