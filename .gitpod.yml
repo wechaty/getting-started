@@ -22,7 +22,10 @@ tasks:
       echo 'See: https://github.com/wechaty/wechaty-getting-started/issues/160'
     command: |
       npm install
-      WECHATY_PUPPET=wechaty-puppet-puppeteer npm start
+      # WECHATY_PUPPET_SERVICE_TOKEN=XXX npm run start:puppet:service
+      # WECHATY_PUPPET_PADLOCAL_TOKEN=XXX npm run start:wechat:padlocal
+      # npm run start:whatsapp:web
+      npm run start:wechat:web
 
 github:
   prebuilds:
