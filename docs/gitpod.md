@@ -13,6 +13,8 @@ GitHub links:
 
 ## Screenshot
 
+If you have any questions, please join our Gitter at <https://gitter.im/wechaty/wechaty>
+
 [![GitPod Wechaty Getting Started](images/gitpod-wechaty.webp)](https://gitpod.io/#https://github.com/wechaty/wechaty-getting-started)
 
 > Wechaty ❤️ Gitpod
