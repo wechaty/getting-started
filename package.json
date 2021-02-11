@@ -30,13 +30,13 @@
     "dotenv": "^8.2.0",
     "qrcode-terminal": "^0.12.0",
     "wechaty": "^0.57.3",
-    "wechaty-plugin-contrib": "^0.14.15"
+    "wechaty-plugin-contrib": "^0.14.16"
   },
   "devDependencies": {
-    "@chatie/eslint-config": "^0.12.2",
+    "@chatie/eslint-config": "^0.12.3",
     "@chatie/git-scripts": "^0.6.2",
     "@chatie/tsconfig": "^0.14.1",
-    "check-node-version": "^4.0.3",
+    "check-node-version": "^4.1.0",
     "connect": "^3.7.0",
     "cross-env": "^7.0.3",
     "is-pr": "^1.1.0",
@@ -45,7 +45,7 @@
     "wechaty-puppet-mock": "^0.28.2",
     "wechaty-puppet-puppeteer": "^0.22.1",
     "wechaty-puppet-wechat4u": "^0.16.3",
-    "wechaty-puppet-whatsapp": "0.0.9"
+    "wechaty-puppet-whatsapp": "0.2.2"
   },
   "git": {
     "scripts": {
