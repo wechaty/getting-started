@@ -30,6 +30,8 @@ Learn more about [Gitpod ❤️  Wechaty](docs/gitpod.md)
 
 [![Open in Cloud Shell][shell_img]][shell_link]
 
+> Generated via [open-in-cloud-shell](https://cloud.google.com/shell/docs/open-in-cloud-shell)
+
 After you get a shell in Google Cloud, run the following commands:
 
 ```sh
@@ -272,5 +274,5 @@ Init version
 [gitpod_img]: https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod
 [gitpod_link]: https://gitpod.io/#https://github.com/wechaty/wechaty-getting-started
 
-[shell_img]: https://gstatic.com/cloudssh/images/open-btn.png
-[shell_link]: https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/wechaty/wechaty-getting-started&page=editor&open_in_editor=examples/ding-dong-bot.ts
+[shell_img]: https://gstatic.com/cloudssh/images/open-btn.svg
+[shell_link]: https://ssh.cloud.google.com/cloudshell/editor?cloudshell_git_repo=https%3A%2F%2Fgithub.com%2Fwechaty%2Fwechaty-getting-started&cloudshell_open_in_editor=ding-dong-bot.ts&cloudshell_workspace=examples&cloudshell_tutorial=tutorials/google-cloud-shell-tutorial.md
