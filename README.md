@@ -16,9 +16,6 @@ If you have any questions, please join our Gitter at <https://gitter.im/wechaty/
 
 [![GitPod Ready-to-Code][gitpod_img]][gitpod_link]
 
-[gitpod_img]: https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod
-[gitpod_link]: https://gitpod.io/#https://github.com/wechaty/wechaty-getting-started
-
 Use Gitpod to run our [Wechaty Getting Started ding-dong BOT](examples/ding-dong-bot.ts) instantly inside your browser!
 
 Learn more about [Gitpod ❤️  Wechaty](docs/gitpod.md)
@@ -26,9 +23,6 @@ Learn more about [Gitpod ❤️  Wechaty](docs/gitpod.md)
 ### Google Cloud Shell
 
 [![Open in Cloud Shell][shell_img]][shell_link]
-
-[shell_img]: https://gstatic.com/cloudssh/images/open-btn.png
-[shell_link]: https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/wechaty/wechaty-getting-started&page=editor&open_in_editor=examples/ding-dong-bot.ts
 
 After you get a shell in Google Cloud, run the following commands:
 
@@ -232,9 +226,15 @@ Learn more about Wechaty Puppet from our documentation at [Wechaty Puppet](https
 
 ### master
 
+### v0.8 (Feb 20, 2021)
+
+[![Open in Cloud Shell][shell_img]][shell_link]
+
+Using Google Cloud Shell for easy getting started!
+
 ### v0.6 (Feb 11, 2021)
 
-[![GitPod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/wechaty/wechaty-getting-started)
+[![GitPod Ready-to-Code][gitpod_img]][gitpod_link]
 
 Using Gitpod for easy getting started!
 
@@ -262,3 +262,9 @@ Init version
 - Code & Docs © 2018-now Huan and [Wechaty Contributors](https://wechaty.js.org/contributors/)
 - Code released under the Apache-2.0 License
 - Docs released under Creative Commons
+
+[gitpod_img]: https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod
+[gitpod_link]: https://gitpod.io/#https://github.com/wechaty/wechaty-getting-started
+
+[shell_img]: https://gstatic.com/cloudssh/images/open-btn.png
+[shell_link]: https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/wechaty/wechaty-getting-started&page=editor&open_in_editor=examples/ding-dong-bot.ts
