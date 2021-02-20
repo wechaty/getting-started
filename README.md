@@ -14,11 +14,21 @@ If you have any questions, please join our Gitter at <https://gitter.im/wechaty/
 
 ## TL;DR
 
-[![GitPod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/wechaty/wechaty-getting-started)
+[![GitPod Ready-to-Code][gitpod_img]][gitpod_link]
+
+[gitpod_img]: https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod
+[gitpod_link]: https://gitpod.io/#https://github.com/wechaty/wechaty-getting-started
 
 Use Gitpod to run our [Wechaty Getting Started ding-dong BOT](examples/ding-dong-bot.ts) instantly inside your browser!
 
 Learn more about [Gitpod ❤️  Wechaty](docs/gitpod.md)
+
+### Google Cloud Shell
+
+[![Open in Cloud Shell][shell_img]][shell_link]
+
+[shell_img]: https://gstatic.com/cloudssh/images/open-btn.png
+[shell_link]: https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/wechaty/wechaty-getting-started&page=editor&open_in_editor=examples/ding-dong-bot.ts
 
 ## Features
 
