@@ -66,7 +66,9 @@ npm install
 
 The NPM system should help you to install all the dependencies by Wechaty, it will take 1 - 3 minutes.
 
-After all dependencies are resolved, we will be able to start our ding-dong BOT **Next**.
+After all dependencies have been resolved, we will be able to start our ding-dong BOT.
+
+Click **Next**.
 
 ## NPM Start
 
