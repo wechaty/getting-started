@@ -1,6 +1,6 @@
 /**
- * Wechaty - WeChat Bot SDK for Personal Account, Powered by TypeScript, Docker, and 💖
- *  - https://github.com/chatie/wechaty
+ * Wechaty - Conversational RPA SDK for Chatbot Makers.
+ *  - https://github.com/wechaty/wechaty
  */
 const {
   Wechaty,
