@@ -267,4 +267,4 @@ Init version
 [gitpod_link]: https://gitpod.io/#https://github.com/wechaty/wechaty-getting-started
 
 [shell_img]: https://gstatic.com/cloudssh/images/open-btn.svg
-[shell_link]: https://ssh.cloud.google.com/cloudshell/editor?cloudshell_git_repo=https%3A%2F%2Fgithub.com%2Fwechaty%2Fwechaty-getting-started&cloudshell_open_in_editor=ding-dong-bot.ts&cloudshell_workspace=examples&cloudshell_tutorial=tutorials/google-cloud-shell-tutorial.md
+[shell_link]: https://ssh.cloud.google.com/cloudshell/editor?cloudshell_git_repo=https%3A%2F%2Fgithub.com%2Fwechaty%2Fwechaty-getting-started&cloudshell_open_in_editor=ding-dong-bot.ts&cloudshell_workspace=.&cloudshell_tutorial=examples/tutorials/google-cloud-shell-tutorial.md
