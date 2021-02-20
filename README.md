@@ -30,6 +30,16 @@ Learn more about [Gitpod ❤️  Wechaty](docs/gitpod.md)
 [shell_img]: https://gstatic.com/cloudssh/images/open-btn.png
 [shell_link]: https://console.cloud.google.com/cloudshell/open?git_repo=https://github.com/wechaty/wechaty-getting-started&page=editor&open_in_editor=examples/ding-dong-bot.ts
 
+After you get a shell in Google Cloud, run the following commands:
+
+```sh
+# required by `wechaty-puppet-puppeteer` & `wechaty-puppet-whatsapp`
+sudo apt install -y libgbm1
+
+npm run start:wechat:web
+npm run start:whatsapp:web
+```
+
 ## Features
 
 1. Works out-of-the-box under Linux/Mac/Windows.
