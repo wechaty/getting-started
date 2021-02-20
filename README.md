@@ -14,6 +14,12 @@ If you have any questions, please join our Gitter at <https://gitter.im/wechaty/
 
 ## TL;DR
 
+The fatest way to getting started with Wechaty is to use a Cloud IDE.
+
+If you have no idea about anything, then you should try Gitpod first.
+
+### [Gitpod ❤️  Wechaty](docs/gitpod.md)
+
 [![GitPod Ready-to-Code][gitpod_img]][gitpod_link]
 
 Use Gitpod to run our [Wechaty Getting Started ding-dong BOT](examples/ding-dong-bot.ts) instantly inside your browser!
