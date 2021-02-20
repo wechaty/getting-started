@@ -32,15 +32,7 @@ Learn more about [Gitpod ❤️  Wechaty](docs/gitpod.md)
 
 > Generated via [open-in-cloud-shell](https://cloud.google.com/shell/docs/open-in-cloud-shell)
 
-After you get a shell in Google Cloud, run the following commands:
-
-```sh
-# required by `wechaty-puppet-puppeteer` & `wechaty-puppet-whatsapp`
-sudo apt install -y libgbm1
-
-npm run start:wechat:web
-npm run start:whatsapp:web
-```
+The Google Cloud Shell should open our tutorial in the right panel for you, please follow it to finish the tutorials.
 
 ## Features
 
