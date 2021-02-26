@@ -48,7 +48,7 @@
     "wechaty-puppet-mock": "^0.28.2",
     "wechaty-puppet-puppeteer": "^0.24",
     "wechaty-puppet-wechat4u": "^0.18",
-    "wechaty-puppet-whatsapp": "0.2.2"
+    "wechaty-puppet-whatsapp": "0.2.3"
   },
   "git": {
     "scripts": {
