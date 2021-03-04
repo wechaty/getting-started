@@ -151,6 +151,8 @@ set WECHATY_PUPPET_PADLOCAL_TOKEN='puppet_padlocal_your-token-here'
 npm start
 ```
 
+Learn more about how to install under windows from this [blog post](https://wechaty.js.org/2018/07/24/wechaty-installation-in-windows-10/).
+
 ## Advanced
 
 ### 1 Wechaty Tutorial
