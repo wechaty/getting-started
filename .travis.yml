@@ -18,10 +18,10 @@ script:
   - #env
   - node --version
   - npm --version
-  - npm ls grpc wechaty wechaty-puppet wechaty-puppet-mock wechaty-puppet-puppeteer wechaty-puppet-wechat4u wechaty-puppet-padplus || true
+  - npm ls grpc wechaty wechaty-puppet wechaty-puppet-mock wechaty-puppet-wechat wechaty-puppet-wechat4u wechaty-puppet-padplus || true
   - echo "Testing Started ..."
   - npm test
-  - npm ls grpc wechaty wechaty-puppet wechaty-puppet-mock wechaty-puppet-puppeteer wechaty-puppet-wechat4u wechaty-puppet-padplus || true
+  - npm ls grpc wechaty wechaty-puppet wechaty-puppet-mock wechaty-puppet-wechat wechaty-puppet-wechat4u wechaty-puppet-padplus || true
   - echo "Testing Finished."
 
 notifications:

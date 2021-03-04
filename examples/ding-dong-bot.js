@@ -49,12 +49,12 @@ const bot = new Wechaty({
    *  1. Set the `WECHATY_PUPPET` environment variable to the puppet NPM module name. (like `wechaty-puppet-padlocal`)
    *
    * You can use the following providers:
-   *  - wechaty-puppet-puppeteer (no token required)
+   *  - wechaty-puppet-wechat (no token required)
    *  - wechaty-puppet-padlocal (token required)
    *  - wechaty-puppet-service (token required, see: <https://wechaty.js.org/docs/puppet-services>)
    *  - etc. see: <https://github.com/wechaty/wechaty-puppet/wiki/Directory>
    */
-  // puppet: 'wechaty-puppet-puppeteer',
+  // puppet: 'wechaty-puppet-wechat',
 })
 
 bot.on('scan',    onScan)

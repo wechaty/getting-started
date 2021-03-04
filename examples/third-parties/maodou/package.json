@@ -30,7 +30,7 @@
     "qrcode-terminal": "^0.12.0",
     "wechaty": "^0.26.1",
     "wechaty-puppet": "^0.14.1",
-    "wechaty-puppet-puppeteer": "^0.16.1"
+    "wechaty-puppet-wechat": "^0.26"
   },
   "devDependencies": {
     "check-node-version": "^3.2.0"

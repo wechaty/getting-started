@@ -92,7 +92,7 @@ You can use `export` to set environment variables in Linux, and use `set` in Win
 
 ```shell
 export WECHATY_LOG=verbose
-export WECHATY_PUPPET=wechaty-puppet-puppeteer
+export WECHATY_PUPPET=wechaty-puppet-wechat
 npm start
 # the above is equals to the below command:
 # npx ts-node examples/ding-dong-bot.ts
@@ -102,7 +102,7 @@ npm start
 
 ```shell
 set WECHATY_LOG=verbose
-set WECHATY_PUPPET=wechaty-puppet-puppeteer
+set WECHATY_PUPPET=wechaty-puppet-wechat
 npm start
 # the above is equals to the below command:
 # npx ts-node examples/ding-dong-bot.ts
@@ -126,7 +126,7 @@ Thanks for the great contributions from our great community, there are many Wech
 | :--- | :--- |
 | Puppet Service | `wechaty-puppet-service` |
 | Whatsapp Web | `wechaty-puppet-whatsapp` |
-| WeChat Web | `wechaty-puppet-puppeteer` |
+| WeChat Web | `wechaty-puppet-wechat` |
 | WeChat Pad | `wechaty-puppet-padlocal` |
 
 > Visit our website for learning more about [Wechaty Puppet Service Providers](https://wechaty.js.org/docs/puppet-services/)
@@ -201,7 +201,7 @@ Solution: Wechaty support protocols other than Web API, such as pad. Learn more 
 
 The term [Puppet](https://github.com/Chatie/wechaty/wiki/Puppet) in Wechaty is an Abstract Class for implementing protocol plugins. The plugins are the component that helps Wechaty to control the Wechat(that's the reason we call it puppet).
 
-The plugins are named `PuppetXXX`, like [PuppetPuppeteer](https://github.com/Chatie/wechaty-puppet-puppeteer) is using the [google puppeteer](https://github.com/GoogleChrome/puppeteer) to control the [WeChat Web API](https://wx.qq.com) via a chrome browser, [PuppetPadchat](https://github.com/lijiarui/wechaty-puppet-padchat) is using the WebSocket protocol to connect with a Protocol Server for controlling the iPad Wechat program. More detail you could go [Puppet in wiki](https://github.com/Chatie/wechaty/wiki/Puppet).
+The plugins are named `PuppetXXX`, like [PuppetWeChat](https://github.com/Chatie/wechaty-puppet-wechat) is using the [google puppeteer](https://github.com/GoogleChrome/puppeteer) to control the [WeChat Web API](https://wx.qq.com) via a chrome browser, [PuppetPadchat](https://github.com/lijiarui/wechaty-puppet-padchat) is using the WebSocket protocol to connect with a Protocol Server for controlling the iPad Wechat program. More detail you could go [Puppet in wiki](https://github.com/Chatie/wechaty/wiki/Puppet).
 
 Learn more about Wechaty Puppet from our documentation at [Wechaty Puppet](https://wechaty.js.org/docs/specifications/puppet)
 

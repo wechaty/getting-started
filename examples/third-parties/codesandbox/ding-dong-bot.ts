@@ -50,7 +50,7 @@ const bot = new Wechaty({
    *
    * You can use the following providers:
    *  - wechaty-puppet-hostie
-   *  - wechaty-puppet-puppeteer
+   *  - wechaty-puppet-wechat
    *  - wechaty-puppet-padplus
    *  - etc.
    *

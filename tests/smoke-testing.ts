@@ -13,8 +13,8 @@ function getBotList () {
   mocker.use(mock.SimpleEnvironment())
   const puppetMock = new PuppetMock({ mocker })
 
-  const optionsPuppeteer = {
-    puppet: 'wechaty-puppet-puppeteer' as const,
+  const optionsWeChat = {
+    puppet: 'wechaty-puppet-wechat' as const,
     puppetOptions: {
       launchOptions: {
         ignoreDefaultArgs: ['--disable-extensions'],
@@ -25,7 +25,7 @@ function getBotList () {
   const botList = [
     new Wechaty({ puppet: puppetMock }),
     new Wechaty({ puppet: 'wechaty-puppet-service' }),
-    new Wechaty(optionsPuppeteer),
+    new Wechaty(optionsWeChat),
     new Wechaty({ puppet: 'wechaty-puppet-wechat4u' }),
   ]
 

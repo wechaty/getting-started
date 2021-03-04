@@ -10,7 +10,7 @@
     "lint": "eslint \"examples/*.ts\"",
     "start": "ts-node examples/ding-dong-bot.ts",
     "start:js": "node examples/ding-dong-bot.js",
-    "start:wechat:web": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-puppeteer npm start",
+    "start:wechat:web": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-wechat npm start",
     "start:wechat:padlocal": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-padlocal npm start",
     "start:puppet:service": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-service npm start",
     "start:whatsapp:web": "cross-env WECHATY_LOG=verbose  WECHATY_PUPPET=wechaty-puppet-whatsapp npm start",
@@ -46,7 +46,7 @@
     "marked": "^2.0.0",
     "nodemon": "^2.0.7",
     "wechaty-puppet-mock": "^0.28.2",
-    "wechaty-puppet-puppeteer": "^0.24",
+    "wechaty-puppet-wechat": "^0.26",
     "wechaty-puppet-wechat4u": "^0.18",
     "wechaty-puppet-whatsapp": "0.2.2"
   },

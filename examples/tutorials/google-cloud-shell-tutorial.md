@@ -93,10 +93,10 @@ You can use your Whatsapp to scan it to login your bot now.
 
 ### 2. Get a WeChat login QR Code
 
-To start our bot with WeChat, we can define `WECHATY_PUPPET` as `wechaty-puppet-puppeteer`, run:
+To start our bot with WeChat, we can define `WECHATY_PUPPET` as `wechaty-puppet-wechat`, run:
 
 ```sh
-export WECHATY_PUPPET=wechaty-puppet-puppeteer
+export WECHATY_PUPPET=wechaty-puppet-wechat
 npm start
 ```
 
@@ -177,7 +177,7 @@ We will start our ding-dong BOT again.
 
 ### 1. Select puppet to use by WCHATY_PUPPET
 
-You can set `WECHATY_PUPPET` to either `wechaty-puppet-whatapp` or `wechaty-puppet-puppeteer`, depends where you want to test the bot.
+You can set `WECHATY_PUPPET` to either `wechaty-puppet-whatapp` or `wechaty-puppet-wechat`, depends where you want to test the bot.
 
 ### 2. Run
 
