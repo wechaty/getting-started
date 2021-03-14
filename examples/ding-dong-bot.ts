@@ -58,7 +58,7 @@ const bot = new Wechaty({
    *  - wechaty-puppet-whatsapp (web protocol, no token required)
    *  - wechaty-puppet-padlocal (pad protocol, token required)
    *  - wechaty-puppet-service (token required, see: <https://wechaty.js.org/docs/puppet-services>)
-   *  - etc. see: <https://github.com/wechaty/wechaty-puppet/wiki/Directory>
+   *  - etc. see: <https://wechaty.js.org/docs/puppet-providers/>
    */
   // puppet: 'wechaty-puppet-whatsapp'
 })
