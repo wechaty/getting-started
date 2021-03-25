@@ -81,7 +81,7 @@ npm install
 1. You mignt need [windows-build-tool](https://www.npmjs.com/package/windows-build-tool) if you are using windows:
 
     ```sh
-    npm install windows-build-tool
+    npm install windows-build-tools
     ```
 
 ### 4 Run the Bot
