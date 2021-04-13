@@ -1,4 +1,4 @@
-# Wechaty Getting Started [![Powered by Wechaty](https://img.shields.io/badge/Powered%20By-Wechaty-brightgreen.svg)](https://github.com/chatie/wechaty)
+# Wechaty Getting Started [![Powered by Wechaty](https://img.shields.io/badge/Powered%20By-Wechaty-brightgreen.svg)](https://wechaty.js.org)
 
 [![Node.js CI](https://github.com/wechaty/wechaty-getting-started/workflows/Node.js%20CI/badge.svg)](https://github.com/wechaty/wechaty-getting-started/actions?query=workflow%3A%22Node.js+CI%22)
 ![Node.js v12](https://img.shields.io/badge/node-%3E%3D12-green.svg)
@@ -24,7 +24,7 @@ If you have no idea about anything, then you should try Gitpod first.
 
 Use Gitpod to run our [Wechaty Getting Started ding-dong BOT](examples/ding-dong-bot.ts) instantly inside your browser!
 
-Learn more about [Gitpod ❤️  Wechaty](docs/gitpod.md)
+Learn more about [Gitpod ❤️  Wechaty](docs/gitpod.md) from our blog: [Getting Started Without Leave Your Browser: Wechaty ❤️ Gitpod, @huan, Feb 06, 2021](https://wechaty.js.org/2021/02/06/wechaty-getting-started-without-leave-your-browser/)
 
 ### Google Cloud Shell
 
@@ -33,6 +33,8 @@ Learn more about [Gitpod ❤️  Wechaty](docs/gitpod.md)
 > Generated via [open-in-cloud-shell](https://cloud.google.com/shell/docs/open-in-cloud-shell)
 
 The Google Cloud Shell should open our tutorial in the right panel for you, please follow it to finish the tutorials.
+
+Learn more from our blog: [Google Cloud Shell Tutorials for Wechaty, @huan, Feb 20, 2021](https://wechaty.js.org/2021/02/20/google-cloud-shell-tutorials/)
 
 ## Features
 
@@ -81,7 +83,7 @@ npm install
 1. You mignt need [windows-build-tool](https://www.npmjs.com/package/windows-build-tool) if you are using windows:
 
     ```sh
-    npm install windows-build-tool
+    npm install windows-build-tools
     ```
 
 ### 4 Run the Bot

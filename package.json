@@ -1,6 +1,6 @@
 {
   "name": "wechaty-getting-started",
-  "version": "0.10.3",
+  "version": "0.10.4",
   "description": "Wechaty conversational SDK getting start template & examples",
   "main": "examples/ding-dong-bot.js",
   "engines": {
@@ -46,7 +46,7 @@
     "marked": "^2.0.0",
     "nodemon": "^2.0.7",
     "wechaty-puppet-mock": "^0.28.2",
-    "wechaty-puppet-wechat": "^0.26",
+    "wechaty-puppet-wechat": "^0.27",
     "wechaty-puppet-wechat4u": "^0.18",
     "wechaty-puppet-whatsapp": "0.2.3"
   },
