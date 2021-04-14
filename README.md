@@ -1,4 +1,4 @@
-# Wechaty Getting Started [![Powered by Wechaty](https://img.shields.io/badge/Powered%20By-Wechaty-brightgreen.svg)](https://github.com/chatie/wechaty)
+# Wechaty Getting Started [![Powered by Wechaty](https://img.shields.io/badge/Powered%20By-Wechaty-brightgreen.svg)](https://wechaty.js.org)
 
 [![Node.js CI](https://github.com/wechaty/wechaty-getting-started/workflows/Node.js%20CI/badge.svg)](https://github.com/wechaty/wechaty-getting-started/actions?query=workflow%3A%22Node.js+CI%22)
 ![Node.js v12](https://img.shields.io/badge/node-%3E%3D12-green.svg)
@@ -24,7 +24,7 @@ If you have no idea about anything, then you should try Gitpod first.
 
 Use Gitpod to run our [Wechaty Getting Started ding-dong BOT](examples/ding-dong-bot.ts) instantly inside your browser!
 
-Learn more about [Gitpod ❤️  Wechaty](docs/gitpod.md)
+Learn more about [Gitpod ❤️  Wechaty](docs/gitpod.md) from our blog: [Getting Started Without Leave Your Browser: Wechaty ❤️ Gitpod, @huan, Feb 06, 2021](https://wechaty.js.org/2021/02/06/wechaty-getting-started-without-leave-your-browser/)
 
 ### Google Cloud Shell
 
@@ -33,6 +33,8 @@ Learn more about [Gitpod ❤️  Wechaty](docs/gitpod.md)
 > Generated via [open-in-cloud-shell](https://cloud.google.com/shell/docs/open-in-cloud-shell)
 
 The Google Cloud Shell should open our tutorial in the right panel for you, please follow it to finish the tutorials.
+
+Learn more from our blog: [Google Cloud Shell Tutorials for Wechaty, @huan, Feb 20, 2021](https://wechaty.js.org/2021/02/20/google-cloud-shell-tutorials/)
 
 ## Features
 
@@ -81,7 +83,7 @@ npm install
 1. You mignt need [windows-build-tool](https://www.npmjs.com/package/windows-build-tool) if you are using windows:
 
     ```sh
-    npm install windows-build-tool
+    npm install windows-build-tools
     ```
 
 ### 4 Run the Bot
@@ -151,12 +153,14 @@ set WECHATY_PUPPET_PADLOCAL_TOKEN='puppet_padlocal_your-token-here'
 npm start
 ```
 
+Learn more about how to install under windows from this [blog post](https://wechaty.js.org/2018/07/24/wechaty-installation-in-windows-10/).
+
 ## Advanced
 
 ### 1 Wechaty Tutorial
 
 <div align="center">
-<a target="_blank" href="https://blog.chatie.io/getting-started-wechaty/"><img src="https://cloud.githubusercontent.com/assets/1361891/21722581/3ec957d0-d468-11e6-8888-a91c236e0ba2.jpg" border=0 width="60%"></a>
+<a target="_blank" href="https://wechaty.js.org/2017/01/01/getting-started-wechaty/"><img src="https://cloud.githubusercontent.com/assets/1361891/21722581/3ec957d0-d468-11e6-8888-a91c236e0ba2.jpg" border=0 width="60%"></a>
 </div>
 
 Above is a 10 minute video tutorial(a little outdated, it's running under v0.14 or older versions of Wechaty), which is a good way to start if you are new to Wechaty.
