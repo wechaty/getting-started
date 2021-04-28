@@ -4,93 +4,86 @@
 ![Node.js v12](https://img.shields.io/badge/node-%3E%3D12-green.svg)
 [![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-blue.svg)](https://www.typescriptlang.org/)
 
-[Wechaty](https://github.com/wechaty/wechaty/) is a Conversatioanl RPA SDK for Chatbot Makers. It's well designed with an easy to use API, supports all OSs including Linux, OSX, Win32, Docker, and lots of IMs including WeChat, WeCom, Whatsapp, Lark, Gitter, etc.
+## About Wechaty
 
-As a developer, you can use Wechaty to easily build your bot, effectively manage message sending/receiving, room creating/inviting, contact friendship, and delightful add artificial intelligence between users and your bot.
+[Wechaty](https://github.com/wechaty/wechaty/) is a Conversational RPA(Robotic Process Automation) SDK(Software Development Kit) for Chatbot Makers. It's well designed with an easy to use API. It supports all operating systems including Linux, OSX, Win32, Docker, and lots of IMs(Instant Messaging services) including WeChat, WeCom, Whatsapp, Lark, Gitter, etc.
 
-This repository should work out-of-the-box, and is the best start point for Wechaty beginners.
+As a developer, you can use Wechaty to easily build your bot, effectively manage message sending and receiving, room creation and sending out invitations, contact friends, and delightfully add artificial intelligence between users and your bot.
 
-If you have any questions, please join our Gitter at <https://gitter.im/wechaty/wechaty>
+## About Wechaty Getting Started Project
 
-## TL;DR
+If you are a total beginner to Wechaty, this project is the best starting point for you. You can run it on a Cloud IDE in a couple of steps or on a local setup on your machine as described in the sections below.
 
-The fatest way to getting started with Wechaty is to use a Cloud IDE.
+If you encounter difficulties or have any questions, you are welcome to ask for help in our Gitter room at <https://gitter.im/wechaty/wechaty>.
 
-If you have no idea about anything, then you should try Gitpod first.
+### Features of Wechaty Getting Started project
 
-### [Gitpod ❤️  Wechaty](docs/gitpod.md)
+1. It works out of the box on Linux, Mac or Windows.
+1. Supports all puppets like Web, Pad, Windows, and Mac.
+1. It replies with a `dong` message when it receives a `ding` message.
+
+### Running Wechaty Getting Started Project on a cloud based IDE
+
+The fastest way to getting started with Wechaty is to use a Cloud based IDE for running the Wechaty Getting Started Project. You can either use Gitpod or Google Cloud Shell.
+
+If you are a total beginner, then we recommed Gitpod.
+
+#### Using [Gitpod ❤️ Wechaty](docs/gitpod.md)
+
+Gitpod  is an online and open source platform for automated and ready-to-code development environments. You can click the button below to access a complete setup of [Wechaty Getting Started ding-dong BOT](examples/ding-dong-bot.ts) project on gitpod. If you have never used gitpod before, you will be required to login using your gitHub account.
 
 [![GitPod Ready-to-Code][gitpod_img]][gitpod_link]
 
-Use Gitpod to run our [Wechaty Getting Started ding-dong BOT](examples/ding-dong-bot.ts) instantly inside your browser!
+You can learn more about [Gitpod ❤️ Wechaty](docs/gitpod.md) from our blog: [Getting Started Without Leaving Your Browser: Wechaty ❤️ Gitpod, @huan, Feb 06, 2021](https://wechaty.js.org/2021/02/06/wechaty-getting-started-without-leave-your-browser/)
 
-Learn more about [Gitpod ❤️  Wechaty](docs/gitpod.md) from our blog: [Getting Started Without Leave Your Browser: Wechaty ❤️ Gitpod, @huan, Feb 06, 2021](https://wechaty.js.org/2021/02/06/wechaty-getting-started-without-leave-your-browser/)
+#### Using Google Cloud Shell
 
-### Google Cloud Shell
+Google Cloud Shell is an online development and operations environment accessible anywhere with your browser. You can run this project on Google Cloud Shell by clicking the button below.
 
 [![Open in Cloud Shell][shell_img]][shell_link]
 
 > Generated via [open-in-cloud-shell](https://cloud.google.com/shell/docs/open-in-cloud-shell)
 
-The Google Cloud Shell should open our tutorial in the right panel for you, please follow it to finish the tutorials.
+After opening the Google Cloud Shell editor, there should be an open tutorial in the right panel which you can follow to learn more about Wechaty.
 
-Learn more from our blog: [Google Cloud Shell Tutorials for Wechaty, @huan, Feb 20, 2021](https://wechaty.js.org/2021/02/20/google-cloud-shell-tutorials/)
+Learn more about running this project on Google Cloud Shell from our blog: [Google Cloud Shell Tutorials for Wechaty, @huan, Feb 20, 2021](https://wechaty.js.org/2021/02/20/google-cloud-shell-tutorials/)
 
-## Features
+### Running Wechaty Getting Started project on your local machine
 
-1. Works out-of-the-box under Linux/Mac/Windows.
-1. Supports all puppets like Web, Pad, Windows, and Mac.
-1. Reply a `dong` message when it received a `ding`.
+#### Prerequisites
 
-## Requirements
+For you to run this project on your local machine, you need to:
 
-1. [Node.js](https://nodejs.dev/) v12+
-1. [Wechaty Puppet Service TOKEN](https://wechaty.js.org/docs/puppet-services/) (if you want to use RPA protocols other than Web)
+1. Have [Node.js](https://nodejs.dev/) v12+ installed on your machine. You can run the command `node -v` on the terminal to check whether you have `Node.js` installed. If you have it, you should be able to see the version printed on the terminal  like `v15.13.0`. Your version might be different from `v15.13.0`. If it is not installed or your version is below 12,You need to install the latest version by following the links below:
+    - [Windows](https://nodejs.org/en/download/package-manager/#windows)
+    - [Linux(Debian/Ubuntu)](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions)
+    - [macOS](https://nodejs.org/en/download/package-manager/#macos)
+    > Node.js for other platforms can be found at <https://nodejs.org/en/download/package-manager/>
 
-## Getting Started
+2. Have [Wechaty Puppet Service TOKEN](https://wechaty.js.org/docs/puppet-services/) if you want to use RPA protocols other than Web
 
-### 1 Install Node.js (>=12)
+#### Step 1: Clone this Repository
 
-If you have not installed Node.js(or version is below 10),You need to install the latest version of Node.js first by following the links below:
-
-- [Windows](https://nodejs.org/en/download/package-manager/#windows)
-- [Linux(Debian/Ubuntu)](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions)
-- [macOS](https://nodejs.org/en/download/package-manager/#macos)
-
-> Instal Node.js for other platforms can be found at <https://nodejs.org/en/download/package-manager/>
-
-### 2 Clone this Repository
+You need to clone this repository to your local machine and then switch to `wechaty-getting-started` directory by running the commands below.
 
 ```sh
 git clone https://github.com/wechaty/wechaty-getting-started.git
 cd wechaty-getting-started
 ```
 
-### 3 Install Dependencies
+#### Step 2: Install Dependencies
+
+You need to install dependencies by running the command below.
 
 ```sh
 npm install
 ```
 
-#### Troubleshooting
+#### Step 3: Run the Bot
 
-1. You might want to use taobao registry mirror for NPM:
+You can use `export` to set environment variables in Linux, and use `set` in Windows. If you run into errors while running this command, check the troubleshooting tips in step 4.
 
-    ```sh
-    npm --registry=https://registry.npm.taobao.org install
-    ```
-
-1. You mignt need [windows-build-tool](https://www.npmjs.com/package/windows-build-tool) if you are using windows:
-
-    ```sh
-    npm install windows-build-tools
-    ```
-
-### 4 Run the Bot
-
-You can use `export` to set environment variables in Linux, and use `set` in Windows.
-
-#### Linux
+##### Linux
 
 ```shell
 export WECHATY_LOG=verbose
@@ -100,7 +93,7 @@ npm start
 # npx ts-node examples/ding-dong-bot.ts
 ```
 
-#### Windows
+##### Windows
 
 ```shell
 set WECHATY_LOG=verbose
@@ -112,15 +105,31 @@ npm start
 
 You are all set!
 
+#### Step 4: Troubleshooting
+
+If you run into problems while following the above steps, try the options below. You are also welcome to ask questions in our [gitter chatroom](https://gitter.im/wechaty/wechaty).
+
+1. You might need to use `taobao` registry mirror for NPM:
+
+    ```sh
+    npm --registry=https://registry.npm.taobao.org install
+    ```
+
+1. You might also need [windows-build-tool](https://www.npmjs.com/package/windows-build-tool) if you are using windows:
+
+    ```sh
+    npm install windows-build-tools
+    ```
+
 ## Working with Different Puppets
 
-In our getting started example, the ding-dong BOT is using [wechaty-puppet-wechat4u](https://github.com/wechaty/wechaty-puppet-wechat4u) when `WECHATY_PUPPET` is not set, which is just for newcomer's convenience.
+In our getting started example, the ding-dong BOT uses [wechaty-puppet-wechat4u](https://github.com/wechaty/wechaty-puppet-wechat4u) when `WECHATY_PUPPET` is not set, which is just for newcomer's convenience.
 
-By default, the Wechaty will use the [Puppet Service](https://wechaty.js.org/docs/puppet-services/) for logging in your bot. You can use other [Puppet Provider](https://github.com/wechaty/wechaty-puppet/wiki/Directory) like Whatsapp Web protocol([wechaty-puppet-whatsapp](https://github.com/wechaty/wechaty-puppet-whatsapp)).
+By default, Wechaty will use the [Puppet Service](https://wechaty.js.org/docs/puppet-services/) for logging in your bot. You can use other [Puppet Provider](https://github.com/wechaty/wechaty-puppet/wiki/Directory) like Whatsapp Web protocol( [wechaty-puppet-whatsapp](https://github.com/wechaty/wechaty-puppet-whatsapp)).
 
-If you want to use a Wechaty Puppet Provider for different protocols, then you need to specified a puppet service provider name (the same as its NPM name) by setting the `WECHATY_PUPPET` environment variable.
+If you want to use a Wechaty Puppet Provider for a different protocol, then you need to specify a puppet service provider name (the same as its NPM name) by setting the `WECHATY_PUPPET` environment variable.
 
-Thanks for the great contributions from our great community, there are many Wechaty Puppets can be used by Wechaty, which helps us to use protocols like Web, Pad, Mac, and Windows.
+Thanks to the great contributions from our community, there are many Wechaty Puppets which can be used by Wechaty. They have helped us use protocols like Web, Pad, Mac, and Windows.
 
 ### Wechaty Puppets
 
@@ -131,13 +140,11 @@ Thanks for the great contributions from our great community, there are many Wech
 | WeChat Web | `wechaty-puppet-wechat` |
 | WeChat Pad | `wechaty-puppet-padlocal` |
 
-> Visit our website for learning more about [Wechaty Puppet Service Providers](https://wechaty.js.org/docs/puppet-services/)
+> Visit our website to learn more about [Wechaty Puppet Service Providers](https://wechaty.js.org/docs/puppet-services/)
 
-For example, if you want to use the `padlocal` puppet, you should set `WECHATY_PUPPET=wechaty-puppet-padlocal` before you run `npm start`.
+For example, if you want to use the `padlocal` puppet, you should set `WECHATY_PUPPET=wechaty-puppet-padlocal` before you run `npm start`. You also need a TOKEN for `wechaty-puppet-padlocal` which you need to set to the `WECHATY_PUPPET_PADLOCAL_TOKEN` environment variable. You can apply for the PadLocal TOKEN from [here](https://wechaty.js.org/docs/puppet-services/padlocal/). The code snippets below illustrate what has been described above on Linux/ MacOS and on Windows.
 
-> You also need a TOKEN for the `wechaty-puppet-padlocal`, and set it to the `WECHATY_PUPPET_PADLOCAL_TOKEN` environment variable. Apply the PadLocal TOKEN from [here](https://wechaty.js.org/docs/puppet-services/padlocal/)
-
-### Linux / macOS
+### On Linux / macOS
 
 ```sh
 export WECHATY_PUPPET=wechaty-puppet-padlocal
@@ -145,7 +152,7 @@ export WECHATY_PUPPET_PADLOCAL_TOKEN='puppet_padlocal_your-token-here'
 npm start
 ```
 
-### Windows
+### On Windows
 
 ```sh
 set WECHATY_PUPPET=wechaty-puppet-padlocal
@@ -153,21 +160,21 @@ set WECHATY_PUPPET_PADLOCAL_TOKEN='puppet_padlocal_your-token-here'
 npm start
 ```
 
-Learn more about how to install under windows from this [blog post](https://wechaty.js.org/2018/07/24/wechaty-installation-in-windows-10/).
+Learn more about installing Wechaty on windows from this [blog post](https://wechaty.js.org/2018/07/24/wechaty-installation-in-windows-10/).
 
-## Advanced
+## Advanced tutorials
 
-### 1 Wechaty Tutorial
+### 1. Wechaty Tutorial
 
 <div align="center">
 <a target="_blank" href="https://wechaty.js.org/2017/01/01/getting-started-wechaty/"><img src="https://cloud.githubusercontent.com/assets/1361891/21722581/3ec957d0-d468-11e6-8888-a91c236e0ba2.jpg" border=0 width="60%"></a>
 </div>
 
-Above is a 10 minute video tutorial(a little outdated, it's running under v0.14 or older versions of Wechaty), which is a good way to start if you are new to Wechaty.
+Above is a 10 minute video tutorial. It is using version 0.14 or older versions of Wechaty therefore it is also outdated. It is a good way to start if you are new to Wechaty.
 
-### 2 More Examples
+### 2. More Examples
 
-> Note: Please make sure you can run `npm start` with this repository first before you go furture with more examples!
+> Note: Before you attempt more examples, make sure you have tried out the wechaty getting started project in this repository.
 
 - [Official Wechaty Examples Directory](https://github.com/wechaty/wechaty-getting-started/tree/master/examples)
 
@@ -175,21 +182,21 @@ Above is a 10 minute video tutorial(a little outdated, it's running under v0.14 
 
 1. GitBook: <https://wechaty.js.org/api>
 
-## SEE ALSO
+## MORE RESOURCES
 
-### 1 Docker Wechaty Getting Started
+### 1. Docker Wechaty Getting Started
 
 [![Docker](https://avatars0.githubusercontent.com/u/5429470?s=200)](https://github.com/Chatie/docker-wechaty-getting-started)
 
 <https://github.com/Chatie/docker-wechaty-getting-started>
 
-### 2 Heroku Wechaty Getting Started
+### 2. Heroku Wechaty Getting Started
 
 [![Heroku](https://avatars3.githubusercontent.com/u/23211?s=200)](https://github.com/Chatie/heroku-wechaty-getting-started)
 
 <https://github.com/Chatie/heroku-wechaty-getting-started>
 
-### 3 Wechaty Home
+### 3. Wechaty Home
 
 <https://wechaty.github.io>
 
@@ -197,15 +204,15 @@ Above is a 10 minute video tutorial(a little outdated, it's running under v0.14 
 
 ### 1. I can not login with my Wechat account
 
-WeChat account that registered after 2017 will not be able to login via Web API.  Learn more at <https://github.com/Chatie/wechaty/issues/872>
+WeChat account registered after 2017 will not be able to login via Web API.  Learn more about it at <https://github.com/Chatie/wechaty/issues/872>
 
-Solution: Wechaty support protocols other than Web API, such as pad. Learn more at <https://github.com/Chatie/wechaty/issues/1296>
+Solution: You can use Wechaty support protocols other than Web API, such as pad. Learn more at <https://github.com/Chatie/wechaty/issues/1296>
 
 ### 2. What is a `Puppet` in Wechaty
 
-The term [Puppet](https://github.com/Chatie/wechaty/wiki/Puppet) in Wechaty is an Abstract Class for implementing protocol plugins. The plugins are the component that helps Wechaty to control the Wechat(that's the reason we call it puppet).
+The term [Puppet](https://github.com/Chatie/wechaty/wiki/Puppet) in Wechaty is an Abstract Class for implementing protocol plugins. The plugins are the components that help Wechaty to control Wechat and that's the reason why we call it puppet.
 
-The plugins are named `PuppetXXX`, like [PuppetWeChat](https://github.com/Chatie/wechaty-puppet-wechat) is using the [google puppeteer](https://github.com/GoogleChrome/puppeteer) to control the [WeChat Web API](https://wx.qq.com) via a chrome browser, [PuppetPadchat](https://github.com/lijiarui/wechaty-puppet-padchat) is using the WebSocket protocol to connect with a Protocol Server for controlling the iPad Wechat program. More detail you could go [Puppet in wiki](https://github.com/Chatie/wechaty/wiki/Puppet).
+The plugins are named `PuppetXXX`, for example [PuppetWeChat](https://github.com/Chatie/wechaty-puppet-wechat) is using the [google puppeteer](https://github.com/GoogleChrome/puppeteer) to control the [WeChat Web API](https://wx.qq.com) via a chrome browser, [PuppetPadchat](https://github.com/lijiarui/wechaty-puppet-padchat) uses the WebSocket protocol to connect with a Protocol Server for controlling the iPad Wechat program. For more details you can go to [Puppet in wiki](https://github.com/Chatie/wechaty/wiki/Puppet).
 
 Learn more about Wechaty Puppet from our documentation at [Wechaty Puppet](https://wechaty.js.org/docs/specifications/puppet)
 
@@ -234,13 +241,13 @@ Learn more about Wechaty Puppet from our documentation at [Wechaty Puppet](https
 
 [![Open in Cloud Shell][shell_img]][shell_link]
 
-Using Google Cloud Shell for easy getting started!
+Using Google Cloud Shell for a quick setup!
 
 ### v0.6 (Feb 11, 2021)
 
 [![GitPod Ready-to-Code][gitpod_img]][gitpod_link]
 
-Using Gitpod for easy getting started!
+Using Gitpod for a quick setup!
 
 ### v0.0.1 (Jan 12, 2017)
 
