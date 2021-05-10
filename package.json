@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/wechaty/wechaty-getting-started#readme",
   "dependencies": {
-    "dotenv": "^8.2.0",
+    "dotenv": "^9.0.2",
     "qrcode-terminal": "^0.12.0",
     "wechaty": "^0.60.3",
     "wechaty-plugin-contrib": "^0.14.16"
