@@ -38,7 +38,7 @@
   "devDependencies": {
     "@chatie/eslint-config": "^0.12.3",
     "@chatie/git-scripts": "^0.6.2",
-    "@chatie/tsconfig": "^0.14.1",
+    "@chatie/tsconfig": "^0.16.2",
     "check-node-version": "^4.1.0",
     "connect": "^3.7.0",
     "cross-env": "^7.0.3",
