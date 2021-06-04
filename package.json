@@ -8,13 +8,12 @@
   },
   "scripts": {
     "lint": "eslint \"examples/*.ts\"",
-    "start": "npm run start:wechat:web",
-    "start:bot": "ts-node examples/ding-dong-bot.ts",
+    "start": "ts-node examples/ding-dong-bot.ts",
     "start:js": "node examples/ding-dong-bot.js",
-    "start:service": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-service npm run start:bot",
-    "start:wechat:web": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-wechat npm run start:bot",
-    "start:wechat:padlocal": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-padlocal npm run start:bot",
-    "start:whatsapp:web": "cross-env WECHATY_LOG=verbose  WECHATY_PUPPET=wechaty-puppet-whatsapp npm start:bot",
+    "start:service": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-service npm start",
+    "start:wechat:web": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-wechat npm start",
+    "start:wechat:padlocal": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-padlocal npm start",
+    "start:whatsapp:web": "cross-env WECHATY_LOG=verbose  WECHATY_PUPPET=wechaty-puppet-whatsapp npm start",
     "test": "npm run lint && npm run test:version && npm run test:smoke",
     "test:smoke": "ts-node tests/smoke-testing.ts",
     "test:version": "check-node-version --node \">= 12\""
