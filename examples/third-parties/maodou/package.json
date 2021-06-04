@@ -33,6 +33,5 @@
     "wechaty-puppet-wechat": "^0.26"
   },
   "devDependencies": {
-    "check-node-version": "^3.2.0"
   }
 }
