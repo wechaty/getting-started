@@ -50,17 +50,27 @@ const bot = new Wechaty({
   /**
    * How to set Wechaty Puppet Provider:
    *
-   *  1. Specify a `puppet` option when instantiating Wechaty. (like `{ puppet: 'wechaty-puppet-padlocal' }`, see below)
-   *  1. Set the `WECHATY_PUPPET` environment variable to the puppet NPM module name. (like `wechaty-puppet-padlocal`)
+   *  1. Specify a `puppet` option when instantiating Wechaty. (like `{ puppet: 'wechaty-puppet-whatsapp' }`, see below)
+   *  1. Set the `WECHATY_PUPPET` environment variable to the puppet NPM module name. (like `wechaty-puppet-whatsapp`)
    *
-   * You can use the following providers:
+   * You can use the following providers locally:
    *  - wechaty-puppet-wechat (web protocol, no token required)
    *  - wechaty-puppet-whatsapp (web protocol, no token required)
    *  - wechaty-puppet-padlocal (pad protocol, token required)
-   *  - wechaty-puppet-service (token required, see: <https://wechaty.js.org/docs/puppet-services>)
    *  - etc. see: <https://wechaty.js.org/docs/puppet-providers/>
    */
   // puppet: 'wechaty-puppet-whatsapp'
+    
+  /**
+   * You can use wechaty puppet provider 'wechaty-puppet-service'
+   *   which can connect to remote Wechaty Puppet Services
+   *   for using more powerful protocol.
+   * Learn more about services (and TOKEN) from https://wechaty.js.org/docs/puppet-services/
+   */
+  // puppet: 'wechaty-puppet-service'
+  // puppetOptions: {
+  //   token: 'xxx',
+  // }
 })
 
 bot.on('scan',    onScan)
