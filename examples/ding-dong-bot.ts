@@ -14,6 +14,10 @@ import { generate } from 'qrcode-terminal'
 
 require('dotenv').config()
 
+function onLogout (user: Contact) {
+  log.info('StarterBot', '%s logout', user)
+}
+
 function onScan (qrcode: string, status: ScanStatus) {
   if (status === ScanStatus.Waiting || status === ScanStatus.Timeout) {
     generate(qrcode, { small: true })  // show qrcode on console
@@ -31,10 +35,6 @@ function onScan (qrcode: string, status: ScanStatus) {
 
 function onLogin (user: Contact) {
   log.info('StarterBot', '%s login', user)
-}
-
-function onLogout (user: Contact) {
-  log.info('StarterBot', '%s logout', user)
 }
 
 async function onMessage (msg: Message) {
