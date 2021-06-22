@@ -60,7 +60,7 @@ const bot = new Wechaty({
    *  - etc. see: <https://wechaty.js.org/docs/puppet-providers/>
    */
   // puppet: 'wechaty-puppet-whatsapp'
-    
+
   /**
    * You can use wechaty puppet provider 'wechaty-puppet-service'
    *   which can connect to remote Wechaty Puppet Services
