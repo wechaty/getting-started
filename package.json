@@ -13,7 +13,7 @@
     "start:service": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-service npm start",
     "start:wechat:web": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-wechat npm start",
     "start:wechat:padlocal": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-padlocal npm start",
-    "start:whatsapp:web": "cross-env WECHATY_LOG=verbose  WECHATY_PUPPET=wechaty-puppet-whatsapp npm start",
+    "start:whatsapp:web": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-whatsapp npm start",
     "test": "npm run lint && npm run test:version && npm run test:smoke",
     "test:smoke": "ts-node tests/smoke-testing.ts",
     "test:version": "check-node-version --node \">= 12\""
@@ -45,7 +45,7 @@
     "wechaty-puppet-mock": "^0.29.8",
     "wechaty-puppet-wechat": "^0.28.1",
     "wechaty-puppet-wechat4u": "^0.18",
-    "wechaty-puppet-whatsapp": "0.2.3"
+    "wechaty-puppet-whatsapp": "^0.2.4"
   },
   "git": {
     "scripts": {
