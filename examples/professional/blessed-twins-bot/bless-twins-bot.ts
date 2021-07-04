@@ -8,7 +8,7 @@ import * as contrib from 'blessed-contrib'
 import { generate } from 'qrcode-terminal'
 
 import {
-  Wechaty,
+  Wechaty, WechatyOptions,
 }               from 'wechaty'
 
 const screen = blessed.screen({
@@ -222,7 +222,7 @@ setInterval(function() {
   const text = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L']
 
   const value = Math.round(Math.random() * 100)
-  lcdLineOne.setDisplay(value + text[value % 12])
+  lcdLineOne.setDisplay(value + text[value % 12]!)
   lcdLineOne.setOptions({
     color: colors[value % 5],
     elementPadding: 4,
@@ -298,8 +298,8 @@ screen.render()
  *
  *
  */
-const boy   = new Wechaty({ profile: 'boy' })
-const girl  = new Wechaty({ profile: 'girl' })
+const boy   = new Wechaty({ profile: 'boy' } as WechatyOptions)
+const girl  = new Wechaty({ profile: 'girl' } as WechatyOptions)
 
 startBot(boy, boyConsole)
 startBot(girl, girlConsole)
