@@ -1,6 +1,6 @@
 {
   "name": "wechaty-getting-started",
-  "version": "0.11.7",
+  "version": "0.11.9",
   "description": "Wechaty conversational SDK getting start template & examples",
   "main": "examples/ding-dong-bot.js",
   "engines": {
@@ -8,7 +8,7 @@
   },
   "scripts": {
     "lint": "eslint \"examples/*.ts\"",
-    "start": "ts-node examples/ding-dong-bot.ts",
+    "start": "cross-env NODE_OPTIONS='--unhandled-rejections=strict' ts-node examples/ding-dong-bot.ts",
     "start:js": "node examples/ding-dong-bot.js",
     "start:service": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-service npm start",
     "start:wechat:web": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-wechat npm start",
@@ -32,7 +32,7 @@
   "dependencies": {
     "dotenv": "^10.0.0",
     "qrcode-terminal": "^0.12.0",
-    "wechaty": "^0.61.18",
+    "wechaty": "^0.62.3",
     "wechaty-plugin-contrib": "^0.14.23"
   },
   "devDependencies": {
