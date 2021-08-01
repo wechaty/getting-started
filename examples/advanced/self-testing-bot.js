@@ -65,7 +65,7 @@ bot
   bot.say('Wechaty login').catch(console.error)
 })
 .on('scan', (qrcode, status) => {
-  generate(qrcode, { small: true })
+  qrTerm.generate(qrcode, { small: true })
   console.log(`${qrcode}\n[${status}] Scan QR Code in above url to login: `)
 })
 .on('message', async msg => {
