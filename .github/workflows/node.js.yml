@@ -15,9 +15,12 @@ jobs:
   build:
     strategy:
       matrix:
-        os: [macos-latest, windows-latest, ubuntu-latest]
-        # os: [macos-latest, ubuntu-latest]
-        node-version: [14]
+        os:
+          - macos-latest
+          - windows-latest
+          - ubuntu-latest
+        node-version:
+          - 16
     runs-on: ${{ matrix.os }}
 
     steps:
