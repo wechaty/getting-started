@@ -45,8 +45,8 @@
     "npm-run-all": "^4.1.5",
     "tstest": "^0.5.16",
     "wechaty-puppet-mock": "^0.31.3",
-    "wechaty-puppet-wechat": "^0.28.4",
     "wechaty-puppet-padlocal": "^0.4.2",
+    "wechaty-puppet-wechat": "^0.28.4",
     "wechaty-puppet-wechat4u": "^0.18",
     "wechaty-puppet-whatsapp": "^0.2.4",
     "wechaty-puppet-xp": "^0.4.16"
