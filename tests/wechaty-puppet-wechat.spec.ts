@@ -1,17 +1,17 @@
-#!/usr/bin/env node --no-warnings --loader ts-node/esm
+#!/usr/bin/env -S node --no-warnings --loader ts-node/esm
 
 import { test }     from 'tstest'
 import { Wechaty }  from 'wechaty'
 
 test('wechaty-puppet-wechat', async t => {
   const optionsWeChat = {
-    puppet: 'wechaty-puppet-wechat' as const,
+    puppet: 'wechaty-puppet-wechat',
     puppetOptions: {
       launchOptions: {
         ignoreDefaultArgs: ['--disable-extensions'],
       },
     },
-  }
+  } as const
 
   const bot = new Wechaty(optionsWeChat)
 

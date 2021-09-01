@@ -1,4 +1,4 @@
-#!/usr/bin/env node --no-warnings --loader ts-node/esm
+#!/usr/bin/env -S node --no-warnings --loader ts-node/esm
 
 import { test }     from 'tstest'
 import { Wechaty }  from 'wechaty'
@@ -8,7 +8,7 @@ import {
   PuppetMock,
 }               from 'wechaty-puppet-mock'
 
-test('wechaty-puppet-service', async t => {
+test('wechaty-puppet-mock', async t => {
   const mocker = new mock.Mocker()
   mocker.use(mock.SimpleEnvironment())
   const puppetMock = new PuppetMock({ mocker })
