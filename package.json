@@ -1,22 +1,22 @@
 {
   "name": "wechaty-getting-started",
-  "version": "0.11.9",
+  "version": "0.13.1",
   "description": "Wechaty conversational SDK getting start template & examples",
-  "main": "examples/ding-dong-bot.js",
+  "type": "module",
   "engines": {
-    "node": ">= 12"
+    "node": ">= 14"
   },
   "scripts": {
-    "lint": "eslint \"examples/*.ts\"",
-    "start": "cross-env NODE_OPTIONS='--unhandled-rejections=strict' ts-node examples/ding-dong-bot.ts",
+    "lint": "eslint \"examples/*.ts\" \"tests/*.ts\"",
+    "start": "cross-env NODE_OPTIONS='--no-warnings --loader=ts-node/esm' node examples/ding-dong-bot.ts",
     "start:js": "node examples/ding-dong-bot.js",
     "start:service": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-service npm start",
     "start:wechat:web": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-wechat npm start",
     "start:wechat:padlocal": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-padlocal npm start",
     "start:whatsapp:web": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-whatsapp npm start",
-    "test": "npm run lint && npm run test:version && npm run test:smoke",
-    "test:smoke": "ts-node tests/smoke-testing.ts",
-    "test:version": "check-node-version --node \">= 12\""
+    "test": "npm-run-all lint test:version test:smoke",
+    "test:smoke": "tap --node-arg=--loader=ts-node/esm --node-arg=--no-warnings \"tests/**/*.spec.ts\"",
+    "test:version": "check-node-version --node \">= 14\""
   },
   "repository": {
     "type": "git",
@@ -32,20 +32,24 @@
   "dependencies": {
     "dotenv": "^10.0.0",
     "qrcode-terminal": "^0.12.0",
-    "wechaty": "^0.63.7",
+    "wechaty": "^0.69.33",
     "wechaty-plugin-contrib": "^0.14.23"
   },
   "devDependencies": {
     "@chatie/eslint-config": "^0.12.4",
     "@chatie/git-scripts": "^0.6.2",
-    "@chatie/tsconfig": "^0.17.1",
+    "@chatie/tsconfig": "^0.19.6",
     "check-node-version": "^4.1.0",
     "cross-env": "^7.0.3",
     "is-pr": "^2.0.0",
-    "wechaty-puppet-mock": "^0.29.8",
-    "wechaty-puppet-wechat": "^0.28.1",
+    "npm-run-all": "^4.1.5",
+    "tstest": "^0.5.16",
+    "wechaty-puppet-mock": "^0.31.3",
+    "wechaty-puppet-padlocal": "^0.4.2",
+    "wechaty-puppet-wechat": "^0.29.5",
     "wechaty-puppet-wechat4u": "^0.18",
-    "wechaty-puppet-whatsapp": "^0.2.4"
+    "wechaty-puppet-whatsapp": "^0.3.3",
+    "wechaty-puppet-xp": "^0.5.3"
   },
   "git": {
     "scripts": {

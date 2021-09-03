@@ -1,3 +1,4 @@
+#!/usr/bin/env -S node --no-warnings --loader ts-node/esm
 /**
  * Wechaty - Conversational RPA SDK for Chatbot Makers.
  *  - https://github.com/wechaty/wechaty
@@ -10,9 +11,11 @@ import {
   log,
 }                  from 'wechaty'
 
-import { generate } from 'qrcode-terminal'
+import qrcodeTerminal from 'qrcode-terminal'
 
-require('dotenv').config()
+// https://stackoverflow.com/a/42817956/1123955
+// https://github.com/motdotla/dotenv/issues/89#issuecomment-587753552
+import 'dotenv/config.js'
 
 function onLogout (user: Contact) {
   log.info('StarterBot', '%s logout', user)
@@ -20,14 +23,14 @@ function onLogout (user: Contact) {
 
 function onScan (qrcode: string, status: ScanStatus) {
   if (status === ScanStatus.Waiting || status === ScanStatus.Timeout) {
-    generate(qrcode, { small: true })  // show qrcode on console
-
     const qrcodeImageUrl = [
       'https://wechaty.js.org/qrcode/',
       encodeURIComponent(qrcode),
     ].join('')
-
     log.info('StarterBot', 'onScan: %s(%s) - %s', ScanStatus[status], status, qrcodeImageUrl)
+
+    qrcodeTerminal.generate(qrcode, { small: true })  // show qrcode on console
+
   } else {
     log.info('StarterBot', 'onScan: %s(%s)', ScanStatus[status], status)
   }

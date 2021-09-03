@@ -2,15 +2,18 @@
  * Wechaty - Conversational RPA SDK for Chatbot Makers.
  *  - https://github.com/wechaty/wechaty
  */
-const {
+import {
   Wechaty,
   ScanStatus,
   log,
-}               = require('wechaty')
+}               from 'wechaty'
+
+import qrcodeTerminal from 'qrcode-terminal'
+import 'dotenv/config.js'
 
 function onScan (qrcode, status) {
   if (status === ScanStatus.Waiting || status === ScanStatus.Timeout) {
-    require('qrcode-terminal').generate(qrcode, { small: true })  // show qrcode on console
+    qrcodeTerminal.generate(qrcode, { small: true })  // show qrcode on console
 
     const qrcodeImageUrl = [
       'https://wechaty.js.org/qrcode/',
