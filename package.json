@@ -36,9 +36,9 @@
     "wechaty-plugin-contrib": "^0.14.23"
   },
   "devDependencies": {
-    "@chatie/eslint-config": "^0.12.4",
+    "@chatie/eslint-config": "^0.14.1",
     "@chatie/git-scripts": "^0.6.2",
-    "@chatie/tsconfig": "^0.19.6",
+    "@chatie/tsconfig": "^0.20.2",
     "check-node-version": "^4.1.0",
     "cross-env": "^7.0.3",
     "is-pr": "^2.0.0",
