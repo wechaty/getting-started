@@ -4,7 +4,7 @@
   "description": "Wechaty conversational SDK getting start template & examples",
   "type": "module",
   "engines": {
-    "node": ">= 14"
+    "node": ">=16"
   },
   "scripts": {
     "lint": "eslint \"examples/*.ts\" \"tests/*.ts\"",
