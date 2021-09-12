@@ -2,7 +2,7 @@
  * Wechaty - WeChat Bot SDK for Personal Account, Powered by TypeScript, Docker, and 💖
  *  - https://github.com/wechaty/wechaty
  */
- import {
+import {
   Contact,
   Message,
   ScanStatus,
