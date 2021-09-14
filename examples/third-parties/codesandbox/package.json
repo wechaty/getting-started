@@ -9,7 +9,7 @@
   "scripts": {
     "gotty": "bash -x install-gotty.sh",
     "start": "npm install && npm run gotty && pwd && ls -l && npm ls nodemon && ./gotty --ws-origin '.*' npm run bot",
-    "bot": "WECHATY_LOG=verbose nodemon -w ding-dong-bot.ts ding-dong-bot.ts"
+    "bot": "cross-env NODE_OPTIONS=\"--no-warnings --loader=ts-node/esm\" WECHATY_LOG=verbose nodemon -w ding-dong-bot.ts ding-dong-bot.ts"
   },
   "repository": {
     "type": "git",
