@@ -1,9 +1,10 @@
 {
-  "name": "wechaty-getting-started",
-  "version": "0.4.30",
+  "name": "codesandbox-wechaty-getting-started",
+  "version": "0.5.0",
   "description": "Wechaty is a Conversational SDK for Chatbot Makers",
+  "type": "module",
   "engines": {
-    "node": ">= 12"
+    "node": ">= 16"
   },
   "scripts": {
     "gotty": "bash -x install-gotty.sh",
@@ -22,12 +23,12 @@
   },
   "homepage": "https://github.com/wechaty/wechaty-getting-started#readme",
   "dependencies": {
-    "@chatie/tsconfig": "^0.14.1",
+    "@chatie/tsconfig": "^0.20.2",
     "cross-env": "^7.0.3",
     "qrcode-terminal": "^0.12.0",
-    "wechaty": "^0.56.6",
-    "wechaty-puppet-mock": "^0.28.2",
-    "wechaty-puppet-wechat4u": "^0.17.4"
+    "wechaty": "^0.69.47",
+    "wechaty-puppet-mock": "^0.28.3",
+    "wechaty-puppet-wechat4u": "^0.19.2"
   },
   "devDependencies": {}
 }
