@@ -1,10 +1,10 @@
 {
   "name": "codesandbox-wechaty-getting-started",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Wechaty is a Conversational SDK for Chatbot Makers",
   "type": "module",
   "engines": {
-    "node": ">= 16"
+    "node": ">=16"
   },
   "scripts": {
     "gotty": "bash -x install-gotty.sh",
