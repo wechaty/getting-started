@@ -10,11 +10,11 @@ import {
   log,
 }               from 'wechaty'
 
-import { generate } from 'qrcode-terminal'
+import qrTerm from 'qrcode-terminal'
 
 function onScan (qrcode: string, status: ScanStatus) {
   if (status === ScanStatus.Waiting || status === ScanStatus.Timeout) {
-    generate(qrcode, { small: true })  // show qrcode on console
+    qrTerm.generate(qrcode, { small: true })  // show qrcode on console
 
     const qrcodeImageUrl = [
       'https://wechaty.js.org/qrcode/',
