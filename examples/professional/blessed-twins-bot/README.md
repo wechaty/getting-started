@@ -2,6 +2,13 @@
 
 [![blessed twins bot](https://wechaty.github.io/wechaty/images/blessed-twins-bot.png)](https://asciinema.org/a/177857)
 
+### How to run
+
+```bash
+npm install blessed blessed-contrib @types/blessed
+ts-node blessed-twins-bot.ts
+```
+
 ### See Also
 
 * Example Source Code: <https://github.com/wechaty/wechaty-getting-started/tree/master/examples/professional/blessed-twins-bot>
