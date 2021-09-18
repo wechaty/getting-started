@@ -46,7 +46,7 @@
     "tstest": "^0.5.16",
     "wechaty-puppet-mock": "^0.31.3",
     "wechaty-puppet-padlocal": "^0.4.2",
-    "wechaty-puppet-wechat": "^0.29.5",
+    "wechaty-puppet-wechat": "^0.30.1",
     "wechaty-puppet-wechat4u": "^0.18",
     "wechaty-puppet-whatsapp": "^0.3.3",
     "wechaty-puppet-xp": "^0.7.2"
