@@ -17,10 +17,10 @@
  *
  */
 
-const {
+import {
   Message,
   Wechaty,
-}             = require('wechaty')
+}             from 'wechaty'
 
 async function onMessage(message) {
   try {

@@ -1,9 +1,9 @@
-const qrTerm = require('qrcode-terminal')
+import qrTerm from 'qrcode-terminal'
 
-const { 
-  Wechaty, 
-  Room 
-} = require('wechaty')
+import {
+  Wechaty,
+  Room
+}           from 'wechaty'
 
 const bot = new Wechaty()
 

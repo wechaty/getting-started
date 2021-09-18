@@ -1,7 +1,7 @@
 # Wechaty Getting Started [![Powered by Wechaty](https://img.shields.io/badge/Powered%20By-Wechaty-brightgreen.svg)](https://wechaty.js.org)
 
 [![Node.js CI](https://github.com/wechaty/wechaty-getting-started/workflows/Node.js%20CI/badge.svg)](https://github.com/wechaty/wechaty-getting-started/actions?query=workflow%3A%22Node.js+CI%22)
-![Node.js v12](https://img.shields.io/badge/node-%3E%3D12-green.svg)
+![Node.js v16](https://img.shields.io/badge/node-%3E%3D16-green.svg)
 [![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-blue.svg)](https://www.typescriptlang.org/)
 [![ES Modules](https://img.shields.io/badge/ES-Modules-brightgreen)](https://github.com/Chatie/tsconfig/issues/16)
 
@@ -55,7 +55,7 @@ Learn more about running this project on Google Cloud Shell from our blog: [Goog
 
 For you to run this project on your local machine, you need to:
 
-1. Have [Node.js](https://nodejs.dev/) v12+ installed on your machine. You can run the command `node -v` on the terminal to check whether you have `Node.js` installed. If you have it, you should be able to see the version printed on the terminal  like `v15.13.0`. Your version might be different from `v15.13.0`. If it is not installed or your version is below 12,You need to install the latest version by following the links below:
+1. Have [Node.js](https://nodejs.dev/) v16+ installed on your machine. You can run the command `node -v` on the terminal to check whether you have `Node.js` installed. If you have it, you should be able to see the version printed on the terminal  like `v16.13.0`. Your version might be different from `v16.13.0`. If it is not installed or your version is below 16, You need to install the latest version by following the links below:
     - [Windows](https://nodejs.org/en/download/package-manager/#windows)
     - [Linux(Debian/Ubuntu)](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions)
     - [macOS](https://nodejs.org/en/download/package-manager/#macos)

@@ -19,13 +19,13 @@
  */
 
 /* tslint:disable:variable-name */
-const qrTerm = require('qrcode-terminal')
+import qrTerm from 'qrcode-terminal'
 
-const {
+import {
   config,
   Wechaty,
   log,
-}             = require('../')
+}             from '../'
 
 async function main () {
   const bot = Wechaty.instance({ profile: config.default.DEFAULT_PROFILE })

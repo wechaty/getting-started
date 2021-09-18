@@ -16,13 +16,13 @@
  *   limitations under the License.
  *
  */
-const {
+import {
   Wechaty,
   config,
-}           = require('wechaty')
+}           from 'wechaty'
 
-const { FileBox }  = require('file-box')
-const qrTerm = require('qrcode-terminal')
+import { FileBox }  from 'file-box'
+import qrTerm from 'qrcode-terminal'
 
 /**
  *

@@ -1,12 +1,13 @@
-const debug = require("debug")("maodou-nlp.js")
+import debug from 'debug'
+import bosonnlp from 'bosonnlp'
 
-var Recognizers = require('@microsoft/recognizers-text-suite');
+import Recognizers from '@microsoft/recognizers-text-suite'
+
 const defaultCulture = Recognizers.Culture.Chinese;
 
-//const NLP = require('chi-time-nlp')
+//import NLP from 'chi-time-nlp'
 //	var nlp = new NLP()
 
-var bosonnlp = require('bosonnlp')
 var b_nlp = new bosonnlp.BosonNLP('6wXvIkZk.35344.lbaaVKiTzyh6')
 
 function getTimeInResults(results) {

@@ -16,16 +16,16 @@
  *   limitations under the License.
  *
  */
-const path  = require('path')
+import path  from 'path'
 
 /* tslint:disable:variable-name */
-const qrTerm      = require('qrcode-terminal')
-const { FileBox } = require('file-box')
+import qrTerm      from 'qrcode-terminal'
+import { FileBox } from 'file-box'
 
-const {
+import {
   Wechaty,
   log,
-}               = require('wechaty')
+}               from 'wechaty'
 
 const BOT_QR_CODE_IMAGE_FILE_BOX = FileBox
   .fromUrl('https://wechaty.js.org/img/friday-qrcode.svg')

@@ -1,7 +1,7 @@
-const { parseTime, parseTitleAndLocation } = require('./maodou-nlp')
+import { parseTime, parseTitleAndLocation } from './maodou-nlp'
 
-const debug = require("debug")("maodou-classes-bot.js")
-const fetch = require('node-fetch')
+import debug from "debug")("maodou-classes-bot.js"
+import fetch from 'node-fetch'
 
 function createCourse(originalText, createCallback) {
     // get rid of html tags like <img class="qqemoji qqemoji0"> in case someone use emoji input
@@ -24,7 +24,7 @@ function createCourse(originalText, createCallback) {
             // title, start_time, location, notes is 4 params to create a new maodou course
             const start_time = time
             const notes = originalText
-            createMaodouCourse(title, start_time, location, notes, createCallback)            
+            createMaodouCourse(title, start_time, location, notes, createCallback)
         })
     }
 }

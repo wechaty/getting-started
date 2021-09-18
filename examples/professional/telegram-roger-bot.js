@@ -24,8 +24,8 @@
  *   For more information: https://github.com/hczhcz/wechaty-telegram
  */
 
-const TelegramBot = require('node-telegram-bot-api')
-const WechatyTelegramBot = require('wechaty-telegram')
+import TelegramBot from 'node-telegram-bot-api'
+import WechatyTelegramBot from 'wechaty-telegram'
 
 const initBot = (ChatBot, token) => {
   const bot = new ChatBot(token, {

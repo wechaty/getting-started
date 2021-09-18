@@ -17,14 +17,14 @@
  *   limitations under the License.
  *
  */
-const qrTerm = require('qrcode-terminal')
+import qrTerm from 'qrcode-terminal'
 
-const {
+import {
   IoClient,
   Wechaty,
   config,
   log,
-}             = require('wechaty')
+}             from 'wechaty'
 
 console.log(`
 =============== Powered by Wechaty ===============

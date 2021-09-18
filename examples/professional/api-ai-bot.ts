@@ -26,13 +26,13 @@
  * Enjoy!
  */
 /* tslint:disable:variable-name */
-const QrcodeTerminal = require('qrcode-terminal')
+import QrcodeTerminal from 'qrcode-terminal'
 
 import { Brolog as log } from 'brolog'
 /* tslint:disable:no-var-requires */
-// const co  = require('co')
+// import co  from 'co'
 /* tslint:disable:variable-name */
-const ApiAi = require('apiai')
+import ApiAi from 'apiai'
 import { EventEmitter } from 'events'
 
 /**

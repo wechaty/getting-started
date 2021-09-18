@@ -17,15 +17,17 @@
  *
  */
 
-const {
+import {
   config,
   Wechaty,
   log,
-}           = require('wechaty')
+}           from 'wechaty'
 
-const { onMessage }      = require('./on-message')
-const { onFriendship }   = require('./on-friend')
-const { onRoomJoin }     = require('./on-room-join')
+import { onMessage }      from './on-message'
+import { onFriendship }   from './on-friend'
+import { onRoomJoin }     from './on-room-join'
+
+import qrTerm from 'qrcode-terminal'
 
 const welcome = `
 =============== Powered by Wechaty ===============
@@ -40,7 +42,7 @@ const bot = Wechaty.instance({ profile: config.default.DEFAULT_PROFILE })
 
 bot
   .on('scan', (qrcode, status) => {
-    require('qrcode-terminal').generate(qrcode)
+    qrTerm.generate(qrcode)
     console.info(`${qrcode}\n[${status}] Scan QR Code in above url to login: `)
   })
 

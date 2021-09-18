@@ -10,13 +10,13 @@
  *   Read more about this bot in https://blog.chatie.io/wechaty-xiaoli/
  *   The bot is implemented using Wechaty and xiaoli news API - https://xiaoli.ai
  */
-const {
+import {
     Wechaty,
     config,
-} = require('wechaty')
-const qrTerm = require('qrcode-terminal')
-const fetch = require('node-fetch')
-const schedule = require('node-schedule')
+}               from 'wechaty'
+import qrTerm from 'qrcode-terminal'
+import fetch from 'node-fetch'
+import schedule from 'node-schedule'
 
 /**
  *

@@ -8,17 +8,17 @@
  *   It can alert you when your class time is up.
  *   You can get alert by 4 ways: sms, call, email and wxmsg(wechat-miniapp-msg)
  */
-const {
+import {
     Wechaty,
     Message,
     config,
-} = require('wechaty')
-const qrTerm = require('qrcode-terminal')
+}               from 'wechaty'
+import qrTerm from 'qrcode-terminal'
 
 // import Debug from 'debug'
 // const debug = Debug('maodou:api/utils/agenda.js')
-const debug = require("debug")("maodou-classes-bot.js");
-const createCourse = require('./maodou-course-api.js')
+import debug from "debug")("maodou-classes-bot.js";
+import createCourse from './maodou-course-api.js'
 /*
  * Declare the Bot
  *

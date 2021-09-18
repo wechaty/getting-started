@@ -26,12 +26,12 @@ import {
   Readable,
 }                             from 'stream'
 
-import request      = require('request')
-import Ffmpeg       = require('fluent-ffmpeg')
-import querystring  = require('querystring')
+import request      from 'request'
+import Ffmpeg       from 'fluent-ffmpeg'
+import querystring  from 'querystring'
 
 /* tslint:disable:variable-name */
-const qrcodeTerminal = require('qrcode-terminal')
+import qrcodeTerminal from 'qrcode-terminal'
 
 /**
  * Change `import { ... } from '../'`

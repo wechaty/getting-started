@@ -16,8 +16,10 @@
  *   limitations under the License.
  *
  */
+import qrTerm from 'qrcode-terminal'
+
 async function onScan (qrcode, status) {
-  require('qrcode-terminal').generate(qrcode, {small: true})
+  qrTerm.generate(qrcode, {small: true})
 
   const qrcodeImageUrl = [
     'https://wechaty.js.org/qrcode/',

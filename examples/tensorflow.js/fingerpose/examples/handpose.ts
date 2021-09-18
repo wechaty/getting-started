@@ -5,7 +5,7 @@ import {
 }               from 'canvas'
 import { FileBox } from 'file-box'
 
-const handpose = require('@tensorflow-models/handpose')
+import handpose from '@tensorflow-models/handpose'
 
 async function main() {
   console.info('Loading model...')

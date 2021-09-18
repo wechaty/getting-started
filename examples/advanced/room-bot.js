@@ -45,15 +45,15 @@ const HELPER_CONTACT_NAME = '李卓桓'
  */
 
 /* tslint:disable:variable-name */
-const qrTerm = require('qrcode-terminal')
+import qrTerm from 'qrcode-terminal'
 
-const {
+import {
   config,
   Contact,
   Room,
   Wechaty,
   log,
-}             = require('wechaty')
+}             from 'wechaty'
 
 const welcome = `
 =============== Powered by Wechaty ===============

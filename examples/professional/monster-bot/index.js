@@ -36,8 +36,8 @@
  *
  */
 
-const finis = require('finis')
-const { Wechaty } = require('wechaty')
+import finis from 'finis'
+import { Wechaty } from 'wechaty'
 
 const bot = Wechaty.instance({ profile: "default"})
 
@@ -60,7 +60,7 @@ main()
 
 finis((code, signal, error) => {
   console.log('Importand data saved at this step.')
-  
+
   // await bot.stop()
   bot.stop()
   console.log(`Wechaty exit ${code} because of ${signal}/${error})`)

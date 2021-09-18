@@ -1,9 +1,9 @@
-const qrTerm = require('qrcode-terminal')
+import qrTerm from 'qrcode-terminal'
 
-const { 
-  Wechaty, 
+import {
+  Wechaty,
   Message,
-} = require('wechaty')
+}             from 'wechaty'
 
 const welcome = `
 =============== Powered by Wechaty ===============

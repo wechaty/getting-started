@@ -18,15 +18,15 @@
  */
 
 /* tslint:disable:variable-name */
-const qrTerm = require('qrcode-terminal')
+import qrTerm from 'qrcode-terminal'
 
-const {
+import {
   config,
   // Contact,
   log,
   Wechaty,
   Friendship,
-}             = require('wechaty')
+}             from 'wechaty'
 
 const welcome = `
 =============== Powered by Wechaty ===============

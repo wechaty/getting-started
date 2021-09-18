@@ -25,7 +25,7 @@
  *
  */
 
-const { hotImport } = require('hot-import')
+import { hotImport } from 'hot-import'
 
 export default async function onFriend (contact, request) {
   const config = await hotImport('config.js')

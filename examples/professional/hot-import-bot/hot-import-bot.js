@@ -32,7 +32,7 @@
  *   * https://www.npmjs.com/package/hot-import
  *
  */
-const { Wechaty } = require('wechaty')
+import { Wechaty } from 'wechaty'
 
 const bot = Wechaty.instance()
 .on('friend',   './listeners/on-friend')

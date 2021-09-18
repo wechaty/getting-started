@@ -25,8 +25,8 @@
  *
  */
 
-const fs = require('fs')
-const { hotImport } = require('hot-import')
+import fs from 'fs'
+import { hotImport } from 'hot-import'
 
 import { MediaMessage, Misc, log } from 'wechaty'
 

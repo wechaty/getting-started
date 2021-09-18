@@ -1,10 +1,10 @@
-const qrTerm = require('qrcode-terminal')
-const Tuling123 = require('tuling123-client')
+import qrTerm from 'qrcode-terminal'
+import Tuling123 from 'tuling123-client'
 
-const { 
-  Wechaty, 
+import {
+  Wechaty,
   Message,
-} = require('wechaty')
+}           from 'wechaty'
 
 const welcome = `
 =============== Powered by Wechaty ===============
