@@ -23,9 +23,9 @@ import {
   log,
 }           from 'wechaty'
 
-import { onMessage }      from './on-message'
-import { onFriendship }   from './on-friend'
-import { onRoomJoin }     from './on-room-join'
+import { onMessage }      from './on-message.js'
+import { onFriendship }   from './on-friend.js'
+import { onRoomJoin }     from './on-room-join.js'
 
 import qrTerm from 'qrcode-terminal'
 

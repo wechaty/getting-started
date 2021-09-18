@@ -36,7 +36,7 @@ import ApiAi from 'apiai'
 import { EventEmitter } from 'events'
 
 /**
- * Change `import { ... } from '../'`
+ * Change `import { ... } from '../.js'`
  * to     `import { ... } from 'wechaty'`
  * when you are runing with Docker or NPM instead of Git Source.
  */

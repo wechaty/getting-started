@@ -17,7 +17,7 @@ import qrTerm from 'qrcode-terminal'
 
 // import Debug from 'debug'
 // const debug = Debug('maodou:api/utils/agenda.js')
-import debug from "debug")("maodou-classes-bot.js";
+import debug from 'debug'
 import createCourse from './maodou-course-api.js'
 /*
  * Declare the Bot

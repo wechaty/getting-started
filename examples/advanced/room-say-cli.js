@@ -25,7 +25,7 @@ import {
   config,
   Wechaty,
   log,
-}             from '../'
+}             from '../mod.js'
 
 async function main () {
   const bot = Wechaty.instance({ profile: config.default.DEFAULT_PROFILE })

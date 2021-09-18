@@ -1,6 +1,6 @@
-import { parseTime, parseTitleAndLocation } from './maodou-nlp'
+import { parseTime, parseTitleAndLocation } from './maodou-nlp.js'
 
-import debug from "debug")("maodou-classes-bot.js"
+import debug from 'debug'
 import fetch from 'node-fetch'
 
 function createCourse(originalText, createCallback) {

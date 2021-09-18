@@ -34,7 +34,7 @@ import querystring  from 'querystring'
 import qrcodeTerminal from 'qrcode-terminal'
 
 /**
- * Change `import { ... } from '../'`
+ * Change `import { ... } from '../.js'`
  * to     `import { ... } from 'wechaty'`
  * when you are runing with Docker or NPM instead of Git Source.
  */
