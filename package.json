@@ -8,7 +8,7 @@
   },
   "scripts": {
     "lint": "eslint \"examples/*.ts\" \"tests/*.ts\"",
-    "start": "cross-env NODE_OPTIONS='--no-warnings --loader=ts-node/esm' node examples/ding-dong-bot.ts",
+    "start": "cross-env NODE_OPTIONS=\"--no-warnings --loader=ts-node/esm\" node examples/ding-dong-bot.ts",
     "start:js": "node examples/ding-dong-bot.js",
     "start:service": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-service npm start",
     "start:wechat:web": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-wechat npm start",
