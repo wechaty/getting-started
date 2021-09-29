@@ -32,8 +32,14 @@
   "dependencies": {
     "dotenv": "^10.0.0",
     "qrcode-terminal": "^0.12.0",
-    "wechaty": "^0.69.45",
-    "wechaty-plugin-contrib": "^0.14.23"
+    "wechaty": "^0.73.6",
+    "wechaty-plugin-contrib": "^0.14.23",
+    "wechaty-puppet-mock": "^0.31.3",
+    "wechaty-puppet-padlocal": "^0.4.2",
+    "wechaty-puppet-wechat": "^0.30.1",
+    "wechaty-puppet-wechat4u": "^0.18",
+    "wechaty-puppet-whatsapp": "^0.3.3",
+    "wechaty-puppet-xp": "^0.7.2"
   },
   "devDependencies": {
     "@chatie/eslint-config": "^0.14.1",
@@ -43,13 +49,7 @@
     "cross-env": "^7.0.3",
     "is-pr": "^2.0.0",
     "npm-run-all": "^4.1.5",
-    "tstest": "^0.5.16",
-    "wechaty-puppet-mock": "^0.31.3",
-    "wechaty-puppet-padlocal": "^0.4.2",
-    "wechaty-puppet-wechat": "^0.30.1",
-    "wechaty-puppet-wechat4u": "^0.18",
-    "wechaty-puppet-whatsapp": "^0.3.3",
-    "wechaty-puppet-xp": "^0.7.2"
+    "tstest": "^0.5.16"
   },
   "git": {
     "scripts": {
