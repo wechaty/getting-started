@@ -29,12 +29,8 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
-    - uses: actions/cache@v2
-      with:
-        path: ~/.npm
-        key: ${{ runner.os }}-wechaty-getting-started-cache
-        restore-keys: |
-          ${{ runner.os }}-wechaty.getting-started-
+        cache: npm
+        cache-dependency-path: package.json
     - run: npm install
     - run: npm test
       env:
