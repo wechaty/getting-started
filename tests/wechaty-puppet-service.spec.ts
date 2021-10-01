@@ -3,6 +3,8 @@
 import { test }     from 'tstest'
 import { Wechaty }  from 'wechaty'
 
+import 'dotenv/config.js'
+
 test('wechaty-puppet-service', async t => {
   const bot = new Wechaty({
     puppet: 'wechaty-puppet-service',
