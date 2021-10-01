@@ -76,3 +76,4 @@ examples/.pki
 log
 /*.jpg
 .env
+data/

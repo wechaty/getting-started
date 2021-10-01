@@ -35,6 +35,7 @@
     "wechaty": "^0.73.6",
     "wechaty-plugin-contrib": "^0.14.23",
     "wechaty-puppet-mock": "^0.31.3",
+    "wechaty-puppet-oicq": "^0.1.6",
     "wechaty-puppet-padlocal": "^0.4.2",
     "wechaty-puppet-wechat": "^0.30.1",
     "wechaty-puppet-wechat4u": "^0.19.3",
