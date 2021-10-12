@@ -43,7 +43,7 @@
     "wechaty-puppet-xp": "^0.7.2"
   },
   "devDependencies": {
-    "@chatie/eslint-config": "^0.14.1",
+    "@chatie/eslint-config": "^0.16.2",
     "@chatie/git-scripts": "^0.6.2",
     "@chatie/tsconfig": "^0.20.2",
     "check-node-version": "^4.1.0",
