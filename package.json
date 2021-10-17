@@ -4,7 +4,8 @@
   "description": "Wechaty conversational SDK getting start template & examples",
   "type": "module",
   "engines": {
-    "node": ">=16"
+    "node": ">=16",
+    "npm": ">=7"
   },
   "scripts": {
     "lint": "eslint \"examples/*.ts\" \"tests/*.ts\"",
@@ -32,12 +33,12 @@
   "dependencies": {
     "dotenv": "^10.0.0",
     "qrcode-terminal": "^0.12.0",
-    "wechaty": "^0.75.21",
+    "wechaty": "^0.75.27",
     "wechaty-plugin-contrib": "^0.14.23",
-    "wechaty-puppet-mock": "^0.31.8",
+    "wechaty-puppet-mock": "^0.33.3",
     "wechaty-puppet-oicq": "^0.1.12",
     "wechaty-puppet-padlocal": "^0.4.2",
-    "wechaty-puppet-wechat": "^0.30.5",
+    "wechaty-puppet-wechat": "^0.31.3",
     "wechaty-puppet-wechat4u": "^0.20.3",
     "wechaty-puppet-whatsapp": "^0.4.1",
     "wechaty-puppet-xp": "^0.7.19"
