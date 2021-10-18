@@ -3,6 +3,10 @@
  * Wechaty - Conversational RPA SDK for Chatbot Makers.
  *  - https://github.com/wechaty/wechaty
  */
+// https://stackoverflow.com/a/42817956/1123955
+// https://github.com/motdotla/dotenv/issues/89#issuecomment-587753552
+import 'dotenv/config.js'
+
 import {
   Contact,
   Message,
@@ -12,10 +16,6 @@ import {
 }                  from 'wechaty'
 
 import qrcodeTerminal from 'qrcode-terminal'
-
-// https://stackoverflow.com/a/42817956/1123955
-// https://github.com/motdotla/dotenv/issues/89#issuecomment-587753552
-import 'dotenv/config.js'
 
 function onLogout (user: Contact) {
   log.info('StarterBot', '%s logout', user)
