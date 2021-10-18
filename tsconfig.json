@@ -1,6 +1,13 @@
 {
   "extends": "@chatie/tsconfig",
   "compilerOptions": {
+    "target": "ESNext",
+    "module": "CommonJS",
+    "lib": [
+      "DOM",
+      "ES6"
+    ],
+    "esModuleInterop": true,
     "outDir": "dist"
   },
   "exclude": [
