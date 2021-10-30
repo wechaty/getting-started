@@ -236,9 +236,11 @@ Learn more about Wechaty Puppet from our documentation at [Wechaty Puppet](https
 
 ## History
 
-### master v0.13
+### master v1.0 (Oct 30, 2021)
 
-1. Enable ESM (ES Module) support ([chatie/tsconfig#16](https://github.com/Chatie/tsconfig/issues/16))
+Release v1.0 of Wechaty.
+
+1. v0.13: Enable ESM (ES Module) support ([chatie/tsconfig#16](https://github.com/Chatie/tsconfig/issues/16))
 
 ### v0.8 (Feb 20, 2021)
 

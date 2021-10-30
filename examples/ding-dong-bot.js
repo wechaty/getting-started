@@ -2,14 +2,14 @@
  * Wechaty - Conversational RPA SDK for Chatbot Makers.
  *  - https://github.com/wechaty/wechaty
  */
-import {
-  Wechaty,
+ import 'dotenv/config.js'
+
+ import {
+  WechatyBuilder,
   ScanStatus,
   log,
-}               from 'wechaty'
-
+}                     from 'wechaty'
 import qrcodeTerminal from 'qrcode-terminal'
-import 'dotenv/config.js'
 
 function onScan (qrcode, status) {
   if (status === ScanStatus.Waiting || status === ScanStatus.Timeout) {
@@ -43,7 +43,7 @@ async function onMessage (msg) {
   }
 }
 
-const bot = new Wechaty({
+const bot = WechatyBuilder.build({
   name: 'ding-dong-bot',
   /**
    * How to set Wechaty Puppet Provider:
