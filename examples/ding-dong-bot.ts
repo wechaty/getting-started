@@ -3,19 +3,19 @@
  * Wechaty - Conversational RPA SDK for Chatbot Makers.
  *  - https://github.com/wechaty/wechaty
  */
+// https://stackoverflow.com/a/42817956/1123955
+// https://github.com/motdotla/dotenv/issues/89#issuecomment-587753552
+import 'dotenv/config.js'
+
 import {
   Contact,
   Message,
   ScanStatus,
-  Wechaty,
+  WechatyBuilder,
   log,
 }                  from 'wechaty'
 
 import qrcodeTerminal from 'qrcode-terminal'
-
-// https://stackoverflow.com/a/42817956/1123955
-// https://github.com/motdotla/dotenv/issues/89#issuecomment-587753552
-import 'dotenv/config.js'
 
 function onLogout (user: Contact) {
   log.info('StarterBot', '%s logout', user)
@@ -48,7 +48,7 @@ async function onMessage (msg: Message) {
   }
 }
 
-const bot = new Wechaty({
+const bot = WechatyBuilder.build({
   name: 'ding-dong-bot',
   /**
    * How to set Wechaty Puppet Provider:
