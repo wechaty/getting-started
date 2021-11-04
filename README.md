@@ -187,15 +187,15 @@ Above is a 10 minute video tutorial. It is using version 0.14 or older versions 
 
 ### 1. Docker Wechaty Getting Started
 
-[![Docker](https://avatars0.githubusercontent.com/u/5429470?s=200)](https://github.com/Chatie/docker-wechaty-getting-started)
+[![Docker](https://avatars0.githubusercontent.com/u/5429470?s=200)](https://github.com/wechaty/docker-wechaty-getting-started)
 
-<https://github.com/Chatie/docker-wechaty-getting-started>
+<https://github.com/wechaty/docker-wechaty-getting-started>
 
 ### 2. Heroku Wechaty Getting Started
 
-[![Heroku](https://avatars3.githubusercontent.com/u/23211?s=200)](https://github.com/Chatie/heroku-wechaty-getting-started)
+[![Heroku](https://avatars3.githubusercontent.com/u/23211?s=200)](https://github.com/wechaty/heroku-wechaty-getting-started)
 
-<https://github.com/Chatie/heroku-wechaty-getting-started>
+<https://github.com/wechaty/heroku-wechaty-getting-started>
 
 ### 3. Wechaty Home
 
@@ -283,4 +283,4 @@ Init version
 [gitpod_link]: https://gitpod.io/#https://github.com/wechaty/getting-started
 
 [shell_img]: https://gstatic.com/cloudssh/images/open-btn.svg
-[shell_link]: https://ssh.cloud.google.com/cloudshell/editor?cloudshell_git_repo=https%3A%2F%2Fgithub.com%2Fwechaty%2Fwechaty-getting-started&cloudshell_open_in_editor=examples/ding-dong-bot.ts&cloudshell_workspace=.&cloudshell_tutorial=examples/tutorials/google-cloud-shell-tutorial.md
+[shell_link]: https://ssh.cloud.google.com/cloudshell/editor?cloudshell_git_repo=https%3A%2F%2Fgithub.com%2Fwechaty%getting-started&cloudshell_open_in_editor=examples/ding-dong-bot.ts&cloudshell_workspace=.&cloudshell_tutorial=examples/tutorials/google-cloud-shell-tutorial.md
