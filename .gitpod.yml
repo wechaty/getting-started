@@ -15,11 +15,11 @@ tasks:
     openMode: split-right
     #
     # Huan(202002): `npm install` will fail the gitpod loading in browser
-    #   https://github.com/wechaty/wechaty-getting-started/issues/160
+    #   https://github.com/wechaty/getting-started/issues/160
     #
     init: |
       echo '`npm install` will fail the gitpod loading in browser'
-      echo 'See: https://github.com/wechaty/wechaty-getting-started/issues/160'
+      echo 'See: https://github.com/wechaty/getting-started/issues/160'
     command: |
       npm install
       # WECHATY_PUPPET_SERVICE_TOKEN=XXX npm run start:puppet:service

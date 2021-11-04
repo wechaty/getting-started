@@ -1,21 +1,21 @@
 # 👇 **Click me**
 
-[![GitPod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/wechaty/wechaty-getting-started)
+[![GitPod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/wechaty/getting-started)
 
 Click the ☝️ above `[Gitpod | Ready-to-Code]` button to launch Gitpod with Wechaty Getting Started ding-dong BOT instantly inside your favorite browser.
 
-The button will take you to this link: <https://gitpod.io/#https://github.com/wechaty/wechaty-getting-started>
+The button will take you to this link: <https://gitpod.io/#https://github.com/wechaty/getting-started>
 
 GitHub links:
 
-- Repo: <https://github.com/wechaty/wechaty-getting-started/blob/master/docs/gitpod.md>
+- Repo: <https://github.com/wechaty/getting-started/blob/master/docs/gitpod.md>
 - Pages <https://wechaty.github.io/wechaty-getting-started/docs/gitpod>
 
 ## Screenshot
 
 You can [join our Gitter](https://gitter.im/wechaty/wechaty) network if you aren’t already a member.
 
-[![GitPod Wechaty Getting Started](images/gitpod-wechaty.webp)](https://gitpod.io/#https://github.com/wechaty/wechaty-getting-started)
+[![GitPod Wechaty Getting Started](images/gitpod-wechaty.webp)](https://gitpod.io/#https://github.com/wechaty/getting-started)
 
 > Wechaty ❤️ Gitpod
 
@@ -35,12 +35,12 @@ You can [join our Gitter](https://gitter.im/wechaty/wechaty) network if you aren
 
 ## What is Wechaty Getting Started
 
-[Wechaty Getting Started](https://github.com/wechaty/wechaty-getting-started) is a repository that work out-of-the-box, which is the best start point for Wechaty beginners.
+[Wechaty Getting Started](https://github.com/wechaty/getting-started) is a repository that work out-of-the-box, which is the best start point for Wechaty beginners.
 
 As a developer, you can use Wechaty to easily build your bot, effectively manage message sending/receiving, room creating/inviting, contact friendship, and delightful add artificial intelligence between users and your bot.
 
-- GitHub: <https://github.com/wechaty/wechaty-getting-started>
-- `ding-dong-bot.ts`: <https://github.com/wechaty/wechaty-getting-started/blob/master/examples/ding-dong-bot.ts>
+- GitHub: <https://github.com/wechaty/getting-started>
+- `ding-dong-bot.ts`: <https://github.com/wechaty/getting-started/blob/master/examples/ding-dong-bot.ts>
 
 ## Maintainers
 
