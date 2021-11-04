@@ -42,7 +42,15 @@ Continue on to the **Next** step to start setting up your chatbot.
 
 ### 1. Install Node.js
 
-Node.js has been pre-installed in Google Cloud Shell already.
+Node.js has been pre-installed in Google Cloud Shell.
+
+However, we need to upgrade Node.js to version 16+
+
+```sh
+nvm install 16
+```
+
+You should get a `v16.13.0` output by running command `node --version`
 
 ### 2. Git clone `wechaty/getting-started` repo
 
