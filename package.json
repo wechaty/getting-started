@@ -1,6 +1,6 @@
 {
   "name": "wechaty-getting-started",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Wechaty conversational SDK getting start template & examples",
   "type": "module",
   "engines": {
@@ -21,15 +21,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wechaty/wechaty-getting-started.git"
+    "url": "git+https://github.com/wechaty/getting-started.git"
   },
   "keywords": [],
   "author": "Huan LI <zixia@zixia.net>",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/wechaty/wechaty-getting-started/issues"
+    "url": "https://github.com/wechaty/getting-started/issues"
   },
-  "homepage": "https://github.com/wechaty/wechaty-getting-started#readme",
+  "homepage": "https://github.com/wechaty/getting-started#readme",
   "dependencies": {
     "dotenv": "^10.0.0",
     "qrcode-terminal": "^0.12.0",

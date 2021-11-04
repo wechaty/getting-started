@@ -36,15 +36,23 @@ Continue on to the **Next** step to start setting up your chatbot.
 
 ## Setting up developing environments
 
-1. Install [Node.js](https://nodejs.org) v12+
-1. Git clone [wechaty-getting-started](https://github.com/wechaty/wechaty-getting-started) repo
+1. Install [Node.js](https://nodejs.org) v16+
+1. Git clone [wechaty/getting-started](https://github.com/wechaty/getting-started) repo
 1. Install system dependency packages
 
 ### 1. Install Node.js
 
-Node.js has been pre-installed in Google Cloud Shell already.
+Node.js has been pre-installed in Google Cloud Shell.
 
-### 2. Git clone `wechaty-getting-started` repo
+However, we need to upgrade Node.js to version 16+
+
+```sh
+nvm install 16
+```
+
+You should get a `v16.13.0` output by running command `node --version`
+
+### 2. Git clone `wechaty/getting-started` repo
 
 Git Repo has been already cloned in Google Cloud Shell already.
 
@@ -206,7 +214,7 @@ Congratulations to be a Wechaty developer now!
 
 You can now start adding more features to our ding-dong BOT and have the bot working for your users with ease.
 
-For a complete list of Wechaty Examples, refer to the [Wechaty Examples Directory](https://github.com/wechaty/wechaty-getting-started/blob/master/examples/README.md).
+For a complete list of Wechaty Examples, refer to the [Wechaty Examples Directory](https://github.com/wechaty/getting-started/blob/master/examples/README.md).
 
 ## Conclusion
 

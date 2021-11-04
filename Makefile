@@ -1,6 +1,6 @@
 # Makefile for Wechaty Getting Started
 #
-# 	GitHb: https://github.com/wechaty/wechaty-getting-started
+# 	GitHb: https://github.com/wechaty/getting-started
 # 	Author: Huan LI <zixia@zixia.net> https://github.com/huan
 #
 # Make commands supported:
