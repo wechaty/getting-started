@@ -17,7 +17,7 @@ Please wait... I'm trying to login in...
 `
 
 console.log(welcome)
-const bot = new Wechaty()
+const bot = WechatyBuilder.build()
 
 bot.on('scan',    onScan)
 bot.on('login',   onLogin)

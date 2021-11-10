@@ -23,7 +23,7 @@ import schedule from 'node-schedule'
  * Declare the Bot
  *
  */
-const bot = new Wechaty({
+const bot = WechatyBuilder.build({
     profile: config.default.DEFAULT_PROFILE,
 })
 

@@ -29,7 +29,7 @@ import qrTerm from 'qrcode-terminal'
  * 1. Declare your Bot!
  *
  */
-const bot = new Wechaty({
+const bot = WechatyBuilder.build({
   name: 'myWechatyBot',
 })
 

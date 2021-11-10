@@ -1,7 +1,7 @@
 #!/usr/bin/env -S node --no-warnings --loader ts-node/esm
 
 import { test }     from 'tstest'
-import { Wechaty }  from 'wechaty'
+import { WechatyBuilder }  from 'wechaty'
 
 test('wechaty-puppet-wechat', async t => {
   const optionsWeChat = {
@@ -13,7 +13,7 @@ test('wechaty-puppet-wechat', async t => {
     },
   } as const
 
-  const bot = new Wechaty(optionsWeChat)
+  const bot = WechatyBuilder.build(optionsWeChat)
 
   const timer = setTimeout(() => {
     console.error('Smoke testing timeout after 2 minutes.')

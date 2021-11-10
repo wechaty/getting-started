@@ -298,8 +298,8 @@ screen.render()
  *
  *
  */
-const boy   = new Wechaty({ profile: 'boy' } as WechatyOptions)
-const girl  = new Wechaty({ profile: 'girl' } as WechatyOptions)
+const boy   = WechatyBuilder.build({ profile: 'boy' } as WechatyOptions)
+const girl  = WechatyBuilder.build({ profile: 'girl' } as WechatyOptions)
 
 startBot(boy, boyConsole)
 startBot(girl, girlConsole)

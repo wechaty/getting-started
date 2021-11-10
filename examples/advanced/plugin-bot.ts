@@ -18,7 +18,8 @@
  *
  */
 import {
-  Wechaty, Message,
+  WechatyBuilder,
+  type,
 }               from 'wechaty'
 
 /**
@@ -38,7 +39,7 @@ import {
  * 1. Declare your Bot!
  *
  */
-const bot = new Wechaty({
+const bot = WechatyBuilder.build({
   name : 'ding-dong-bot',
 })
 
@@ -52,34 +53,34 @@ bot.use(
   EventLogger(),
   DingDong(),
   OneToManyRoomConnector({
-    blacklist: [ async () => true ],
+    blacklist: [async () => true],
     many: [
       '20049383519@chatroom',     // 小句子测试
       '5611663299@chatroom',      // 'ChatOps - Mike BO'
     ],
     map: async message => message.from()?.name() + '(one to many): ' + message.text(),
     one: '17237607145@chatroom',  // PreAngel 动态
-    whitelist: [ async message => message.type() === Message.Type.Text ],
+    whitelist: [async message => message.type() === type.Message.Text],
   }),
   ManyToOneRoomConnector({
-    blacklist: [ async () => true ],
+    blacklist: [async () => true],
     many: [
       '20049383519@chatroom',     // 小句子测试
       '5611663299@chatroom',      // 'ChatOps - Mike BO'
     ],
     map: async message => message.from()?.name() + '(many to one): ' + message.text(),
     one: '17237607145@chatroom',  // PreAngel 动态
-    whitelist: [ async message => message.type() === Message.Type.Text ],
+    whitelist: [async message => message.type() === type.Message.Text],
   }),
   ManyToManyRoomConnector({
-    blacklist: [ async () => true ],
+    blacklist: [async () => true],
     many: [
       '20049383519@chatroom',     // 小句子测试
       '5611663299@chatroom',      // 'ChatOps - Mike BO'
     ],
     map: async message => message.from()?.name() + '(many to many): ' + message.text(),
-    whitelist: [ async message => message.type() === Message.Type.Text ],
-  })
+    whitelist: [async message => message.type() === type.Message.Text],
+  }),
 
 )
 

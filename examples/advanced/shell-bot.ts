@@ -3,7 +3,7 @@ import repl from 'repl'
 import { Wechaty } from 'wechaty'
 
 async function main () {
-  const wechaty = new Wechaty({
+  const wechaty = WechatyBuilder.build({
     name: 'shell-bot',
   })
 

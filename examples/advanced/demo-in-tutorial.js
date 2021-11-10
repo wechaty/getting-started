@@ -5,7 +5,7 @@ import {
   Room
 }           from 'wechaty'
 
-const bot = new Wechaty()
+const bot = WechatyBuilder.build()
 
 bot.on('scan',    function (qrcode, status) {
   qrTerm.generate(qrcode, { small: true })

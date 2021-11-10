@@ -6,7 +6,7 @@ import {
   Contact,
   Message,
   ScanStatus,
-  Wechaty,
+  WechatyBuilder,
   log,
 }               from 'wechaty'
 
@@ -43,7 +43,7 @@ async function onMessage (msg: Message) {
   }
 }
 
-const bot = new Wechaty({
+const bot = WechatyBuilder.build({
   name: 'ding-dong-bot',
   /**
    * Specify a `puppet` for a specific protocol (Web/Pad/Mac/Windows, etc).

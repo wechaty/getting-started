@@ -24,7 +24,7 @@ import createCourse from './maodou-course-api.js'
  *
  */
 
-const bot = new Wechaty({
+const bot = WechatyBuilder.build({
     //profile: config.default.DEFAULT_PROFILE,
     profile: 'maodou',
 })

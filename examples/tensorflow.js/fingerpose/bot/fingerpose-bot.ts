@@ -1,6 +1,6 @@
 import { Wechaty } from 'wechaty'
 
-const bot = new Wechaty({
+const bot = WechatyBuilder.build({
   puppet: 'wechaty-puppet-service',
   puppetOptions: {
     token: 'puppet_hostie_gdg_zhengzhou',

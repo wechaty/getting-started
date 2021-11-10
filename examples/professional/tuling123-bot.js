@@ -30,7 +30,7 @@ console.log(welcome)
 const TULING123_API_KEY = '18f25157e0446df58ade098479f74b21'
 const tuling = new Tuling123(TULING123_API_KEY)
 
-const bot = new Wechaty()
+const bot = WechatyBuilder.build()
 
 bot.on('scan',    onScan)
 bot.on('login',   onLogin)
