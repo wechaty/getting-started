@@ -19,7 +19,7 @@ If you encounter difficulties or have any questions, you are welcome to ask for 
 
 Notice: the current active version of Wechaty is v1.x which is not compatible with most of the v0.x modules.
 
-- **`wechaty@0.x`** - To use the Wechaty v0.x, please use the [Wechaty Getting Started v0.x](https://github.com/wechaty/getting-started/tree/v0.x) branch.
+- **`wechaty@0.x`** - To use the Wechaty v0.x, please visit the [Wechaty Getting Started v0.x](https://github.com/wechaty/getting-started/tree/v0.x) branch.
 
 ### Features of Wechaty Getting Started project
 
