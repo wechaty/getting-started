@@ -34,10 +34,9 @@
   "dependencies": {
     "dotenv": "^10.0.0",
     "qrcode-terminal": "^0.12.0",
-    "wechaty": "~1.0.6",
-    "wechaty-plugin-contrib": "~1.0.16",
-    "wechaty-puppet": "~1.3",
-    "wechaty-puppet-oicq": "~1.0.0",
+    "wechaty": "~1.7.22",
+    "wechaty-plugin-contrib": "~1.0.18",
+    "wechaty-puppet-oicq": "^1.7.1",
     "wechaty-puppet-wechat": "~1.0.1",
     "wechaty-puppet-wechat4u": "~1.0.1",
     "wechaty-puppet-whatsapp": "~1.0.1"
@@ -46,7 +45,7 @@
     "@chatie/eslint-config": "^1.0.4",
     "@chatie/git-scripts": "^0.6.2",
     "@chatie/tsconfig": "^1.0.3",
-    "check-node-version": "^4.1.0",
+    "check-node-version": "^4.2.1",
     "is-pr": "^2.0.0",
     "wechaty-puppet-mock": "^1.0.3"
   },

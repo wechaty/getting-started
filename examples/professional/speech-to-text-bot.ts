@@ -1,3 +1,4 @@
+#!/usr/bin/env -S node --no-warnings --loader ts-node/esm
 /**
  *   Wechaty - https://github.com/chatie/wechaty
  *
@@ -39,12 +40,11 @@ import qrcodeTerminal from 'qrcode-terminal'
  * when you are runing with Docker or NPM instead of Git Source.
  */
 import {
-  config,
-  Message,
-  Wechaty,
+  WechatyBuilder,
+  type,
 }                 from 'wechaty'
 
-const bot = Wechaty.instance({ profile: config.default.DEFAULT_PROFILE })
+const bot = WechatyBuilder.build({ name: 'speech-bot' })
 
 bot
 .on('scan', (qrcode, status) => {
@@ -55,13 +55,13 @@ bot
 .on('message', async function(msg) {
   console.log(`RECV: ${msg}`)
 
-  if (msg.type() !== Message.Type.Audio) {
+  if (msg.type() !== type.Message.Audio) {
     return // skip no-VOICE message
   }
 
   // const mp3Stream = await msg.readyStream()
 
-  const msgFile = await msg.file()
+  const msgFile = await msg.toFileBox()
   const filename = msgFile.name
   msgFile.toFile(filename)
 
@@ -70,14 +70,16 @@ bot
   console.log('VOICE TO TEXT: ' + text)
 
   if (msg.self()) {
-    await this.say(text)  // send text to 'filehelper'
+    await bot.say(text)  // send text to 'filehelper'
   } else {
     await msg.say(text)     // to original sender
   }
 
 })
-.start()
-.catch(e => console.error('bot.start() error: ' + e))
+
+bot
+  .start()
+  .catch(e => console.error('bot.start() error: ' + e))
 
 async function speechToText(mp3Stream: Readable): Promise<string> {
   const wavStream = mp3ToWav(mp3Stream)
