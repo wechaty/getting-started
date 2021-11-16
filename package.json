@@ -39,7 +39,8 @@
     "wechaty-puppet-oicq": "^1.7.1",
     "wechaty-puppet-wechat": "~1.0.1",
     "wechaty-puppet-wechat4u": "~1.0.1",
-    "wechaty-puppet-whatsapp": "~1.0.1"
+    "wechaty-puppet-whatsapp": "~1.0.1",
+    "wechaty-puppet-xp": "^1.7.1"
   },
   "devDependencies": {
     "@chatie/eslint-config": "^1.0.4",
