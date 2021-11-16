@@ -10,6 +10,7 @@
   "scripts": {
     "build": "tsc",
     "lint": "eslint \"examples/*.ts\" \"tests/*.ts\"",
+    "postinstall": "check-node-version --node \">=16\" --npm \">=7\"",
     "start": "cross-env NODE_OPTIONS=\"--no-warnings --loader=ts-node/esm\" node examples/ding-dong-bot.ts",
     "start:js": "node examples/ding-dong-bot.js",
     "start:service": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-service npm start",
@@ -17,8 +18,7 @@
     "start:wechat:padlocal": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-padlocal npm start",
     "start:whatsapp:web": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-whatsapp npm start",
     "test": "npm-run-all lint test:version test:smoke",
-    "test:smoke": "cross-env NODE_OPTIONS=\"--no-warnings --loader=ts-node/esm\" tap \"tests/**/*.spec.ts\"",
-    "test:version": "check-node-version --node \">= 16\""
+    "test:smoke": "cross-env NODE_OPTIONS=\"--no-warnings --loader=ts-node/esm\" tap \"tests/**/*.spec.ts\""
   },
   "repository": {
     "type": "git",
