@@ -1,6 +1,6 @@
 # WECHATY OFFICIAL EXAMPLES LIST DIRECTORY
 
-The `wechaty-getting-started/examples` directory is provided for people who want to learn coding wechaty, for them to get an easier start. If you start coding wechaty for the first time, we highly recommend to start with the [ding-dong-bot.js](ding-dong-bot.js), the best starter template for you.
+The `wechaty-getting-started/examples` directory is provided for people who want to learn coding wechaty, for them to get an easier start. If you start coding wechaty for the first time, we highly recommend to start with the [ding-dong-bot.js](basic/ding-dong-bot.js), the best starter template for you.
 
 | Filename         | Description | 描述 |
 | ---              | ---         | ---         |

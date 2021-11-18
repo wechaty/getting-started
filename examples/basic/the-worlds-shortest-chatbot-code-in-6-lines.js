@@ -1,7 +1,7 @@
 /**
- *   Wechaty - https://github.com/chatie/wechaty
+ *   Wechaty - https://github.com/wechaty/wechaty
  *
- *   @copyright 2016-2018 Huan LI <zixia@zixia.net>
+ *   @copyright 2016-now Huan LI <zixia@zixia.net>
  *
  *   Licensed under the Apache License, Version 2.0 (the "License");
  *   you may not use this file except in compliance with the License.
@@ -16,9 +16,9 @@
  *   limitations under the License.
  *
  */
-import { Wechaty } from 'wechaty'
+import { WechatyBuilder } from 'wechaty'
 
-Wechaty.instance() // Singleton
+WechatyBuilder.singleton() // Singleton
 .on('scan',     (qrcode, status)  => console.log(`Scan QR Code to login: ${status}\nhttps://wechaty.js.org/qrcode/${encodeURIComponent(qrcode)}`))
 .on('login',    user              => console.log(`User ${user} logined`))
 .on('message',  message           => console.log(`Message: ${message}`))
