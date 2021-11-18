@@ -1,9 +1,8 @@
 import qrTerm from 'qrcode-terminal'
 
 import {
-  Contact,
   log,
-  Wechaty,
+  WechatyBuilder,
 }           from 'wechaty'
 
 const welcome = `
@@ -58,7 +57,7 @@ async function main() {
    */
   for (let i = 0; i < contactList.length; i++) {
     const contact = contactList[i]
-    if (contact.type() === Contact.Type.Official) {
+    if (contact.type() === bot.Contact.Type.Official) {
       log.info('Bot', `official ${i}: ${contact}`)
     }
   }
@@ -69,7 +68,7 @@ async function main() {
 
   for (let i = 0; i < contactList.length; i++) {
     const contact = contactList[i]
-    if (contact.type() === Contact.Type.Personal) {
+    if (contact.type() === bot.Contact.Type.Personal) {
       log.info('Bot', `personal ${i}: ${contact.name()} : ${contact.id}`)
     }
   }
