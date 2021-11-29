@@ -185,7 +185,7 @@ Above is a 10 minute video tutorial. It is using version 0.14 or older versions 
 
 ## API REFERENCE
 
-1. GitBook: <https://wechaty.js.org/api>
+1. Official API Docs: <https://wechaty.js.org/docs/api>
 
 ## MORE RESOURCES
 
