@@ -1,6 +1,6 @@
 {
   "name": "wechaty-getting-started",
-  "version": "1.0.18",
+  "version": "1.10.0",
   "description": "Wechaty conversational SDK getting start template & examples",
   "type": "module",
   "engines": {
@@ -34,21 +34,21 @@
   "dependencies": {
     "dotenv": "^10.0.0",
     "qrcode-terminal": "^0.12.0",
-    "wechaty": "~1.7.22",
+    "wechaty": "~1.10.4",
     "wechaty-plugin-contrib": "~1.0.18",
-    "wechaty-puppet-oicq": "^1.7.1",
-    "wechaty-puppet-wechat": "~1.0.1",
-    "wechaty-puppet-wechat4u": "~1.0.1",
-    "wechaty-puppet-whatsapp": "~1.0.1",
-    "wechaty-puppet-xp": "^1.7.1"
+    "wechaty-puppet-oicq": "^1.10.2",
+    "wechaty-puppet-wechat": "~1.10.4",
+    "wechaty-puppet-wechat4u": "~1.10.2",
+    "wechaty-puppet-whatsapp": "~1.10.4",
+    "wechaty-puppet-xp": "^1.10.2"
   },
   "devDependencies": {
     "@chatie/eslint-config": "^1.0.4",
     "@chatie/git-scripts": "^0.6.2",
-    "@chatie/tsconfig": "^1.0.3",
+    "@chatie/tsconfig": "^4.6.2",
     "check-node-version": "^4.2.1",
     "is-pr": "^2.0.0",
-    "wechaty-puppet-mock": "^1.0.3"
+    "wechaty-puppet-mock": "^1.10.2"
   },
   "git": {
     "scripts": {

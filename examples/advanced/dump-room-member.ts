@@ -41,19 +41,25 @@ const onReady = async () => {
 
   const roomTopicRegex = /TEEC人工智能委员会/
 
-  const room = await bot.Room.find({ topic: roomTopicRegex })
-  if (!room) {
-    log.error('DumpRoomMemberBot', 'no room found, wait 3 seconds')
-    log.info('DumpRoomMemberBot', 'Tip: if you are using web protocol, you can try to say something in the room so that the puppet can discover it')
-    setTimeout(onReady, 3 * 1000)
-    return
+  const dump = async () => {
+    const room = await bot.Room.find({ topic: roomTopicRegex })
+    if (!room) {
+      log.error('DumpRoomMemberBot', 'no room found, wait 3 seconds')
+      log.info('DumpRoomMemberBot', 'Tip: if you are using web protocol, you can try to say something in the room so that the puppet can discover it')
+      setTimeout(dump, 3 * 1000)
+      return
+    }
+
+    log.info('DumpRoomMemberBot', 'dumping members for room: %s ...', room)
+    for await (const member of room) {
+      console.info(member.name())
+    }
+    log.info('DumpRoomMemberBot', 'dumping members for room: %s ... done', room)
+
+    process.exit(0)
   }
 
-  log.info('DumpRoomMemberBot', 'dumping members for room: %s ...', room)
-  for await (const member of room) {
-    console.info(member.name())
-  }
-  log.info('DumpRoomMemberBot', 'dumping members for room: %s ... done', room)
+  dump()
 }
 
 bot.on('scan',  onScan)
