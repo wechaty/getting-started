@@ -73,7 +73,7 @@ You need to clone this repository to your local machine and then switch to `wech
 
 ```sh
 git clone https://github.com/wechaty/getting-started.git
-cd wechaty-getting-started
+cd getting-started
 ```
 
 #### Step 2: Install Dependencies
