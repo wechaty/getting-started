@@ -114,12 +114,6 @@ You are all set!
 
 If you run into problems while following the above steps, try the options below. You are also welcome to ask questions in our [gitter chatroom](https://gitter.im/wechaty/wechaty).
 
-1. You might need to use `registry.npmmirror.com` registry mirror for NPM if you are using Chinanet:
-
-    ```sh
-    npm --registry=https://registry.npmmirror.com install
-    ```
-
 1. You might also need [windows-build-tool](https://www.npmjs.com/package/windows-build-tool) if you are using windows:
 
     ```sh
