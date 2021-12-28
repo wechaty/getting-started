@@ -1,6 +1,6 @@
 {
   "name": "wechaty-getting-started",
-  "version": "1.10.1",
+  "version": "1.10.2",
   "description": "Wechaty conversational SDK getting start template & examples",
   "type": "module",
   "engines": {
@@ -13,6 +13,7 @@
     "postinstall": "check-node-version --node \">=16\" --npm \">=7\"",
     "start": "cross-env NODE_OPTIONS=\"--no-warnings --loader=ts-node/esm\" node examples/ding-dong-bot.ts",
     "start:js": "node examples/ding-dong-bot.js",
+    "start:walnut": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-walnut npm start",
     "start:service": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-service npm start",
     "start:wechat:web": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-wechat npm start",
     "start:wechat:padlocal": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-padlocal npm start",
@@ -40,7 +41,8 @@
     "wechaty-puppet-wechat": "~1.10.4",
     "wechaty-puppet-wechat4u": "~1.10.2",
     "wechaty-puppet-whatsapp": "~1.10.4",
-    "wechaty-puppet-xp": "^1.10.2"
+    "wechaty-puppet-xp": "^1.10.2",
+    "wechaty-puppet-walnut": "^1.11.6"
   },
   "devDependencies": {
     "@chatie/eslint-config": "^1.0.4",
