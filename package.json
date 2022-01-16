@@ -39,7 +39,7 @@
     "wechaty-plugin-contrib": "^1.11.1",
     "wechaty-puppet-oicq": "^1.10.2",
     "wechaty-puppet-walnut": "^1.11.6",
-    "wechaty-puppet-wechat": "^1.11.8",
+    "wechaty-puppet-wechat": "^1.11.11",
     "wechaty-puppet-wechat4u": "~1.11.1",
     "wechaty-puppet-whatsapp": "~1.11.2",
     "wechaty-puppet-xp": "^1.10.2"
