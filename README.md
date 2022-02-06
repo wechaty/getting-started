@@ -5,7 +5,11 @@
 [![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-blue.svg)](https://www.typescriptlang.org/)
 [![ES Modules](https://img.shields.io/badge/ES-Modules-brightgreen)](https://github.com/Chatie/tsconfig/issues/16)
 
-## About Wechaty
+# Wechaty
+
+This repo provides information about the organisation Wechaty and its tools. You can find out who we are, what we do and most importantly, how we work and how you can contribute.  
+
+## What is Wechaty?
 
 [Wechaty](https://github.com/wechaty/wechaty/) is a Conversational RPA(Robotic Process Automation) SDK(Software Development Kit) for Chatbot Makers. It's well designed with an easy to use API. It supports all operating systems including Linux, OSX, Win32, Docker, and lots of IMs(Instant Messaging services) including WeChat, WeCom, Whatsapp, Lark, Gitter, etc.
 
