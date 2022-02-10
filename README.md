@@ -7,7 +7,7 @@
 
 # Wechaty
 
-This repo provides information about the organisation Wechaty and its tools. You can find out who we are, what we do and most importantly, how we work and how you can contribute.  
+This repo provides information about the organisation Wechaty. You can find out who we are, what we do and most importantly, how we work and how you can contribute.  
 
 ## What is Wechaty?
 
