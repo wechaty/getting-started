@@ -19,7 +19,8 @@
  *
  */
 import * as WECHATY from 'wechaty'
-import * as PUPPET  from 'wechaty-puppet'
+import * as CQRS    from 'wechaty-cqrs'
+
 import {
   of,
   merge,
@@ -36,14 +37,13 @@ import {
   switchMap,
 }                   from 'rxjs/operators'
 
-import * as CQRS    from 'wechaty-cqrs'
 
 const onScan$ = (source$: CQRS.BusObs) => CQRS.events$.scanReceivedEvent$(source$).pipe(
   map(scanReceivedEvent => scanReceivedEvent.payload),
   tap(({ qrcode, status }) => {
     const qrStatusList = [
-      PUPPET.types.ScanStatus.Waiting,
-      PUPPET.types.ScanStatus.Timeout,
+      WECHATY.types.ScanStatus.Waiting,
+      WECHATY.types.ScanStatus.Timeout,
     ]
     if (qrcode && qrStatusList.includes(status)) {
       const qrcodeImageUrl = [
@@ -51,9 +51,9 @@ const onScan$ = (source$: CQRS.BusObs) => CQRS.events$.scanReceivedEvent$(source
         encodeURIComponent(qrcode),
       ].join('')
 
-      console.info('onScan: %s(%s) - %s', PUPPET.types.ScanStatus[status], status, qrcodeImageUrl)
+      console.info('onScan: %s(%s) - %s', WECHATY.types.ScanStatus[status], status, qrcodeImageUrl)
     } else {
-      console.info('onScan: %s(%s)', PUPPET.types.ScanStatus[status], status)
+      console.info('onScan: %s(%s)', WECHATY.types.ScanStatus[status], status)
     }
   }),
 )
