@@ -234,9 +234,13 @@ Learn more about Wechaty Puppet from our documentation at [Wechaty Puppet](https
 
 ## History
 
-### master v1.0 (Oct 30, 2021)
+### main v1.18 (Mar 14, 2022)
 
-Release v1.0 of Wechaty.
+Add CQRS Wechaty examples.
+
+### v1.11 (Oct 30, 2021)
+
+Branch: [v1.11](https://github.com/wechaty/getting-started/tree/v1.11): release v1.11 of Wechaty.
 
 1. v0.13: Enable ESM (ES Module) support ([chatie/tsconfig#16](https://github.com/Chatie/tsconfig/issues/16))
 

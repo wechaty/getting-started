@@ -1,6 +1,6 @@
 {
   "name": "wechaty-getting-started",
-  "version": "1.11.3",
+  "version": "1.18.0",
   "description": "Wechaty conversational SDK getting start template & examples",
   "type": "module",
   "engines": {
@@ -11,6 +11,7 @@
     "build": "tsc",
     "lint": "eslint \"examples/*.ts\" \"tests/*.ts\"",
     "postinstall": "check-node-version --node \">=16\" --npm \">=7\"",
+    "cqrs": "cross-env NODE_OPTIONS=\"--no-warnings --loader=ts-node/esm\" node examples/cqrs/ding-dong-bot.ts ",
     "start": "cross-env NODE_OPTIONS=\"--no-warnings --loader=ts-node/esm\" node examples/ding-dong-bot.ts",
     "start:js": "node examples/ding-dong-bot.js",
     "start:walnut": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-walnut npm start",
@@ -33,24 +34,25 @@
   },
   "homepage": "https://github.com/wechaty/getting-started#readme",
   "dependencies": {
-    "dotenv": "^11.0.0",
+    "dotenv": "^16.0.0",
     "qrcode-terminal": "^0.12.0",
-    "wechaty": "^1.11.28",
+    "wechaty": "^1.18.1",
+    "wechaty-cqrs": "^0.6.1",
     "wechaty-plugin-contrib": "^1.11.1",
     "wechaty-puppet-oicq": "^1.10.2",
     "wechaty-puppet-walnut": "^1.11.6",
-    "wechaty-puppet-wechat": "^1.11.11",
+    "wechaty-puppet-wechat": "^1.12.2",
     "wechaty-puppet-wechat4u": "~1.11.1",
     "wechaty-puppet-whatsapp": "~1.11.2",
-    "wechaty-puppet-xp": "^1.10.2"
+    "wechaty-puppet-xp": "^1.10.20"
   },
   "devDependencies": {
     "@chatie/eslint-config": "^1.0.4",
     "@chatie/git-scripts": "^0.6.2",
-    "@chatie/tsconfig": "^4.6.2",
+    "@chatie/tsconfig": "^4.6.3",
     "check-node-version": "^4.2.1",
     "is-pr": "^2.0.0",
-    "wechaty-puppet-mock": "^1.11.11"
+    "wechaty-puppet-mock": "^1.18.2"
   },
   "git": {
     "scripts": {
