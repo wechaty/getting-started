@@ -68,7 +68,7 @@ const onMessage$ = (bus$: CQRS.Bus) => CQRS.events$.messageReceivedEvent$(bus$).
       messageReceivedEvent.meta.puppetId,
       messageId,
     )),
-    mergeMap(CQRS.execute$(bus$)(CQRS.duck.actions.sayablePayloadGotMessage)),
+    mergeMap(CQRS.execute$(bus$)(CQRS.duck.actions.getSayablePayloadQuery)),
     map(sayablePayloadGotMessage => sayablePayloadGotMessage.payload),
     filter(Boolean),
     tap(sayable => console.info('sayable:', sayable)),
@@ -86,7 +86,7 @@ const onMessage$ = (bus$: CQRS.Bus) => CQRS.events$.messageReceivedEvent$(bus$).
        * ding -> talkerId
        */
       map(messageReceivedEvent => CQRS.duck.actions.getMessagePayloadQuery(messageReceivedEvent.meta.puppetId, messageReceivedEvent.payload.messageId)),
-      mergeMap(CQRS.execute$(bus$)(CQRS.duck.actions.messagePayloadGotMessage)),
+      mergeMap(CQRS.execute$(bus$)(CQRS.duck.actions.getMessagePayloadQuery)),
       /**
        * Huan(202203): `.fromId` deprecated, will be removed after v2.0
        */
@@ -107,7 +107,7 @@ const onMessage$ = (bus$: CQRS.Bus) => CQRS.events$.messageReceivedEvent$(bus$).
       /**
        * execute command (return MessageSentMessage)
        */
-      mergeMap(CQRS.execute$(bus$)(CQRS.duck.actions.messageSentMessage)),
+      mergeMap(CQRS.execute$(bus$)(CQRS.duck.actions.sendMessageCommand)),
     )),
   )),
 )
@@ -144,7 +144,7 @@ async function main () {
   const main$ = defer(() => of(CQRS.duck.actions.startCommand(puppetId))).pipe(
     mergeMap(startCommand => merge(
       onStartedEvent$(bus$),
-      CQRS.execute$(bus$)()(startCommand),
+      CQRS.execute$(bus$)(CQRS.duck.actions.startCommand)(startCommand),
     )),
     ignoreElements(),
     finalize(() => bus$.next(CQRS.duck.actions.stopCommand(puppetId))),

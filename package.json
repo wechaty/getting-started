@@ -19,7 +19,7 @@
     "start:wechat:web": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-wechat npm start",
     "start:wechat:padlocal": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-padlocal npm start",
     "start:whatsapp:web": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-whatsapp npm start",
-    "test": "npm-run-all lint test:version test:smoke",
+    "test": "npm-run-all lint test:smoke",
     "test:smoke": "cross-env NODE_OPTIONS=\"--no-warnings --loader=ts-node/esm\" tap \"tests/**/*.spec.ts\""
   },
   "repository": {
@@ -37,7 +37,7 @@
     "dotenv": "^16.0.0",
     "qrcode-terminal": "^0.12.0",
     "wechaty": "^1.18.1",
-    "wechaty-cqrs": "^0.6.3",
+    "wechaty-cqrs": "^0.7.5",
     "wechaty-plugin-contrib": "^1.11.1",
     "wechaty-puppet-oicq": "^1.10.2",
     "wechaty-puppet-walnut": "^1.11.6",
