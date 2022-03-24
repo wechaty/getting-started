@@ -17,10 +17,6 @@ import {
 
 import qrcodeTerminal from 'qrcode-terminal'
 
-function onLogout (user: Contact) {
-  log.info('StarterBot', '%s logout', user)
-}
-
 function onScan (qrcode: string, status: ScanStatus) {
   if (status === ScanStatus.Waiting || status === ScanStatus.Timeout) {
     const qrcodeImageUrl = [
@@ -38,6 +34,10 @@ function onScan (qrcode: string, status: ScanStatus) {
 
 function onLogin (user: Contact) {
   log.info('StarterBot', '%s login', user)
+}
+
+function onLogout (user: Contact) {
+  log.info('StarterBot', '%s logout', user)
 }
 
 async function onMessage (msg: Message) {
