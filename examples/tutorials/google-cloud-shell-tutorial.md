@@ -61,7 +61,7 @@ Git Repo has been already cloned in Google Cloud Shell already.
 The `puppeteer` needs `libgbm1` to be presented in the system, we need to install it first, run:
 
 ```sh
-sudo apt install -y libgbm1
+sudo apt install -y libgbm1 libxkbcommon-x11-0
 ```
 
 ## NPM Install
