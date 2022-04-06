@@ -78,3 +78,7 @@ log
 .env
 .env.*
 data/
+
+# Puppet WhatsApp Auth Folder
+# TODO: remove this after https://github.com/wechaty/puppet-whatsapp/issues/350 has been fixed
+.wwebjs_auth/
