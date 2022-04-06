@@ -43,7 +43,7 @@
     "wechaty-puppet-walnut": "^1.11.6",
     "wechaty-puppet-wechat": "^1.18.1",
     "wechaty-puppet-wechat4u": "~1.11.1",
-    "wechaty-puppet-whatsapp": "~1.11.2",
+    "wechaty-puppet-whatsapp": "~1.15.7",
     "wechaty-puppet-xp": "^1.10.20"
   },
   "devDependencies": {
