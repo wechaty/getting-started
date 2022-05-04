@@ -62,7 +62,7 @@ const bot = WechatyBuilder.build({
    *  - wechaty-puppet-padlocal (pad protocol, token required)
    *  - etc. see: <https://wechaty.js.org/docs/puppet-providers/>
    */
-  // puppet: 'wechaty-puppet-whatsapp'
+  puppet: 'wechaty-puppet-xp',
 
   /**
    * You can use wechaty puppet provider 'wechaty-puppet-service'
