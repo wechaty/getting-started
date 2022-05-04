@@ -55,10 +55,5 @@
     "check-node-version": "^4.2.1",
     "is-pr": "^2.0.0",
     "wechaty-puppet-mock": "^1.18.2"
-  },
-  "git": {
-    "scripts": {
-      "pre-push": "npx git-scripts-pre-push"
-    }
   }
 }
