@@ -62,7 +62,7 @@ const bot = WechatyBuilder.build({
    *  - wechaty-puppet-padlocal (pad protocol, token required)
    *  - etc. see: <https://wechaty.js.org/docs/puppet-providers/>
    */
-  puppet: 'wechaty-puppet-xp',
+  // puppet: 'wechaty-puppet-whatsapp'
 
   /**
    * You can use wechaty puppet provider 'wechaty-puppet-service'
@@ -75,6 +75,15 @@ const bot = WechatyBuilder.build({
   //   token: 'xxx',
   // }
 })
+
+// 自2022-7-15基于uos的web协议可以使用，需要设置uos: true
+// const bot = WechatyBuilder.build({
+//   name: 'WechatEveryDay',
+//   puppet: 'wechaty-puppet-wechat', // 如果有token，记得更换对应的puppet
+//   puppetOptions: {
+//     uos: true
+//   }
+// })
 
 bot.on('scan',    onScan)
 bot.on('login',   onLogin)
