@@ -76,6 +76,15 @@ const bot = WechatyBuilder.build({
   // }
 })
 
+// 使用wechaty-puppet-wechat，需要设置uos: true
+// const bot = WechatyBuilder.build({
+//   name: 'WechatEveryDay',
+//   puppet: 'wechaty-puppet-wechat', // 如果有token，记得更换对应的puppet
+//   puppetOptions: {
+//     uos: true
+//   }
+// })
+
 bot.on('scan',    onScan)
 bot.on('login',   onLogin)
 bot.on('logout',  onLogout)
