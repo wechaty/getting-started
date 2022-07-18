@@ -79,7 +79,7 @@ const bot = WechatyBuilder.build({
 // To use wechaty-puppet-wechat, you need to set `uos:true`
 // const bot = WechatyBuilder.build({
 //   name: 'ding-dong-bot',
-//   puppet: 'wechaty-puppet-wechat', // 如果有token，记得更换对应的puppet
+//   puppet: 'wechaty-puppet-wechat',
 //   puppetOptions: {
 //     uos: true
 //   }
