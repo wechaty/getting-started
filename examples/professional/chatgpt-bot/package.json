@@ -1,0 +1,30 @@
+{
+  "name": "wechaty-chatgpt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx ts-node bot.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "file-box": "^1.5.5",
+    "markdown-it": "^13.0.1",
+    "node-html-to-image": "^3.3.0",
+    "openai": "^3.2.1",
+    "qrcode-terminal": "^0.12.0",
+    "ts-node": "^10.9.1",
+    "wechaty": "^1.20.2",
+    "wechaty-puppet-padlocal": "^1.20.1",
+    "wechaty-puppet-service": "^1.19.9",
+    "wechaty-puppet-wechat": "^1.18.4"
+  },
+  "devDependencies": {
+    "@types/markdown-it": "^12.2.3",
+    "@types/qrcode-terminal": "^0.12.0"
+  }
+}
