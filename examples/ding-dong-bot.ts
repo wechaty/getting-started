@@ -47,7 +47,6 @@ async function onMessage (msg: Message) {
     await msg.say('dong')
   }
 }
-
 const bot = WechatyBuilder.build({
   name: 'ding-dong-bot',
   /**
@@ -70,10 +69,10 @@ const bot = WechatyBuilder.build({
    *   for using more powerful protocol.
    * Learn more about services (and TOKEN) from https://wechaty.js.org/docs/puppet-services/
    */
-  // puppet: 'wechaty-puppet-service'
+  // puppet: 'wechaty-puppet-service',
   // puppetOptions: {
   //   token: 'xxx',
-  // }
+  // },
 })
 
 // To use wechaty-puppet-wechat, you need to set `uos:true`

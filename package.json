@@ -15,7 +15,7 @@
     "start": "cross-env NODE_OPTIONS=\"--no-warnings --loader=ts-node/esm\" node examples/ding-dong-bot.ts",
     "start:js": "node examples/ding-dong-bot.js",
     "start:walnut": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-walnut npm start",
-    "start:service": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-service npm start",
+    "start:service": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-service WECHATY_PUPPET_SERVICE_NO_TLS_INSECURE_CLIENT=true npm start",
     "start:wechat:web": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-wechat npm start",
     "start:wechat:padlocal": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-padlocal npm start",
     "start:whatsapp:web": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-whatsapp npm start",
@@ -44,7 +44,8 @@
     "wechaty-puppet-wechat": "^1.18.4",
     "wechaty-puppet-wechat4u": "~1.11.1",
     "wechaty-puppet-whatsapp": "^1.19.0",
-    "wechaty-puppet-xp": "^1.11.14"
+    "wechaty-puppet-service": "^1.19.8",
+    "wechaty-puppet-xp": "^1.12.7"
   },
   "devDependencies": {
     "@chatie/eslint-config": "^1.0.4",
