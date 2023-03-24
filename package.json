@@ -19,6 +19,8 @@
     "start:wechat:web": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-wechat npm start",
     "start:wechat:padlocal": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-padlocal npm start",
     "start:whatsapp:web": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-whatsapp npm start",
+    "start:gpt": "cross-env NODE_OPTIONS=\"--no-warnings --loader=ts-node/esm\" node examples/chatgpt-coder/meet-mate.ts",
+    "start:service:chatgpt": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-service WECHATY_PUPPET_SERVICE_NO_TLS_INSECURE_CLIENT=true npm run start:gpt",
     "test": "npm-run-all lint test:smoke",
     "test:smoke": "cross-env NODE_OPTIONS=\"--no-warnings --loader=ts-node/esm\" tap \"tests/**/*.spec.ts\""
   },
@@ -34,17 +36,18 @@
   },
   "homepage": "https://github.com/wechaty/getting-started#readme",
   "dependencies": {
+    "@yuque/sdk": "^1.1.1",
     "dotenv": "^16.0.0",
     "qrcode-terminal": "^0.12.0",
     "wechaty": "^1.20.2",
     "wechaty-cqrs": "^0.7.5",
     "wechaty-plugin-contrib": "^1.11.1",
     "wechaty-puppet-oicq": "^1.10.2",
+    "wechaty-puppet-service": "^1.19.8",
     "wechaty-puppet-walnut": "^1.11.6",
     "wechaty-puppet-wechat": "^1.18.4",
     "wechaty-puppet-wechat4u": "~1.11.1",
     "wechaty-puppet-whatsapp": "^1.19.0",
-    "wechaty-puppet-service": "^1.19.8",
     "wechaty-puppet-xp": "^1.12.7"
   },
   "devDependencies": {
