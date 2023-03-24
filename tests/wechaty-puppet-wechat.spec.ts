@@ -8,7 +8,7 @@ test('wechaty-puppet-wechat', async t => {
     puppet: 'wechaty-puppet-wechat',
     puppetOptions: {
       launchOptions: {
-        ignoreDefaultArgs: ['--disable-extensions'],
+        ignoreDefaultArgs: [ '--disable-extensions' ],
       },
     },
   } as const

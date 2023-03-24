@@ -1,0 +1,12 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "waitFor": "onCreateCommand",
+  "updateContentCommand": "npm install",
+  "postCreateCommand": "npm install cross-env -g",
+  "customizations": {
+    "codespaces": {
+      "openFiles": ["examples/ding-dong-bot.ts"]
+    }
+  },
+
+}
