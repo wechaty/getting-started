@@ -1,3 +1,4 @@
+#!/usr/bin/env -S node --no-warnings --loader ts-node/esm
 // 导入Wechaty相关模块
 import {
     Contact,
