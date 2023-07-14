@@ -50,10 +50,14 @@ async function onMessage (msg: Message) {
 
 const bot = WechatyBuilder.build({
   name: 'ding-dong-bot',
+  /**
+   * You can specific `puppet` and `puppetOptions` here with hard coding:
+   *
   puppet: 'wechaty-puppet-wechat',
   puppetOptions: {
     uos: true,
   },
+   */
   /**
    * How to set Wechaty Puppet Provider:
    *
