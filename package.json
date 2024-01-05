@@ -51,6 +51,7 @@
     "@chatie/git-scripts": "^0.6.2",
     "@chatie/tsconfig": "^4.6.3",
     "check-node-version": "^4.2.1",
+    "cross-env": "^7.0.3",
     "is-pr": "^2.0.0",
     "ts-node": "^10.9.1",
     "wechaty-puppet-mock": "^1.18.2"
