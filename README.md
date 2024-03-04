@@ -15,7 +15,7 @@ As a developer, you can use Wechaty to easily build your bot, effectively manage
 
 If you are a total beginner to Wechaty, this project is the best starting point for you. You can run it on a Cloud IDE in a couple of steps or on a local setup on your machine as described in the sections below.
 
-If you encounter difficulties or have any questions, you are welcome to ask for help in our Gitter room at <https://gitter.im/wechaty/wechaty>.
+If you encounter difficulties or have any questions, you are welcome to ask for help in our Discord Community at <https://discord.gg/7q8NBZbQzt>.
 
 Notice: the current active version of Wechaty is v1.x which is not compatible with most of the v0.x modules.
 
