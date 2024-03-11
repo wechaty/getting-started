@@ -27,6 +27,14 @@ Notice: the current active version of Wechaty is v1.x which is not compatible wi
 1. Supports all puppets like Web, Pad, Windows, and Mac.
 1. It replies with a `dong` message when it receives a `ding` message.
 
+### Wechaty Getting Started video tutorial
+
+<div align="center">
+<a target="_blank" href="https://youtu.be/GdmikkU4ZfM?si=V9bLNBdYxPK-ojaW"><img src="docs/images/video-tutorial-img.webp" border=0 width="60%"></a>
+</div>
+
+Above is a short run-through of deploying the ding-dong-bot using WeChat, WhatsApp, and WeCom.
+
 ### Running Wechaty Getting Started Project on a cloud based IDE
 
 The fastest way to getting started with Wechaty is to use a Cloud based IDE for running the Wechaty Getting Started Project. You can either use Gitpod or Google Cloud Shell.

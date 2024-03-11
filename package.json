@@ -1,6 +1,6 @@
 {
   "name": "wechaty-getting-started",
-  "version": "1.18.11",
+  "version": "1.18.12",
   "description": "Wechaty conversational SDK getting start template & examples",
   "type": "module",
   "engines": {
@@ -35,6 +35,7 @@
   "homepage": "https://github.com/wechaty/getting-started#readme",
   "dependencies": {
     "dotenv": "^16.0.0",
+    "npm-run-all": "^4.1.5",
     "qrcode-terminal": "^0.12.0",
     "wechaty": "^1.18.1",
     "wechaty-cqrs": "^0.7.5",
