@@ -30,7 +30,7 @@ Notice: the current active version of Wechaty is v1.x which is not compatible wi
 ### Wechaty Getting Started video tutorial
 
 <div align="center">
-<a target="_blank" href="https://youtu.be/GdmikkU4ZfM?si=V9bLNBdYxPK-ojaW"><img src="docs/images/video-tutorial-img.png" border=0 width="60%"></a>
+<a target="_blank" href="https://youtu.be/GdmikkU4ZfM?si=V9bLNBdYxPK-ojaW"><img src="docs/images/video-tutorial-img.webp" border=0 width="60%"></a>
 </div>
 
 Above is a short run-through of deploying the ding-dong-bot using WeChat, WhatsApp, and WeCom.
