@@ -303,7 +303,15 @@ async function manageDingRoom() {
     /**
      * Event: Leave
      */
-    room.on('leave', (leaverList, remover) => {
+room.on('leave', async function(leaverList) {
+  
+  log.info('Bot', 'EVENT: room-leave - Room "%s" lost member "%s"',
+                  await room.topic(),
+  const members = await room.memberAll()
+  if (members.length < 3) {
+    await room.quit()
+  }
+})
       log.info('Bot', 'Room EVENT: leave - "%s" leave(remover "%s"), byebye', leaverList.join(','), remover || 'unknown')
     })
 
@@ -399,31 +407,36 @@ async function createDingRoom(contact) {
   log.info('Bot', 'createDingRoom("%s")', contact)
 
   try {
-    const helperContact = await getHelperContact()
-
-    if (!helperContact) {
-      log.warn('Bot', 'getHelperContact() found nobody')
-      await contact.say(`You don't have a friend called "${HELPER_CONTACT_NAME}",
-                         because create a new room at least need 3 contacts, please set [HELPER_CONTACT_NAME] in the code first!`)
+    if (!contact.room().has(contact)) {
+      log.warn('Bot', 'The group has less than 3 members')
+      await contact.say(`The group has less than 3 members, please add more members before starting the game.`)
       return
     }
 
-    log.info('Bot', 'getHelperContact() ok. got: "%s"', helperContact.name())
+    const members = await contact.room().memberAll()
+    const randomMembers = []
+    while(randomMembers.length < 2) {
+      const randomIndex = Math.floor(Math.random() * members.length)
+      const randomMember = members[randomIndex]
+      if(randomMember != contact && !randomMembers.includes(randomMember)) {
+        randomMembers.push(randomMember)
+      }
+    }
 
-    const contactList = [contact, helperContact]
+    const contactList = [contact, ...randomMembers]
     log.verbose('Bot', 'contactList: "%s"', contactList.join(','))
 
-    await contact.say(`There isn't ding room. I'm trying to create a room with "${helperContact.name()}" and you`)
-    const room = await bot.Room.create(contactList, 'ding')
-    log.info('Bot', 'createDingRoom() new ding room created: "%s"', room)
+    await contact.say(`Creating a new group with you and ${randomMembers.map(member => member.name()).join(', ')}`)
+    const room = await bot.Room.create(contactList, 'Coffee Chat')
+    log.info('Bot', 'createDingRoom() new Coffee Chat room created: "%s"', room)
 
-    await room.topic('ding - created')
-    await room.say('ding - created')
+    await room.topic('Coffee Chat - created')
+await room.say(`Welcome to the coffee chat group! This group is requested by ${contact.name()}, and your random partners are ${randomMembers.map(member => member.name()).join(', ')}. I hope you guys have a good ice-breaking time!`);
 
     return room
 
   } catch (e) {
-    log.error('Bot', 'getHelperContact() exception:', e.stack)
+    log.error('Bot', 'createDingRoom() exception:', e.stack)
     throw e
   }
 }
