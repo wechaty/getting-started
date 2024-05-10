@@ -55,7 +55,7 @@ Wechaty Integrated with Other Modules/Services (demos under the `professional/` 
 
 ## Multi-lang Wechaty Examples Directories
 
-1. Python: <https://github.com/wechaty/python-wechaty-getting-started/examples/>
+1. Python: <https://github.com/wechaty/python-wechaty-getting-started/tree/master/examples>
 1. Java: <https://github.com/wechaty/java-wechaty-getting-started/examples/>
 1. Go: <https://github.com/wechaty/go-wechaty-getting-started/examples/>
 
