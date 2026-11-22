@@ -43,7 +43,7 @@ If you are a total beginner, then we recommed Gitpod.
 
 #### Using [Gitpod ❤️ Wechaty](docs/gitpod.md)
 
-Gitpod  is an online and open source platform for automated and ready-to-code development environments. You can click the button below to access a complete setup of [Wechaty Getting Started ding-dong BOT](examples/ding-dong-bot.ts) project on gitpod. If you have never used gitpod before, you will be required to login using your gitHub account.
+Gitpod  is an online and open source platform for automated and ready-to-code development environments. You can click the button below to access a complete setup of [Wechaty Getting Started ding-dong BOT](examples/ding-dong-bot.ts) project on gitpod. If you have never used gitpod before, you will be required to log in using your GitHub account.
 
 [![GitPod Ready-to-Code][gitpod_img]][gitpod_link]
 
