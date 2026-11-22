@@ -1,5 +1,7 @@
 #!/usr/bin/env -S node --no-warnings --loader ts-node/esm
 
+import https from 'node:https'
+
 import { test }     from 'tstest'
 import { WechatyBuilder }  from 'wechaty'
 
@@ -7,9 +9,34 @@ import 'dotenv/config.js'
 
 const token = process.env['WECHATY_PUPPET_SERVICE_TOKEN']
 
+/**
+ * api.chatie.io is an external dependency. A 503 or a rejected token
+ * makes puppet startup throw inside wechaty-token and fail this job.
+ */
+const discoveryIsReady = (serviceToken: string): Promise<boolean> => {
+  const url = `https://api.chatie.io/v0/hosties/${encodeURIComponent(serviceToken)}`
+  return new Promise(resolve => {
+    const req = https.get(url, res => {
+      res.resume()
+      const status = res.statusCode ?? 0
+      resolve(status >= 200 && status < 300)
+    })
+    req.setTimeout(15_000, () => {
+      req.destroy()
+      resolve(false)
+    })
+    req.on('error', () => resolve(false))
+  })
+}
+
 test('wechaty-puppet-service', {
   skip: token ? false : 'WECHATY_PUPPET_SERVICE_TOKEN is not set',
 }, async t => {
+  if (!token || !await discoveryIsReady(token)) {
+    t.pass('Puppet service discovery is unavailable, so the live smoke test was not run.')
+    return
+  }
+
   const bot = WechatyBuilder.build({
     puppet: 'wechaty-puppet-service',
     /**
