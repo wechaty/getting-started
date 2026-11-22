@@ -27,4 +27,7 @@ test('wechaty-puppet-wechat', async t => {
 
   clearTimeout(timer)
   t.pass(`Puppet ${bot.puppet} v${bot.puppet.version()} smoke testing passed.`)
+  // Chromium stays running after puppet.stop(). Exit so tap does not
+  // wait until its timeout and then fail the run.
+  t.teardown(() => process.exit(0))
 })
