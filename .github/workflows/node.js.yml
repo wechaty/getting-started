@@ -20,17 +20,20 @@ jobs:
           - windows-latest
           - ubuntu-latest
         node-version:
-          - 16
+          # Node 16 is EOL. 22 is the newest LTS line this Wechaty 1.x toolchain
+          # (ts-node 10 and the current puppet dependencies) is verified on.
+          - 22
     runs-on: ${{ matrix.os }}
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v7
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v7
       with:
         node-version: ${{ matrix.node-version }}
-        cache: npm
-        cache-dependency-path: package.json
+        # package-lock.json is gitignored. setup-node caching requires a lockfile,
+        # and the v2 cache client is what made this job fail with HTTP 400.
+        package-manager-cache: false
     - run: npm install
     - run: npm test
       env:

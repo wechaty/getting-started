@@ -5,7 +5,11 @@ import { WechatyBuilder }  from 'wechaty'
 
 import 'dotenv/config.js'
 
-test('wechaty-puppet-service', async t => {
+const token = process.env['WECHATY_PUPPET_SERVICE_TOKEN']
+
+test('wechaty-puppet-service', {
+  skip: token ? false : 'WECHATY_PUPPET_SERVICE_TOKEN is not set',
+}, async t => {
   const bot = WechatyBuilder.build({
     puppet: 'wechaty-puppet-service',
     /**
@@ -27,4 +31,7 @@ test('wechaty-puppet-service', async t => {
 
   clearTimeout(timer)
   t.pass(`Puppet ${bot.puppet} v${bot.puppet.version()} smoke testing passed.`)
+  // A successful smoke test can leave sockets open. Exit so tap does not
+  // wait until its timeout and then fail the run.
+  t.teardown(() => process.exit(0))
 })
