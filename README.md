@@ -39,7 +39,7 @@ Above is a short run-through of deploying the ding-dong-bot using WeChat, WhatsA
 
 The fastest way to getting started with Wechaty is to use a Cloud based IDE for running the Wechaty Getting Started Project. You can either use Gitpod or Google Cloud Shell.
 
-If you are a total beginner, then we recommed Gitpod.
+If you are a total beginner, then we recommend Gitpod.
 
 #### Using [Gitpod ❤️ Wechaty](docs/gitpod.md)
 
