@@ -56,7 +56,7 @@ import {
 
 function errorDetail (e: unknown): string {
   if (e instanceof Error) {
-    return errorDetail(e) ?? e.message
+    return e.stack ?? e.message
   }
   return String(e)
 }

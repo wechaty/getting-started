@@ -23,7 +23,6 @@ import {
   IoClient,
   WechatyBuilder,
   config,
-  impls,
   log,
   type Wechaty,
 }             from 'wechaty'
@@ -93,7 +92,11 @@ let busyAnnouncement = `Automatic Reply: I cannot read your message because I'm 
 bot.on('message', async function(msg) {
   log.info('Bot', '(message) %s', msg)
 
-  const filehelper = impls.ContactImpl.load('filehelper')
+  const filehelper = await bot.Contact.find({ id: 'filehelper' })
+  if (!filehelper) {
+    log.error('Bot', 'filehelper contact is not available')
+    return
+  }
 
   const sender   = msg.from()
   const receiver = msg.to()

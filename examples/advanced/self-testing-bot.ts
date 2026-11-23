@@ -23,7 +23,6 @@ import { FileBox } from 'file-box'
 
 import {
   WechatyBuilder,
-  impls,
   log,
 }               from 'wechaty'
 
@@ -138,7 +137,7 @@ bot
       // const contact = await bot.Contact.find({
       //   name: /李佳芮/,
       // })
-      const contact = impls.ContactImpl.load('qq512436430')
+      const contact = await bot.Contact.find({ id: 'qq512436430' })
       if (!contact) {
         console.error('contact not found')
         return

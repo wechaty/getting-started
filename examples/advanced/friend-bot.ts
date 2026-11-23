@@ -22,7 +22,6 @@
 import qrTerm from 'qrcode-terminal'
 
 import {
-  impls,
   log,
   types,
   WechatyBuilder,
@@ -70,7 +69,11 @@ bot
  */
 .on('friendship', async friendship => {
   let logMsg
-  const fileHelper = impls.ContactImpl.load('filehelper')
+  const fileHelper = await bot.Contact.find({ id: 'filehelper' })
+  if (!fileHelper) {
+    log.error('Bot', 'filehelper contact is not available')
+    return
+  }
 
   try {
     logMsg = 'received `friend` event from ' + friendship.contact().name()
