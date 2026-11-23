@@ -57,7 +57,7 @@ The same suite has an experimental Deno 2.9.8 job,
 uses `continue-on-error: true`, so a Deno failure does not fail the workflow.
 The command grants read, write, environment, network, system, and subprocess
 access because the smoke tests start puppets and, for the web puppet, Chrome.
-It also allows the `leveldown` prebuilt used by Wechaty's memory card.
+It also allows the `leveldown` prebuilt used by Wechaty's memory card and the Puppet Neo native addon.
 It starts Deno with a sanitized environment containing only `PATH`, `HOME`,
 `CI`, and `NODE_BINARY`.
 

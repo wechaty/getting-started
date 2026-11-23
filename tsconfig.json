@@ -37,10 +37,11 @@
     "node_modules/",
     "dist/",
     "tests/fixtures/",
-    "examples/third-parties/**"
+    // wechaty-cqrs is not installed with the Wechaty 2 starter.
+    "examples/cqrs/**"
   ],
   "include": [
-    "examples/*.ts",
+    "examples/**/*.ts",
     "tests/**/*.test.ts"
   ]
 }

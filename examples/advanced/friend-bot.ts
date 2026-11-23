@@ -70,14 +70,14 @@ bot
 .on('friendship', async friendship => {
   let logMsg
   const fileHelper = await bot.Contact.find({ id: 'filehelper' })
-  if (!fileHelper) {
-    log.error('Bot', 'filehelper contact is not available')
-    return
-  }
 
   try {
     logMsg = 'received `friend` event from ' + friendship.contact().name()
-    await fileHelper.say(logMsg)
+    if (fileHelper) {
+      await fileHelper.say(logMsg)
+    } else {
+      log.error('Bot', 'filehelper contact is not available')
+    }
     console.log(logMsg)
 
     switch (friendship.type()) {
@@ -118,7 +118,9 @@ bot
   }
 
   console.log(logMsg)
-  await fileHelper.say(logMsg)
+  if (fileHelper && logMsg) {
+    await fileHelper.say(logMsg)
+  }
 
 })
 

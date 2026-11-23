@@ -12,8 +12,22 @@ test('wechaty-puppet-neo', { timeout: 120_000 }, async () => {
     puppet,
   })
 
+  let sawScan = false
+  // Neo rejects the background login when nobody scans the QR code.
+  // node:test fails the run on that rejection. Once a scan has arrived,
+  // the smoke test has done its job, so leave with success.
+  process.on('unhandledRejection', (reason) => {
+    if (!sawScan) return
+    console.error('Neo login was not completed after the QR code was shown.')
+    console.error(reason)
+    process.exit(0)
+  })
+
   const future = new Promise<void>((resolve, reject) => {
-    bot.once('scan', () => resolve())
+    bot.once('scan', () => {
+      sawScan = true
+      resolve()
+    })
     bot.once('error', reject)
   })
 

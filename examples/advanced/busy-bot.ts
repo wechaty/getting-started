@@ -93,10 +93,6 @@ bot.on('message', async function(msg) {
   log.info('Bot', '(message) %s', msg)
 
   const filehelper = await bot.Contact.find({ id: 'filehelper' })
-  if (!filehelper) {
-    log.error('Bot', 'filehelper contact is not available')
-    return
-  }
 
   const sender   = msg.from()
   const receiver = msg.to()
@@ -113,6 +109,10 @@ bot.on('message', async function(msg) {
   }
 
   if (receiver.id === 'filehelper') {
+    if (!filehelper) {
+      log.error('Bot', 'filehelper contact is not available')
+      return
+    }
     if (text === '#status') {
       await filehelper.say('in busy mode: ' + busyIndicator)
       await filehelper.say('auto reply: ' + busyAnnouncement)
