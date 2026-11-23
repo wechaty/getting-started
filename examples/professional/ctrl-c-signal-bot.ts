@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 /**
  *   Wechaty - https://github.com/chatie/wechaty
  *
@@ -21,12 +22,12 @@ import { generate } from 'qrcode-terminal'
 import { finis }    from 'finis'
 
 import {
-  Wechaty,
+  WechatyBuilder,
   log,
   qrcodeValueToImageUrl,
-}                         from 'wechaty'  // from 'wechaty'
+}                         from 'wechaty'
 
-const bot = Wechaty.instance()
+const bot = WechatyBuilder.build()
 
 const welcome = `
 | __        __        _           _
@@ -38,7 +39,7 @@ const welcome = `
 
 =============== Powered by Wechaty ===============
 -------- https://github.com/chatie/wechaty --------
-          Version: ${bot.version(true)}
+          Version: ${bot.version()}
 
 I'm a bot, my superpower is:
 
@@ -77,12 +78,12 @@ bot
 
 bot.on('error', async e => {
   log.error('Bot', 'error: %s', e)
-  if (bot.logonoff()) {
+  if (bot.isLoggedIn) {
     await bot.say('Wechaty error: ' + e.message).catch(console.error)
   }
 })
 
-let killChrome: NodeJS.SignalsListener
+let killChrome: ((signal: 'SIGINT') => void) | undefined
 
 bot.start()
 .then(() => {
@@ -104,7 +105,7 @@ let quiting = false
 finis(async (code, signal) => {
   log.info('Bot', 'finis(%s, %s)', code, signal)
 
-  if (!bot.logonoff()) {
+  if (!bot.isLoggedIn) {
     log.info('Bot', 'finis() bot had been already stopped')
     doExit(code)
   }

@@ -1,7 +1,8 @@
+#!/usr/bin/env node
 import {
-  Wechaty,
-  Message,
-  UrlLink,
+  WechatyBuilder,
+  impls,
+  type Message,
 } from 'wechaty'
 
 import { PuppetPadchat } from 'wechaty-puppet-padchat'
@@ -11,8 +12,8 @@ import { generate      } from 'qrcode-terminal'
 
 const puppet = new PuppetPadchat()
 
-export const wechatyBot = Wechaty.instance({
-  puppet,
+export const wechatyBot = WechatyBuilder.build({
+  puppet: puppet as never,
 })
 
 wechatyBot
@@ -28,7 +29,7 @@ wechatyBot
   })
   .on('message', async function (m: Message) {
     if (m.text() === 'ding') {
-      const urlLink = new UrlLink ({
+      const urlLink = new impls.UrlLinkImpl({
         description : 'WeChat Bot SDK for Individual Account, Powered by TypeScript, Docker, and Love',
         thumbnailUrl: 'https://avatars0.githubusercontent.com/u/25162437?s=200&v=4',
         title       : 'Welcome to Wechaty',

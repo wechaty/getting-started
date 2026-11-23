@@ -2,14 +2,15 @@
   "name": "maodou-classes-bot",
   "version": "0.1.0",
   "description": "maodou-classes-bot is a class reminder bot based on wechaty",
-  "main": "index.js",
+  "type": "module",
+  "main": "maodou-classes-bot.ts",
   "engines": {
     "node": ">= 10"
   },
   "scripts": {
     "postinstall": "check-node-version --node \">= 10\"",
-    "start": "node maodou-classes-bot.js",
-    "dev": "DEBUG=maodou* node maodou-classes-bot.js"
+    "start": "node maodou-classes-bot.ts",
+    "dev": "DEBUG=maodou* node maodou-classes-bot.ts"
   },
   "repository": {
     "type": "git",

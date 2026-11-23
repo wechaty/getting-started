@@ -1,6 +1,7 @@
-import repl from 'repl'
+#!/usr/bin/env node
+import repl from 'node:repl'
 
-import { Wechaty } from 'wechaty'
+import { WechatyBuilder } from 'wechaty'
 
 async function main () {
   const wechaty = WechatyBuilder.build({
@@ -12,7 +13,7 @@ async function main () {
   await wechaty.start()
 
   const shell = repl.start('wechaty> ')
-  shell.context.wechaty = wechaty
+  shell.context['wechaty'] = wechaty
   shell.on('exit', () => wechaty.stop())
 }
 

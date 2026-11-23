@@ -4,23 +4,25 @@
   "description": "Wechaty conversational SDK getting start template & examples",
   "type": "module",
   "engines": {
-    "node": ">=16",
-    "npm": ">=7"
+    "node": ">=26",
+    "npm": ">=10"
   },
   "scripts": {
     "build": "tsc",
-    "lint": "eslint \"examples/*.ts\" \"tests/*.ts\"",
-    "postinstall": "check-node-version --node \">=16\" --npm \">=7\"",
-    "cqrs": "cross-env NODE_OPTIONS=\"--no-warnings --loader=ts-node/esm\" node examples/cqrs/ding-dong-bot.ts ",
-    "start": "cross-env NODE_OPTIONS=\"--no-warnings --loader=ts-node/esm\" node examples/ding-dong-bot.ts",
-    "start:js": "node examples/ding-dong-bot.js",
+    "lint:biome": "biome lint examples tests",
+    "lint:ts": "tsc --isolatedModules --noEmit",
+    "lint": "npm run lint:biome && npm run lint:ts",
+    "postinstall": "check-node-version --node \">=26\" --npm \">=10\"",
+    "cqrs": "node examples/cqrs/ding-dong-bot.ts",
+    "start": "node examples/ding-dong-bot.ts",
     "start:walnut": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-walnut npm start",
     "start:service": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-service npm start",
     "start:wechat:web": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-wechat npm start",
     "start:wechat:padlocal": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-padlocal npm start",
     "start:whatsapp:web": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-whatsapp npm start",
-    "test": "npm-run-all lint test:smoke",
-    "test:smoke": "cross-env NODE_OPTIONS=\"--no-warnings --loader=ts-node/esm\" tap --timeout=150 \"tests/**/*.spec.ts\""
+    "test": "npm run lint && npm run test:smoke",
+    "test:smoke": "node --test --test-force-exit --test-timeout=180000 tests",
+    "test:unit:deno": "env -i PATH=\"$PATH\" HOME=\"$HOME\" CI=\"${CI:-}\" NODE_BINARY=\"${NODE_BINARY:-$(command -v node)}\" deno test --no-check --allow-read --allow-write --allow-env --allow-net --allow-run --allow-sys --allow-ffi=node_modules/leveldown/prebuilds tests"
   },
   "repository": {
     "type": "git",
@@ -34,8 +36,8 @@
   },
   "homepage": "https://github.com/wechaty/getting-started#readme",
   "dependencies": {
+    "cross-env": "^7.0.3",
     "dotenv": "^18.0.10",
-    "npm-run-all": "^4.1.5",
     "qrcode-terminal": "^0.12.0",
     "wechaty": "^1.20.2",
     "wechaty-cqrs": "^0.7.5",
@@ -47,21 +49,11 @@
     "wechaty-puppet-whatsapp": "^1.19.16"
   },
   "devDependencies": {
-    "@chatie/eslint-config": "^1.4.1",
-    "@chatie/git-scripts": "^0.6.2",
-    "@chatie/tsconfig": "^4.9.2",
+    "@biomejs/biome": "^2.6.5",
+    "@types/node": "^26.6.6",
+    "@types/qrcode-terminal": "^0.12.2",
+    "@typescript/native": "npm:typescript@^7.0.2",
     "check-node-version": "^4.2.1",
-    "is-pr": "^2.0.0",
-    "ts-node": "^10.9.2",
-    "typescript": "~5.9.3",
     "wechaty-puppet-mock": "^1.18.2"
-  },
-  "overrides": {
-    "typescript": "~5.9.3"
-  },
-  "git": {
-    "scripts": {
-      "pre-push": "npx git-scripts-pre-push"
-    }
   }
 }

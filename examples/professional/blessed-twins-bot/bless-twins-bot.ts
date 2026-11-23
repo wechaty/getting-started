@@ -1,14 +1,16 @@
+#!/usr/bin/env node
 /**
  * Wechaty Twins Bot + Blessed Contrib Demo
  * Credit: https://github.com/yaronn/blessed-contrib/blob/06a05f107a3b54c91b5200a041ad8c15e6489de9/examples/dashboard.js
  */
-import * as blessed from 'blessed'
-import * as contrib from 'blessed-contrib'
+import blessed from 'blessed'
+import contrib from 'blessed-contrib'
 
 import { generate } from 'qrcode-terminal'
 
 import {
-  Wechaty, WechatyOptions,
+  WechatyBuilder,
+  type Wechaty,
 }               from 'wechaty'
 
 const screen = blessed.screen({
@@ -260,7 +262,7 @@ function setLineData(mockData: any, line: any) {
   line.setData(mockData)
 }
 
-screen.key(['escape', 'q', 'C-c'], function(ch, key) {
+screen.key(['escape', 'q', 'C-c'], function(ch: string, key: unknown) {
   console.log(ch, key)
   return process.exit(0)
 })
@@ -298,8 +300,8 @@ screen.render()
  *
  *
  */
-const boy   = WechatyBuilder.build({ profile: 'boy' } as WechatyOptions)
-const girl  = WechatyBuilder.build({ profile: 'girl' } as WechatyOptions)
+const boy   = WechatyBuilder.build({ name: 'boy' })
+const girl  = WechatyBuilder.build({ name: 'girl' })
 
 startBot(boy, boyConsole)
 startBot(girl, girlConsole)
@@ -336,7 +338,7 @@ function startBot(bot: Wechaty, logElement: any) {
 
   bot.on('error', async e => {
     logElement.log(`error: ${e}`)
-    if (bot.logonoff()) {
+    if (bot.isLoggedIn) {
       await bot.say('Wechaty error: ' + e.message).catch(console.error)
     }
     // await bot.stop()

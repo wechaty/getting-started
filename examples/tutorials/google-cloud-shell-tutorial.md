@@ -36,7 +36,7 @@ Continue on to the **Next** step to start setting up your chatbot.
 
 ## Setting up developing environments
 
-1. Install [Node.js](https://nodejs.org) v16+
+1. Install [Node.js](https://nodejs.org) v26+
 1. Git clone [wechaty/getting-started](https://github.com/wechaty/getting-started) repo
 1. Install system dependency packages
 
@@ -85,7 +85,7 @@ Let's start our ding-dong BOT, it's source code [examples/ding-dong-bot.ts] shou
 
 If it's not opened yet, click <walkthrough-editor-open-file filePath="examples/ding-dong-bot.ts">Open</walkthrough-editor-open-file> to open it now.
 
-Our `npm start` script is defined as `ts-node examples/ding-dong-bot.ts`. (`ts-node` is the `node` for TypeScript)
+Our `npm start` script is defined as `node examples/ding-dong-bot.ts`. Node.js 26 runs the TypeScript file directly.
 
 ### 1. Get a Whatsapp login QR Code
 

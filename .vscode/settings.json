@@ -1,6 +1,4 @@
 {
-  "typescript.tsdk": "./node_modules/typescript/lib",
-
   "editor.fontFamily": "'Fira Code iScript', Consolas, 'Courier New', monospace",
   "editor.fontLigatures": true,
 
@@ -66,10 +64,6 @@
   },
   "editor.formatOnSave": false,
   "python.pythonPath": "python3",
-  "eslint.validate": [
-    "javascript",
-    "typescript",
-  ],
   "cSpell.words": [
     "KUBERNETES",
     "gitpod",

@@ -1,4 +1,4 @@
-#!/usr/bin/env -S node --no-warnings --loader ts-node/esm
+#!/usr/bin/env node
 /**
  * Wechaty - Conversational RPA SDK for Chatbot Makers.
  *  - https://github.com/wechaty/wechaty
@@ -8,11 +8,11 @@
 import 'dotenv/config.js'
 
 import {
-  Contact,
-  Message,
   ScanStatus,
   WechatyBuilder,
   log,
+  type Contact,
+  type Message,
 }                  from 'wechaty'
 
 import qrcodeTerminal from 'qrcode-terminal'

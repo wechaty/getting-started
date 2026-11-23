@@ -2,13 +2,14 @@
   "name": "wechaty-getting-started",
   "version": "0.1.0",
   "description": "Wechaty is a Wechat Bot SDK for Personal Account in Node.js",
-  "main": "index.js",
+  "type": "module",
+  "main": "xiaoli-news-bot.ts",
   "engines": {
     "node": ">= 10"
   },
   "scripts": {
     "postinstall": "check-node-version --node \">= 10\"",
-    "start": "node xiaoli-news-bot.js"
+    "start": "node xiaoli-news-bot.ts"
   },
   "repository": {
     "type": "git",
