@@ -1,7 +1,30 @@
 {
-  "extends": "@chatie/tsconfig",
   "compilerOptions": {
-    "outDir": "dist"
+    "target": "esnext",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "outDir": "dist",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "lib": [
+      "esnext"
+    ],
+    "strict": true,
+    "noEmitOnError": true,
+    "noUnusedLocals": true,
+    "noImplicitReturns": true,
+    "noImplicitOverride": true,
+    "noUncheckedIndexedAccess": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true
   },
   "exclude": [
     "node_modules/",
@@ -13,5 +36,5 @@
     "scripts/**/*.ts",
     "src/**/*.ts",
     "tests/**/*.ts"
-  ],
+  ]
 }

@@ -16,13 +16,13 @@ jobs:
     strategy:
       matrix:
         os:
+          # macos-latest is Apple Silicon, which matches Neo's macOS addon.
+          # ubuntu-latest is Linux x64 and windows-latest is Windows x64.
           - macos-latest
           - windows-latest
           - ubuntu-latest
         node-version:
-          # Node 16 is EOL. 22 is the newest LTS line this Wechaty 1.x toolchain
-          # (ts-node 10 and the current puppet dependencies) is verified on.
-          - 22
+          - 26
     runs-on: ${{ matrix.os }}
 
     steps:
@@ -38,4 +38,3 @@ jobs:
     - run: npm test
       env:
         CI: true
-        WECHATY_PUPPET_SERVICE_TOKEN: ${{ secrets.WECHATY_PUPPET_SERVICE_TOKEN }}

@@ -4,23 +4,17 @@
   "description": "Wechaty conversational SDK getting start template & examples",
   "type": "module",
   "engines": {
-    "node": ">=16",
-    "npm": ">=7"
+    "node": ">=26",
+    "npm": ">=10"
   },
   "scripts": {
     "build": "tsc",
-    "lint": "eslint \"examples/*.ts\" \"tests/*.ts\"",
-    "postinstall": "check-node-version --node \">=16\" --npm \">=7\"",
-    "cqrs": "cross-env NODE_OPTIONS=\"--no-warnings --loader=ts-node/esm\" node examples/cqrs/ding-dong-bot.ts ",
-    "start": "cross-env NODE_OPTIONS=\"--no-warnings --loader=ts-node/esm\" node examples/ding-dong-bot.ts",
-    "start:js": "node examples/ding-dong-bot.js",
-    "start:walnut": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-walnut npm start",
-    "start:service": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-service npm start",
-    "start:wechat:web": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-wechat npm start",
-    "start:wechat:padlocal": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-padlocal npm start",
-    "start:whatsapp:web": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-whatsapp npm start",
+    "lint": "tsc --noEmit",
+    "postinstall": "check-node-version --node \">=26\" --npm \">=10\"",
+    "start": "node examples/ding-dong-bot.ts",
+    "start:js": "node examples/basic/ding-dong-bot.js",
     "test": "npm-run-all lint test:smoke",
-    "test:smoke": "cross-env NODE_OPTIONS=\"--no-warnings --loader=ts-node/esm\" tap --timeout=150 \"tests/**/*.spec.ts\""
+    "test:smoke": "tap --timeout=150 \"tests/**/*.spec.ts\""
   },
   "repository": {
     "type": "git",
@@ -37,27 +31,23 @@
     "dotenv": "^18.0.10",
     "npm-run-all": "^4.1.5",
     "qrcode-terminal": "^0.12.0",
-    "wechaty": "^1.20.2",
-    "wechaty-cqrs": "^0.7.5",
+    "wechaty": ">=2.0.0-0 <3",
     "wechaty-plugin-contrib": "^1.12.2",
-    "wechaty-puppet-oicq": "^1.10.2",
-    "wechaty-puppet-walnut": "^1.18.8",
-    "wechaty-puppet-wechat": "^1.18.4",
-    "wechaty-puppet-wechat4u": "~1.11.1",
-    "wechaty-puppet-whatsapp": "^1.19.16"
+    "wechaty-puppet-neo": "^0.1.1"
   },
   "devDependencies": {
     "@chatie/eslint-config": "^1.4.1",
     "@chatie/git-scripts": "^0.6.2",
-    "@chatie/tsconfig": "^4.9.2",
+    "@types/qrcode-terminal": "^0.12.2",
     "check-node-version": "^4.2.1",
     "is-pr": "^2.0.0",
-    "ts-node": "^10.9.2",
-    "typescript": "~5.9.3",
-    "wechaty-puppet-mock": "^1.18.2"
+    "tap": "~16.3.10",
+    "tstest": "^1.2.8",
+    "typescript": "^7.0.2",
+    "wechaty-puppet-mock": "^1.19.4"
   },
   "overrides": {
-    "typescript": "~5.9.3"
+    "typescript": "^7.0.2"
   },
   "git": {
     "scripts": {

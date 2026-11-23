@@ -22,7 +22,7 @@ Click the **Start** button to move to the next step.
 
 Before you get started, let's briefly go over what Wechaty can do.
 
-Wechaty is a Conversatioanl RPA SDK for Chatbot Makers. It's well designed with an easy to use API, supports all OSs including Linux, OSX, Win32, Docker, and lots of IMs including WeChat, Whatsapp, WeCom, Lark, Gitter, etc.
+Wechaty is a Conversational RPA SDK for Chatbot Makers. It's well designed with an easy to use API, supports all OSs including Linux, OSX, Win32, Docker, and lots of IMs including WeChat, Whatsapp, WeCom, Lark, Gitter, etc.
 
 ![Wechaty][wechaty_flyer_url]
 
@@ -30,40 +30,32 @@ Wechaty is a Conversatioanl RPA SDK for Chatbot Makers. It's well designed with 
 
 As a developer, you can use Wechaty to easily build your bot, effectively manage message sending/receiving, room creating/inviting, contact friendship, and delightful add artificial intelligence between users and your bot.
 
-This repository should work out-of-the-box, and is the best start point for Wechaty beginners.
+This repository should work out-of-the-box, and is the best start point for Wechaty beginners. The starter bot uses Wechaty 2 with Puppet Neo.
 
 Continue on to the **Next** step to start setting up your chatbot.
 
 ## Setting up developing environments
 
-1. Install [Node.js](https://nodejs.org) v16+
+1. Install [Node.js](https://nodejs.org) v26+
 1. Git clone [wechaty/getting-started](https://github.com/wechaty/getting-started) repo
-1. Install system dependency packages
 
 ### 1. Install Node.js
 
 Node.js has been pre-installed in Google Cloud Shell.
 
-However, we need to upgrade Node.js to version 16+
+This repository needs Node.js 26 or newer and npm 10 or newer:
 
 ```sh
-nvm install 16
+nvm install 26
 ```
 
-You should get a `v16.13.0` output by running command `node --version`
+`node --version` should print v26 or newer, for example `v26.13.1`. `npm --version` should print 10 or newer.
 
 ### 2. Git clone `wechaty/getting-started` repo
 
-Git Repo has been already cloned in Google Cloud Shell already.
+The git repository has already been cloned in Google Cloud Shell.
 
-### 3. Install system dependency packages
-
-The `puppeteer` needs `libgbm1` and `libatk-bridge2.0` to be presented in the system, we need to install it first, run:
-
-```sh
-sudo apt install -y libgbm1 libxkbcommon-x11-0
-sudo apt-get install -y libatk-bridge2.0-0
-```
+Puppet Neo ships a prebuilt native addon. On Linux that addon needs glibc 2.38 or newer, which the current Google Cloud Shell image provides.
 
 ## NPM Install
 
@@ -73,7 +65,7 @@ Let's install NPM packages, run:
 npm install
 ```
 
-The NPM system should help you to install all the dependencies by Wechaty, it will take 1 - 3 minutes.
+npm installs the newest Wechaty 2 release and `wechaty-puppet-neo`. It takes a few minutes.
 
 After all dependencies have been resolved, we will be able to start our ding-dong BOT.
 
@@ -81,41 +73,25 @@ Click **Next**.
 
 ## NPM Start
 
-Let's start our ding-dong BOT, it's source code [examples/ding-dong-bot.ts] should have already opened in the editor.
+Let's start our ding-dong BOT. Its source code [examples/ding-dong-bot.ts] should have already opened in the editor.
 
 If it's not opened yet, click <walkthrough-editor-open-file filePath="examples/ding-dong-bot.ts">Open</walkthrough-editor-open-file> to open it now.
 
-Our `npm start` script is defined as `ts-node examples/ding-dong-bot.ts`. (`ts-node` is the `node` for TypeScript)
+`npm start` runs `examples/ding-dong-bot.ts` with Node.js. The bot is built with `WechatyBuilder` and `new PuppetNeo()`.
 
-### 1. Get a Whatsapp login QR Code
-
-To start our bot with Whatsapp, we need to define `WECHATY_PUPPET` as `wechaty-puppet-whatsapp`, run:
+### 1. Get a WeChat login QR code
 
 ```sh
-export WECHATY_PUPPET=wechaty-puppet-whatsapp
 npm start
 ```
 
-You should see our bot start generating logs and after a while, a QR Code will be printed.
+The bot prints logs and then a QR code. Scan it with WeChat and confirm the login on your phone.
 
-You can use your Whatsapp to scan it to login your bot now.
+Neo keeps the login in memory, so the next start prints a new QR code.
 
-### 2. Get a WeChat login QR Code
+### 2. Play with your bot
 
-To start our bot with WeChat, we can define `WECHATY_PUPPET` as `wechaty-puppet-wechat`, run:
-
-```sh
-export WECHATY_PUPPET=wechaty-puppet-wechat
-npm start
-```
-
-You should see our bot start generating logs and after a while, a QR Code will be printed.
-
-You can use your WeChat app to scan it to login your bot now.
-
-### 3. Play with your bot
-
-Please play with your bot for a while now. **Next** we will add our first new feature to the bot.
+Send `ding` to the bot from another WeChat account. The bot replies `dong`. **Next** we will add a new feature to the bot.
 
 ## Add a new feature
 
@@ -125,11 +101,9 @@ _“reply `dongdong` for `dingding`”_
 
 ### 1. Requirement analysis
 
-If you have finished the previous step, and login-ed successfully, then your bot will be able to reply a `dong` for any message send it as a `ding`, no matter which IM(Whatsapp or WeChat) your bot are working with.
+After you log in, the bot replies `dong` when it receives `ding`.
 
-Now we get a new feature request from our client: reply `dongdong` for `dingding`.
-
-It will be a hard work but we will make it!
+The new request is to reply `dongdong` for `dingding`.
 
 ### 2. Code explaination
 
@@ -149,7 +123,7 @@ Let's start working on it now.
 
 ### 3. Developing new code
 
-We need to check the `msg.text()` for `dingding` when receiving messages, and use `msg.say('dongdong')` to replay!
+We need to check the `msg.text()` for `dingding` when receiving messages, and use `msg.say('dongdong')` to reply:
 
 ```ts
 if (msg.text() === 'dingding') {
@@ -157,11 +131,9 @@ if (msg.text() === 'dingding') {
 }
 ```
 
-It looks great!
-
 ### 4. Final `onMessage` function
 
-Let's put out new code into the `onMessage` function:
+Let's put our new code into the `onMessage` function:
 
 ```ts
 async function onMessage (msg: Message) {
@@ -176,30 +148,21 @@ async function onMessage (msg: Message) {
 }
 ```
 
-That's it! We have added 3 lines of code to implment our new feature. Do not forget to save the file changes to the disk.
+That's it. We have added 3 lines of code to implement our new feature. Save the file.
 
-**Next** up, starting our braning new ding-dong BOT!
+**Next** up, starting our ding-dong BOT again.
 
 ## Test new feature
 
 We will start our ding-dong BOT again.
 
-### 1. Select puppet to use by WCHATY_PUPPET
-
-You can set `WECHATY_PUPPET` to either `wechaty-puppet-whatapp` or `wechaty-puppet-wechat`, depends where you want to test the bot.
-
-### 2. Run
-
-If you decide to use Whatsapp, run:
+### 1. Run
 
 ```sh
-export WECHATY_PUPPET=wechaty-puppet-whatsapp
 npm start
 ```
 
-The ding-dong BOT should start outputing log messages, after a while shows you a QR Code for login.
-
-Scan it on your phone, and then try to send `dingding` to the bot, you should receive `dongdong` instantly!
+The bot prints logs and a new QR code. Scan it with WeChat, then send `dingding` to the bot. You should receive `dongdong`.
 
 Enjoy your bot, and click **Next** when you like.
 
@@ -209,7 +172,7 @@ Enjoy your bot, and click **Next** when you like.
 
 You're all set!
 
-You have finished the Wechaty Getting Started Tutorial, and be able to run Wechaty in TypeScript, receiving and replying messages on Whatsapp and WeChat!
+You have finished the Wechaty Getting Started Tutorial. You can run Wechaty in TypeScript, with Puppet Neo, and receive and reply to WeChat messages.
 
 Congratulations to be a Wechaty developer now!
 
@@ -223,4 +186,4 @@ Done!
 
 Learn more about Wechaty from our [docs](https://wechaty.js.org/docs/) and [blog](https://wechaty.js.org/blog/), and [join our Gitter](https://gitter.im/wechaty/wechaty) network if you aren’t already a member!
 
-<walkthrough-footnote>Wechaty © 2016 - 2021</walkthrough-footnote>
+<walkthrough-footnote>Wechaty © 2016 - 2026</walkthrough-footnote>
