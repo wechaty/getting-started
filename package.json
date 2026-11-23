@@ -15,7 +15,7 @@
     "postinstall": "check-node-version --node \">=26\" --npm \">=10\"",
     "start": "node examples/ding-dong-bot.ts",
     "test": "npm run lint && npm run test:smoke",
-    "test:smoke": "node --test --test-force-exit --test-timeout=180000 tests",
+    "test:smoke": "node --test --test-force-exit --test-timeout=180000 \"tests/*.test.ts\"",
     "test:unit:deno": "env -i PATH=\"$PATH\" HOME=\"$HOME\" CI=\"${CI:-}\" NODE_BINARY=\"${NODE_BINARY:-$(command -v node)}\" deno test --no-check --allow-read --allow-write --allow-env --allow-net --allow-run --allow-sys --allow-ffi=node_modules/leveldown/prebuilds --allow-ffi=node_modules/wechaty-puppet-neo/native tests"
   },
   "repository": {
