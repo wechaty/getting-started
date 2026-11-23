@@ -1,8 +1,8 @@
 # Wechaty Getting Started [![Powered by Wechaty](https://img.shields.io/badge/Powered%20By-Wechaty-brightgreen.svg)](https://wechaty.js.org)
 
 [![Node.js CI](https://github.com/wechaty/getting-started/workflows/Node.js%20CI/badge.svg)](https://github.com/wechaty/getting-started/actions?query=workflow%3A%22Node.js+CI%22)
-![Node.js v16](https://img.shields.io/badge/node-%3E%3D16-green.svg)
-[![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-blue.svg)](https://www.typescriptlang.org/)
+![Node.js v26](https://img.shields.io/badge/node-%3E%3D26-green.svg)
+[![TypeScript](https://img.shields.io/badge/TypeScript-7-blue.svg)](https://www.typescriptlang.org/)
 [![ES Modules](https://img.shields.io/badge/ES-Modules-brightgreen)](https://github.com/Chatie/tsconfig/issues/16)
 
 ## About Wechaty
@@ -13,18 +13,18 @@ As a developer, you can use Wechaty to easily build your bot, effectively manage
 
 ## About Wechaty Getting Started Project
 
-If you are a total beginner to Wechaty, this project is the best starting point for you. You can run it on a Cloud IDE in a couple of steps or on a local setup on your machine as described in the sections below.
+If you are a total beginner to Wechaty, this project is the best starting point for you. You can run it on Google Cloud Shell or on a local setup on your machine as described in the sections below.
 
 If you encounter difficulties or have any questions, you are welcome to ask for help in our Discord Community at <https://discord.gg/7q8NBZbQzt>.
 
-Notice: the current active version of Wechaty is v1.x which is not compatible with most of the v0.x modules.
+This repository tracks Wechaty 2. It needs Node.js 26 or newer and TypeScript 7.
 
 - **`wechaty@0.x`** - To use the Wechaty v0.x, please visit the [Wechaty Getting Started v0.x](https://github.com/wechaty/getting-started/tree/v0.x) branch.
 
 ### Features of Wechaty Getting Started project
 
-1. It works out of the box on Linux, Mac or Windows.
-1. Supports all puppets like Web, Pad, Windows, and Mac.
+1. It runs on Linux x64 and arm64 (glibc 2.38 or newer), macOS on Apple Silicon, and Windows x64.
+1. The starter bot uses [Wechaty Puppet Neo](https://www.npmjs.com/package/wechaty-puppet-neo).
 1. It replies with a `dong` message when it receives a `ding` message.
 
 ### Wechaty Getting Started video tutorial
@@ -33,23 +33,9 @@ Notice: the current active version of Wechaty is v1.x which is not compatible wi
 <a target="_blank" href="https://youtu.be/GdmikkU4ZfM?si=cpsuh7RyQjtgLE5F"><img src="docs/images/video-tutorial-img.webp" border=0 width="60%"></a>
 </div>
 
-Above is a short run-through of deploying the ding-dong-bot using WeChat, WhatsApp, and WeCom.
+Above is a short run-through of the ding-dong bot.
 
 ### Running Wechaty Getting Started Project on a cloud based IDE
-
-The fastest way to getting started with Wechaty is to use a Cloud based IDE for running the Wechaty Getting Started Project. You can either use Gitpod or Google Cloud Shell.
-
-If you are a total beginner, then we recommed Gitpod.
-
-#### Using [Gitpod ❤️ Wechaty](docs/gitpod.md)
-
-Gitpod  is an online and open source platform for automated and ready-to-code development environments. You can click the button below to access a complete setup of [Wechaty Getting Started ding-dong BOT](examples/ding-dong-bot.ts) project on gitpod. If you have never used gitpod before, you will be required to log in using your GitHub account.
-
-[![GitPod Ready-to-Code][gitpod_img]][gitpod_link]
-
-You can learn more about [Gitpod ❤️ Wechaty](docs/gitpod.md) from our blog: [Getting Started Without Leaving Your Browser: Wechaty ❤️ Gitpod, @huan, Feb 06, 2021](https://wechaty.js.org/2021/02/06/wechaty-getting-started-without-leave-your-browser/)
-
-#### Using Google Cloud Shell
 
 Google Cloud Shell is an online development and operations environment accessible anywhere with your browser. You can run this project on Google Cloud Shell by clicking the button below.
 
@@ -65,15 +51,25 @@ Learn more about running this project on Google Cloud Shell from our blog: [Goog
 
 #### Prerequisites
 
-For you to run this project on your local machine, you need to:
+For you to run this project on your local machine, you need [Node.js](https://nodejs.dev/) v26 or newer and npm 10 or newer. Run `node -v` and `npm -v` to check. A current Node.js 26 release looks like `v26.13.1`.
 
-1. Have [Node.js](https://nodejs.dev/) v16+ installed on your machine. You can run the command `node -v` on the terminal to check whether you have `Node.js` installed. If you have it, you should be able to see the version printed on the terminal  like `v16.13.0`. Your version might be different from `v16.13.0`. If it is not installed or your version is below 16, You need to install the latest version by following the links below:
-    - [Windows](https://nodejs.org/en/download/package-manager/#windows)
-    - [Linux(Debian/Ubuntu)](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions)
-    - [macOS](https://nodejs.org/en/download/package-manager/#macos)
-    > Node.js for other platforms can be found at <https://nodejs.org/en/download/package-manager/>
+Install Node.js from the links below when it is missing or older than 26:
 
-2. Have [Wechaty Puppet Service TOKEN](https://wechaty.js.org/docs/puppet-services/) if you want to use RPA protocols other than Web
+- [Windows](https://nodejs.org/en/download/package-manager/#windows)
+- [Linux(Debian/Ubuntu)](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions)
+- [macOS](https://nodejs.org/en/download/package-manager/#macos)
+
+> Node.js for other platforms can be found at <https://nodejs.org/en/download/package-manager/>
+
+Puppet Neo publishes prebuilt native addons for:
+
+| Platform | Node.js |
+| :--- | :--- |
+| Linux x64 and arm64 | glibc 2.38 or newer |
+| macOS | Apple Silicon |
+| Windows x64 | x64 Node.js, including Windows on ARM under x64 emulation |
+
+Run `node -p process.arch` on Windows on ARM. It needs to print `x64`.
 
 #### Step 1: Clone this Repository
 
@@ -92,79 +88,46 @@ You need to install dependencies by running the command below.
 npm install
 ```
 
+`npm install` selects the newest Wechaty 2 release, including a later alpha, a beta, or a stable 2.x.
+
 #### Step 3: Run the Bot
 
-You can use `export` to set environment variables in Linux, and use `set` in Windows. If you run into errors while running this command, check the troubleshooting tips in step 4.
-
-##### Linux
-
-```shell
-export WECHATY_LOG=verbose
-export WECHATY_PUPPET=wechaty-puppet-wechat
+```sh
 npm start
-# the above is equals to the below command:
-# npx ts-node examples/ding-dong-bot.ts
 ```
 
-##### Windows
+The same command works on Linux, macOS, and Windows. Node.js runs `examples/ding-dong-bot.ts` directly. The bot is built with `WechatyBuilder` and `new PuppetNeo()`.
 
-```shell
-set WECHATY_LOG=verbose
-set WECHATY_PUPPET=wechaty-puppet-wechat
-npm start
-# the above is equals to the below command:
-# npx ts-node examples/ding-dong-bot.ts
-```
+A QR code is printed in the terminal. Scan it with WeChat. Neo keeps the login in memory, so every start prints a new QR code.
+
+After the bot logs in, send `ding` from another WeChat account, in a direct chat or in a group that includes this account. The bot replies `dong`.
 
 You are all set!
 
 #### Step 4: Troubleshooting
 
-If you run into problems while following the above steps, try the options below. You are also welcome to ask questions in our [gitter chatroom](https://gitter.im/wechaty/wechaty).
+If you run into problems while following the above steps, check the items below. You are also welcome to ask questions in our [gitter chatroom](https://gitter.im/wechaty/wechaty).
 
-1. You might also need [windows-build-tool](https://www.npmjs.com/package/windows-build-tool) if you are using windows:
+1. `node -v` is v26 or newer, and `npm -v` is 10 or newer.
+1. On Linux, `ldd --version` reports glibc 2.38 or newer.
+1. `node -p process.arch` is `x64` on Linux x64 and Windows, or `arm64` on Linux arm64 and macOS Apple Silicon.
 
-    ```sh
-    npm install windows-build-tools
-    ```
+## Wechaty Puppet Neo
 
-## Working with Different Puppets
+The ding-dong bot in this repository uses [wechaty-puppet-neo](https://www.npmjs.com/package/wechaty-puppet-neo) through `WechatyBuilder`.
 
-In our getting started example, the ding-dong BOT uses [wechaty-puppet-wechat4u](https://github.com/wechaty/wechaty-puppet-wechat4u) when `WECHATY_PUPPET` is not set, which is just for newcomer's convenience.
+| Provider | NPM | Login |
+| :--- | :--- | :--- |
+| Puppet Neo | `wechaty-puppet-neo` | In memory. A new QR code on every start. |
 
-By default, Wechaty will use the [Puppet Service](https://wechaty.js.org/docs/puppet-services/) for logging in your bot. You can use other [Puppet Provider](https://github.com/wechaty/wechaty-puppet/wiki/Directory) like Whatsapp Web protocol( [wechaty-puppet-whatsapp](https://github.com/wechaty/wechaty-puppet-whatsapp)).
+```ts
+import { WechatyBuilder } from 'wechaty'
+import { PuppetNeo } from 'wechaty-puppet-neo'
 
-If you want to use a Wechaty Puppet Provider for a different protocol, then you need to specify a puppet service provider name (the same as its NPM name) by setting the `WECHATY_PUPPET` environment variable.
-
-Thanks to the great contributions from our community, there are many Wechaty Puppets which can be used by Wechaty. They have helped us use protocols like Web, Pad, Mac, and Windows.
-
-### Wechaty Puppets
-
-| Protocol | NPM |
-| :--- | :--- |
-| Puppet Service | `wechaty-puppet-service` |
-| Whatsapp Web | `wechaty-puppet-whatsapp` |
-| WeChat Web | `wechaty-puppet-wechat` |
-| WeChat Pad | `wechaty-puppet-padlocal` |
-
-> Visit our website to learn more about [Wechaty Puppet Service Providers](https://wechaty.js.org/docs/puppet-services/)
-
-For example, if you want to use the `padlocal` puppet, you should set `WECHATY_PUPPET=wechaty-puppet-padlocal` before you run `npm start`. You also need a TOKEN for `wechaty-puppet-padlocal` which you need to set to the `WECHATY_PUPPET_PADLOCAL_TOKEN` environment variable. You can apply for the PadLocal TOKEN from [here](https://wechaty.js.org/docs/puppet-services/padlocal/). The code snippets below illustrate what has been described above on Linux/ MacOS and on Windows.
-
-### On Linux / macOS
-
-```sh
-export WECHATY_PUPPET=wechaty-puppet-padlocal
-export WECHATY_PUPPET_PADLOCAL_TOKEN='puppet_padlocal_your-token-here'
-npm start
-```
-
-### On Windows
-
-```sh
-set WECHATY_PUPPET=wechaty-puppet-padlocal
-set WECHATY_PUPPET_PADLOCAL_TOKEN='puppet_padlocal_your-token-here'
-npm start
+const bot = WechatyBuilder.build({
+  name: 'ding-dong-bot',
+  puppet: new PuppetNeo(),
+})
 ```
 
 Learn more about installing Wechaty on windows from this [blog post](https://wechaty.js.org/2018/07/24/wechaty-installation-in-windows-10/).
@@ -184,6 +147,8 @@ Above is a 10 minute video tutorial. It is using version 0.14 or older versions 
 > Note: Before you attempt more examples, make sure you have tried out the wechaty getting started project in this repository.
 
 - [Official Wechaty Examples Directory](https://github.com/wechaty/getting-started/tree/master/examples)
+
+The files under `examples/` other than the two starter bots are v1-era samples. The root package does not install them.
 
 ## API REFERENCE
 
@@ -209,19 +174,15 @@ Above is a 10 minute video tutorial. It is using version 0.14 or older versions 
 
 ## FAQ
 
-### 1. I can not login with my Wechat account
+### 1. How do I log in
 
-WeChat account registered after 2017 will not be able to login via Web API.  Learn more about it at <https://github.com/Chatie/wechaty/issues/872>
-
-Solution: You can use Wechaty support protocols other than Web API, such as pad. Learn more at <https://github.com/Chatie/wechaty/issues/1296>
+`npm start` prints a QR code. Scan it with WeChat and confirm the login on the phone. Neo stores that login in memory, so stopping the process and starting it again prints a new QR code.
 
 ### 2. What is a `Puppet` in Wechaty
 
-The term [Puppet](https://github.com/Chatie/wechaty/wiki/Puppet) in Wechaty is an Abstract Class for implementing protocol plugins. The plugins are the components that help Wechaty to control Wechat and that's the reason why we call it puppet.
+The term [Puppet](https://github.com/wechaty/wechaty/wiki/Puppet) in Wechaty is an abstract class for implementing protocol plugins. The plugins are the components that help Wechaty control a chat service, which is why they are called puppets.
 
-The plugins are named `PuppetXXX`, for example [PuppetWeChat](https://github.com/Chatie/wechaty-puppet-wechat) is using the [google puppeteer](https://github.com/GoogleChrome/puppeteer) to control the [WeChat Web API](https://wx.qq.com) via a chrome browser, [PuppetPadchat](https://github.com/lijiarui/wechaty-puppet-padchat) uses the WebSocket protocol to connect with a Protocol Server for controlling the iPad Wechat program. For more details you can go to [Puppet in wiki](https://github.com/Chatie/wechaty/wiki/Puppet).
-
-Learn more about Wechaty Puppet from our documentation at [Wechaty Puppet](https://wechaty.js.org/docs/specifications/puppet)
+This repository uses [PuppetNeo](https://www.npmjs.com/package/wechaty-puppet-neo). Learn more from the documentation at [Wechaty Puppet](https://wechaty.js.org/docs/specifications/puppet).
 
 ## Wechaty Getting Started in Multiple Languages
 
@@ -242,6 +203,10 @@ Learn more about Wechaty Puppet from our documentation at [Wechaty Puppet](https
 
 ## History
 
+### main (Wechaty 2)
+
+Node.js 26, TypeScript 7, and [wechaty-puppet-neo](https://www.npmjs.com/package/wechaty-puppet-neo). The starter bot uses `WechatyBuilder` and `new PuppetNeo()`.
+
 ### main v1.18 (Mar 14, 2022)
 
 Add CQRS Wechaty examples.
@@ -257,12 +222,6 @@ Branch: [v1.11](https://github.com/wechaty/getting-started/tree/v1.11): release 
 [![Open in Cloud Shell][shell_img]][shell_link]
 
 Using Google Cloud Shell for a quick setup!
-
-### v0.6 (Feb 11, 2021)
-
-[![GitPod Ready-to-Code][gitpod_img]][gitpod_link]
-
-Using Gitpod for a quick setup!
 
 ### v0.0.1 (Jan 12, 2017)
 
@@ -288,9 +247,6 @@ Init version
 - Code & Docs © 2018-now Huan and [Wechaty Contributors](https://wechaty.js.org/contributors/)
 - Code released under the Apache-2.0 License
 - Docs released under Creative Commons
-
-[gitpod_img]: https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod
-[gitpod_link]: https://gitpod.io/#https://github.com/wechaty/getting-started
 
 [shell_img]: https://gstatic.com/cloudssh/images/open-btn.svg
 [shell_link]: https://ssh.cloud.google.com/cloudshell/editor?cloudshell_git_repo=https%3A%2F%2Fgithub.com%2Fwechaty%2Fgetting-started&cloudshell_open_in_editor=examples/ding-dong-bot.ts&cloudshell_workspace=.&cloudshell_tutorial=examples/tutorials/google-cloud-shell-tutorial.md
