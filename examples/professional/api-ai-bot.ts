@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 /**
  *   Wechaty - https://github.com/chatie/wechaty
  *
@@ -33,7 +34,7 @@ import { Brolog as log } from 'brolog'
 // import co  from 'co'
 /* tslint:disable:variable-name */
 import ApiAi from 'apiai'
-import { EventEmitter } from 'events'
+import { EventEmitter } from 'node:events'
 
 /**
  * Change `import { ... } from '../.js'`
@@ -41,9 +42,8 @@ import { EventEmitter } from 'events'
  * when you are runing with Docker or NPM instead of Git Source.
  */
 import {
-  config,
-  Wechaty,
-  Message,
+  WechatyBuilder,
+  type Message,
 }           from 'wechaty'
 
 // log.level = 'verbose'
@@ -57,7 +57,7 @@ import {
 const APIAI_API_KEY = '7217d7bce18c4bcfbe04ba7bdfaf9c08'
 const brainApiAi = ApiAi(APIAI_API_KEY)
 
-const bot = Wechaty.instance({ profile: config.default.DEFAULT_PROFILE })
+const bot = WechatyBuilder.build({ name: 'api-ai-bot' })
 
 console.log(`
 Welcome to api.AI Wechaty Bot.
@@ -106,7 +106,7 @@ class Talker extends EventEmitter {
     text: string[],
     time: number[],
   }
-  private timer?: NodeJS.Timer
+  private timer?: ReturnType<typeof setTimeout> | number
 
   constructor(
     thinker: (text: string) => Promise<string>,
@@ -177,8 +177,9 @@ function talk(m: Message) {
   const content = m.text()
 
   const talkerName = roomId + (fromId || '')
-  if (!Talkers[talkerName]) {
-    Talkers[talkerName] = new Talker(function(text: string) {
+  let talker = Talkers[talkerName]
+  if (!talker) {
+    talker = new Talker(function(text: string) {
       return new Promise((resolve, reject) => {
         brainApiAi.textRequest(text)
         .on('response', function(response: any) {
@@ -211,7 +212,8 @@ function talk(m: Message) {
         .end()
       })
     })
-    Talkers[talkerName].on('say', reply => m.say(reply))
+    Talkers[talkerName] = talker
+    talker.on('say', (reply: string) => { void m.say(reply) })
   }
-  Talkers[talkerName].hear(content)
+  talker.hear(content)
 }

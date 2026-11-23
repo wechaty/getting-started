@@ -6,7 +6,7 @@
 
 ```bash
 npm install blessed blessed-contrib @types/blessed
-ts-node blessed-twins-bot.ts
+node bless-twins-bot.ts
 ```
 
 ## See Also

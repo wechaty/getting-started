@@ -3,7 +3,7 @@
 [![Node.js CI](https://github.com/wechaty/getting-started/workflows/Node.js%20CI/badge.svg)](https://github.com/wechaty/getting-started/actions?query=workflow%3A%22Node.js+CI%22)
 ![Node.js v26](https://img.shields.io/badge/node-%3E%3D26-green.svg)
 [![TypeScript](https://img.shields.io/badge/TypeScript-7-blue.svg)](https://www.typescriptlang.org/)
-[![ES Modules](https://img.shields.io/badge/ES-Modules-brightgreen)](https://github.com/Chatie/tsconfig/issues/16)
+[![ES Modules](https://img.shields.io/badge/ES-Modules-brightgreen)](https://nodejs.org/api/esm.html)
 
 ## About Wechaty
 

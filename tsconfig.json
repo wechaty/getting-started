@@ -1,11 +1,14 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "module": "nodenext",
-    "moduleResolution": "nodenext",
-    "verbatimModuleSyntax": true,
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "rewriteRelativeImportExtensions": true,
+    "erasableSyntaxOnly": true,
     "isolatedModules": true,
-    "outDir": "dist",
+    "traceResolution": false,
+    "noLib": false,
+    "resolveJsonModule": false,
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
@@ -13,9 +16,6 @@
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "lib": [
-      "esnext"
-    ],
     "strict": true,
     "noEmitOnError": true,
     "noUnusedLocals": true,
@@ -24,17 +24,24 @@
     "noUncheckedIndexedAccess": true,
     "noPropertyAccessFromIndexSignature": true,
     "noFallthroughCasesInSwitch": true,
-    "forceConsistentCasingInFileNames": true
+    "strictNullChecks": true,
+    "noImplicitAny": true,
+    "noUnusedParameters": true,
+    "noImplicitThis": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "dist",
+    "lib": ["ESNext", "DOM"],
+    "verbatimModuleSyntax": true
   },
   "exclude": [
     "node_modules/",
     "dist/",
-    "tests/fixtures/"
+    "tests/fixtures/",
+    // wechaty-cqrs is not installed with the Wechaty 2 starter.
+    "examples/cqrs/**"
   ],
   "include": [
-    "examples/*.ts",
-    "scripts/**/*.ts",
-    "src/**/*.ts",
-    "tests/**/*.ts"
+    "examples/**/*.ts",
+    "tests/**/*.test.ts"
   ]
 }

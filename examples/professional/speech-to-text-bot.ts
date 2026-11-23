@@ -1,4 +1,4 @@
-#!/usr/bin/env -S node --no-warnings --loader ts-node/esm
+#!/usr/bin/env node
 /**
  *   Wechaty - https://github.com/chatie/wechaty
  *
@@ -19,17 +19,16 @@
  */
 
 import {
-  // createWriteStream,
   createReadStream,
-}                     from 'fs'
+}                     from 'node:fs'
 import {
   PassThrough,
   Readable,
-}                             from 'stream'
+}                             from 'node:stream'
+import querystring from 'node:querystring'
 
 import request      from 'request'
 import Ffmpeg       from 'fluent-ffmpeg'
-import querystring  from 'querystring'
 
 /* tslint:disable:variable-name */
 import qrcodeTerminal from 'qrcode-terminal'
@@ -41,7 +40,7 @@ import qrcodeTerminal from 'qrcode-terminal'
  */
 import {
   WechatyBuilder,
-  type,
+  types,
 }                 from 'wechaty'
 
 const bot = WechatyBuilder.build({ name: 'speech-bot' })
@@ -55,7 +54,7 @@ bot
 .on('message', async function(msg) {
   console.log(`RECV: ${msg}`)
 
-  if (msg.type() !== type.Message.Audio) {
+  if (msg.type() !== types.Message.Audio) {
     return // skip no-VOICE message
   }
 
@@ -176,7 +175,11 @@ async function wavToText(wavStream: NodeJS.ReadableStream): Promise<string> {
           throw new Error(obj.err_msg)
         }
 
-        return resolve(obj.result[0])
+        const text = obj.result?.[0]
+        if (typeof text !== 'string') {
+          throw new Error('speech result was empty')
+        }
+        return resolve(text)
 
       } catch (err) {
         return reject(err)

@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 /**
  *   Wechaty Chatbot SDK - https://github.com/wechaty/wechaty
  *
@@ -19,7 +20,7 @@
  */
 import {
   WechatyBuilder,
-  type,
+  types,
 }               from 'wechaty'
 
 /**
@@ -60,7 +61,7 @@ bot.use(
     ],
     map: async message => message.from()?.name() + '(one to many): ' + message.text(),
     one: '17237607145@chatroom',  // PreAngel 动态
-    whitelist: [async message => message.type() === type.Message.Text],
+    whitelist: [async message => message.type() === types.Message.Text],
   }),
   ManyToOneRoomConnector({
     blacklist: [async () => true],
@@ -70,7 +71,7 @@ bot.use(
     ],
     map: async message => message.from()?.name() + '(many to one): ' + message.text(),
     one: '17237607145@chatroom',  // PreAngel 动态
-    whitelist: [async message => message.type() === type.Message.Text],
+    whitelist: [async message => message.type() === types.Message.Text],
   }),
   ManyToManyRoomConnector({
     blacklist: [async () => true],
@@ -79,7 +80,7 @@ bot.use(
       '5611663299@chatroom',      // 'ChatOps - Mike BO'
     ],
     map: async message => message.from()?.name() + '(many to many): ' + message.text(),
-    whitelist: [async message => message.type() === type.Message.Text],
+    whitelist: [async message => message.type() === types.Message.Text],
   }),
 
 )

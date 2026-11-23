@@ -66,6 +66,8 @@ tags
 /package
 /wechaty-*.*.*.tgz
 *.bak
+# Deliberately untracked so a broken dependency range fails on npm install.
+# See DEVELOPMENT.md.
 package-lock.json
 .babel.json
 
