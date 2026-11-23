@@ -14,6 +14,8 @@
     "sourceMap": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "strict": true,
     "noEmitOnError": true,
     "noUnusedLocals": true,
@@ -38,7 +40,7 @@
     "examples/third-parties/**"
   ],
   "include": [
-    "examples/**/*.ts",
+    "examples/*.ts",
     "tests/**/*.test.ts"
   ]
 }

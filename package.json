@@ -13,13 +13,7 @@
     "lint:ts": "tsc --isolatedModules --noEmit",
     "lint": "npm run lint:biome && npm run lint:ts",
     "postinstall": "check-node-version --node \">=26\" --npm \">=10\"",
-    "cqrs": "node examples/cqrs/ding-dong-bot.ts",
     "start": "node examples/ding-dong-bot.ts",
-    "start:walnut": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-walnut npm start",
-    "start:service": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-service npm start",
-    "start:wechat:web": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-wechat npm start",
-    "start:wechat:padlocal": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-padlocal npm start",
-    "start:whatsapp:web": "cross-env WECHATY_LOG=verbose WECHATY_PUPPET=wechaty-puppet-whatsapp npm start",
     "test": "npm run lint && npm run test:smoke",
     "test:smoke": "node --test --test-force-exit --test-timeout=180000 tests",
     "test:unit:deno": "env -i PATH=\"$PATH\" HOME=\"$HOME\" CI=\"${CI:-}\" NODE_BINARY=\"${NODE_BINARY:-$(command -v node)}\" deno test --no-check --allow-read --allow-write --allow-env --allow-net --allow-run --allow-sys --allow-ffi=node_modules/leveldown/prebuilds tests"
@@ -36,17 +30,11 @@
   },
   "homepage": "https://github.com/wechaty/getting-started#readme",
   "dependencies": {
-    "cross-env": "^7.0.3",
     "dotenv": "^18.0.10",
     "qrcode-terminal": "^0.12.0",
-    "wechaty": "^1.20.2",
-    "wechaty-cqrs": "^0.7.5",
+    "wechaty": ">=2.0.0-0 <3",
     "wechaty-plugin-contrib": "^1.12.2",
-    "wechaty-puppet-oicq": "^1.10.2",
-    "wechaty-puppet-walnut": "^1.18.8",
-    "wechaty-puppet-wechat": "^1.18.4",
-    "wechaty-puppet-wechat4u": "~1.11.1",
-    "wechaty-puppet-whatsapp": "^1.19.16"
+    "wechaty-puppet-neo": "^0.1.1"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.6.5",
@@ -54,6 +42,6 @@
     "@types/qrcode-terminal": "^0.12.2",
     "@typescript/native": "npm:typescript@^7.0.2",
     "check-node-version": "^4.2.1",
-    "wechaty-puppet-mock": "^1.18.2"
+    "wechaty-puppet-mock": "^1.19.4"
   }
 }

@@ -17,6 +17,8 @@ jobs:
     strategy:
       matrix:
         os:
+          # macos-latest is Apple Silicon, which matches Neo's macOS addon.
+          # ubuntu-latest is Linux x64 and windows-latest is Windows x64.
           - macos-latest
           - windows-latest
           - ubuntu-latest
@@ -36,7 +38,6 @@ jobs:
     - run: npm test
       env:
         CI: true
-        WECHATY_PUPPET_SERVICE_TOKEN: ${{ secrets.WECHATY_PUPPET_SERVICE_TOKEN }}
 
   deno:
     name: Deno test (2.9.8, experimental)

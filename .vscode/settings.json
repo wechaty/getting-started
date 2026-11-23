@@ -66,7 +66,6 @@
   "python.pythonPath": "python3",
   "cSpell.words": [
     "KUBERNETES",
-    "gitpod",
     "gotty",
     "prebuild",
     "prebuilds"

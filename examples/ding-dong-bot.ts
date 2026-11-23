@@ -14,6 +14,7 @@ import {
   type Contact,
   type Message,
 }                  from 'wechaty'
+import { PuppetNeo } from 'wechaty-puppet-neo'
 
 import qrcodeTerminal from 'qrcode-terminal'
 
@@ -48,40 +49,13 @@ async function onMessage (msg: Message) {
   }
 }
 
+/**
+ * Puppet Neo keeps the login in memory and prints a new QR code on every start.
+ * Scan that code with WeChat.
+ */
 const bot = WechatyBuilder.build({
   name: 'ding-dong-bot',
-  /**
-   * You can specific `puppet` and `puppetOptions` here with hard coding:
-   *
-  puppet: 'wechaty-puppet-wechat',
-  puppetOptions: {
-    uos: true,
-  },
-   */
-  /**
-   * How to set Wechaty Puppet Provider:
-   *
-   *  1. Specify a `puppet` option when instantiating Wechaty. (like `{ puppet: 'wechaty-puppet-whatsapp' }`, see below)
-   *  1. Set the `WECHATY_PUPPET` environment variable to the puppet NPM module name. (like `wechaty-puppet-whatsapp`)
-   *
-   * You can use the following providers locally:
-   *  - wechaty-puppet-wechat (web protocol, no token required)
-   *  - wechaty-puppet-whatsapp (web protocol, no token required)
-   *  - wechaty-puppet-padlocal (pad protocol, token required)
-   *  - etc. see: <https://wechaty.js.org/docs/puppet-providers/>
-   */
-  // puppet: 'wechaty-puppet-whatsapp'
-
-  /**
-   * You can use wechaty puppet provider 'wechaty-puppet-service'
-   *   which can connect to remote Wechaty Puppet Services
-   *   for using more powerful protocol.
-   * Learn more about services (and TOKEN) from https://wechaty.js.org/docs/puppet-services/
-   */
-  // puppet: 'wechaty-puppet-service'
-  // puppetOptions: {
-  //   token: 'xxx',
-  // }
+  puppet: new PuppetNeo(),
 })
 
 bot.on('scan',    onScan)

@@ -2,6 +2,8 @@
 
 The `wechaty-getting-started/examples` directory is provided for people who want to learn coding wechaty, for them to get an easier start. If you start coding wechaty for the first time, we highly recommend to start with the [ding-dong-bot.ts](basic/ding-dong-bot.ts), the best starter template for you.
 
+The starter bots, [ding-dong-bot.ts](ding-dong-bot.ts) and [ding-dong-bot.js](basic/ding-dong-bot.js), run on Wechaty 2 with Puppet Neo. The other files in this directory are v1-era samples. The root `package.json` does not install them.
+
 | Filename         | Description | 描述 |
 | ---              | ---         | ---         |
 | ding-dong-bot.ts | The Best Starter Template for You | |
