@@ -33,7 +33,7 @@
   "dependencies": {
     "dotenv": "^18.0.10",
     "qrcode-terminal": "^0.12.0",
-    "wechaty": ">=2.0.0-0",
+    "wechaty": ">=2.0.0-alpha.21",
     "wechaty-plugin-contrib": "^1.12.2",
     "wechaty-puppet-neo": "^0.1.1"
   },
