@@ -1,4 +1,10 @@
 #!/usr/bin/env node
+/**
+ * Smoke test for Wechaty with `wechaty-puppet-neo`.
+ *
+ * Verifies that `WechatyBuilder` starts `PuppetNeo`, emits a `scan` QR code,
+ * and stops cleanly without leaking unhandled rejection listeners.
+ */
 
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
@@ -6,21 +12,26 @@ import { test } from 'node:test'
 import { WechatyBuilder } from 'wechaty'
 import { PuppetNeo } from 'wechaty-puppet-neo'
 
-test('wechaty-puppet-neo', { timeout: 120_000 }, async () => {
+test('wechaty-puppet-neo', { timeout: 120_000 }, async (t) => {
   const puppet = new PuppetNeo()
   const bot = WechatyBuilder.build({
-    puppet,
+    // wechaty-puppet-neo@0.1.1 still bundles wechaty-puppet@1.x types
+    puppet: puppet as unknown as Exclude<NonNullable<Parameters<typeof WechatyBuilder.build>[0]>['puppet'], string | undefined>,
   })
 
   let sawScan = false
-  // Neo rejects the background login when nobody scans the QR code.
-  // node:test fails the run on that rejection. Once a scan has arrived,
-  // the smoke test has done its job, so leave with success.
-  process.on('unhandledRejection', (reason) => {
+  // Neo rejects its background login promise when stopped before a QR scan.
+  // Register a scoped listener and remove it in t.after() so it never leaks.
+  const onUnhandledRejection = (reason: unknown) => {
     if (!sawScan) return
     console.error('Neo login was not completed after the QR code was shown.')
     console.error(reason)
-    process.exit(0)
+  }
+  process.on('unhandledRejection', onUnhandledRejection)
+
+  t.after(async () => {
+    process.off('unhandledRejection', onUnhandledRejection)
+    await bot.stop().catch(() => undefined)
   })
 
   const future = new Promise<void>((resolve, reject) => {
@@ -31,11 +42,7 @@ test('wechaty-puppet-neo', { timeout: 120_000 }, async () => {
     bot.once('error', reject)
   })
 
-  try {
-    await bot.start()
-    await future
-    assert.ok(bot.puppet, `Puppet ${bot.puppet} v${bot.puppet.version()} smoke testing passed.`)
-  } finally {
-    await bot.stop().catch(() => undefined)
-  }
+  await bot.start()
+  await future
+  assert.ok(bot.puppet, `Puppet ${bot.puppet} v${bot.puppet.version()} smoke testing passed.`)
 })

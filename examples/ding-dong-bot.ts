@@ -2,46 +2,58 @@
 /**
  * Wechaty - Conversational RPA SDK for Chatbot Makers.
  *  - https://github.com/wechaty/wechaty
+ *
+ * Starter ding-dong bot using `PuppetNeo`. Prints a terminal QR code on `scan`
+ * and replies `dong` to incoming `ding` messages.
  */
-// https://stackoverflow.com/a/42817956/1123955
-// https://github.com/motdotla/dotenv/issues/89#issuecomment-587753552
 import 'dotenv/config.js'
 
 import {
   ScanStatus,
   WechatyBuilder,
+  helpers,
   log,
   type Contact,
   type Message,
-}                  from 'wechaty'
+} from 'wechaty'
 import { PuppetNeo } from 'wechaty-puppet-neo'
-
 import qrcodeTerminal from 'qrcode-terminal'
 
-function onScan (qrcode: string, status: ScanStatus) {
+/**
+ * Renders the login QR code in the terminal when waiting for a scan.
+ */
+function onScan (qrcode: string, status: ScanStatus): void {
   if (status === ScanStatus.Waiting || status === ScanStatus.Timeout) {
     const qrcodeImageUrl = [
       'https://wechaty.js.org/qrcode/',
       encodeURIComponent(qrcode),
     ].join('')
-    log.info('StarterBot', 'onScan: %s(%s) - %s', ScanStatus[status], status, qrcodeImageUrl)
+    log.info('StarterBot', 'onScan: %s(%s) - %s', helpers.typeName(ScanStatus, status), status, qrcodeImageUrl)
 
-    qrcodeTerminal.generate(qrcode, { small: true })  // show qrcode on console
-
+    qrcodeTerminal.generate(qrcode, { small: true })
   } else {
-    log.info('StarterBot', 'onScan: %s(%s)', ScanStatus[status], status)
+    log.info('StarterBot', 'onScan: %s(%s)', helpers.typeName(ScanStatus, status), status)
   }
 }
 
-function onLogin (user: Contact) {
+/**
+ * Logs when the bot account signs in.
+ */
+function onLogin (user: Contact): void {
   log.info('StarterBot', '%s login', user)
 }
 
-function onLogout (user: Contact) {
+/**
+ * Logs when the bot account signs out.
+ */
+function onLogout (user: Contact): void {
   log.info('StarterBot', '%s logout', user)
 }
 
-async function onMessage (msg: Message) {
+/**
+ * Replies `dong` when an incoming text message equals `ding`.
+ */
+async function onMessage (msg: Message): Promise<void> {
   log.info('StarterBot', msg.toString())
 
   if (msg.text() === 'ding') {
@@ -55,14 +67,15 @@ async function onMessage (msg: Message) {
  */
 const bot = WechatyBuilder.build({
   name: 'ding-dong-bot',
-  puppet: new PuppetNeo(),
+  // wechaty-puppet-neo@0.1.1 still bundles wechaty-puppet@1.x types
+  puppet: new PuppetNeo() as unknown as Exclude<NonNullable<Parameters<typeof WechatyBuilder.build>[0]>['puppet'], string | undefined>,
 })
 
-bot.on('scan',    onScan)
-bot.on('login',   onLogin)
-bot.on('logout',  onLogout)
+bot.on('scan', onScan)
+bot.on('login', onLogin)
+bot.on('logout', onLogout)
 bot.on('message', onMessage)
 
 bot.start()
   .then(() => log.info('StarterBot', 'Starter Bot Started.'))
-  .catch(e => log.error('StarterBot', e))
+  .catch((e) => log.error('StarterBot', e))
