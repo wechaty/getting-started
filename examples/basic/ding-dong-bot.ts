@@ -17,7 +17,7 @@
  *   limitations under the License.
  *
  */
-import 'dotenv/config.js'
+import 'dotenv/config'
 
 import {
   ScanStatus,
