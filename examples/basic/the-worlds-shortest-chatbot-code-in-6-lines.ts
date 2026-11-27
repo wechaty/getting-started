@@ -17,10 +17,10 @@
  *   limitations under the License.
  *
  */
-import { WechatyBuilder } from 'wechaty'
+import { Wechaty } from 'wechaty'
 
-WechatyBuilder.singleton() // Singleton
-  .on('scan',     (qrcode, status)  => console.log(`Scan QR Code to login: ${status}\nhttps://wechaty.js.org/qrcode/${encodeURIComponent(qrcode)}`))
-  .on('login',    user              => console.log(`User ${user} logined`))
-  .on('message',  message           => console.log(`Message: ${message}`))
-  .start()
+const bot = Wechaty.singleton()
+bot.addEventListener('scan',    ({ detail: { qrcode, status } }) => console.log(`Scan QR Code to login: ${status}\nhttps://wechaty.js.org/qrcode/${encodeURIComponent(qrcode)}`))
+bot.addEventListener('login',   ({ detail: user }) => console.log(`User ${user} logined`))
+bot.addEventListener('message', ({ detail: message }) => console.log(`Message: ${message}`))
+bot.start().catch(console.error)

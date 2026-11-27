@@ -96,7 +96,7 @@ npm install
 npm start
 ```
 
-The same command works on Linux, macOS, and Windows. Node.js runs `examples/ding-dong-bot.ts` directly. The bot is built with `WechatyBuilder` and `new PuppetNeo()`.
+The same command works on Linux, macOS, and Windows. Node.js runs `examples/ding-dong-bot.ts` directly. The bot is built with `new Wechaty(...)` and `new PuppetNeo()`.
 
 A QR code is printed in the terminal. Scan it with WeChat. Neo keeps the login in memory, so every start prints a new QR code.
 
@@ -114,17 +114,17 @@ If you run into problems while following the above steps, check the items below.
 
 ## Wechaty Puppet Neo
 
-The ding-dong bot in this repository uses [wechaty-puppet-neo](https://www.npmjs.com/package/wechaty-puppet-neo) through `WechatyBuilder`.
+The ding-dong bot in this repository uses [wechaty-puppet-neo](https://www.npmjs.com/package/wechaty-puppet-neo) through `Wechaty`.
 
 | Provider | NPM | Login |
 | :--- | :--- | :--- |
 | Puppet Neo | `wechaty-puppet-neo` | In memory. A new QR code on every start. |
 
 ```ts
-import { WechatyBuilder } from 'wechaty'
+import { Wechaty } from 'wechaty'
 import { PuppetNeo } from 'wechaty-puppet-neo'
 
-const bot = WechatyBuilder.build({
+const bot = new Wechaty({
   name: 'ding-dong-bot',
   puppet: new PuppetNeo(),
 })
@@ -215,7 +215,7 @@ This repository uses [PuppetNeo](https://www.npmjs.com/package/wechaty-puppet-ne
 
 ### main (Wechaty 2)
 
-Node.js 26, TypeScript 7, and [wechaty-puppet-neo](https://www.npmjs.com/package/wechaty-puppet-neo). The starter bot uses `WechatyBuilder` and `new PuppetNeo()`.
+Node.js 26, TypeScript 7, and [wechaty-puppet-neo](https://www.npmjs.com/package/wechaty-puppet-neo). The starter bot uses `new Wechaty(...)` and `new PuppetNeo()`.
 
 ### main v1.18 (Mar 14, 2022)
 

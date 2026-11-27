@@ -77,7 +77,7 @@ Let's start our ding-dong BOT. Its source code [examples/ding-dong-bot.ts] shoul
 
 If it's not opened yet, click <walkthrough-editor-open-file filePath="examples/ding-dong-bot.ts">Open</walkthrough-editor-open-file> to open it now.
 
-`npm start` runs `examples/ding-dong-bot.ts` with Node.js. The bot is built with `WechatyBuilder` and `new PuppetNeo()`.
+`npm start` runs `examples/ding-dong-bot.ts` with Node.js. The bot is built with `new Wechaty(...)` and `new PuppetNeo()`.
 
 ### 1. Get a WeChat login QR code
 

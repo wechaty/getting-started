@@ -10,13 +10,12 @@ import 'dotenv/config'
 
 import {
   ScanStatus,
-  WechatyBuilder,
+  Wechaty,
   helpers,
   log,
   type Contact,
   type Message,
 } from 'wechaty'
-import { PuppetNeo } from 'wechaty-puppet-neo'
 import qrcodeTerminal from 'qrcode-terminal'
 
 /**
@@ -65,16 +64,14 @@ async function onMessage (msg: Message): Promise<void> {
  * Puppet Neo keeps the login in memory and prints a new QR code on every start.
  * Scan that code with WeChat.
  */
-const bot = WechatyBuilder.build({
+const bot = new Wechaty({
   name: 'ding-dong-bot',
-  // wechaty-puppet-neo@0.1.1 still bundles wechaty-puppet@1.x types
-  puppet: new PuppetNeo() as unknown as Exclude<NonNullable<Parameters<typeof WechatyBuilder.build>[0]>['puppet'], string | undefined>,
 })
 
-bot.on('scan', onScan)
-bot.on('login', onLogin)
-bot.on('logout', onLogout)
-bot.on('message', onMessage)
+bot.addEventListener('scan', ({ detail: { qrcode, status } }) => onScan(qrcode, status))
+bot.addEventListener('login', ({ detail: user }) => onLogin(user))
+bot.addEventListener('logout', ({ detail: { contact } }) => onLogout(contact))
+bot.addEventListener('message', ({ detail: msg }) => onMessage(msg))
 
 bot.start()
   .then(() => log.info('StarterBot', 'Starter Bot Started.'))
