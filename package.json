@@ -17,7 +17,7 @@
     "start": "node examples/ding-dong-bot.ts",
     "test": "npm run lint && npm run test:smoke",
     "test:smoke": "node --test --test-timeout=180000 \"tests/*.test.ts\"",
-    "test:unit:deno": "env -i PATH=\"$PATH\" HOME=\"$HOME\" CI=\"${CI:-}\" NODE_BINARY=\"${NODE_BINARY:-$(command -v node)}\" deno test --no-check --allow-read=.,/tmp,/etc/alpine-release --allow-write=/tmp --allow-env --allow-net --allow-run --allow-sys=hostname,cpus,networkInterfaces --allow-ffi=node_modules/leveldown/prebuilds,node_modules/wechaty-puppet-neo/native tests"
+    "test:unit:deno": "env -i PATH=\"$PATH\" HOME=\"$HOME\" CI=\"${CI:-}\" NODE_BINARY=\"${NODE_BINARY:-$(command -v node)}\" deno test --no-check --allow-read=.,/tmp,/etc/alpine-release --allow-write=/tmp --allow-env --allow-net --allow-run --allow-sys=hostname,cpus,networkInterfaces --allow-ffi=node_modules/@lmdb tests"
   },
   "repository": {
     "type": "git",
@@ -34,8 +34,7 @@
     "dotenv": "^18.0.10",
     "qrcode-terminal": "^0.12.0",
     "wechaty": ">=2.0.0-alpha.21",
-    "wechaty-plugin-contrib": "^1.12.2",
-    "wechaty-puppet-neo": "^0.1.1"
+    "wechaty-plugin-contrib": "^1.12.2"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.6.5",
@@ -43,6 +42,6 @@
     "@types/qrcode-terminal": "^0.12.2",
     "@typescript/native": "npm:typescript@^7.0.2",
     "markdownlint-cli": "^0.50.0",
-    "wechaty-puppet-mock": "^1.19.4"
+    "wechaty-puppet-mock": ">=2.0.0-alpha.21"
   }
 }
