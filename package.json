@@ -9,14 +9,15 @@
   },
   "scripts": {
     "build": "tsc",
+    "clean": "node -e \"import('node:fs').then(fs => fs.rmSync('dist', { recursive: true, force: true }))\"",
     "lint:biome": "biome lint examples tests",
+    "lint:md": "markdownlint README.md DEVELOPMENT.md examples/README.md",
     "lint:ts": "tsc --isolatedModules --noEmit",
-    "lint": "npm run lint:biome && npm run lint:ts",
-    "postinstall": "check-node-version --node \">=26\" --npm \">=10\"",
+    "lint": "npm run lint:biome && npm run lint:ts && npm run lint:md",
     "start": "node examples/ding-dong-bot.ts",
     "test": "npm run lint && npm run test:smoke",
-    "test:smoke": "node --test --test-force-exit --test-timeout=180000 \"tests/*.test.ts\"",
-    "test:unit:deno": "env -i PATH=\"$PATH\" HOME=\"$HOME\" CI=\"${CI:-}\" NODE_BINARY=\"${NODE_BINARY:-$(command -v node)}\" deno test --no-check --allow-read --allow-write --allow-env --allow-net --allow-run --allow-sys --allow-ffi=node_modules/leveldown/prebuilds --allow-ffi=node_modules/wechaty-puppet-neo/native tests"
+    "test:smoke": "node --test --test-timeout=180000 \"tests/*.test.ts\"",
+    "test:unit:deno": "env -i PATH=\"$PATH\" HOME=\"$HOME\" CI=\"${CI:-}\" NODE_BINARY=\"${NODE_BINARY:-$(command -v node)}\" deno test --no-check --allow-read=.,/tmp,/etc/alpine-release --allow-write=/tmp --allow-env --allow-net --allow-run --allow-sys=hostname,cpus,networkInterfaces --allow-ffi=node_modules/leveldown/prebuilds,node_modules/wechaty-puppet-neo/native tests"
   },
   "repository": {
     "type": "git",
@@ -41,7 +42,7 @@
     "@types/node": "^26.6.6",
     "@types/qrcode-terminal": "^0.12.2",
     "@typescript/native": "npm:typescript@^7.0.2",
-    "check-node-version": "^4.2.1",
+    "markdownlint-cli": "^0.50.0",
     "wechaty-puppet-mock": "^1.19.4"
   }
 }

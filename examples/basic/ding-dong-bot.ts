@@ -22,6 +22,7 @@ import 'dotenv/config.js'
 import {
   ScanStatus,
   WechatyBuilder,
+  helpers,
   log,
   type Contact,
   type Message,
@@ -38,10 +39,10 @@ function onScan (qrcode: string, status: ScanStatus) {
       encodeURIComponent(qrcode),
     ].join('')
 
-    log.info('StarterBot', 'onScan: %s(%s) - %s', ScanStatus[status], status, qrcodeImageUrl)
+    log.info('StarterBot', 'onScan: %s(%s) - %s', helpers.typeName(ScanStatus, status), status, qrcodeImageUrl)
 
   } else {
-    log.info('StarterBot', 'onScan: %s(%s)', ScanStatus[status], status)
+    log.info('StarterBot', 'onScan: %s(%s)', helpers.typeName(ScanStatus, status), status)
   }
 }
 
@@ -67,7 +68,8 @@ async function onMessage (msg: Message) {
  */
 const bot = WechatyBuilder.build({
   name: 'ding-dong-bot',
-  puppet: new PuppetNeo(),
+  // wechaty-puppet-neo@0.1.1 still bundles wechaty-puppet@1.x types
+  puppet: new PuppetNeo() as unknown as Exclude<NonNullable<Parameters<typeof WechatyBuilder.build>[0]>['puppet'], string | undefined>,
 })
 
 bot.on('scan',    onScan)

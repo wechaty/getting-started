@@ -30,7 +30,7 @@ This repository tracks Wechaty 2. It needs Node.js 26 or newer and TypeScript 7.
 ### Wechaty Getting Started video tutorial
 
 <div align="center">
-<a target="_blank" href="https://youtu.be/GdmikkU4ZfM?si=cpsuh7RyQjtgLE5F"><img src="docs/images/video-tutorial-img.webp" border=0 width="60%"></a>
+<a target="_blank" href="https://youtu.be/GdmikkU4ZfM?si=cpsuh7RyQjtgLE5F"><img src="docs/images/video-tutorial-img.webp" alt="Wechaty Getting Started video tutorial" border=0 width="60%"></a>
 </div>
 
 Above is a short run-through of the ding-dong bot.
@@ -106,7 +106,7 @@ You are all set!
 
 #### Step 4: Troubleshooting
 
-If you run into problems while following the above steps, check the items below. You are also welcome to ask questions in our [gitter chatroom](https://gitter.im/wechaty/wechaty).
+If you run into problems while following the above steps, check the items below. You are also welcome to ask questions in our [Discord community](https://discord.gg/7q8NBZbQzt).
 
 1. `node -v` is v26 or newer, and `npm -v` is 10 or newer.
 1. On Linux, `ldd --version` reports glibc 2.38 or newer.
@@ -137,7 +137,7 @@ Learn more about installing Wechaty on windows from this [blog post](https://wec
 ### 1. Wechaty Tutorial
 
 <div align="center">
-<a target="_blank" href="https://wechaty.js.org/2017/01/01/getting-started-wechaty/"><img src="https://cloud.githubusercontent.com/assets/1361891/21722581/3ec957d0-d468-11e6-8888-a91c236e0ba2.jpg" border=0 width="60%"></a>
+<a target="_blank" href="https://wechaty.js.org/2017/01/01/getting-started-wechaty/"><img src="https://cloud.githubusercontent.com/assets/1361891/21722581/3ec957d0-d468-11e6-8888-a91c236e0ba2.jpg" alt="Wechaty 10 minute video tutorial" border=0 width="60%"></a>
 </div>
 
 Above is a 10 minute video tutorial. It is using version 0.14 or older versions of Wechaty therefore it is also outdated. It is a good way to start if you are new to Wechaty.
@@ -146,9 +146,19 @@ Above is a 10 minute video tutorial. It is using version 0.14 or older versions 
 
 > Note: Before you attempt more examples, make sure you have tried out the wechaty getting started project in this repository.
 
-- [Official Wechaty Examples Directory](https://github.com/wechaty/getting-started/tree/master/examples)
+- [Official Wechaty Examples Directory](https://github.com/wechaty/getting-started/tree/main/examples)
 
-The files under `examples/` other than the two starter bots are v1-era samples. The root package does not install them.
+`examples/cqrs/` is kept for a future Wechaty 2 upgrade and is excluded from the root TypeScript check.
+
+#### Verification
+
+Run linting, TypeScript checks, and smoke tests locally:
+
+```sh
+npm run lint
+npm test
+npm run test:unit:deno
+```
 
 ## API REFERENCE
 
