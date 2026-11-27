@@ -2,7 +2,7 @@
 /**
  *   Wechaty - https://github.com/wechaty/wechaty
  *
- *   @copyright 2016-now Huan LI <zixia@zixia.net>
+ *   @copyright 2016-now Huan Li <huan@chatie.io>
  *
  *   Licensed under the Apache License, Version 2.0 (the "License");
  *   you may not use this file except in compliance with the License.
