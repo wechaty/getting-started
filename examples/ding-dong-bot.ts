@@ -6,7 +6,7 @@
  * Starter ding-dong bot using `PuppetNeo`. Prints a terminal QR code on `scan`
  * and replies `dong` to incoming `ding` messages.
  */
-import 'dotenv/config.js'
+import 'dotenv/config'
 
 import {
   ScanStatus,
